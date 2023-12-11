@@ -7,4 +7,4 @@ This is a WIP. It has not undergone any quality control.
 
 ## Current Status
 Trendline charts based on data from:
-[Current Viz](docs/CONTRIBUTING.md)
+[Current Viz](docs/c19-trends.png)
