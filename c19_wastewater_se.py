@@ -10,23 +10,31 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import numpy as np
 
+# Fill all missing weeks attempt. Set to false because not working as intended
+fill_missing_weeks = False
 
 wastewater_data = pd.read_csv(
     "https://blobserver.dc.scilifelab.se/blob/SLU_wastewater_data.csv",
     sep=",",
 )
 wastewater_data["year"] = (wastewater_data["week"].str[:4]).astype(int)
-wastewater_data["week_no"] = wastewater_data["week"].str[-3:]
-wastewater_data["week_no"] = wastewater_data["week_no"].str.replace("*", "", regex=False)
-wastewater_data["week_no"] = (wastewater_data["week_no"].str.replace("-", "", regex=False)).astype(int)
-wastewater_data["week"] = (wastewater_data["week"].str.replace("*", "", regex=False)) #DD
+wastewater_data["week_no"] = wastewater_data["week"].str.replace(r"\*$", "", regex=True)
+wastewater_data["week"] = wastewater_data["week"].str.replace(r"\*$", "", regex=True)
 
+# Convert week to ISO year and week
+wastewater_data[['iso_year', 'iso_week']] = wastewater_data['week'].str.split('-', expand=True)
 
-# set the date to the start of the week (Monday)
-wastewater_data["day"] = 1
-wastewater_data["date"] = wastewater_data.apply(
-    lambda row: dt.fromisocalendar(row["year"], row["week_no"], row["day"]), axis=1
-)
+# Convert ISO year and week to integers
+wastewater_data['iso_year'] = wastewater_data['iso_year'].astype(int)
+wastewater_data['iso_week'] = wastewater_data['iso_week'].astype(int)
+
+# Define a function to get the first day of the ISO year and week
+def get_first_day(row):
+    return dt.fromisocalendar(row['iso_year'], row['iso_week'], 1)
+
+# Apply the function to create a new column "first_day"
+wastewater_data['first_day'] = wastewater_data.apply(get_first_day, axis=1)
+
 # The below accomodates a change in the column title for the COVID data
 wastewater_data.rename(
     columns={
@@ -34,9 +42,6 @@ wastewater_data.rename(
     },
     inplace=True,
 )
-
-# Fill all missing weeks attempt
-fill_missing_weeks = False
 
 if fill_missing_weeks == True:
     ## DD ADD ALL WEEKS
@@ -69,18 +74,15 @@ if fill_missing_weeks == True:
     result_df = result_df.sort_values(by=['channel', 'date']).reset_index(drop=True)
     #df = result_df[['channel','week', 'relative_copy_number']]
     df = result_df
+    # Now, result_df contains the DataFrame with missing dates filled for each channel
+    # The 'flag' column indicates whether the datapoint is added or existed already
 
 else:
     df = wastewater_data
-# Now, result_df contains the DataFrame with missing dates filled for each channel
-# The 'flag' column indicates whether the datapoint is added or existed already
-
-
 
 
 df.dropna(subset=['channel'], inplace=True)
 unique_areas = list(df.channel.unique())
-
 
 n_unique_areas = len(unique_areas)
 n_cols_for_output = 4 # user specified
@@ -121,7 +123,7 @@ for i, area in enumerate(unique_areas, start=1):
 
 
 fig.update_layout(
-    height=50*n_unique_areas, width=1200,  # Adjust width to accommodate all subplots
+    height=50*n_unique_areas, width=300*n_cols_for_output,  # Adjust width to accommodate all subplots
     title_text="Covid-19 Wastewater Sweden"
 )
 
