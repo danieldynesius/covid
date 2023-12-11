@@ -10,9 +10,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import numpy as np
 
-# # Knivsta, Vaxholm and Österåker.
-# Göteborg, Malmö and Stockholm-Käppala
-#/home/stratega/Documents/code/data/timeseries/covid/COVID-19_rioolwaterdata.csv
+
 wastewater_data = pd.read_csv(
     "https://blobserver.dc.scilifelab.se/blob/SLU_wastewater_data.csv",
     sep=",",
@@ -79,44 +77,6 @@ else:
 
 
 
-## DD TEST
-"""
-from dash import Dash, dcc, html, Input, Output
-import plotly.express as px
-
-app = Dash(__name__)
-
-
-app.layout = html.Div([
-    html.H4('Polotical candidate voting pool analysis'),
-    html.P("Select a candidate:"),
-    dcc.RadioItems(
-        id='candidate', 
-        options=["Joly", "Coderre", "Bergeron"],
-        value="Coderre",
-        inline=True
-    ),
-    dcc.Graph(id="graph"),
-])
-
-
-@app.callback(
-    Output("graph", "figure"), 
-    Input("candidate", "value"))
-def display_choropleth(candidate):
-    df = px.data.election() # replace with your own data source
-    geojson = px.data.election_geojson()
-    fig = px.choropleth(
-        df, geojson=geojson, color=candidate,
-        locations="district", featureidkey="properties.district",
-        projection="mercator", range_color=[0, 6500])
-    fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    return fig
-
-
-app.run_server(debug=True)
-"""
 
 df.dropna(subset=['channel'], inplace=True)
 unique_areas = list(df.channel.unique())
@@ -166,47 +126,3 @@ fig.update_layout(
 )
 
 fig.show()                  
-
-
-"""
-fig = go.Figure()
-
-fig.add_trace(go.Scatter(
-    x=x,
-    y=[10, 20, None, 15, 10, 5, 15, None, 20, 10, 10, 15, 25, 20, 10],
-    name = '<b>No</b> Gaps', # Style name/legend entry with html tags
-    connectgaps=True # override default to connect the gaps
-))
-fig.add_trace(go.Scatter(
-    x=x,
-    y=[5, 15, None, 10, 5, 0, 10, None, 15, 5, 5, 10, 20, 15, 5],
-    name='Gaps',
-))
-
-fig.show()
-
-import plotly.express as px
-import geopandas as gpd
-
-# Load GeoJSON file into a GeoDataFrame
-sweden_gdf = gpd.read_file("/home/stratega/Documents/code/data/geo/sweden-counties.geojson")
-
-# Filter data for Uppsala
-#uppsala_gdf = sweden_gdf[sweden_gdf['name'] == 'Uppsala']
-
-# Create a choropleth map using Plotly Express
-fig = px.choropleth_mapbox(
-    df,
-    sweden_gdf,
-    geojson=sweden_gdf.geometry,
-    locations=sweden_gdf.index,
-    color="name",
-    mapbox_style="carto-positron",
-    center={"lat": sweden_gdf.bounds.mean().maxy.mean(), "lon": sweden_gdf.bounds.mean().maxx.mean()},  # Center on Sweden
-    zoom=5,
-)
-
-# Show the plot
-fig.show()
-
-"""
