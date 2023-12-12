@@ -10,8 +10,8 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import numpy as np
 
-# Fill all missing weeks attempt. Set to false because True DOES NOT DRAW DATAPOINTS CORRECTLY!
-fill_missing_weeks = True
+# Fill all missing weeks attempt. Set to false is more Concise. set to true is more Complete.
+fill_missing_weeks = False
 
 wastewater_data = pd.read_csv(
     "https://blobserver.dc.scilifelab.se/blob/SLU_wastewater_data.csv",
@@ -46,13 +46,14 @@ wastewater_data.rename(
     inplace=True,
 )
 
-""" grouped = wastewater_data[['channel', 'date']].groupby('channel')
-grouped = grouped.max().reset_index()
+#grouped = wastewater_data[['channel', 'date']].groupby('channel')
+#grouped = grouped.max().reset_index()
 fresh_data_cutoff = dt.today() - timedelta(days=365)
-grouped = grouped[grouped['date'] > fresh_data_cutoff]
-
-wastewater_data = wastewater_data[wastewater_data.channel.isin(grouped.channel)]
- """
+common_x_range_start = fresh_data_cutoff
+#grouped = grouped[grouped['date'] > fresh_data_cutoff]
+#wastewater_data = wastewater_data[wastewater_data.channel.isin(grouped.channel)]
+wastewater_data['fresh_data_flg'] = 0
+wastewater_data.loc[wastewater_data['date'] >= common_x_range_start, ['fresh_data_flg']] = 1
 
 
 if fill_missing_weeks == True:
@@ -102,7 +103,7 @@ n_unique_areas = len(unique_areas)
 n_cols_for_output = 4 # user specified
 n_rows_for_output = math.ceil(n_unique_areas/n_cols_for_output) # needed based on n areas in data
 
-df = df[['week', 'channel', 'relative_copy_number', 'iso_week', 'date']]
+df = df[['week', 'channel', 'relative_copy_number', 'iso_week', 'date', 'fresh_data_flg']]
 
 fig = make_subplots(
     rows=n_rows_for_output, cols=n_cols_for_output,
@@ -119,6 +120,9 @@ for i, area in enumerate(unique_areas, start=1):
     print('Current area:', area, 'RC:',row_num, col_num)
     area_x_series = df[df['channel'].str.lower() == area_lowercase].date
     area_y_series = df[df['channel'].str.lower() == area_lowercase].relative_copy_number
+
+    area_x_series_last365 = df[(df['channel'].str.lower() == area_lowercase) & (df['fresh_data_flg'] == 1)].date
+    area_y_series_last365 = df[(df['channel'].str.lower() == area_lowercase) & (df['fresh_data_flg'] == 1)].relative_copy_number
 
     fig.add_trace(
         go.Scatter(
@@ -137,6 +141,6 @@ fig.update_layout(
     title_text="Covid-19 Wastewater Sweden"
 )
 fig.update_xaxes(tickangle=45, tickfont=dict(family='Rockwell', color='black', size=14))
-#fig.update_yaxes(rangemode="tozero")
+
 
 fig.show()
