@@ -10,7 +10,7 @@ import pandas as pd
 
 
 # Load GeoJSON file into a GeoDataFrame
-sweden_gdf = gpd.read_file("./analytics/covid/data/NUTS_RG_20M_2021_3035.geojson")
+sweden_gdf = gpd.read_file("./data/NUTS_RG_20M_2021_3035.geojson")
 sweden_gdf = sweden_gdf[(sweden_gdf['CNTR_CODE'] == 'SE') & (sweden_gdf['LEVL_CODE'] == 3)]
 
 # City -> Region Mapping
@@ -49,7 +49,6 @@ wastewater_data = pd.read_csv(
     sep=",",
 )
 wastewater_data["year"] = wastewater_data["week"].str[:4].astype(int)
-
 wastewater_data["week_no"] = wastewater_data["week"].str.replace(r"\*$", "", regex=True)
 wastewater_data["week"] = wastewater_data["week"].str.replace(r"\*$", "", regex=True)
 
