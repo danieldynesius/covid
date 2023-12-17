@@ -3,7 +3,7 @@ This is a work in progress to visualize Swedish covid wastewater data.
 
 
 ## Please Note
-This is a WIP. It has not undergone any quality control.
+This is a WIP. It has only undergone minor quality control.
 
 
 ## Current Status
