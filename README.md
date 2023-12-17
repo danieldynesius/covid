@@ -8,8 +8,7 @@ This is a WIP. It has not undergone any quality control.
 
 ## Current Status
 Countries visualized on Map (choropleth) e.g:
-![Geo Map Viz](https://github.com/danieldynesius/covid/assets/88065615/474893b4-5b43-4f50-9913-1bbad6e0f003)
-![Map Viz](docs/analytics/covid/docs/c19_wastewater_sweden_2023_v0.2.gif)
+![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_sweden_2023_v0.2.gif)
 
 Relative Copy Number Cap was created by simple heuristic to in order to have the color meaning not being relative to included time period or country overall (which also might be effected by data of other countries or lack of reporting of one or another country. This will facilitate and standardize interpretability within Sweden for now, which later will be reviewed as more countries are added.
 The range of Relative Copy Number is fixed based a heuristic based on Uppsala Wastewater during the first data wave. Uppsala a stable measurement across time, and as far as I remember Sweden had a very high transmission of SARS-CoV-2 during this time. I think it should serve as a decent estimate on the degree of covid transmission. 
