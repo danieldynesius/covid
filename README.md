@@ -7,7 +7,8 @@ This is a WIP. It has only undergone minor quality control.
 
 
 ## Current Status
-Countries visualized on Map (choropleth) e.g:
+Countries visualized on Map (choropleth) e.g.
+
 ![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_sweden_2023_v0.2.gif)
 
 Relative Copy Number Cap was created by simple heuristic to in order to have the color meaning not being relative to included time period or country overall (which also might be effected by data of other countries or lack of reporting of one or another country. This will facilitate and standardize interpretability within Sweden for now, which later will be reviewed as more countries are added.
