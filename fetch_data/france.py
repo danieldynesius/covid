@@ -7,38 +7,6 @@
 #--------------------------------------------------------------------------------
 import requests
 import pandas as pd
-
-
-url = 'https://www.data.gouv.fr/fr/datasets/r/2963ccb5-344d-4978-bdd3-08aaf9efe514'
-
-# Read the CSV file into a Pandas DataFrame
-df = pd.read_csv(url, sep=';')
-
-import hashlib
-
-# Calculate the hash of the DataFrame
-hash_before = hashlib.sha256(df.to_csv().encode()).hexdigest()
-
-# Save the DataFrame to a CSV file
-df.to_csv('./data/france/france_data.csv', index=False)
-
-# Read the CSV file back into a DataFrame
-df_read = pd.read_csv('./data/france/france_data.csv', sep=';')
-
-# Calculate the hash of the re-read DataFrame
-hash_after = hashlib.sha256(df_read.to_csv().encode()).hexdigest()
-
-# Compare the hashes
-if hash_before == hash_after:
-    print("The data format has not changed.")
-else:
-    print("The data format may have changed.")
-
-
-
-
-
-import pandas as pd
 import requests
 import hashlib
 import pyarrow.parquet as pq
