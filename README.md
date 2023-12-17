@@ -24,4 +24,9 @@ The range of Relative Copy Number is fixed based a heuristic based on Uppsala Wa
 
 ## Questions?
 For questions, suggestions, requests or ideas:
-Contact me on twitter @dynesius_
+Contact me on twitter or linkedin.
+
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/dynesius_.svg?style=social&label=Follow%20%40dynesius_)](https://twitter.com/dynesius_)
+
+
+[![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/danieldynesius/)&nbsp;
