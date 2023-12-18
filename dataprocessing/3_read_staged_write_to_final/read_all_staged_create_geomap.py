@@ -7,9 +7,11 @@ from folium import plugins
 # Read the Parquet files into GeoDataFrames
 g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
 g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
+g3 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/netherlands_wastewater.parquet')
+
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3], ignore_index=True))
 
 # Write out data for other to see what goes into geoplot
 gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)

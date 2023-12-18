@@ -112,7 +112,7 @@ values_2d = merged_gdf['value'].values.reshape(-1, 1)
 
 # Create and fit the MinMaxScaler
 scaler = MinMaxScaler()
-merged_gdf['normalized_value'] = scaler.fit_transform(values_2d)
+merged_gdf.loc[:, 'normalized_value'] = scaler.fit_transform(values_2d)
 
 merged_gdf.drop_duplicates(inplace=True)
 
