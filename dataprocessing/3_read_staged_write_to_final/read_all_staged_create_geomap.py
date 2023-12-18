@@ -43,7 +43,7 @@ geojson_data = {
 }
 
 # Create a Folium map centered around France
-m = folium.Map(location=[46.6031, 5], zoom_start=3.5)
+m = folium.Map(location=[55, 8], zoom_start=3.5)
 
 # Use TimestampedGeoJson to add a timestamp slider
 plugins.TimestampedGeoJson(
