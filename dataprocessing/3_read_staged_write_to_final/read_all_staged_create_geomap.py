@@ -4,16 +4,26 @@ import geopandas as gpd
 from branca.colormap import linear
 import folium
 from folium import plugins
+import os
+
+
+
 
 # Read the Parquet file into a new Pandas DataFrame
-gdf = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
+
+g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
+g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
+list_gdf = [g1,g2]
+
+gdf = gpd.GeoDataFrame( pd.concat( [g1, g2], ignore_index=True) )
+
 
 #### Visualize Data
 # Create a color scale - Dynamic
-#color_scale = linear.OrRd_04.scale(min(gdf['value']), max(gdf['value']))
+color_scale = linear.OrRd_04.scale(min(gdf['value']), max(gdf['value']))
 
 # Create a color scale - Static
-color_scale = linear.OrRd_04.scale(0, 25)
+#color_scale = linear.OrRd_04.scale(0, 25)
 #color_scale = 'YlOrRd'
 
 # Create a GeoJSON object and features

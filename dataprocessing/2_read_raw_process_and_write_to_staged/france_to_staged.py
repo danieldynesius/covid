@@ -117,7 +117,7 @@ merged_gdf['normalized_value'] = scaler.fit_transform(values_2d)
 merged_gdf.drop_duplicates(inplace=True)
 
 # RECREATE above
-merged_gdf = merged_gdf[['first_day', 'geometry','region','value','normalized_value']]
+merged_gdf = merged_gdf[['first_day', 'geometry','region','cntr_code','value','normalized_value']]
 merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 
 # EXPORT DATA TO STAGED
