@@ -1,4 +1,4 @@
-# Wastewater Data Viz - EARLY WIP
+# Europe Wastewater Data Viz - EARLY WIP
 This is a work in progress to visualize Swedish covid wastewater data.
 !DONT MAKE INTERPRETATIONS ON THIS GRAPHS YET!
 
