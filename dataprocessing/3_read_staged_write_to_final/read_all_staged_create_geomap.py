@@ -11,6 +11,9 @@ g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewat
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2], ignore_index=True))
 
+# Write out data for other to see what goes into geoplot
+gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)
+
 # Create a color scale for each cntr_code
 color_scales = {}
 for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
