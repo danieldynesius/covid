@@ -8,7 +8,7 @@ This is a WIP. It has only undergone minor quality control.
 
 
 ## Current Status
-![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.gif)
+![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.1.gif)
 
 #### Countries visualized on Map (choropleth)
 
