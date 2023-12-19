@@ -8,14 +8,16 @@ from folium import plugins
 g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
 g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
 g3 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/netherlands_wastewater.parquet')
+g4 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/denmark_wastewater.parquet')
 
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4], ignore_index=True))
 
 # Write out data for other to see what goes into geoplot
 gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)
 
+# RESOLVE THIS BUG HERE TO WORK ON normalized_value instead of value!
 # Create a color scale for each cntr_code
 color_scales = {}
 for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
@@ -25,12 +27,12 @@ for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
 geojson_features = []
 for _, row in gdf.iterrows():
     cntr_code = row['cntr_code']
+    formatted_region = row['region'].replace("-", " ").title()
     feature = {
         'type': 'Feature',
         'geometry': row['geometry'].__geo_interface__,
         'properties': {
             'style': {
-                'color': 'black',
                 'color': color_scales[cntr_code](row['value']),
                 'fillcolor': color_scales[cntr_code](row['value']),
                 'opacity': 0.7,
@@ -38,7 +40,8 @@ for _, row in gdf.iterrows():
                 'fillOpacity': 0.5,
             },
             'time': row['first_day'],
-        }
+            'popup': f"<b>Region:</b> {formatted_region}<br><b>Value:</b> {row['value']}<br><b>Normalized Value</b>: {row['normalized_value']}"
+        },
     }
     geojson_features.append(feature)
 
@@ -65,9 +68,9 @@ plugins.TimestampedGeoJson(
 ).add_to(m)
 
 # Display color scales for each cntr_code
-#for cntr_code, color_scale in color_scales.items():
-#    color_scale.caption = f'Value - {cntr_code}'
-#    color_scale.add_to(m)
+for cntr_code, color_scale in color_scales.items():
+    color_scale.caption = f'Value - {cntr_code}'
+    color_scale.add_to(m)
 
 # Display the map
 m

@@ -27,61 +27,28 @@ geojson
 geojson = geojson[['nuts_name', 'cntr_code', 'geometry']]
 geojson['nuts_name'] = geojson['nuts_name'].str.lower()
 region_mapping = {
-    'uppsala': 'uppsala län',
-    'knivsta': 'uppsala län',
-    'enköping': 'uppsala län',
-    'älvkarleby': 'uppsala län',  # assuming älvkarleby is also in uppsala
-    'östhammar': 'uppsala län',  # assuming östhammar is also in uppsala
-    'ekerö': 'stockholms län',
-    'tierp': 'uppsala län',
-    'österåker': 'stockholms län',
-    'vaxholm': 'stockholms län',
-    'örebro': 'örebro län',
-    'umeå': 'västerbottens län',
-    'kalmar': 'kalmar län',
-    'ekeby': 'skåne län',  # note: this is a guess; provide the correct mapping if ekeby is in a different region
-    'jönköping': 'jönköpings län',
-    'västerås': 'västmanlands län',
-    'helsingborg': 'skåne län',
-    'östersund': 'jämtlands län',
-    'gävle': 'gävleborgs län',
-    'göteborg': 'västra götalands län',
-    'malmö': 'skåne län',
-    'stockholm-käppala': 'stockholms län',
-    'luleå': 'norrbottens län',
-    'karlstad': 'värmlands län',
-    'stockholm-grödinge': 'stockholms län',
-    'linköping': 'östergötlands län',
-    'stockholm-bromma': 'stockholms län',
-    'stockholm-henriksdal': 'stockholms län'
+    'capital region of denmark': 'hovedstaden',
+    'central denmark region': 'midtjylland',
+    'north denmark region': 'nordjylland',
+    'region zealand': 'sjælland',
+    'region of southern denmark': 'syddanmark'
 }
 
 
 # Pull data
 filename = 'denmark_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
-df['channel'] = df['channel'].str.lower()
-df["year"] = df["week"].str[:4].astype(int)
-df["week_no"] = df["week"].str.replace(r"\*$", "", regex=True)
-df["week"] = df["week"].str.replace(r"\*$", "", regex=True)
 
-# Convert week to ISO year and week
-df[['iso_year', 'iso_week']] = df['week'].str.split('-', expand=True)
+df['region_eng'] = df['region_eng'].str.lower()
 
-# Convert ISO year and week to integers
-df['iso_year'] = df['iso_year'].astype(int)
-df['iso_week'] = df['iso_week'].astype(int)
-
-# Apply the function to create a new column "first_day"
-df['first_day'] = df.apply(get_first_day, axis=1)
-
-df.rename(columns={"SARS-CoV2/PMMoV x 1000": "value", }, inplace=True) # relative_copy_number
+df.rename(columns={"rna_mean_faeces": "value", 'date':'first_day'}, inplace=True) # Outcome var
+df['first_day'] = pd.to_datetime(df['first_day'], format='%Y-%m-%d')
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
-region_stats = df.groupby('channel')['first_day'].agg(['count','min','max']).reset_index()
-sufficient_reporting_region = region_stats[region_stats['count'] >= sufficient_updates_since_threshold].channel
-df = df[df['channel'].isin(sufficient_reporting_region)]
-df['region'] = df['channel'].map(region_mapping) # add region map for geojson
+region_stats = df.groupby('region_eng')['first_day'].agg(['count','min','max']).reset_index()
+sufficient_reporting_region = region_stats[region_stats['count'] >= sufficient_updates_since_threshold].region_eng
+df = df[df['region_eng'].isin(sufficient_reporting_region)]
+df['region'] = df['region_eng'].map(region_mapping) # add region map for geojson
 df = df[['first_day','region', 'value']]
 df = df.groupby(['first_day','region'])['value'].agg('mean').reset_index()
 df['first_day'] = df.first_day.dt.date
@@ -123,33 +90,3 @@ gdf_original = merged_gdf
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/2_staged_data/{filename}'
 gdf_original.to_parquet(parquet_filename, index=False)
-
-"""
-# Plot choropleth map using Plotly Express with Mapbox
-fig = px.choropleth_mapbox(
-    merged_gdf,
-    geojson=merged_gdf.geometry,
-    locations=merged_gdf.index,
-    color='value',
-    opacity=0.5,
-    template='ggplot2', 
-    hover_name='region',
-    title='Covid-19 Sweden Wastewater Data',
-    labels={'value': 'Relative Copy Number', 'first_day': 'Date (Weekly)'},
-    color_continuous_scale="OrRd",
-    range_color=color_range,
-    mapbox_style="carto-positron",
-    center={"lat": 62, "lon": 18.1},
-    zoom=2.9,
-    animation_frame='first_day'
-)
-
-# Set the size of the graph
-fig.update_layout(
-    height=600,
-    width=800,
-)
-
-# Show the plot
-fig.show()
-"""
