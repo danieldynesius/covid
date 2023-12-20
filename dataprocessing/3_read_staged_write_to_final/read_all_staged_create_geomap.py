@@ -9,10 +9,13 @@ g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewat
 g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
 g3 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/netherlands_wastewater.parquet')
 g4 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/denmark_wastewater.parquet')
+g5 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/austria_wastewater.parquet')
 
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5], ignore_index=True))
+gdf = gdf.to_crs(epsg=4326)
+gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
 
 # Write out data for other to see what goes into geoplot
 gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)
