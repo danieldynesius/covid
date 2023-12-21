@@ -87,7 +87,7 @@ from folium.plugins import TimeSliderChoropleth
 # Assuming gdf is a GeoDataFrame with a 'first_day' column representing dates
 
 # Create a Folium Map object
-m = folium.Map(location=[latitude, longitude], zoom_start=10)
+m = folium.Map(location=[56, 10.5], zoom_start=10)
 
 # Create a TimeSliderChoropleth layer
 time_slider = TimeSliderChoropleth(

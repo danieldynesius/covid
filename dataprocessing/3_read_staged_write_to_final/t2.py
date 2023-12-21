@@ -5,20 +5,22 @@ import folium
 from folium import plugins
 
 # Read the Parquet files into GeoDataFrames
-g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
-g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
-g3 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/netherlands_wastewater.parquet')
+#g1 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/france_wastewater.parquet')
+#g2 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/sweden_wastewater.parquet')
+#g3 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/netherlands_wastewater.parquet')
 gdf = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/denmark_wastewater.parquet')
-g5 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/austria_wastewater.parquet')
-
+#g5 = gpd.read_parquet('~/code/analytics/covid/data/2_staged_data/austria_wastewater.parquet')
+#gdf = gdf[gdf['region'] == 'region of southern denmark']
 
 # Concatenate GeoDataFrames
 #gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5], ignore_index=True))
-gdf = gdf.to_crs(epsg=4326)
+#gdf = gdf.to_crs(epsg=4326)
+#gdf = gdf.to_crs('EPSG:3857')  # Convert to Web Mercator
+gdf = gdf.to_crs('EPSG:3395')
 gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
 
 # Write out data for other to see what goes into geoplot
-gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)
+#gdf.to_csv('~/code/analytics/covid/data/3_finalized_data/final_wastewaterfile.csv', index=False)
 
 # RESOLVE THIS BUG HERE TO WORK ON normalized_value instead of value!
 # Create a color scale for each cntr_code
@@ -36,7 +38,7 @@ for _, row in gdf.iterrows():
         'geometry': row['geometry'].__geo_interface__,
         'properties': {
             'style': {
-                'color': 'black',
+                'color': 'green',
                 'fillcolor': 'red',
                 'opacity': 0.7,
                 'weight': 2,
@@ -62,7 +64,7 @@ plugins.TimestampedGeoJson(
     period="P1W",
     duration="P1D",
     add_last_point=True,
-    auto_play=True,
+    auto_play=False,
     loop=True,
     max_speed=1.5,
     loop_button=True,
