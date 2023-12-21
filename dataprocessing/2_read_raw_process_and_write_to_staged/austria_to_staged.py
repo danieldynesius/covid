@@ -27,8 +27,7 @@ geojson.columns = geojson.columns.str.lower()
 geojson
 geojson = geojson[['nuts_name', 'cntr_code', 'geometry']]
 geojson['nuts_name'] = geojson['nuts_name'].str.lower()
-
-
+geojson[(geojson['cntr_code']=='AT')&~(geojson['nuts_name']=='österreich')]
 
 # Pull data
 filename = 'austria_wastewater.parquet'
@@ -37,6 +36,8 @@ df.columns = df.columns.str.lower()
 df['gruppe'] = df['gruppe'].str.lower()
 
 df.rename(columns={"genkopien pro ew / tag * 10^6": "value", 'datum':'first_day', 'gruppe':'region'}, inplace=True) # relative_copy_number
+df = df[~df['region'].str.contains('österreich')]
+
 df['first_day'] = pd.to_datetime(df['first_day']).dt.date
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
