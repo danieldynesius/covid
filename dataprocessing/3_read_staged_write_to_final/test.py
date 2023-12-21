@@ -78,3 +78,41 @@ m
 
 
 
+
+
+
+import folium
+from folium.plugins import TimeSliderChoropleth
+
+# Assuming gdf is a GeoDataFrame with a 'first_day' column representing dates
+
+# Create a Folium Map object
+m = folium.Map(location=[latitude, longitude], zoom_start=10)
+
+# Create a TimeSliderChoropleth layer
+time_slider = TimeSliderChoropleth(
+    data=gdf.to_json(),
+    styledict={},
+    name='Normalized Value',
+    overlay=True,
+    control=True,
+    show=False,
+).add_to(m)
+
+# Add the GeoJSON layer with the default date
+folium.Choropleth(
+    geo_data=gdf,
+    data=gdf,
+    columns=['region', 'normalized_value'],
+    fill_color='Reds',
+    fill_opacity=0.7,
+    line_opacity=0.2,
+    legend_name='Normalized Value',
+    nan_fill_color='grey',
+    nan_fill_opacity=0.4,
+).add_to(time_slider)
+
+# Display the map
+m
+
+
