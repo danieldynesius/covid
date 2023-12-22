@@ -75,10 +75,10 @@ plugins.TimestampedGeoJson(
 ).add_to(m)
 
 # Display color scales for each cntr_code
-"""for cntr_code, color_scale in color_scales.items():
+for cntr_code, color_scale in color_scales.items():
     color_scale.caption = f'Value - {cntr_code}'
     color_scale.add_to(m)
-"""
+
 # Display the map
 m
 m.save('geo_map.html')
