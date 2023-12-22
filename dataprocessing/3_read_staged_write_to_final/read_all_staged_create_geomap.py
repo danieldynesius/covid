@@ -13,9 +13,10 @@ g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
 g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1
 g5 = gpd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
 g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
+g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7], ignore_index=True))
 #gdf = gdf[['first_day', 'geometry', 'region', 'cntr_code', 'value']]
 #gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g5], ignore_index=True))
 
@@ -32,12 +33,11 @@ gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
 color_scales = {}
 gdf['type_of_colorscale'] = 'Country Relative Min-Max'
 for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
-#    print('cntr_code', cntr_code, 'cntr_df', cntr_code_df)
     if cntr_code == 'SE':
-        color_scales[cntr_code] = linear.OrRd_04.scale(0, 10)
+        color_scales[cntr_code] = linear.OrRd_04.scale(0, 10) # Purple scale: PuRd_04 :)
         gdf.loc[gdf['cntr_code'] == 'SE', 'type_of_colorscale'] = 'Country Heuristic (Basic)'
     else:
-        color_scales[cntr_code] = linear.PuRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
+        color_scales[cntr_code] = linear.OrRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
 
 
 
@@ -79,6 +79,7 @@ plugins.TimestampedGeoJson(
     add_last_point=True,
     auto_play=True,
     loop=True,
+    speed_slider=0.5, # initial speed
     max_speed=1.5,
     loop_button=True,
     time_slider_drag_update=True,
