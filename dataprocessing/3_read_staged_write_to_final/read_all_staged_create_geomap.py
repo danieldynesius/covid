@@ -81,3 +81,4 @@ plugins.TimestampedGeoJson(
 """
 # Display the map
 m
+m.save('geo_map.html')
