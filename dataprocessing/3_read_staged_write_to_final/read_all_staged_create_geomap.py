@@ -9,7 +9,7 @@ datapath = '~/code/analytics/covid/data/2_staged_data/'
 
 g1 = gpd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
 g2 = gpd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
-g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) # fail 2
+g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
 g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1
 g5 = gpd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
 g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
