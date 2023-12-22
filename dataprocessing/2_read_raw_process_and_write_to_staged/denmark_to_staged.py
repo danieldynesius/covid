@@ -38,10 +38,24 @@ region_mapping = {
 # Pull data
 filename = 'denmark_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
+df['date'] = pd.to_datetime(df['date'])
+#df["year"] = df["week"].str[:4].astype(int)
+df["week_no"] = df['date'].dt.strftime('%G-%V')
+
+# Convert week to ISO year and week
+df[['iso_year', 'iso_week']] = df['week_no'].str.split('-', expand=True)
+
+# Convert ISO year and week to integers
+df['iso_year'] = df['iso_year'].astype(int)
+df['iso_week'] = df['iso_week'].astype(int)
+
+# Apply the function to create a new column "first_day"
+df['first_day'] = df.apply(get_first_day, axis=1)
+
 
 df['region_eng'] = df['region_eng'].str.lower()
 
-df.rename(columns={"rna_mean_faeces": "value", 'date':'first_day'}, inplace=True) # Outcome var
+df.rename(columns={"rna_mean_faeces": "value"}, inplace=True) # Outcome var
 df['first_day'] = pd.to_datetime(df['first_day'], format='%Y-%m-%d')
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 

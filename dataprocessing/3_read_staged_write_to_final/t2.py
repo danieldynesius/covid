@@ -25,9 +25,9 @@ gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
 # RESOLVE THIS BUG HERE TO WORK ON normalized_value instead of value!
 # Create a color scale for each cntr_code
 color_scales = {}
-"""for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
+for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
     color_scales[cntr_code] = linear.OrRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
-"""
+
 # Visualize Data
 geojson_features = []
 for _, row in gdf.iterrows():

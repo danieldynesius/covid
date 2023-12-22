@@ -34,8 +34,23 @@ filename = 'austria_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
 df['gruppe'] = df['gruppe'].str.lower()
+# Convert the 'date' column to datetime
+df['datum'] = pd.to_datetime(df['datum'])
 
-df.rename(columns={"genkopien pro ew / tag * 10^6": "value", 'datum':'first_day', 'gruppe':'region'}, inplace=True) # relative_copy_number
+# Extract the week number using ISO week date system
+df['week_no'] = df['datum'].dt.strftime('%G-%V')
+
+# Convert week to ISO year and week
+df[['iso_year', 'iso_week']] = df['week_no'].str.split('-', expand=True)
+
+# Convert ISO year and week to integers
+df['iso_year'] = df['iso_year'].astype(int)
+df['iso_week'] = df['iso_week'].astype(int)
+
+df['first_day'] = df.apply(get_first_day, axis=1)
+
+
+df.rename(columns={"genkopien pro ew / tag * 10^6": "value", 'gruppe':'region'}, inplace=True) # relative_copy_number
 df = df[~df['region'].str.contains('österreich')]
 
 df['first_day'] = pd.to_datetime(df['first_day']).dt.date

@@ -348,10 +348,23 @@ df.columns = df.columns.str.lower()
 df['rwzi_awzi_name'] = df['rwzi_awzi_name'].str.lower()
 df = df[['date_measurement','rwzi_awzi_name','rna_flow_per_100000']]
 
-df.rename(columns={"rna_flow_per_100000": "value"
-                    ,'date_measurement': 'first_day'}, inplace=True) 
+df.rename(columns={"rna_flow_per_100000": "value"}, inplace=True) 
 
-df['first_day'] = pd.to_datetime(df['first_day'], format='%Y-%m-%d')
+df['date_measurement'] = pd.to_datetime(df['date_measurement'], format='%Y-%m-%d')
+
+
+df["week_no"] = df['date_measurement'].dt.strftime('%G-%V')
+
+# Convert week to ISO year and week
+df[['iso_year', 'iso_week']] = df['week_no'].str.split('-', expand=True)
+
+# Convert ISO year and week to integers
+df['iso_year'] = df['iso_year'].astype(int)
+df['iso_week'] = df['iso_week'].astype(int)
+
+# Apply the function to create a new column "first_day"
+df['first_day'] = df.apply(get_first_day, axis=1)
+
 
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
