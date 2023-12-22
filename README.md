@@ -11,7 +11,7 @@ This is a WIP. It has only undergone minor quality control.
 ## Current Status
 ![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.2.gif)
 
-![Right Click & Open in New Tab to Check it Out](covid/dataprocessing/3_read_staged_write_to_final/geo_map.html)
+![Right Click & Open in New Tab to Check it Out](https://github.com/danieldynesius/covid/blob/main/dataprocessing/3_read_staged_write_to_final/geo_map.html)
 #### Countries visualized on Map (choropleth)
 <br><br><br>
 
