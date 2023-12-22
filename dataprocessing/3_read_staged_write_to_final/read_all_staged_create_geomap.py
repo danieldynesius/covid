@@ -12,9 +12,10 @@ g2 = gpd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
 g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) # fail 2
 g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1
 g5 = gpd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
+g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6], ignore_index=True))
 #gdf = gdf[['first_day', 'geometry', 'region', 'cntr_code', 'value']]
 #gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g5], ignore_index=True))
 
@@ -26,9 +27,19 @@ gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
 
 # RESOLVE THIS BUG HERE TO WORK ON normalized_value instead of value!
 # Create a color scale for each cntr_code
+
+# Create default scales based on min-max of each country's value in time-range
 color_scales = {}
+gdf['type_of_colorscale'] = 'Country Relative Min-Max'
 for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
-    color_scales[cntr_code] = linear.OrRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
+#    print('cntr_code', cntr_code, 'cntr_df', cntr_code_df)
+    if cntr_code == 'SE':
+        color_scales[cntr_code] = linear.OrRd_04.scale(0, 10)
+        gdf.loc[gdf['cntr_code'] == 'SE', 'type_of_colorscale'] = 'Country Heuristic (Basic)'
+    else:
+        color_scales[cntr_code] = linear.PuRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
+
+
 
 # Visualize Data
 geojson_features = []
@@ -47,7 +58,7 @@ for _, row in gdf.iterrows():
                 'fillOpacity': 0.5,
             },
             'time': row['first_day'],
-            'popup': f"<b>Region:</b> {formatted_region}<br><b>Value:</b> {row['value']}<br><b>Normalized Value</b>: {row['normalized_value']}"
+            'popup': f"<b>Region:</b> {formatted_region}<br><b>Value:</b> {row['value']}<br><b>Normalized Value</b>: {row['normalized_value']}<br><b>Colorization Rule</b>: {row['type_of_colorscale']}"
         },
     }
     geojson_features.append(feature)
@@ -66,7 +77,7 @@ plugins.TimestampedGeoJson(
     period="P1W",
     duration="P1D",
     add_last_point=True,
-    auto_play=False,
+    auto_play=True,
     loop=True,
     max_speed=1.5,
     loop_button=True,
@@ -75,10 +86,10 @@ plugins.TimestampedGeoJson(
 ).add_to(m)
 
 # Display color scales for each cntr_code
-"""for cntr_code, color_scale in color_scales.items():
+for cntr_code, color_scale in color_scales.items():
     color_scale.caption = f'Value - {cntr_code}'
     color_scale.add_to(m)
-"""
+
 # Display the map
 m
-m.save('geo_map.html')
+#m.save('geo_map.html')
