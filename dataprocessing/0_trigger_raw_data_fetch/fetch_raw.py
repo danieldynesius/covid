@@ -8,7 +8,8 @@ import pandas as pd
 # Variables
 datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
 data_stale_hours = 24 # hours
-
+staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
+final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
 #----------------------------------------------------------------------------------------------
 # Step 1: Check Which Countrie's Data Need to be Updated
 #----------------------------------------------------------------------------------------------
@@ -124,3 +125,52 @@ if __name__ == "__main__":
 #----------------------------------------------------------------------------------------------
 file_df = data_freshness(datapath)
 file_df.to_csv('~/code/analytics/covid/data/3_finalized_data/data_freshness.csv',index=False)
+
+
+
+#----------------------------------------------------------------------------------------------
+# Step 4: Run Staged Scripts
+#----------------------------------------------------------------------------------------------
+
+
+def run_scripts_in_stage(trigger_path, log_output_path):
+    script_files = [file for file in os.listdir(trigger_path) if file.endswith(".py")]
+
+    # Iterate over script files
+    
+    for script_file in script_files:
+        # Check if part of the file name exists in the 'country' column where 'needs_update_flg' is True
+        for index, row in file_df[file_df['needs_update_flg']==True].iterrows():
+            if row['country'] in script_file:
+                print(f"'{script_file}' will trigger.")
+
+    # Dont make New File
+#    with open(log_output_path, "w") as log_file:
+ #       log_file.write("")
+
+    with open(log_output_path, "a") as log_file:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_file.write(f"---------------------[ Stage Transformation: {timestamp} ]----------------------\n")
+        for script_file in script_files:
+            print('Triggering:', script_file)
+            script_path = os.path.join(trigger_path, script_file)
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            try:
+                subprocess.run(["python", script_path], check=True)
+                log_file.write(f"{timestamp} - {script_file} - OK\n")
+            except subprocess.CalledProcessError as e:
+                log_file.write(f"{timestamp} - {script_file} - Fail\n")
+                log_file.write(f"Error: {e}\n")
+
+
+run_scripts_in_stage(staged_scripts, log_output_path)
+
+
+#----------------------------------------------------------------------------------------------
+# Step 5: Run Final Script
+#----------------------------------------------------------------------------------------------
+
+# Run it
+subprocess.run(["python", final_script], check=True)
+

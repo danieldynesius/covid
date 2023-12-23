@@ -3,6 +3,7 @@ import geopandas as gpd
 from branca.colormap import linear
 import folium
 from folium import plugins
+import os
 
 # Read the Parquet files into GeoDataFrames
 datapath = '~/code/analytics/covid/data/2_staged_data/'
