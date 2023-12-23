@@ -1,38 +1,17 @@
 import os
 import subprocess
 from datetime import datetime
-
-def run_scripts_in_folder(trigger_path, log_output_path):
-    script_files = [file for file in os.listdir(trigger_path) if file.endswith(".py")]
-
-    with open(log_output_path, "w") as log_file:
-        log_file.write("")
-
-    with open(log_output_path, "a") as log_file:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_file.write(f"---------------------[ Dataload Triggered: {timestamp} ]----------------------\n")
-        for script_file in script_files:
-            script_path = os.path.join(trigger_path, script_file)
-            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            
-            try:
-                subprocess.run(["python", script_path], check=True)
-                log_file.write(f"{timestamp} - {script_file} - OK\n")
-            except subprocess.CalledProcessError as e:
-                log_file.write(f"{timestamp} - {script_file} - Fail\n")
-                log_file.write(f"Error: {e}\n")
-
-if __name__ == "__main__":
-    trigger_path = "home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw"
-    log_output_path = "home/stratega/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/log.txt"
-    run_scripts_in_folder(trigger_path, log_output_path)
-
-
-
-import os
 import time
 from datetime import datetime
 import pandas as pd
+
+# Variables
+datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
+data_stale_hours = 24 # hours
+
+#----------------------------------------------------------------------------------------------
+# Step 1: Check Which Countrie's Data Need to be Updated
+#----------------------------------------------------------------------------------------------
 
 def extract_country_name(file_path):
     # Get the last part of the path after the last '/'
@@ -55,7 +34,7 @@ def convert_timestamp_to_datetime(timestamp):
 
     return formatted_date
 
-def find_old_files(directory, hours_threshold=24):
+def data_freshness(directory, hours_threshold=data_stale_hours):
     files_data = {"country": [], "last_modified_date": [], "needs_update_flg": []}
 
 # Step 1: Check for latest update per raw datafile
@@ -94,9 +73,54 @@ def find_old_files(directory, hours_threshold=24):
 
     return files_df
 
-# Example usage:
-datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
-files_df = find_old_files(datapath)
+
+
+file_df = data_freshness(datapath)
 
 # Display the DataFrame
-files_df
+file_df
+
+
+#----------------------------------------------------------------------------------------------
+# Step 2: Update Needed Data
+#----------------------------------------------------------------------------------------------
+
+def run_scripts_in_folder(trigger_path, log_output_path):
+    script_files = [file for file in os.listdir(trigger_path) if file.endswith(".py")]
+
+    # Iterate over script files
+    
+    for script_file in script_files:
+        # Check if part of the file name exists in the 'country' column where 'needs_update_flg' is True
+        for index, row in file_df[file_df['needs_update_flg']==True].iterrows():
+            if row['country'] in script_file:
+                print(f"'{script_file}' will trigger.")
+    
+    with open(log_output_path, "w") as log_file:
+        log_file.write("")
+
+    with open(log_output_path, "a") as log_file:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_file.write(f"---------------------[ Dataload Triggered: {timestamp} ]----------------------\n")
+        for script_file in script_files:
+            print('Triggering:', script_file)
+            script_path = os.path.join(trigger_path, script_file)
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            try:
+                subprocess.run(["python", script_path], check=True)
+                log_file.write(f"{timestamp} - {script_file} - OK\n")
+            except subprocess.CalledProcessError as e:
+                log_file.write(f"{timestamp} - {script_file} - Fail\n")
+                log_file.write(f"Error: {e}\n")
+
+if __name__ == "__main__":
+    trigger_path = "/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw"
+    log_output_path = "/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/log.txt"
+    run_scripts_in_folder(trigger_path, log_output_path)
+
+#----------------------------------------------------------------------------------------------
+# Step 3: Check Data Updated & Save to Output Dir
+#----------------------------------------------------------------------------------------------
+file_df = data_freshness(datapath)
+file_df.to_csv('~/code/analytics/covid/data/3_finalized_data/data_freshness.csv',index=False)
