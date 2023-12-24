@@ -5,7 +5,7 @@ from branca.colormap import linear
 import folium
 from folium import plugins
 from folium.plugins import FloatImage
-
+from datetime import datetime
 import pandas as pd
 import geopandas as gpd
 from branca.colormap import linear
@@ -15,6 +15,10 @@ import os
 
 # Read the Parquet files into GeoDataFrames
 datapath = '~/code/analytics/covid/data/2_staged_data/'
+final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
+
+latest_dataload = pd.read_csv(final_datapath+'latest_dataload.csv') # Get the Timestamp
+latest_dataload = latest_dataload.at[0, 'latest_dataload']
 
 g1 = gpd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
 g2 = gpd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
@@ -26,7 +30,12 @@ g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7], ignore_index=True))
+
+# Get latest data by country
 last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
+last_datapoint_by_country = last_datapoint_by_country.sort_values(ascending=False)
+
+
 
 gdf = gdf.to_crs(epsg=4326)
 gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
@@ -106,13 +115,24 @@ m
 #m.save('../../geo_map.html')
 
 
-# Get last datapoint by country
-last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
 
 # Create a custom HTML content for the information section
-info_html_content = """
+#font_size = 22
+info_html_content = f"""
     <div style="margin: 10px;">
-        <h3>Last Datapoint by Country</h3>
+        <h3>(Beta) Covid Wastewater Dashboard<h3>
+        <h3>Latest Dataload</h3>
+        <font size="2"><p>{latest_dataload}</p></font>  
+        <h3>Info</h3>
+        <font size="3">  
+        <p><b>Sweden:</b> The color scale is based on a rule-of-thumb to indicate high transmission. The rule is based on the Uppsala Wastewater Level just below the height of the first wave. this indicates red color in the Swedish map-part and can be interpreted as <i>"high covid transmission"</i>.<br><br>
+        <b>All Other Countries:</b> The color gradient is based on the Minimum and Maximum value from that country in the time period they're included. For these countries red can be interpreted as <i>"relatively high transmission within the country"</i>. <b>CAUTION</b>: <i>Between country comparisons</i> should not be made without good understanding of each country's specific metric.
+        P.S. There will be more thought put into the metrics at a later stage in development.        
+        </font>
+        
+        </p>
+        <h4>More information on GitHub, here:<br><a href="https://github.com/danieldynesius/covid" target="_blank">https://github.com/danieldynesius/covid</a></h4>
+        <h3>Latest Datapoint by Country</h3>
         <p>
 """
 
@@ -146,11 +166,11 @@ folium.Marker(
 ).add_to(m)
 
 # Add Fullscreen button
-plugins.Fullscreen().add_to(m)
+#plugins.Fullscreen().add_to(m)
 
 # Add the custom menu bar to the map
-folium.Element(menu_html).add_to(m)
+#folium.Element(menu_html).add_to(m)
 
 # Display the map
 m
-#m.save('../../geo_map_with_menu.html')
+m.save('../../geo_map.html')

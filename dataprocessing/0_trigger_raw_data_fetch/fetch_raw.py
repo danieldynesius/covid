@@ -10,7 +10,7 @@ datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
 data_stale_hours = 24 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
 final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
-final_write_dir='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/'
+final_write_dir='/home/stratega/code/analytics/covid/data/3_finalized_data/'
 #----------------------------------------------------------------------------------------------
 # Step 1: Check Which Countrie's Data Need to be Updated
 #----------------------------------------------------------------------------------------------
@@ -179,11 +179,8 @@ subprocess.run(["python", final_script], check=True)
 # Step 6: Misc
 #----------------------------------------------------------------------------------------------
 
-
-pd.DataFrame({'latest_dataload': [load_tstamp]}).to_csv(final_write_dir+'latest_dataload.csv', index=False)
-
-
-data = {"latest_dataload": date_string}
-
-with open(file_path, 'w') as file:
-    json.dump(data, file)
+# Write the load data timestamp
+pd.DataFrame(
+    {'latest_dataload': [load_tstamp]}
+    ).to_csv(final_write_dir+'latest_dataload.csv'
+    ,index=False)
