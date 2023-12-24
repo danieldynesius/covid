@@ -1,3 +1,11 @@
+import os
+import pandas as pd
+import geopandas as gpd
+from branca.colormap import linear
+import folium
+from folium import plugins
+from folium.plugins import FloatImage
+
 import pandas as pd
 import geopandas as gpd
 from branca.colormap import linear
@@ -18,8 +26,7 @@ g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7], ignore_index=True))
-#gdf = gdf[['first_day', 'geometry', 'region', 'cntr_code', 'value']]
-#gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g5], ignore_index=True))
+last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
 
 gdf = gdf.to_crs(epsg=4326)
 gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
@@ -88,10 +95,62 @@ plugins.TimestampedGeoJson(
 ).add_to(m)
 
 # Display color scales for each cntr_code
+"""
 for cntr_code, color_scale in color_scales.items():
     color_scale.caption = f'Value - {cntr_code}'
     color_scale.add_to(m)
+"""
 
 # Display the map
 m
-m.save('../../geo_map.html')
+#m.save('../../geo_map.html')
+
+
+# Get last datapoint by country
+last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
+
+# Create a custom HTML content for the information section
+info_html_content = """
+    <div style="margin: 10px;">
+        <h3>Last Datapoint by Country</h3>
+        <p>
+"""
+
+# Append each country and its last datapoint to the HTML content
+for country, last_datapoint in last_datapoint_by_country.items():
+    info_html_content += f"<b>{country}:</b> {last_datapoint}<br>"
+
+# Close the HTML content
+info_html_content += """
+        </p>
+    </div>
+"""
+
+
+# Create a custom menu bar
+menu_html = """
+    <div style="position: absolute; top: 10px; right: 10px; background-color: white; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        <h3>Menu</h3>
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+        <button onclick="showInfo()">Information</button>
+    </div>
+"""
+
+# Add the custom HTML content to the map as a popup
+popup = folium.Popup(info_html_content, max_width=500, min_width=300)
+folium.Marker(
+    location=[55, -12],  # Adjust the location as needed
+    icon=folium.Icon(color='darkblue'),
+    popup=popup
+).add_to(m)
+
+# Add Fullscreen button
+plugins.Fullscreen().add_to(m)
+
+# Add the custom menu bar to the map
+folium.Element(menu_html).add_to(m)
+
+# Display the map
+m
+#m.save('../../geo_map_with_menu.html')

@@ -10,6 +10,7 @@ datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
 data_stale_hours = 24 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
 final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
+final_write_dir='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/'
 #----------------------------------------------------------------------------------------------
 # Step 1: Check Which Countrie's Data Need to be Updated
 #----------------------------------------------------------------------------------------------
@@ -101,8 +102,8 @@ def run_scripts_in_folder(trigger_path, log_output_path):
         log_file.write("")
 
     with open(log_output_path, "a") as log_file:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_file.write(f"---------------------[ Dataload Triggered: {timestamp} ]----------------------\n")
+        load_tstamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_file.write(f"---------------------[ Dataload Triggered: {load_tstamp} ]----------------------\n")
         for script_file in script_files:
             print('Triggering:', script_file)
             script_path = os.path.join(trigger_path, script_file)
@@ -174,3 +175,15 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 # Run it
 subprocess.run(["python", final_script], check=True)
 
+#----------------------------------------------------------------------------------------------
+# Step 6: Misc
+#----------------------------------------------------------------------------------------------
+
+
+pd.DataFrame({'latest_dataload': [load_tstamp]}).to_csv(final_write_dir+'latest_dataload.csv', index=False)
+
+
+data = {"latest_dataload": date_string}
+
+with open(file_path, 'w') as file:
+    json.dump(data, file)
