@@ -18,8 +18,11 @@ if [ ! -f "$file_to_commit" ]; then
     exit 1
 fi
 
+# Chg to branch gh-pages
+git checkout "$branch_name"
+
 # Add the file to the staging area
-git add "$file_to_commit"
+git add -f "$file_to_commit"
 
 # Commit changes
 git commit -m "$commit_message"
