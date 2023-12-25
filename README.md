@@ -6,24 +6,24 @@
 
 A Work in Progress - To Visualize Covid Wastewater data.
 
-<br><br><br>
+
 #### Please Note: The graphs and data are to be interpreted carefully.
 
+<br>
 
-
-#### Current Status
+### Current Status
 ![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.3.gif)
 
 [Link to Webapp here (Click Here!)](https://danieldynesius.github.io/covid/geo_map.html)
-#### Countries visualized on Map (choropleth)
-<br><br><br>
 
-#### Colorization Rule (Current)
-Interpretation:
-* Sweden: Red = "High Transmission". Based on the height of Uppsala wastewater measures during wave 1 2020.
-* All Other Countries: Red = "Relatively High Transmission". Based on each country separately relative to the Min-Max values in the timeperiod.
-* In country comparisons can be made.
-* Between country comparisons should only be made with careful interpretation. The reason is that each country supply different metrics.
+<br>
+
+### Colorization Rule (Current)
+<b>Interpretation</b>
+* <b>Sweden:</b> Red = "High Transmission". Based on the height of Uppsala wastewater measures during wave 1 2020.
+* <b>All Other Countries:</b> Red = "Relatively High Transmission". Based on each country separately relative to the Min-Max values in the timeperiod.
+* <b>Withinin</b> country comparisons can be made.
+* <b>Between</b> country comparisons should <i>ONLY</i> be made with careful interpretation. The colors are relative, so I *believe* only relative time dimension interpretations are possible. NOT degree of transmission on a specific week.
 
 
 ![Trendline Viz](docs/se_uppsala_c19_first_recorded_peak.png)
@@ -43,3 +43,5 @@ Contact me on twitter or linkedin.
 
 
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/danieldynesius/)&nbsp;
+
+[Email: daniel.dynesius@stratega.ai](mailto:daniel.dynesius@stratega.ai)
