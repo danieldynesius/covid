@@ -23,15 +23,17 @@ A Work in Progress - To Visualize Covid Wastewater data.
 * <b>Sweden:</b> Red = "High Transmission". Based on the height of Uppsala wastewater measures during wave 1 2020.
 * <b>All Other Countries:</b> Red = "Relatively High Transmission". Based on each country separately relative to the Min-Max values in the timeperiod.
 * <b>Withinin</b> country comparisons can be made.
-* <b>Between</b> country comparisons should <i>ONLY</i> be made with careful interpretation. The colors are relative, so I *believe* only relative time dimension interpretations are possible. NOT degree of transmission on a specific week.
+* <b>Between</b> country comparisons should <i>ONLY</i> be made with careful interpretation. The colors are relative, so I *believe* only relative time dimension interpretations are possible. NOT degree of transmission on a specific week. The reason is that almost each country uses different metrics to track transmission.
 
+<br>
 
+The Heuristic of the Swedish Cut-off Value of 10 and above indicated as "high transmission" (red).
 ![Trendline Viz](docs/se_uppsala_c19_first_recorded_peak.png)
 <br><br><br>
 
 ## Trendline Charts
 Later some trend graphs might be added too (geo higher prioritized to be implemented).
-
+Later might add trendgraphs too. The trick is to figure out how to create a concise & intuitive overview.
 ![Trendline Viz](docs/c19-trends.png)
 
 
