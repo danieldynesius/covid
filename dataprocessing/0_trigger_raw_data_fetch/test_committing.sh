@@ -7,7 +7,8 @@ commit_message="Scheduled update"
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
 commit_message="Scheduled update at $current_datetime"
 
-branch_name="gh-pages"
+#branch_name="gh-pages"
+branch_name="main"
 github_username="danieldynesius"
 github_token="$GITHUB_TOKEN"  # Use environment variable
 github_repo="covid"

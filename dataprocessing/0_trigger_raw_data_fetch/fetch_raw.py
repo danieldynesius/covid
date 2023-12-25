@@ -117,11 +117,13 @@ def run_scripts_in_folder(trigger_path, log_output_path):
             except subprocess.CalledProcessError as e:
                 log_file.write(f"{timestamp} - {script_file} - Fail\n")
                 log_file.write(f"Error: {e}\n")
+    
+    return load_tstamp
 
 if __name__ == "__main__":
     trigger_path = "/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw"
     log_output_path = "/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/log.txt"
-    run_scripts_in_folder(trigger_path, log_output_path)
+    load_tstamp = run_scripts_in_folder(trigger_path, log_output_path)
 
 #----------------------------------------------------------------------------------------------
 # Step 3: Check Data Updated & Save to Output Dir
