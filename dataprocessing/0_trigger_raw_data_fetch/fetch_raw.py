@@ -11,6 +11,8 @@ data_stale_hours = 24 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
 final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
 final_write_dir='/home/stratega/code/analytics/covid/data/3_finalized_data/'
+push_html_file='/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/test_committing.sh'
+
 #----------------------------------------------------------------------------------------------
 # Step 1: Check Which Countrie's Data Need to be Updated
 #----------------------------------------------------------------------------------------------
@@ -176,7 +178,7 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 subprocess.run(["python", final_script], check=True)
 
 #----------------------------------------------------------------------------------------------
-# Step 6: Misc
+# Step 6: Save latest load timestamp
 #----------------------------------------------------------------------------------------------
 
 # Write the load data timestamp
@@ -184,3 +186,11 @@ pd.DataFrame(
     {'latest_dataload': [load_tstamp]}
     ).to_csv(final_write_dir+'latest_dataload.csv'
     ,index=False)
+
+#----------------------------------------------------------------------------------------------
+# Step 7: Trigger shell script
+#----------------------------------------------------------------------------------------------
+
+
+# Run the shell script
+subprocess.run(['bash', push_html_file])
