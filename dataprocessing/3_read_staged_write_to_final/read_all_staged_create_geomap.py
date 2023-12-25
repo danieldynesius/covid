@@ -112,7 +112,7 @@ for cntr_code, color_scale in color_scales.items():
 
 # Display the map
 m
-#m.save('../../geo_map.html')
+#m.save('../../docs/geo_map.html')
 
 
 
@@ -173,4 +173,4 @@ folium.Marker(
 
 # Display the map
 m
-m.save('../../geo_map.html')
+m.save('../../docs/geo_map.html')
