@@ -1,30 +1,10 @@
-<style>
-    /* External CSS for better organization (optional) */
-    p {
-        font-family: 'Arial', sans-serif; /* Choose a suitable font family */
-        text-align: center; /* Center the text */
-        line-height: 1.5; /* Adjust line height for better readability */
-    }
-
-    b {
-        font-size: 28px; /* Increase font size for emphasis */
-        color: #FF5733; /* Set a unique color for emphasis, you can choose your preferred color */
-    }
-
-    .subtext {
-        font-size: 18px; /* Smaller font size for subtext */
-        color: #555; /* Use a subdued color for the subtext */
-    }
-</style>
-
-<!-- Your HTML content -->
 <p>
     <img src="docs/red-sewer-fox.png" alt="Red Sewer Fox" width="128" height="128"> <br>
-    <b>Red Sewer Fox</b> <br>
-    <span class="subtext">Covid Wastewater Monitoring</span>
+    <strong>Red Sewer Fox</strong> <br>
+    <span class="subtext">A Covid Wastewater Monitoring Project</span>
 </p>
 
-A Work in Progress to Visualize Covid Wastewater data.
+A Work in Progress - To Visualize Covid Wastewater data.
 
 <br><br><br>
 #### Please Note: The graphs and data are to be interpreted carefully.
