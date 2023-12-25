@@ -1,10 +1,10 @@
 <p>
     <img src="docs/red-sewer-fox.png" alt="Red Sewer Fox" width="128" height="128"> <br>
-    <strong>Red Sewer Fox</strong> <br>
-    <span class="subtext">Covid Wastewater Monitoring Project</span>
+    <strong>Sewer Fox Monitoring</strong> <br>
+    <span class="subtext">A Covid Wastewater  Project</span>
 </p>
 
-A Work in Progress - Visualizing Wastewater data.
+A work in progress to visualize wastewater data.
 
 
 #### Please Note: The graphs and data are to be interpreted carefully.
