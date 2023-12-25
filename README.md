@@ -1,34 +1,50 @@
-# Europe Wastewater Data Viz - EARLY WIP
-This is a work in progress to visualize European Covid Wastewater data.
+<style>
+    /* External CSS for better organization (optional) */
+    p {
+        font-family: 'Arial', sans-serif; /* Choose a suitable font family */
+        text-align: center; /* Center the text */
+        line-height: 1.5; /* Adjust line height for better readability */
+    }
 
-## NOTE: DONT MAKE INTERPRETATIONS ON THESE GRAPHS (YET)!
+    b {
+        font-size: 28px; /* Increase font size for emphasis */
+        color: #FF5733; /* Set a unique color for emphasis, you can choose your preferred color */
+    }
+
+    .subtext {
+        font-size: 18px; /* Smaller font size for subtext */
+        color: #555; /* Use a subdued color for the subtext */
+    }
+</style>
+
+<!-- Your HTML content -->
+<p>
+    <img src="docs/red-sewer-fox.png" alt="Red Sewer Fox" width="128" height="128"> <br>
+    <b>Red Sewer Fox</b> <br>
+    <span class="subtext">Covid Wastewater Monitoring</span>
+</p>
+
+A Work in Progress to Visualize Covid Wastewater data.
+
+<br><br><br>
+#### Please Note: The graphs and data are to be interpreted carefully.
 
 
-## Please Note
-This is a WIP. It has only undergone minor quality control.
 
-
-## Current Status
+#### Current Status
 ![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.3.gif)
 
-[Check it out in Website Form (Click Here!)](https://danieldynesius.github.io/daniel.dynesius.github.io/geo_map.html)
+[Link to Webapp here (Click Here!)](https://danieldynesius.github.io/covid/geo_map.html)
 #### Countries visualized on Map (choropleth)
 <br><br><br>
 
-# Color Variable:
-### 1) Country Specific Min-Max Values (per their own metric)
-The reason is that country comparison cannot be made, even with normalized data as the regular country measures cannot be calculated into eachother.
-<br><br><br>
+#### Colorization Rule (Current)
+Interpretation:
+* Sweden: Red = "High Transmission". Based on the height of Uppsala wastewater measures during wave 1 2020.
+* All Other Countries: Red = "Relatively High Transmission". Based on each country separately relative to the Min-Max values in the timeperiod.
+* In country comparisons can be made.
+* Between country comparisons should only be made with careful interpretation. The reason is that each country supply different metrics.
 
-### 2) Potential Plotting Var: SARS-CoV-2 Wastewater Plotting Variable (indicating color)
-At the current stage of development Min-Max normalization was used for each country based on frequent data quality checks (for details see dataprocessing steps under step 2 in the repo). This makes within country comparisons possible.
-From first glance it might SEEM that its possible to interpret across countries but that's probably Not the case. The reason for that is that is that underneath the normalization one country can still measure something thats not quite reflective of another country.
-<br><br><br>
-
-### 3) OLD Plotting Var: Relative Copy Number - Heuristic (Old Method for Sweden data only)
-Relative Copy Number Cap was created by simple heuristic to in order to have the color meaning not being relative to included time period or country overall (which also might be effected by data of other countries or lack of reporting of one or another country. This will facilitate and standardize interpretability within Sweden for now, which later will be reviewed as more countries are added.
-
-The range of Relative Copy Number is fixed based a heuristic based on Uppsala Wastewater during the first data wave. Uppsala a stable measurement across time, and as far as I remember Sweden had a very high transmission of SARS-CoV-2 during this time. I think it should serve as a decent estimate on the degree of covid transmission. 
 
 ![Trendline Viz](docs/se_uppsala_c19_first_recorded_peak.png)
 <br><br><br>
