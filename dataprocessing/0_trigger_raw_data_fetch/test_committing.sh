@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-file_to_commit="/home/stratega/code/analytics/covid/geo_map.html"
+file_to_commit="/home/stratega/code/analytics/covid/docs/geo_map.html"
 
 commit_message="Scheduled update"
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")

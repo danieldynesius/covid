@@ -125,9 +125,10 @@ info_html_content = f"""
         <font size="2"><p>{latest_dataload}</p></font>  
         <h3>Info</h3>
         <font size="3">  
-        <p><b>Sweden:</b> The color scale is based on a rule-of-thumb to indicate high transmission. The rule is based on the Uppsala Wastewater Level just below the height of the first wave. this indicates red color in the Swedish map-part and can be interpreted as <i>"high covid transmission"</i>.<br><br>
-        <b>All Other Countries:</b> The color gradient is based on the Minimum and Maximum value from that country in the time period they're included. For these countries red can be interpreted as <i>"relatively high transmission within the country"</i>. <b>CAUTION</b>: <i>Between country comparisons</i> should not be made without good understanding of each country's specific metric.
-        P.S. There will be more thought put into the metrics at a later stage in development.        
+        <p><b>Sweden:</b> Red can be interpreted as <i>"high covid transmission"</i>.<br><br>
+        <b>All Other Countries:</b> Red can be interpreted as <i>"relatively high transmission within the country"</i>. <br><br><b>CAUTION</b>: <i>Between country comparisons</i> should not be made without good understanding of each country's specific metric.
+        White areas usually means that data is missing (will add more regions once I find data).
+        
         </font>
         
         </p>
