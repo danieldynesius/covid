@@ -1,6 +1,6 @@
 alabaster==0.7.13
 annotated-types==0.6.0
-apparmor==3.1.6
+apparmor>=3.1.6
 arandr==0.1.11
 Archey3==0.4.1
 archinstall==2.7.1
