@@ -7,7 +7,7 @@ import pandas as pd
 
 # Variables
 datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
-data_stale_hours = 24 # hours
+data_stale_hours = 23 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
 final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
 final_write_dir='/home/stratega/code/analytics/covid/data/3_finalized_data/'
