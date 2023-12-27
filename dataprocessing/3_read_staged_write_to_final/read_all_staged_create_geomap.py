@@ -167,7 +167,7 @@ folium.Marker(
 ).add_to(m)
 
 # Add Fullscreen button
-#plugins.Fullscreen().add_to(m)
+plugins.Fullscreen().add_to(m)
 
 # Add the custom menu bar to the map
 #folium.Element(menu_html).add_to(m)
