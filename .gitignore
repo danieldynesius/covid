@@ -1,5 +1,4 @@
 *.xlsx
-*.geojson
 *.txt
 *.csv
 *.parquet
