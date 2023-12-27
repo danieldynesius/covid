@@ -1,6 +1,6 @@
 <p>
     <img src="docs/red-sewer-fox.png" alt="Red Sewer Fox" width="128" height="128"> <br>
-    <strong>Sewer Fox Monitoring</strong> <br>
+    <strong>Covid Fox Monitoring</strong> <br>
     <span class="subtext">A Covid Wastewater  Project</span>
 </p>
 
@@ -14,7 +14,7 @@ A work in progress to visualize wastewater data.
 ### Current Status
 ![Geo Map Viz](https://github.com/danieldynesius/covid/blob/main/docs/c19_wastewater_v0.3.3.gif)
 
-[Link to Webapp here (Click Here!)](https://danieldynesius.github.io/covid/geo_map.html)
+[Link to Website (Click Here!)](https://danieldynesius.github.io/covid/docs/index.html)
 
 <br>
 
