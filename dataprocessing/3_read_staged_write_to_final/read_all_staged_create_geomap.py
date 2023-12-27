@@ -23,19 +23,18 @@ latest_dataload = latest_dataload.at[0, 'latest_dataload']
 g1 = gpd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
 g2 = gpd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
 g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
-g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1
+g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge
 g5 = gpd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
 g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
 g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
+g8 = gpd.read_parquet(os.path.join(datapath, 'switzerland_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3,  g5, g6, g7], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8], ignore_index=True))
 
 # Get latest data by country
 last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
 last_datapoint_by_country = last_datapoint_by_country.sort_values(ascending=False)
-
-
 
 gdf = gdf.to_crs(epsg=4326)
 gdf.sort_values(by=['first_day','cntr_code'], inplace=True)
@@ -111,7 +110,7 @@ for cntr_code, color_scale in color_scales.items():
 """
 
 # Display the map
-m
+#m
 #m.save('../../docs/geo_map.html')
 
 
@@ -175,3 +174,13 @@ folium.Marker(
 # Display the map
 m
 m.save('../../docs/geo_map.html')
+
+
+file_path = '../../docs/geo_map.html'
+if os.path.exists(file_path):
+    file_size_bytes = os.path.getsize(file_path)
+    file_size_mb = file_size_bytes / (1024 * 1024)  # Convert bytes to megabytes
+
+    print(f'The file size of {file_path} is {file_size_bytes} bytes or {file_size_mb:.2f} MB.')
+else:
+    print(f'The file {file_path} does not exist.')
