@@ -9,7 +9,8 @@ import pandas as pd
 datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
 data_stale_hours = 23 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
-final_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
+final_geo_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
+final_trend_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_trendcharts.py'
 final_write_dir='/home/stratega/code/analytics/covid/data/3_finalized_data/'
 push_html_file='/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/test_committing.sh'
 
@@ -173,11 +174,13 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 
 
 #----------------------------------------------------------------------------------------------
-# Step 5: Run Final Script
+# Step 5: Run Final Scripts
 #----------------------------------------------------------------------------------------------
 
 # Run it
-subprocess.run(["python", final_script], check=True)
+subprocess.run(["python", final_geo_script], check=True) # Geo Map
+subprocess.run(["python", final_trend_script], check=True) # Trend Charts
+
 
 #----------------------------------------------------------------------------------------------
 # Step 6: Save latest load timestamp

@@ -32,10 +32,11 @@ sufficient_updates_since_threshold = 22 # 22 in 365 days they should have atleas
 #color_range = [0,10]
 
 # READ DATA
+metric_nm = 'viral concentration of SARS-CoV-2 (expressed in cg/L & quantification carried out from the E gene) & the nitrogen concentration ammoniacal (expressed in mg of N/L)'
 country_name = 'france'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
-df_metadata = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}_metadata.parquet') # meta
+df_metadata = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{country_name}_wastewater_metadata.parquet') # meta
 df_metadata = df_metadata[['nom', 'commune', 'population']]
 geojson = gpd.read_file("~/code/analytics/covid/data/NUTS_RG_20M_2021_3035.geojson") # geo
 geojson = geojson.to_crs(epsg=4326)  # Convert to EPSG:4326
@@ -122,6 +123,7 @@ merged_gdf.drop_duplicates(inplace=True)
 merged_gdf = merged_gdf[['first_day', 'geometry','region','cntr_code','value','normalized_value']]
 merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 merged_gdf['cntr_nm'] = country_name
+merged_gdf['metric_nm'] = metric_nm
 
 # EXPORT DATA TO STAGED
 

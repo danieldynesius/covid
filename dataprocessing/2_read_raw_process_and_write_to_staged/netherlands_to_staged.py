@@ -346,6 +346,7 @@ country_name = 'netherlands'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
+metric_nm = 'RNA_flow_per_100000'
 df['rwzi_awzi_name'] = df['rwzi_awzi_name'].str.lower()
 df = df[['date_measurement','rwzi_awzi_name','rna_flow_per_100000']]
 
@@ -403,7 +404,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0).astype(int)
 merged_gdf['cntr_nm'] = country_name
-
+merged_gdf['metric_nm'] = metric_nm
 
 # EXPORT DATA TO STAGED
 

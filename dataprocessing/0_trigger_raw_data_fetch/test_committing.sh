@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-file_to_commit="/home/stratega/code/analytics/covid/docs/geo_map.html"
+files_to_commit="/home/stratega/code/analytics/covid/docs/geo_map.html /home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_trendcharts.py"
 
 commit_message="Scheduled update"
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
@@ -14,8 +14,8 @@ github_token="$GITHUB_TOKEN"  # Use environment variable
 github_repo="covid"
 
 # Check if the file exists
-if [ ! -f "$file_to_commit" ]; then
-    echo "Error: File $file_to_commit not found."
+if [ ! -f "$files_to_commit" ]; then
+    echo "Error: File $files_to_commit not found."
     exit 1
 fi
 
@@ -23,7 +23,7 @@ fi
 git checkout "$branch_name"
 
 # Add the file to the staging area
-git add -f "$file_to_commit"
+git add -f "$files_to_commit"
 
 # Commit changes
 git commit -m "$commit_message"

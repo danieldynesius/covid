@@ -50,7 +50,7 @@ df['iso_week'] = df['iso_week'].astype(int)
 
 df['first_day'] = df.apply(get_first_day, axis=1)
 
-
+metric_nm = "Genkopien pro EW / Tag * 10^6"
 df.rename(columns={"genkopien pro ew / tag * 10^6": "value", 'gruppe':'region'}, inplace=True) # relative_copy_number
 df = df[~df['region'].str.contains('österreich')]
 
@@ -93,6 +93,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0).astype(int)
 merged_gdf['cntr_nm'] = country_name
+merged_gdf['metric_nm'] = metric_nm
 
 
 # EXPORT DATA TO STAGED

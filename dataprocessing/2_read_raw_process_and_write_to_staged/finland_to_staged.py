@@ -42,6 +42,7 @@ region_mapping = {
 country_name = 'finland'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
+metric_nm = 'Normalized RNA count using the RNA standard'
 df.columns = df.columns.str.lower()
 df.rename(columns={'date of sample':'date'
                     ,'normalized rna count using the rna standard': 'value'
@@ -49,7 +50,6 @@ df.rename(columns={'date of sample':'date'
                     }
                 ,inplace=True) # relative_copy_number
 
-df['value_metric'] = 'normalized rna count using the rna standard'
 df['region'] = df['region'].str.lower()
 
 df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
@@ -104,7 +104,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0)
 merged_gdf['cntr_nm'] = country_name
-
+merged_gdf['metric_nm'] = metric_nm
 
 # EXPORT DATA TO STAGED
 

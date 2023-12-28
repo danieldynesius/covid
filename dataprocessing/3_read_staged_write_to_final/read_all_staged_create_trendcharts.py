@@ -26,7 +26,7 @@ d9 = pd.read_parquet(os.path.join(datapath, 'canada_wastewater.parquet'))
 
 
 df = pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9],ignore_index=True)
-df = df[['first_day', 'region', 'cntr_code','value', 'normalized_value']]
+df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 
 df.groupby('cntr_code')['region'].agg('nunique')
 
@@ -70,9 +70,15 @@ if fill_missing_weeks == True:
 else:
     df = df
 
+df.dropna(subset=['region'], inplace=True) # drop nan in region value
+df.dropna(subset=['cntr_nm'], inplace=True) # drop nan in country 
+df.sort_values(by=['cntr_nm','region', 'first_day'], inplace=True)
+
+
+########################################################################
+# Subplots. Old method (Too many regions)
+########################################################################
 def make_region_subplots(df):
-    df.dropna(subset=['region'], inplace=True) # drop nan in region value
-    df.sort_values(by=['cntr_code','region', 'first_day'], inplace=True)
     unique_areas = list(df.region.unique())
 
     plot_titles = list((df.cntr_code.str.upper() +' - '+ df.region.str.title()).unique())
@@ -124,24 +130,47 @@ def make_region_subplots(df):
     return fig
 
 
-fig = make_region_subplots(df)
-fig.show()
 
 
-#############################
+########################################################################
+# List of Trend Graphs 
+########################################################################
+country_list = list(df.cntr_nm.unique())
+df['region'] = df.region.astype(str).str.title()
+trend_html_filepath = '../../docs/country_trends.html'
 
+try:
+    os.remove(trend_html_filepath)
+    print(trend_html_filepath, 'removed')
+except FileNotFoundError:
+    print(trend_html_filepath, 'does not exist')
+except Exception as e:
+    print(f"An error occurred: {e}")
 
-fig1 = px.line(df[df.cntr_code=='CH'], x="first_day", y="value", color='region', title='Switzerland')
-fig2 = px.line(df[df.cntr_code=='SE'], x="first_day", y="value", color='region', title='Sweden')
+for i, country in enumerate(country_list, start=1):
+    print(i, ':', country.title())
+    current_fig = px.line(df[df.cntr_nm == country], x="first_day", y="value", color='region', title=country.title()+' Wastewater Measurements')
+    # Update the y-axis label
+    current_fig.update_yaxes(title_text=df[df.cntr_nm == country].metric_nm.iloc[0])
+    #current_fig.update_xaxes(title_text='first_day(of week)')
+    current_fig.update_layout(coloraxis_colorbar_title='Region',
+                            title_font=dict(size=28),
+                            xaxis_title_font=dict(size=22),
+                            yaxis_title_font=dict(size=26),
+                            legend_title_font=dict(size=22),
+                            xaxis_tickfont=dict(size=22),
+                            yaxis_tickfont=dict(size=22),
+                            legend_font=dict(size=22)
+                            )
 
-fig2.show()
+    # Set font size for everything in the hover tooltip to size 22
+    current_fig.update_traces(
+        textfont=dict(size=22),
+        )
+    
 
+    ### put figs into 1 graph
+    with open(trend_html_filepath, 'a') as f:
+        f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))
+        
 
-html_filename = './your_plot.html'
-offline.plot(fig1, filename=html_filename, auto_open=True)
-
-"""
-with open('./p_graph.html', 'a') as f:
-    f.write(fig1.to_html(full_html=False, include_plotlyjs='cdn'))
-    f.write(fig2.to_html(full_html=False, include_plotlyjs='cdn'))
-"""    

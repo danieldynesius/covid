@@ -75,7 +75,7 @@ df['iso_week'] = df['iso_week'].astype(int)
 
 # Apply the function to create a new column "first_day"
 df['first_day'] = df.apply(get_first_day, axis=1)
-
+metric_nm = "SARS-CoV2/PMMoV x 1000"
 df.rename(columns={"SARS-CoV2/PMMoV x 1000": "value", }, inplace=True) # relative_copy_number
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
@@ -114,6 +114,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0).astype(int)
 merged_gdf['cntr_nm'] = country_name
+merged_gdf['metric_nm'] = metric_nm
 
 
 # EXPORT DATA TO STAGED
