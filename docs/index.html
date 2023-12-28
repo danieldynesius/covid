@@ -56,8 +56,27 @@
                     </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                       <div class="top-box">
-                        <p>It's better to prevent.</p>
+                     <div class="top-box">
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <style>
+                            @keyframes throb {
+                                0%, 100% {
+                                    transform: scale(1);
+                                }
+                                50% {
+                                    transform: scale(1.2);
+                                }
+                            }
+                    
+                            .throb-line:hover::after {
+                                content: ' ❤️'; /* Add the heart emoji after the text */
+                                display: inline-block;
+                                animation: throb 0.5s infinite; /* Apply the throb animation */
+                            }
+                        </style>
+                    
+                        <p class="throb-line">It's better to prevent.</p>
                     </div>
                   </div>
                </div>
