@@ -39,7 +39,8 @@ region_mapping = {
 
 
 # Pull data
-filename = 'finland_wastewater.parquet'
+country_name = 'finland'
+filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
 df.rename(columns={'date of sample':'date'
@@ -102,7 +103,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0)
-df['value'] = df['value'].astype(float).fillna(0)
+merged_gdf['cntr_nm'] = country_name
 
 
 # EXPORT DATA TO STAGED

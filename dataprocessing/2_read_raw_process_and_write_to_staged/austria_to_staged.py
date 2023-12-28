@@ -30,7 +30,8 @@ geojson['nuts_name'] = geojson['nuts_name'].str.lower()
 geojson[(geojson['cntr_code']=='AT')&~(geojson['nuts_name']=='österreich')]
 
 # Pull data
-filename = 'austria_wastewater.parquet'
+country_name = 'austria'
+filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
 df['gruppe'] = df['gruppe'].str.lower()
@@ -91,7 +92,7 @@ merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
 merged_gdf['value'] = merged_gdf['value'].astype(float).fillna(0).astype(int)
-df['value'] = df['value'].astype(float).fillna(0).astype(int)
+merged_gdf['cntr_nm'] = country_name
 
 
 # EXPORT DATA TO STAGED
@@ -102,33 +103,3 @@ gdf_original = merged_gdf
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/2_staged_data/{filename}'
 gdf_original.to_parquet(parquet_filename, index=False)
-
-"""
-# Plot choropleth map using Plotly Express with Mapbox
-fig = px.choropleth_mapbox(
-    merged_gdf,
-    geojson=merged_gdf.geometry,
-    locations=merged_gdf.index,
-    color='value',
-    opacity=0.5,
-    template='ggplot2', 
-    hover_name='region',
-    title='Covid-19 Sweden Wastewater Data',
-    labels={'value': 'Relative Copy Number', 'first_day': 'Date (Weekly)'},
-    color_continuous_scale="OrRd",
-    range_color=color_range,
-    mapbox_style="carto-positron",
-    center={"lat": 62, "lon": 18.1},
-    zoom=2.9,
-    animation_frame='first_day'
-)
-
-# Set the size of the graph
-fig.update_layout(
-    height=600,
-    width=800,
-)
-
-# Show the plot
-fig.show()
-"""
