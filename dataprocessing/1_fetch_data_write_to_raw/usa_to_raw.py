@@ -22,6 +22,7 @@ query1 = (
 )
 
 # OK?
+
 query2 = (
     "https://data.cdc.gov/resource/g653-rqe2.json?"
     "$order=date%20DESC"  # replace blankspace with %20
@@ -34,7 +35,7 @@ query2 = (
     "https://data.cdc.gov/resource/g653-rqe2.json?"
     #"$select=date,key_plot_id,normalization,pcr_conc_smoothed"
     "$order=date%20DESC"  # replace blankspace with %20
-    "&$limit=50000"
+    "&$limit=500"
     #"&$where=date>='2020-01-01'"
 )
 

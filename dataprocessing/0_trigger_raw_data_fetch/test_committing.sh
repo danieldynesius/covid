@@ -1,11 +1,18 @@
 #!/bin/bash
 
 # Configuration
-files_to_commit="/home/stratega/code/analytics/covid/docs/geo_map.html /home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_trendcharts.py"
+files_to_commit=(
+  "/home/stratega/code/analytics/covid/docs/geo_map.html"
+  "/home/stratega/code/analytics/covid/docs/country_trends.html"
+)
 
-commit_message="Scheduled update"
+for file in "${files_to_commit[@]}"; do
+  git add "$file"
+done
+
+commit_message="Scheduled data update"
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
-commit_message="Scheduled update at $current_datetime"
+commit_message="Scheduled data update at $current_datetime"
 
 #branch_name="gh-pages"
 branch_name="main"

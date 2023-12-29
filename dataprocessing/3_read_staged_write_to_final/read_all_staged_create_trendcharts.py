@@ -5,6 +5,7 @@ import plotly.offline as offline
 import math
 from plotly.subplots import make_subplots
 import numpy as np
+import os
 
 
 datapath = '~/code/analytics/covid/data/2_staged_data/'
