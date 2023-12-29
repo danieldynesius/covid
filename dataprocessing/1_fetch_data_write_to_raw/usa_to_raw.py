@@ -10,6 +10,19 @@ import pandas as pd
 
 filename = 'usa_wastewater.parquet'
 
+
+
+# Replace 'YOUR_API_KEY' with the actual API key
+api_key = 'YOUR_API_KEY'
+api_url = 'https://data.cdc.gov/resource/g653-rqe2.csv'
+
+headers = {
+    'X-App-Token': api_key,
+}
+
+response = requests.get(api_url, headers=headers)
+d1 = pd.read_csv(pd.compat.StringIO(response.text), sep=',')
+
 d1 = pd.read_csv('https://data.cdc.gov/resource/g653-rqe2.csv', sep=',')
 d2 = pd.read_csv('https://data.cdc.gov/resource/2ew6-ywp6.csv', sep=',')
 
