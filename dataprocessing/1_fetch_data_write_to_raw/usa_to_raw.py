@@ -6,25 +6,54 @@
 #--------------------------------------------------------------------------------
 import requests
 import pandas as pd
+import json.decoder
+from urllib.error import HTTPError
+
+query = (
+    "https://data.cdc.gov/resource/2ew6-ywp6.json?"
+    "$order=first_sample_date%20DESC"  # replace blankspace with %20
+    "&$limit=5"
+)
+query1 = (
+    "https://data.cdc.gov/resource/2ew6-ywp6.json?"
+    "$select=wwtp_jurisdiction,reporting_jurisdiction,key_plot_id,county_names,first_sample_date"
+    "&$order=first_sample_date%20DESC"  # replace blankspace with %20
+    "&$limit=5"
+)
+
+# OK?
+query2 = (
+    "https://data.cdc.gov/resource/g653-rqe2.json?"
+    "$order=date%20DESC"  # replace blankspace with %20
+    "&$where=date<'2023-01-01'"
+
+)
+
+# cant
+query2 = (
+    "https://data.cdc.gov/resource/g653-rqe2.json?"
+    #"$select=date,key_plot_id,normalization,pcr_conc_smoothed"
+    "$order=date%20DESC"  # replace blankspace with %20
+    "&$limit=50000"
+    #"&$where=date>='2020-01-01'"
+)
+
+d2 = pd.read_json(query2)
+d2
+d2.date.min()
+
+#d1 = pd.read_json(query1)
+d2 = pd.read_json(query2)
+d2
+d2.date.min()
+except json.decoder.JSONDecodeError as e:
+    print(f"JSON Decode Error: {e}")
+except HTTPError as e:
+    print(f"HTTP Error: {e}")
+
+raw_data.first_sample_date.min()
 
 
-filename = 'usa_wastewater.parquet'
-
-
-
-# Replace 'YOUR_API_KEY' with the actual API key
-api_key = 'YOUR_API_KEY'
-api_url = 'https://data.cdc.gov/resource/g653-rqe2.csv'
-
-headers = {
-    'X-App-Token': api_key,
-}
-
-response = requests.get(api_url, headers=headers)
-d1 = pd.read_csv(pd.compat.StringIO(response.text), sep=',')
-
-d1 = pd.read_csv('https://data.cdc.gov/resource/g653-rqe2.csv', sep=',')
-d2 = pd.read_csv('https://data.cdc.gov/resource/2ew6-ywp6.csv', sep=',')
 
 d1.key_plot_id = d1.key_plot_id.str.lower()
 d2.key_plot_id = d2.key_plot_id.str.lower()
