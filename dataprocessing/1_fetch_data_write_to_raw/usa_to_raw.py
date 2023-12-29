@@ -1,72 +1,39 @@
 # -------------------------------[ DATASET INFO ] -------------------------------
-# utilizing "accessURL" from:
-# https://data.europa.eu/data/datasets/651a82516edc589b4f6a0354?locale=fr
-# but same data seems to also exist here:
-# https://www.data.gouv.fr/fr/datasets/surveillance-du-sars-cov-2-dans-les-eaux-usees-sumeau/#/resources
+# Source Data:
+# https://data.cdc.gov/Public-Health-Surveillance/NWSS-Public-SARS-CoV-2-Concentration-in-Wastewater/g653-rqe2/about_data
+# https://data.cdc.gov/Public-Health-Surveillance/NWSS-Public-SARS-CoV-2-Wastewater-Metric-Data/2ew6-ywp6/about_data
 #--------------------------------------------------------------------------------
-import requests
-import pandas as pd
-import json.decoder
-from urllib.error import HTTPError
 
-query = (
-    "https://data.cdc.gov/resource/2ew6-ywp6.json?"
-    "$order=first_sample_date%20DESC"  # replace blankspace with %20
-    "&$limit=5"
-)
-query1 = (
+import pandas as pd
+from datetime import datetime as dt
+from datetime import timedelta
+
+date_threshold = (dt.now() - timedelta(days=365)).date()
+date_threshold_str = date_threshold.strftime('%Y-%m-%d')
+filename = 'usa_wastewater.parquet'
+
+wastewaterdata_query = (
+    "https://data.cdc.gov/resource/g653-rqe2.json?"
+    "$order=date%20DESC"  # replace blankspace with %20
+    f"&$where=date>='{date_threshold_str}'"
+    "&$limit=500000"
+    )
+
+wastewatermetadata_query = (
     "https://data.cdc.gov/resource/2ew6-ywp6.json?"
     "$select=wwtp_jurisdiction,reporting_jurisdiction,key_plot_id,county_names,first_sample_date"
     "&$order=first_sample_date%20DESC"  # replace blankspace with %20
-    "&$limit=5"
-)
+    f"&$where=first_sample_date>='{date_threshold_str}'"
+    "&$limit=500000"
+    )
 
-# OK?
+# TODO: CHECK FIRST SAMPLE DATE!! IS IT CORRECTLY USED BY ME??
 
-query2 = (
-    "https://data.cdc.gov/resource/g653-rqe2.json?"
-    "$order=date%20DESC"  # replace blankspace with %20
-    "&$where=date<'2023-01-01'"
+d1 = pd.read_json(wastewaterdata_query)
+d2 = pd.read_json(wastewatermetadata_query)
+d2.first_sample_date = pd.to_datetime(d2.first_sample_date)
 
-)
-
-# cant
-query2 = (
-    "https://data.cdc.gov/resource/g653-rqe2.json?"
-    #"$select=date,key_plot_id,normalization,pcr_conc_smoothed"
-    "$order=date%20DESC"  # replace blankspace with %20
-    "&$limit=500"
-    #"&$where=date>='2020-01-01'"
-)
-
-d2 = pd.read_json(query2)
-d2
-d2.date.min()
-
-#d1 = pd.read_json(query1)
-d2 = pd.read_json(query2)
-d2
-d2.date.min()
-except json.decoder.JSONDecodeError as e:
-    print(f"JSON Decode Error: {e}")
-except HTTPError as e:
-    print(f"HTTP Error: {e}")
-
-raw_data.first_sample_date.min()
-
-
-
-d1.key_plot_id = d1.key_plot_id.str.lower()
-d2.key_plot_id = d2.key_plot_id.str.lower()
-
-d1.key_plot_id.unique()
-d2.key_plot_id.unique()
-
-d1.merge(d2, how='inner', on='key_plot_id')
-d1
-d2
-
-df_original = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6], ignore_index=True))
+df_original = d1.merge(d2, how='inner', left_on=['key_plot_id', 'date'], right_on=['key_plot_id', 'first_sample_date'])
 
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/1_raw_data/{filename}'

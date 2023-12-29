@@ -29,9 +29,10 @@ g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # thi
 g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
 g8 = gpd.read_parquet(os.path.join(datapath, 'switzerland_wastewater.parquet'))
 g9 = gpd.read_parquet(os.path.join(datapath, 'canada_wastewater.parquet'))
+g10 = gpd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8, g9], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8, g9, g10], ignore_index=True))
 
 # Get latest data by country
 last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
