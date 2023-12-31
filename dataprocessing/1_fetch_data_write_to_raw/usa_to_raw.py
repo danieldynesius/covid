@@ -21,7 +21,7 @@ wastewaterdata_query = (
 
 wastewatermetadata_query = (
     "https://data.cdc.gov/resource/2ew6-ywp6.json?"
-    "$select=wwtp_jurisdiction,reporting_jurisdiction,key_plot_id,county_names,first_sample_date"
+    "$select=wwtp_jurisdiction,reporting_jurisdiction,key_plot_id,county_names,first_sample_date,date_start"
     "&$order=first_sample_date%20DESC"  # replace blankspace with %20
     f"&$where=first_sample_date>='{date_threshold_str}'"
     "&$limit=500000"
@@ -32,9 +32,10 @@ wastewatermetadata_query = (
 d1 = pd.read_json(wastewaterdata_query)
 d2 = pd.read_json(wastewatermetadata_query)
 d2.first_sample_date = pd.to_datetime(d2.first_sample_date)
+d2.date_start = pd.to_datetime(d2.date_start)
 
-df_original = d1.merge(d2, how='inner', left_on=['key_plot_id', 'date'], right_on=['key_plot_id', 'first_sample_date'])
-
+df_original = d1.merge(d2, how='inner', left_on=['key_plot_id'], right_on=['key_plot_id'])
+df_original.dropna(subset='pcr_conc_smoothed', inplace=True)
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/1_raw_data/{filename}'
 df_original.to_parquet(parquet_filename, index=False)

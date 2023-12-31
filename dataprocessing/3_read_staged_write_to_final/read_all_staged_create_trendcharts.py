@@ -24,7 +24,7 @@ d6 = pd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this
 d7 = pd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
 d8 = pd.read_parquet(os.path.join(datapath, 'switzerland_wastewater.parquet'))
 d9 = pd.read_parquet(os.path.join(datapath, 'canada_wastewater.parquet'))
-d10 = gpd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
+d10 =pd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
 
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
