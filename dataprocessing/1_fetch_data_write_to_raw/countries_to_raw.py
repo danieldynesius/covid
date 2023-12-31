@@ -1,35 +1,11 @@
-"""##
+##
 # Testing to write everything via 
 ##
+"""
 
-import json
 import pandas as pd
+import subprocess
 
-
-filename = country + '_wastewater.parquet'
-
-
-url_filename_dict = {'https://abwassermonitoring.at/cbe1/dl_blverlauf.csv':
-                    'austria_wastewater.parquet'}
-
-
-# Use a dict to read URL, and associate file name with URL
-for url, filename in url_filename_dict.items():
-    # Read the CSV file into a Pandas DataFrame
-    df_original = pd.read_csv(url, sep=';')
-
-    # Save the DataFrame as a Parquet file
-    parquet_filename = f'~/code/analytics/covid/data/1_raw_data/{filename}'
-    df_original.to_parquet(parquet_filename, index=False)
-
-    # Read the Parquet file into a new Pandas DataFrame
-    df_from_parquet = pd.read_parquet(parquet_filename)
-
-    # Check data integrity by comparing the DataFrames
-    if df_original.equals(df_from_parquet):
-        print(f'Data integrity maintained: {filename}')
-    else:
-        print(f'Data integrity may be compromised: {filename}')
 
 
 
@@ -51,6 +27,7 @@ for i, country in enumerate(df_source['country']):
 
     if (data_read_type == 'direct_link') and (n_links == 1):
         df_original = pd.read_csv(link, sep=';')
+        df_original.head(2)
 
         # Save the DataFrame as a Parquet file
         parquet_filename = f'~/code/analytics/covid/data/1_raw_data/{filename}'
@@ -66,9 +43,53 @@ for i, country in enumerate(df_source['country']):
             print(f'Data integrity may be compromised: {filename}')
 
 
+    elif (country == 'finland'):
+        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/finland_to_raw.py'
+        try:
+            subprocess.run(['python3', script_path])
+        except Exception as e:
+            print(f"Error: {e}")
+
+    elif (country == 'denmark'):
+        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/denmark_to_raw.py'
+        try:
+            subprocess.run(['python3', script_path])
+        except Exception as e:
+            print(f"Error: {e}")
+
+    elif (country == 'scotland'):
+        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/scotland_to_raw.py'
+        try:
+            subprocess.run(['python3', script_path])
+        except Exception as e:
+            print(f"Error: {e}")
+
+    elif (country == 'switzerland'):
+        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/switzerland_to_raw.py'
+        try:
+            subprocess.run(['python3', script_path])
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+    elif (country == 'usa'):
+        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/usa_to_raw.py'
+        try:
+            subprocess.run(['python3', script_path])
+        except Exception as e:
+            print(f"Error: {e}")
 
 
 
 
 
 """
+
+df = pd.DataFrame(data)
+
+# Convert DataFrame to HTML
+html_table = df.to_html(index=False)
+
+# Save the HTML to a file
+with open('output.html', 'w') as f:
+    f.write(html_table)
