@@ -4,11 +4,8 @@ import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
 
 
-
 datapath = '~/code/analytics/covid/data/2_staged_data/'
 final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
-
-
 
 d1 = pd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
 d2 = pd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
@@ -31,6 +28,16 @@ df['normalized_value'] = df['normalized_value'].fillna(df['normalized_value'].me
 
 # Assuming df has a datetime column 'first_day' - replace it with your actual datetime column
 df['first_day'] = pd.to_datetime(df['first_day'])
+
+# Extract additional temporal features from 'first_day'
+df['year'] = df['first_day'].dt.year
+df['month'] = df['first_day'].dt.month
+df['week'] = df['first_day'].dt.isocalendar().week
+df['day'] = df['first_day'].dt.day
+
+# Normalize the new temporal features
+scaler_temporal = MinMaxScaler()
+df[['year', 'month', 'week', 'day']] = scaler_temporal.fit_transform(df[['year', 'month', 'week', 'day']])
 
 # Sort the DataFrame by date
 df = df.sort_values(by='first_day')
@@ -69,13 +76,16 @@ def create_sequences(data, sequence_length):
     for i in range(len(data) - sequence_length):
         seq = data.iloc[i:i+sequence_length]
         target = data.iloc[i+sequence_length]['normalized_value']
-        sequences.append(seq[['cntr_int', 'region_int', 'normalized_value', 'year', 'month', 'week', 'day']].values)
+        # Only include relevant features for training
+        sequences.append(seq[['cntr_int', 'region_int', 'normalized_value']].values)
         targets.append(target)
     
     return np.array(sequences), np.array(targets)
 
 # Create sequences and targets
-sequences, targets = create_sequences(data, sequence_length)
+sequences, targets = create_sequences(df, sequence_length)
+
+
 
 # Split the data into training and testing sets
 split = int(0.8 * len(sequences))
@@ -110,250 +120,4 @@ plt.plot(denormalized_predictions, label='Predictions', linestyle='--', alpha=0.
 plt.plot(test_targets, label='Actual (Offset)', linestyle='--', alpha=0.2)  # Solid line with 'x' markers for offset actual values
 plt.legend()
 plt.show()
-
-
-
-from sklearn.metrics import mean_squared_error
-import numpy as np
-
-# Inverse transform to get original scale
-predictions_original = denormalized_predictions
-y_test_original = scaler.inverse_transform(test_targets.reshape(-1, 1))
-
-# Reshape y_test_original to match the shape of predictions_original
-y_test_original = np.repeat(y_test_original, predictions_original.shape[1], axis=-1)
-
-# Compute RMSE
-rmse = np.sqrt(mean_squared_error(y_test_original, predictions_original))
-print(f'Root Mean Squared Error (RMSE): {rmse}')
-
-
-
-## T2
-
-
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
-import matplotlib.pyplot as plt
-from tensorflow.keras.optimizers import Adam
-
-
-# Assuming df is your DataFrame with 'normalized_value' column
-# Replace this with your actual data loading and preprocessing steps
-# Ensure df is sorted by date if it's a time series data
-# ...
-
-
-# Feature scaling
-scaler = MinMaxScaler(feature_range=(0, 1))
-
-df['normalized_value'] = scaler.fit_transform(df[['normalized_value']])
-
-# Creating sequences for LSTM
-def create_sequences(data, sequence_length):
-    sequences, labels = [], []
-    for i in range(len(data) - sequence_length):
-        seq = data[i:i+sequence_length]
-        label = data[i+sequence_length]
-        sequences.append(seq)
-        labels.append(label)
-    return np.array(sequences), np.array(labels)
-
-# Sequence length (you can adjust this)
-sequence_length = 10
-
-# Creating sequences and labels
-X, y = create_sequences(df['normalized_value'].values, sequence_length)
-
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=False)
-
-# Model architecture
-model = Sequential()
-model.add(LSTM(units=50, return_sequences=True, input_shape=(X_train.shape[1], 1)))
-model.add(LSTM(units=50, return_sequences=True))
-model.add(LSTM(units=50))
-model.add(Dense(units=1))
-
-# You can experiment with different values for the following hyperparameters
-model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
-
-
-# Train the model for more epochs
-history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test), shuffle=False)
-
-# Training the model
-history = model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_test, y_test), shuffle=False)
-
-
-# Predictions
-predictions = model.predict(X_test)
-
-# Inverse transform to get original scale
-predictions_original = scaler.inverse_transform(predictions)
-y_test_original = scaler.inverse_transform(y_test.reshape(-1, 1))
-
-
-
-
-# Plotting predictions vs actual with offset
-plt.plot(predictions_original, label='Predictions', linestyle='--', alpha=0.8)  # Solid line with circle markers for predictions
-plt.plot(y_test_shifted, label='Actual (Offset)', linestyle='--', alpha=0.2)  # Solid line with 'x' markers for offset actual values
-plt.legend()
-plt.show()
-
-
-## DD TEST
-import math
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-def make_region_subplots(df, value):
-    unique_areas = list(df.region.unique())
-
-    plot_titles = list((df.cntr_code.str.upper() +' - '+ df.region.str.title()).unique())
-
-
-    n_unique_areas = len(unique_areas)
-    n_cols_for_output = 4 # user specified
-    n_rows_for_output = math.ceil(n_unique_areas/n_cols_for_output) # needed based on n areas in data
-
-    df = df[['first_day', 'region', 'cntr_code', 'value', 'normalized_value']]
-
-    fig = make_subplots(
-        rows=n_rows_for_output, cols=n_cols_for_output,
-        y_title='Covid Transmission Value',
-        subplot_titles=plot_titles
-    )
-
-    for i, area in enumerate(unique_areas, start=1):
-        print(i,'....' ,area)
-        area_lowercase = area.lower()
-
-        row_num = (i - 1) // n_cols_for_output + 1
-        col_num = (i - 1) % n_cols_for_output + 1
-        print('Current area:', area, 'RC:',row_num, col_num)
-        area_x_series = df[df['region'].str.lower() == area_lowercase].first_day
-        area_y_series = df[df['region'].str.lower() == area_lowercase].normalized_value
-
-        area_x_series_last365 = df[(df['region'].str.lower() == area_lowercase) ].first_day
-        area_y_series_last365 = df[(df['region'].str.lower() == area_lowercase) ].normalized_value
-
-        fig.add_trace(
-            go.Scatter(
-                x=area_x_series
-                ,y=area_y_series
-                #,y=test_list
-                ,mode='lines+markers'
-                ,connectgaps=True
-                ,showlegend=False
-            ),
-            row=row_num, col=col_num
-        )
-
-    fig.update_layout(
-        height=300 + (50*n_unique_areas), width=300*n_cols_for_output,  # Adjust width to accommodate all subplots
-        title_text="Covid-19 Wastewater Measurements"
-    )
-    fig.update_xaxes(tickangle=45, tickfont=dict(family='Rockwell', color='black', size=14))
-
-    return fig
-
-
-make_region_subplots(df=df, value=df.normalized_value)
-
-
-## T3
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
-from sklearn.model_selection import train_test_split
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
-import matplotlib.pyplot as plt
-from tensorflow.keras.optimizers import Adam
-
-# Assuming df is your DataFrame with 'normalized_value', 'cntr_nm', and other columns
-# Replace this with your actual data loading and preprocessing steps
-# Ensure df is sorted by date if it's a time series data
-# ...
-
-# Feature scaling for normalized_value
-scaler = MinMaxScaler(feature_range=(0, 1))
-df['normalized_value'] = scaler.fit_transform(df[['normalized_value']])
-
-# One-hot encoding for cntr_nm
-encoder = OneHotEncoder(sparse=False)
-df_encoded = pd.get_dummies(df, columns=['cntr_nm'], prefix='country')
-
-# Creating sequences for LSTM
-def create_sequences(data, sequence_length):
-    sequences, labels = [], []
-    for i in range(len(data) - sequence_length):
-        seq = data[i:i+sequence_length]
-        label = data[i+sequence_length]
-        sequences.append(seq)
-        labels.append(label)
-    return np.array(sequences), np.array(labels)
-
-# Sequence length (you can adjust this)
-sequence_length = 10
-
-# One-hot encoding for country_nm
-encoder = OneHotEncoder(sparse=False)
-df_encoded = pd.get_dummies(df, columns=['cntr_nm'], prefix='country')
-
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=False)
-
-
-# Model architecture
-model = Sequential()
-model.add(LSTM(units=50, return_sequences=True, input_shape=(X_train.shape[1], 1)))
-model.add(LSTM(units=50, return_sequences=True))
-model.add(LSTM(units=50))
-
-
-# You can experiment with different values for the following hyperparameters
-model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
-
-# Train the model for more epochs
-history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test), shuffle=False)
-
-# Predictions
-predictions = model.predict(X_test)
-
-# Inverse transform to get original scale
-predictions_original = scaler.inverse_transform(predictions)
-y_test_original = scaler.inverse_transform(y_test.reshape(-1, 1))
-
-# Plotting predictions vs actual
-plt.plot(predictions_original, label='Predictions')
-plt.plot(y_test_original, label='Actual')
-plt.legend()
-plt.show()
-
-
-# Plotting predictions vs actual with offset
-plt.plot(predictions_original, label='Predictions', linestyle='--', alpha=0.8)  # Solid line with circle markers for predictions
-plt.plot(y_test_original, label='Actual (Offset)', linestyle='--', alpha=0.2)  # Solid line with 'x' markers for offset actual values
-plt.legend()
-plt.show()
-
-from sklearn.metrics import mean_squared_error
-import numpy as np
-
-# Inverse transform to get original scale
-predictions_original = scaler.inverse_transform(predictions)
-y_test_original = scaler.inverse_transform(y_test.reshape(-1, 1))
-
-# Reshape y_test_original to match the shape of predictions_original
-y_test_original = np.repeat(y_test_original, predictions_original.shape[1], axis=-1)
-
-# Compute RMSE
-rmse = np.sqrt(mean_squared_error(y_test_original, predictions_original))
-print(f'Root Mean Squared Error (RMSE): {rmse}')
 
