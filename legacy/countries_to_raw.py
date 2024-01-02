@@ -1,12 +1,21 @@
+
 ##
 # Testing to write everything via 
 ##
-"""
 
 import pandas as pd
 import subprocess
 
 
+
+# Specify the path to your JSON file
+json_file_path = '/home/stratega/code/analytics/covid/dataprocessing/metadata/data_sources.json'
+
+# Read the JSON file into a Pandas DataFrame
+df = pd.read_json(json_file_path)
+df
+# Flatten the 'countries' column using json_normalize
+df_normalized = pd.json_normalize(df['countries'])
 
 
 

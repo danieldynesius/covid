@@ -1,0 +1,59 @@
+{
+    "countries": [
+      {
+        "Country": "Austria",
+        "link": "https://abwassermonitoring.at/cbe1/dl_blverlauf.csv"
+      },
+      {
+        "Country": "Canada",
+        "link": "https://health-infobase.canada.ca/src/data/covidLive/wastewater/covid19-wastewater.csv"
+      },
+      {
+        "Country": "Denmark",
+        "link": "https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid-19---spildevandsovervaagning"
+      },
+      {
+        "Country": "Finland",
+        "link": "https://www.thl.fi/episeuranta/jatevesi/wastewater_weekly_report.html#data"
+      },
+      {
+        "Country": "France",
+        "link": "https://data.europa.eu/data/datasets/651a82516edc589b4f6a0354?locale=fr"
+      },
+      {
+        "Country": "Netherlands",
+        "link": "https://data.rivm.nl/covid-19/COVID-19_rioolwaterdata.csv"
+      },
+      {
+        "Country": "Poland",
+        "link": "https://www.poznan.pl/mim/public/wortals/attachments.att?co=show&instance=9341&parent=183099&lang=pl&id=432849"
+      },
+      {
+        "Country": "Scotland",
+        "link": "https://informatics.sepa.org.uk/RNAmonitoring/"
+      },
+      {
+        "Country": "Sweden",
+        "link": "https://blobserver.dc.scilifelab.se/blob/SLU_wastewater_data.csv"
+      },
+      {
+        "Country": "Switzerland",
+        "links": [
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_zurich_v2.csv",
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_lugano_v2.csv",
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_altenrhein_v2.csv",
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_chur_v2.csv",
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_geneve_v2.csv",
+          "https://sensors-eawag.ch/sars/__data__/processed_normed_data_laupen_v2.csv"
+        ]
+      },
+      {
+        "Country": "Usa",
+        "links": [
+          "https://data.cdc.gov/resource/g653-rqe2.json",
+          "https://data.cdc.gov/resource/2ew6-ywp6.json"
+        ]
+      }
+    ]
+  }
+  
