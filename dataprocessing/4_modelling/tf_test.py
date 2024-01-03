@@ -2,7 +2,11 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+from matplotlib import pyplot as plt
 
+
+use_prenormalized = False # works better on True currently
 
 datapath = '~/code/analytics/covid/data/2_staged_data/'
 final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
@@ -22,7 +26,20 @@ d10 =pd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 #df['normalized_value'] = df['normalized_value'].fillna(df['normalized_value'].mean())
-df['normalized_value'] = df['normalized_value'].fillna(df.groupby(['cntr_nm', 'region'])['normalized_value'].transform('mean'))
+
+# USE NORMALIZED VALUE
+if use_prenormalized==True:
+    print('Using Pre-Normalized')
+    df['normalized_value'] = df['normalized_value'].fillna(df.groupby(['cntr_nm', 'region'])['normalized_value'].transform('mean'))
+
+else:
+    print('Creating Normalized')
+    # Fill NaN values in the 'value' column with the mean of each group
+    df['value'] = df['value'].fillna(df.groupby(['cntr_nm', 'region'])['value'].transform('mean'))
+
+    # Normalize the 'value' column based on groups
+    scaler_value = MinMaxScaler()
+    df['normalized_value'] = df.groupby(['cntr_nm', 'region'])['value'].transform(lambda x: scaler_value.fit_transform(x.values.reshape(-1, 1)).flatten())
 
 # Assuming df is your DataFrame with 'normalized_value', 'cntr_nm', and 'region' columns
 # Adjust this based on your actual DataFrame structure
@@ -56,18 +73,12 @@ df['cntr_int'] = df['cntr_nm'].map(country_to_int)
 df['region_int'] = df['region'].map(region_to_int)
 
 # Select relevant columns
-data = df[['first_day', 'normalized_value', 'cntr_int', 'region_int']]
-
-# Example: Fill NaN values with the mean of the column
-data['normalized_value'] = data['normalized_value'].fillna(data['normalized_value'].mean())
+#data = df[['first_day', 'normalized_value', 'cntr_int', 'region_int']]
 
 
-# Normalize the 'normalized_value' column
-scaler = MinMaxScaler()
-data['normalized_value'] = scaler.fit_transform(data[['normalized_value']])
 
 # Define sequence length (number of time steps to consider)
-sequence_length = 7
+sequence_length = 4 # nr of steps for firt_day (weekly values)
 
 # Function to create sequences for training
 def create_sequences(data, sequence_length):
@@ -112,13 +123,15 @@ print(f'Test Loss: {loss}')
 # Predictions on the test set
 predictions = model.predict(test_sequences)
 
+# Fit the scaler on the training data
+scaler.fit(train_targets.reshape(-1, 1))
+
 # Denormalize the predictions
 denormalized_predictions = scaler.inverse_transform(predictions.reshape(-1, 1))
 
-
 # Plotting predictions vs actual with offset
-plt.plot(denormalized_predictions, label='Predictions', linestyle='--', alpha=0.7)  # Solid line with circle markers for predictions
-plt.plot(test_targets, label='Actual (Offset)', linestyle='--', alpha=0.2)  # Solid line with 'x' markers for offset actual values
+plt.plot(denormalized_predictions, label='Predictions', linestyle='--', alpha=0.7)
+plt.plot(test_targets, label='Actual (Offset)', linestyle='--', alpha=0.2)
 plt.legend()
 plt.show()
 
@@ -146,3 +159,11 @@ merged_df
 
 
 
+# CHECK RMSE
+# Predictions on the test set
+predictions = model.predict(test_sequences)
+
+# Calculate RMSE on the normalized predictions and normalized actuals
+rmse = np.sqrt(mean_squared_error(test_targets, predictions))
+
+print(f'RMSE on Normalized Predictions vs Normalized Actuals: {rmse}')
