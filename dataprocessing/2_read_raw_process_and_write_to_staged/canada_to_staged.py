@@ -9,11 +9,28 @@ from sklearn.preprocessing import MinMaxScaler
 def get_first_day(row):
     return dt.fromisocalendar(row['iso_year'], row['iso_week'], 1)
 
+import configparser
+
+#----------------------------------------------------------------------------------------------
+# Step 0: Read Config file
+#----------------------------------------------------------------------------------------------
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Data Params
+data_stale_hours = config.getint('Data', 'data_stale_hours')
+datafreshness = config.getint('Data', 'datafreshness')
+n_days_back_to_include = config.getint('Data', 'n_days_back_to_include')
+sufficient_updates_since_threshold = config.getint('Data', 'sufficient_updates_since_threshold')
 
 # Data Inclusion Criteria
-datafreshness = 15 # 15 means data to be included in dataset is 15 days
-date_threshold = dt.now() - timedelta(days=365)
-sufficient_updates_since_threshold = 22 # 22 in 365 days they should have atleast 22 data reports (assumes weekly reporting)
+datafreshness = datafreshness # 15 means data to be included in dataset is 15 days
+date_threshold = (dt.now() - timedelta(days=n_days_back_to_include)).date()
+date_threshold = pd.Timestamp(date_threshold)
+sufficient_updates_since_threshold = sufficient_updates_since_threshold # 22 in 365 days they should have atleast 22 data reports (assumes weekly reporting)
 
 
 # Load GeoJSON file into a GeoDataFrame
@@ -114,7 +131,8 @@ df['iso_week'] = df['iso_week'].astype(int)
 # Apply the function to create a new column "first_day"
 df['first_day'] = df.apply(get_first_day, axis=1)
 
-df
+
+df.dtypes
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
 region_stats = df.groupby('channel')['first_day'].agg(['count','min','max']).reset_index()

@@ -9,11 +9,28 @@ from sklearn.preprocessing import MinMaxScaler
 def get_first_day(row):
     return dt.fromisocalendar(row['iso_year'], row['iso_week'], 1)
 
+import configparser
+
+#----------------------------------------------------------------------------------------------
+# Step 0: Read Config file
+#----------------------------------------------------------------------------------------------
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Data Params
+data_stale_hours = config.getint('Data', 'data_stale_hours')
+datafreshness = config.getint('Data', 'datafreshness')
+n_days_back_to_include = config.getint('Data', 'n_days_back_to_include')
+sufficient_updates_since_threshold = config.getint('Data', 'sufficient_updates_since_threshold')
 
 # Data Inclusion Criteria
-datafreshness = 15 # 15 means data to be included in dataset is 15 days
-date_threshold = dt.now() - timedelta(days=365)
-sufficient_updates_since_threshold = 22 # 22 in 365 days they should have atleast 22 data reports (assumes weekly reporting)
+datafreshness = datafreshness # 15 means data to be included in dataset is 15 days
+date_threshold = (dt.now() - timedelta(days=n_days_back_to_include)).date()
+date_threshold = pd.Timestamp(date_threshold)
+sufficient_updates_since_threshold = sufficient_updates_since_threshold # 22 in 365 days they should have atleast 22 data reports (assumes weekly reporting)
 
 
 # Load GeoJSON file into a GeoDataFrame
@@ -25,64 +42,6 @@ geojson.rename(columns={"name": "nuts_name"}, inplace=True)
 geojson = geojson[['nuts_name', 'cntr_code', 'geometry']]
 geojson['nuts_name'] = geojson['nuts_name'].astype(str)
 geojson['nuts_name'] = geojson['nuts_name'].str.lower()
-region_mapping = {
-    'trenton': 'ontario',
-    'vancouver': 'british columbia',
-    'winnipeg': 'manitoba',
-    'regina': 'saskatchewan',
-    'souris': 'prince edward island',
-    "st. john's": 'newfoundland and labrador',
-    'summerside': 'prince edward island',
-    'toronto': 'ontario',
-    'halifax': 'nova scotia',
-    'miramichi (nml historical data)': 'new brunswick',
-    'moncton (nml historical data)': 'new brunswick',
-    'montague': 'prince edward island',
-    'montreal': 'quebec',
-    'yarmouth': 'nova scotia',
-    'assiniboia': 'saskatchewan',
-    'battleford': 'saskatchewan',
-    'birch hills': 'saskatchewan',
-    'canora': 'saskatchewan',
-    'estevan': 'saskatchewan',
-    'île-à-la-crosse': 'saskatchewan',
-    'la ronge': 'saskatchewan',
-    'lumsden': 'saskatchewan',
-    'maple creek': 'saskatchewan',
-    'meadow lake': 'saskatchewan',
-    'melville': 'saskatchewan',
-    'moose jaw': 'saskatchewan',
-    'north battleford': 'saskatchewan',
-    'pasqua': 'saskatchewan',
-    'prince albert': 'saskatchewan',
-    'saskatoon': 'saskatchewan',
-    'southey': 'saskatchewan',
-    'swift current': 'saskatchewan',
-    'unity': 'saskatchewan',
-    'watrous': 'saskatchewan',
-    'weyburn': 'saskatchewan',
-    'yorkton': 'saskatchewan',
-    'bathurst': 'new brunswick',
-    'campbellton': 'new brunswick',
-    'edmundston': 'new brunswick',
-    'fredericton': 'new brunswick',
-    'miramichi': 'new brunswick',
-    'moncton': 'new brunswick',
-    'saint john': 'new brunswick',
-    'edmonton': 'alberta',
-    'fredericton (nml historical data)': 'new brunswick',
-    'haines junction': 'yukon',
-    'bathurst (nml historical data)': 'new brunswick',
-    'battery point': 'new brunswick',
-    'brandon': 'manitoba',
-    'bridgewater': 'nova scotia',
-    'campbellton (nml historical data)': 'new brunswick',
-    'central colchester': 'nova scotia',
-    'city of charlottetown & town of stratford': 'prince edward island',
-    'dominion-bridgeport': 'nova scotia',
-    'alberton': 'prince edward island'
-}
-
 
 # Pull data
 country_name = 'usa'
