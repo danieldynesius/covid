@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # Variables
-datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
+raw_datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
 data_stale_hours = 23 # hours
 staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
 final_geo_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
@@ -80,7 +80,7 @@ def data_freshness(directory, hours_threshold=data_stale_hours):
 
 
 
-file_df = data_freshness(datapath)
+file_df = data_freshness(raw_datapath)
 
 # Display the DataFrame
 file_df
@@ -129,7 +129,7 @@ if __name__ == "__main__":
 #----------------------------------------------------------------------------------------------
 # Step 3: Check Data Updated & Save to Output Dir
 #----------------------------------------------------------------------------------------------
-file_df = data_freshness(datapath)
+file_df = data_freshness(raw_datapath)
 file_df.to_csv('~/code/analytics/covid/data/3_finalized_data/data_freshness.csv',index=False)
 
 

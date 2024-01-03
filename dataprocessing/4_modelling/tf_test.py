@@ -11,6 +11,9 @@ use_prenormalized = False # works better on True currently
 datapath = '~/code/analytics/covid/data/2_staged_data/'
 final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
 
+pd.read_csv('/home/stratega/code/analytics/covid/data/metadata/country_stats.csv', encoding='utf-8', on_bad_lines='skip')
+
+
 d1 = pd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
 d2 = pd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
 d3 = pd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
