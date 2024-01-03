@@ -54,11 +54,6 @@ print(f"push_html_file: {push_html_file}")
 print(f"data_stale_hours: {data_stale_hours}")
 
 
-# Activate the virtual environment
-venv_activate_script = os.path.join(base_path, 'venv/covid-dash/bin/activate')
-subprocess.run(f"source {venv_activate_script}", shell=True)
-
-
 # Check if the flag file exists (indicating the script has already run today)
 if os.path.isfile(flag_file):
     with open(flag_file, 'r') as file:
