@@ -11,13 +11,11 @@ from datetime import datetime as dt
 from datetime import timedelta
 import geopandas as gpd
 from sklearn.preprocessing import MinMaxScaler
-
+import configparser
 
 # Get the first day of the ISO year and week
 def get_first_day(row):
     return dt.fromisocalendar(row['iso_year'], row['iso_week'], 1)
-
-import configparser
 
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file

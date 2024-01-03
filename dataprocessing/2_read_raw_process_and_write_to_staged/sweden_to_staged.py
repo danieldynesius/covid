@@ -4,12 +4,13 @@ import pandas as pd
 from datetime import datetime as dt
 from datetime import timedelta
 from sklearn.preprocessing import MinMaxScaler
+import configparser
 
 # Define a function to get the first day of the ISO year and week
 def get_first_day(row):
     return dt.fromisocalendar(row['iso_year'], row['iso_week'], 1)
 
-import configparser
+
 
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
