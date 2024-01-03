@@ -25,6 +25,26 @@ d10 =pd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
+
+# NEED TO CREATE A CONTINENT VARIABLE SOMEWHERE
+# Iterate over unique countries
+for country in df['cntr_nm'].unique():
+    # Filter data for the current country
+    country_data = df[df['cntr_nm'] == country]
+    
+    # Iterate over unique regions within the current country
+    for region in country_data['region'].unique():
+        region_data = country_data[country_data['region'] == region]
+        plt.plot(region_data['first_day'], region_data['normalized_value'], label=region)
+
+    # Set labels and title
+    plt.xlabel('Date')
+    plt.ylabel('Normalized Value')
+    plt.title(f'Normalized Values by Region in {country}')
+    plt.legend()
+    plt.show()
+
+
 #df['normalized_value'] = df['normalized_value'].fillna(df['normalized_value'].mean())
 
 # USE NORMALIZED VALUE
@@ -79,6 +99,8 @@ df['region_int'] = df['region'].map(region_to_int)
 
 # Define sequence length (number of time steps to consider)
 sequence_length = 4 # nr of steps for firt_day (weekly values)
+my_predictor_list = ['cntr_int', 'region_int','week','day', 'normalized_value']
+my_predictor_len = len(my_predictor_list)
 
 # Function to create sequences for training
 def create_sequences(data, sequence_length):
@@ -89,7 +111,7 @@ def create_sequences(data, sequence_length):
         seq = data.iloc[i:i+sequence_length]
         target = data.iloc[i+sequence_length]['normalized_value']
         # Only include relevant features for training
-        sequences.append(seq[['cntr_int', 'region_int', 'normalized_value']].values)
+        sequences.append(seq[my_predictor_list].values)
         targets.append(target)
     
     return np.array(sequences), np.array(targets)
@@ -106,7 +128,7 @@ train_targets, test_targets = targets[:split], targets[split:]
 
 # Build the LSTM model
 model = tf.keras.Sequential([
-    tf.keras.layers.LSTM(50, input_shape=(sequence_length, 3)),
+    tf.keras.layers.LSTM(50, input_shape=(sequence_length, my_predictor_len)),
     tf.keras.layers.Dense(1)
 ])
 
