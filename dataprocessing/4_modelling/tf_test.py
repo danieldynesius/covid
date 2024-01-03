@@ -21,7 +21,8 @@ d10 =pd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
-df['normalized_value'] = df['normalized_value'].fillna(df['normalized_value'].mean())
+#df['normalized_value'] = df['normalized_value'].fillna(df['normalized_value'].mean())
+df['normalized_value'] = df['normalized_value'].fillna(df.groupby(['cntr_nm', 'region'])['normalized_value'].transform('mean'))
 
 # Assuming df is your DataFrame with 'normalized_value', 'cntr_nm', and 'region' columns
 # Adjust this based on your actual DataFrame structure
@@ -120,4 +121,28 @@ plt.plot(denormalized_predictions, label='Predictions', linestyle='--', alpha=0.
 plt.plot(test_targets, label='Actual (Offset)', linestyle='--', alpha=0.2)  # Solid line with 'x' markers for offset actual values
 plt.legend()
 plt.show()
+
+
+# Denormalize the predictions
+denormalized_predictions = scaler.inverse_transform(predictions.reshape(-1, 1))
+
+# Invert normalization on test_targets
+denormalized_actuals = scaler.inverse_transform(test_targets.reshape(-1, 1))
+
+# Create a DataFrame with denormalized predictions, country, region, and first_day
+predictions_df = pd.DataFrame({
+    'Denormalized_Predictions': denormalized_predictions.flatten(),
+    'Denormalized_Actuals': denormalized_actuals.flatten(),
+    'Country': df.iloc[split+sequence_length:]['cntr_nm'].values,
+    'Region': df.iloc[split+sequence_length:]['region'].values,
+    'First_Day': df.iloc[split+sequence_length:]['first_day'].values
+})
+
+# Merge the predictions DataFrame with the original DataFrame
+merged_df = pd.merge(df, predictions_df, left_on=['cntr_nm', 'region', 'first_day'], right_on=['Country', 'Region', 'First_Day'], how='left')
+
+# Print or use merged_df as needed
+merged_df
+
+
 
