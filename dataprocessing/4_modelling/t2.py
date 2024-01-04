@@ -182,3 +182,114 @@ plt.xlabel("Date")
 plt.ylabel("Closing Price")
 plt.legend()
 plt.show()
+
+
+
+from pytrends.request import TrendReq
+import pandas as pd
+import time
+from datetime import date, timedelta
+
+# Set up the pytrends object
+pytrends = TrendReq(hl='en-US', tz=10)
+
+# Define the search term and the time range
+search_term = 'covid'
+time_range = 'today 12-m'  # Last 365 days
+end_date = date.today()
+start_date = end_date - timedelta(days=7)
+time_range = f'{start_date} {end_date}'
+
+# Get the list of countries you are interested in
+countries = ['US', 'Canada']  # Add more countries as needed
+
+# Create an empty DataFrame to store the results
+df = pd.DataFrame()
+
+# Loop through each country
+for country in countries:
+    # Build the payload for the request
+    pytrends.build_payload(kw_list=[search_term], cat=0, timeframe=time_range, geo=country)
+
+    # Get interest over time data
+    try:
+        interest_over_time_df = pytrends.interest_over_time()
+
+        # Add the data to the main DataFrame
+        if not interest_over_time_df.empty:
+            df = pd.concat([df, interest_over_time_df[search_term]], axis=1)
+
+        # Sleep to avoid rate limiting (required by Google Trends)
+        time.sleep(1)
+
+    except Exception as e:
+        print(f"Error for {country}: {e}")
+
+# Rename columns to include country names
+df.columns = countries
+
+# Print the resulting DataFrame
+print(df)
+
+
+##########
+
+
+import pandas as pd
+from pytrends.request import TrendReq
+import plotly.express as px
+import time
+
+# Set up pytrends object
+pytrends = TrendReq(hl='en-US', tz=360)
+#pytrends = TrendReq(hl='en-US', tz=360, timeout=(10,25), proxies=['https://34.203.233.13:80',], retries=2, backoff_factor=0.1, requests_args={'verify':False})
+# Build payload
+kw_list = ["covid"]
+#pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='SE')  # 'SE' is the ISO 3166-1 alpha-2 country code for Sweden
+pytrends.build_payload(kw_list, cat=0, timeframe='today 1-y', geo='FI')
+
+# 1. Interest over Time
+data = pytrends.interest_over_time()
+data = data.reset_index()
+
+# Display the chart using Plotly Express
+fig = px.line(data, x="date", y=['covid'], title='Keyword Web Search Interest Over Time - Sweden')
+fig.show()
+
+# Sleep to avoid rate limiting (required by Google Trends)
+time.sleep(1)
+
+
+
+
+
+import pandas as pd
+from pytrends.request import TrendReq
+import plotly.express as px
+import time
+
+# Function to get data with retries and delay
+def get_trends_data_with_retry(pytrends, retries=3, delay_seconds=2):
+    for _ in range(retries):
+        try:
+            data = pytrends.interest_over_time()
+            return data.reset_index()
+        except Exception as e:
+            print(f"Error: {e}")
+            print("Retrying after a delay...")
+            time.sleep(delay_seconds)
+    raise Exception("Failed after retries")
+
+# Set up pytrends object
+pytrends = TrendReq(hl='en-US', tz=360)
+
+# Build payload
+kw_list = ["covid"]
+pytrends.build_payload(kw_list, cat=0, timeframe='today 1-y', geo='SE')  # 'SE' is the ISO 3166-1 alpha-2 country code for Sweden
+
+# 1. Interest over Time
+data = get_trends_data_with_retry(pytrends)
+
+# Display the chart using Plotly Express
+fig = px.line(data, x="date", y=['covid'], title='Keyword Web Search Interest Over Time - Sweden')
+fig.show()
