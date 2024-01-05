@@ -3,8 +3,7 @@
     <strong>Covid Fox Monitoring</strong> <br>
     <span class="subtext">A Covid Wastewater  Project</span>
 </p>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9995564d-0664-49de-9b47-2218497769ab/deploy-status)](https://app.netlify.com/sites/covidmonitoring/deploys)
-<br><br>
+
 ## Project Direction
 #### There are several <b>aims</b> that I want to fulfill with this project.<br>
 * Give People An Overview of Current Covid Transmission Levels
