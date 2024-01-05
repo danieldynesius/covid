@@ -6,26 +6,38 @@ import math
 from plotly.subplots import make_subplots
 import numpy as np
 import os
+import configparser
 
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
 
-datapath = '~/code/analytics/covid/data/2_staged_data/'
-final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Data Params
+staged_datapath = config.get('Paths', 'staged_datapath')
+final_datapath = config.get('Paths', 'final_datapath')
+save_trend_dir = config.get('Paths', 'save_trend_dir')
+save_trend_filepath = os.path.join(save_trend_dir, 'country_trends.html')
+
+#staged_datapath = '~/code/analytics/covid/data/2_staged_data/'
+#final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
 
 
 # Fill all missing weeks attempt. Set to false is more Concise. set to true is more Complete.
 fill_missing_weeks = False
 
-d1 = pd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
-d2 = pd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
-d3 = pd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
-d4 = pd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge. Due to geofile probably.
-d5 = pd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
-d6 = pd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
-d7 = pd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
-d8 = pd.read_parquet(os.path.join(datapath, 'switzerland_wastewater.parquet'))
-d9 = pd.read_parquet(os.path.join(datapath, 'canada_wastewater.parquet'))
-d10 =pd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
-d11 =pd.read_parquet(os.path.join(datapath, 'newzealand_wastewater.parquet'))
+d1 = pd.read_parquet(os.path.join(staged_datapath, 'france_wastewater.parquet'))
+d2 = pd.read_parquet(os.path.join(staged_datapath, 'sweden_wastewater.parquet'))
+d3 = pd.read_parquet(os.path.join(staged_datapath, 'netherlands_wastewater.parquet')) 
+d4 = pd.read_parquet(os.path.join(staged_datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge. Due to geofile probably.
+d5 = pd.read_parquet(os.path.join(staged_datapath, 'austria_wastewater.parquet'))
+d6 = pd.read_parquet(os.path.join(staged_datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
+d7 = pd.read_parquet(os.path.join(staged_datapath, 'finland_wastewater.parquet'))
+d8 = pd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parquet'))
+d9 = pd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
+d10 =pd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
+d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
 
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11], ignore_index=True))
@@ -140,7 +152,8 @@ def make_region_subplots(df):
 ########################################################################
 country_list = list(df.cntr_nm.unique())
 df['region'] = df.region.astype(str).str.title()
-trend_html_filepath = '../../docs/country_trends.html'
+
+trend_html_filepath = save_trend_filepath
 
 try:
     os.remove(trend_html_filepath)

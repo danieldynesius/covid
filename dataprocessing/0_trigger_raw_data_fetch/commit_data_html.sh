@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configuration
+#"/home/stratega/code/analytics/covid/docs/geo_map.html"
 files_to_commit=(
-  "/home/stratega/code/analytics/covid/docs/geo_map.html"
   "/home/stratega/code/analytics/covid/docs/country_trends.html"
 )
 

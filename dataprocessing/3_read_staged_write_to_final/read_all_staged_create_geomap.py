@@ -12,25 +12,33 @@ from branca.colormap import linear
 import folium
 from folium import plugins
 import os
+import configparser
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
 
-# Read the Parquet files into GeoDataFrames
-datapath = '~/code/analytics/covid/data/2_staged_data/'
-final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Paths
+staged_datapath = config.get('Paths', 'staged_datapath')
+final_datapath = config.get('Paths', 'final_datapath')
+save_geomap_dir = config.get('Paths', 'save_geomap_dir')
+save_geomap_filepath =  os.path.join(save_geomap_dir, 'geo_map.html')
 
 latest_dataload = pd.read_csv(final_datapath+'latest_dataload.csv') # Get the Timestamp
 latest_dataload = latest_dataload.at[0, 'latest_dataload']
 
-g1 = gpd.read_parquet(os.path.join(datapath, 'france_wastewater.parquet'))
-g2 = gpd.read_parquet(os.path.join(datapath, 'sweden_wastewater.parquet'))
-g3 = gpd.read_parquet(os.path.join(datapath, 'netherlands_wastewater.parquet')) 
-g4 = gpd.read_parquet(os.path.join(datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge
-g5 = gpd.read_parquet(os.path.join(datapath, 'austria_wastewater.parquet'))
-g6 = gpd.read_parquet(os.path.join(datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
-g7 = gpd.read_parquet(os.path.join(datapath, 'finland_wastewater.parquet'))
-g8 = gpd.read_parquet(os.path.join(datapath, 'switzerland_wastewater.parquet'))
-g9 = gpd.read_parquet(os.path.join(datapath, 'canada_wastewater.parquet'))
-g10 = gpd.read_parquet(os.path.join(datapath, 'usa_wastewater.parquet'))
-g11 = gpd.read_parquet(os.path.join(datapath, 'newzealand_wastewater.parquet'))
+g1 = gpd.read_parquet(os.path.join(staged_datapath, 'france_wastewater.parquet'))
+g2 = gpd.read_parquet(os.path.join(staged_datapath, 'sweden_wastewater.parquet'))
+g3 = gpd.read_parquet(os.path.join(staged_datapath, 'netherlands_wastewater.parquet')) 
+g4 = gpd.read_parquet(os.path.join(staged_datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge
+g5 = gpd.read_parquet(os.path.join(staged_datapath, 'austria_wastewater.parquet'))
+g6 = gpd.read_parquet(os.path.join(staged_datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
+g7 = gpd.read_parquet(os.path.join(staged_datapath, 'finland_wastewater.parquet'))
+g8 = gpd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parquet'))
+g9 = gpd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
+g10 =gpd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
+g11 =gpd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11], ignore_index=True))
@@ -176,10 +184,10 @@ folium.Marker(
 
 # Display the map
 m
-m.save('../../docs/geo_map.html')
+m.save(save_geomap_filepath)
 
 
-file_path = '../../docs/geo_map.html'
+file_path = save_geomap_filepath
 if os.path.exists(file_path):
     file_size_bytes = os.path.getsize(file_path)
     file_size_mb = file_size_bytes / (1024 * 1024)  # Convert bytes to megabytes
