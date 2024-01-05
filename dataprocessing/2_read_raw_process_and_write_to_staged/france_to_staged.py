@@ -12,6 +12,7 @@ from datetime import timedelta
 import geopandas as gpd
 from sklearn.preprocessing import MinMaxScaler
 import configparser
+import re
 
 # Get the first day of the ISO year and week
 def get_first_day(row):
