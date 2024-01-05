@@ -4,9 +4,29 @@
     <span class="subtext">A Covid Wastewater  Project</span>
 </p>
 
-A work in progress to visualize wastewater data.
+## Project Direction
+#### There are several <b>aims</b> that I want to fulfill with this project.<br>
+* Give People An Overview of Current Covid Transmission Levels
+* Collect & Share Data Sources for people to use for their Covid-projects
+<br><br>
+#### In order to fulfill these aims the current project direction is <br>
+* Find Datalinks to Covid Wastewater Data
+* Find ways to pull aggregated google trends search terms data by region
+* Find ways to pull aggregated mobility data per region
+* Forecast covid transmission per region 1-4+ weeks ahead
+<br><br>
+#### Reliability of The Project
+* Find ways of better hosting (URGENT - Exceeding free github tier)
+* Data Quality Control
+* Implementation of proper CI/CD pipeline
+* Testing prior to releases
+* Full automation of independent daily updates
+<br><br>
 
-
+#### Outside of Scope (Currently)
+* Simulations of NPI's & transmission level
+<br><br>
+<br><br>
 #### Please Note: The graphs and data are to be interpreted carefully.
 
 <br>
