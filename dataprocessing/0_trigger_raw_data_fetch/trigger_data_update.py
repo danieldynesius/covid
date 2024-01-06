@@ -5,16 +5,6 @@ import time
 import pandas as pd
 import configparser
 
-# Variables
-"""
-raw_datapath = '/home/stratega/code/analytics/covid/data/1_raw_data'
-data_stale_hours = 23 # hours
-staged_scripts='/home/stratega/code/analytics/covid/dataprocessing/2_read_raw_process_and_write_to_staged'
-final_geo_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_geomap.py'
-final_trend_script='/home/stratega/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/read_all_staged_create_trendcharts.py'
-final_write_dir='/home/stratega/code/analytics/covid/data/3_finalized_data/'
-push_html_file='/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/test_committing.sh'
-"""
 
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
