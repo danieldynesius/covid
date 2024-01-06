@@ -15,6 +15,7 @@ config = configparser.ConfigParser()
 config.read(config_file)
 
 # Get values from the [Paths] section
+base_path_bb = config.get('Paths', 'base_path_bb')
 base_path = config.get('Paths', 'base_path')
 raw_datapath = config.get('Paths', 'raw_datapath')
 trigger_raw_scripts = config.get('Paths', 'trigger_raw_scripts')
@@ -253,7 +254,9 @@ pd.DataFrame(
 
 
 # Run the shell script: github
-subprocess.run(['bash', push_html_file_gh])
+#subprocess.run(['bash', push_html_file_gh])
+subprocess.run(['bash', push_html_file_gh], cwd=base_path)
 
 # Run the shell script: bitbucket
-subprocess.run(['bash', push_html_file_bb])
+#subprocess.run(['bash', push_html_file_bb])
+subprocess.run(['bash', push_html_file_bb], cwd=base_path_bb)
