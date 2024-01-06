@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Configuration
-#"/home/stratega/code/analytics/covid/docs/geo_map.html"
+
 files_to_commit=(
+  "/home/stratega/code/analytics/covid/docs/geo_map.html"
   "/home/stratega/code/analytics/covid/docs/country_trends.html"
 )
 
@@ -30,7 +31,8 @@ fi
 git checkout "$branch_name"
 
 # Add the file to the staging area
-git add -f "$files_to_commit"
+#git add -f "$files_to_commit"
+git add "$files_to_commit"
 
 # Commit changes
 git commit -m "$commit_message"
