@@ -17,8 +17,12 @@ config.read(config_file)
 # Data Params
 staged_datapath = config.get('Paths', 'staged_datapath')
 final_datapath = config.get('Paths', 'final_datapath')
-save_trend_dir = config.get('Paths', 'save_trend_dir')
-save_trend_filepath = os.path.join(save_trend_dir, 'country_trends.html')
+save_trend_dir_gh = config.get('Paths', 'save_trend_dir_gh')
+save_trend_filepath_gh = os.path.join(save_trend_dir_gh, 'country_trends.html')
+
+save_trend_dir_bb = config.get('Paths', 'save_trend_dir_bb')
+save_trend_filepath_bb = os.path.join(save_trend_dir_bb, 'country_trends.html')
+
 
 #staged_datapath = '~/code/analytics/covid/data/2_staged_data/'
 #final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
@@ -153,7 +157,7 @@ def make_region_subplots(df):
 country_list = list(df.cntr_nm.unique())
 df['region'] = df.region.astype(str).str.title()
 
-trend_html_filepath = save_trend_filepath
+trend_html_filepath = save_trend_filepath_gh
 
 try:
     os.remove(trend_html_filepath)
@@ -188,5 +192,7 @@ for i, country in enumerate(country_list, start=1):
     ### put figs into 1 graph
     with open(trend_html_filepath, 'a') as f:
         f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))
-        
+
+    with open(save_trend_filepath_bb, 'a') as f:
+        f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))        
 

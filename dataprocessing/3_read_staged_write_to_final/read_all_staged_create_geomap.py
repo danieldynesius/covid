@@ -22,8 +22,10 @@ config.read(config_file)
 # Paths
 staged_datapath = config.get('Paths', 'staged_datapath')
 final_datapath = config.get('Paths', 'final_datapath')
-save_geomap_dir = config.get('Paths', 'save_geomap_dir')
-save_geomap_filepath =  os.path.join(save_geomap_dir, 'geo_map.html')
+save_geomap_dir_gh = config.get('Paths', 'save_geomap_dir_gh')
+save_geomap_filepath_gh =  os.path.join(save_geomap_dir_gh, 'geo_map.html')
+save_geomap_dir_bb = config.get('Paths', 'save_geomap_dir_bb')
+save_geomap_filepath_bb =  os.path.join(save_geomap_dir_bb, 'geo_map.html')
 
 latest_dataload = pd.read_csv(final_datapath+'latest_dataload.csv') # Get the Timestamp
 latest_dataload = latest_dataload.at[0, 'latest_dataload']
@@ -185,10 +187,11 @@ folium.Marker(
 
 # Display the map
 m
-m.save(save_geomap_filepath)
+m.save(save_geomap_filepath_gh)
+m.save(save_geomap_filepath_bb)
 
 
-file_path = save_geomap_filepath
+file_path = save_geomap_filepath_bb
 if os.path.exists(file_path):
     file_size_bytes = os.path.getsize(file_path)
     file_size_mb = file_size_bytes / (1024 * 1024)  # Convert bytes to megabytes
