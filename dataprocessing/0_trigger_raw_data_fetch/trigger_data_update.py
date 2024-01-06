@@ -23,7 +23,8 @@ staged_scripts = config.get('Paths', 'staged_scripts')
 final_geo_script = config.get('Paths', 'final_geo_script')
 final_trend_script = config.get('Paths', 'final_trend_script')
 final_write_dir = config.get('Paths', 'final_write_dir')
-push_html_file = config.get('Paths', 'push_html_file')
+push_html_file_gh = config.get('Paths', 'push_html_file_gh')
+push_html_file_bb = config.get('Paths', 'push_html_file_bb')
 
 trigger_path = config.get('Paths', 'trigger_path')
 log_output_path = config.get('Paths', 'log_output_path')
@@ -39,7 +40,8 @@ print(f"staged_scripts: {staged_scripts}")
 print(f"final_geo_script: {final_geo_script}")
 print(f"final_trend_script: {final_trend_script}")
 print(f"final_write_dir: {final_write_dir}")
-print(f"push_html_file: {push_html_file}")
+print(f"push_html_file: {push_html_file_gh}")
+print(f"push_html_file: {push_html_file_bb}")
 print(f"data_stale_hours: {data_stale_hours}")
 
 
@@ -246,9 +248,12 @@ pd.DataFrame(
     ,index=False)
 
 #----------------------------------------------------------------------------------------------
-# Step 7: Trigger shell script
+# Step 7: Trigger shell script Pushing html
 #----------------------------------------------------------------------------------------------
 
 
-# Run the shell script
-subprocess.run(['bash', push_html_file])
+# Run the shell script: github
+subprocess.run(['bash', push_html_file_gh])
+
+# Run the shell script: bitbucket
+subprocess.run(['bash', push_html_file_bb])
