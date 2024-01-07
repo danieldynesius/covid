@@ -42,9 +42,10 @@ d8 = pd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parqu
 d9 = pd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
 d10 =pd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
 d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
+d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
 
 # Concatenate DataFrames
-df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11], ignore_index=True))
+df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12], ignore_index=True))
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 
 df.groupby('cntr_code')['region'].agg('nunique')
@@ -157,15 +158,17 @@ def make_region_subplots(df):
 country_list = list(df.cntr_nm.unique())
 df['region'] = df.region.astype(str).str.title()
 
-trend_html_filepath = save_trend_filepath_gh
+files_to_remove = [save_trend_filepath_bb, save_trend_filepath_gh]
+for file in files_to_remove:
+    trend_html_filepath = file
 
-try:
-    os.remove(trend_html_filepath)
-    print(trend_html_filepath, 'removed')
-except FileNotFoundError:
-    print(trend_html_filepath, 'does not exist')
-except Exception as e:
-    print(f"An error occurred: {e}")
+    try:
+        os.remove(trend_html_filepath)
+        print(trend_html_filepath, 'removed')
+    except FileNotFoundError:
+        print(trend_html_filepath, 'does not exist')
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 for i, country in enumerate(country_list, start=1):
     print(i, ':', country.title())

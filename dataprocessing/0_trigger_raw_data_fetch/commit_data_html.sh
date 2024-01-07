@@ -31,8 +31,8 @@ fi
 git checkout "$branch_name"
 
 # Add the file to the staging area
-#git add -f "$files_to_commit"
-git add "$files_to_commit"
+git add -f "$files_to_commit"
+#git add "$files_to_commit"
 
 # Commit changes
 git commit -m "$commit_message"
