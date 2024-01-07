@@ -37,7 +37,13 @@ pytrends.interest_by_region(resolution='REGION', inc_low_vol=True, inc_geo_code=
 import pandas as pd
 from pytrends.request import TrendReq
 
+
+# Define your search term and location
+search_term = 'covid'
+location = 'SE'
+
 pytrends = TrendReq(hl='en-US', tz=360, timeout=(10, 25), geo=location)
+
 
 # build payload
 

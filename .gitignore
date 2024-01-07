@@ -6,3 +6,4 @@
 *.geojson
 dataprocessing/websearch_data/*
 **/websearch_data
+*.env
