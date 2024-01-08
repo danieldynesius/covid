@@ -11,13 +11,14 @@
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
 * Find Datalinks to Covid Wastewater Data
+* Find ways to use social media data <span style="color: DarkOrange;">🚧  In Progress</span>
 * Find ways to pull aggregated google trends search terms data by region
 * Find ways to pull aggregated mobility data per region
 * Forecast covid transmission per region 1-4+ weeks ahead
 <br><br>
 #### Reliability of The Project
-* Find ways of better hosting (URGENT - Exceeding free github tier)  :heavy_check_mark: Completed
-* Data Quality Control <span style="color: green;">&#10004; Completed</span>
+* Find ways of better hosting (URGENT - Exceeding free github tier)  <span style="color: green;">&#10004; Completed</span>
+* Data Quality Control 
 * Implementation of proper CI/CD pipeline
 * Testing prior to releases
 * Full automation of independent daily updates
