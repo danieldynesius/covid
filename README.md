@@ -16,7 +16,7 @@
 * Forecast covid transmission per region 1-4+ weeks ahead
 <br><br>
 #### Reliability of The Project
-* Find ways of better hosting (URGENT - Exceeding free github tier)
+* Find ways of better hosting (URGENT - Exceeding free github tier)  :heavy_check_mark: Completed
 * Data Quality Control
 * Implementation of proper CI/CD pipeline
 * Testing prior to releases
