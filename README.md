@@ -17,7 +17,7 @@
 <br><br>
 #### Reliability of The Project
 * Find ways of better hosting (URGENT - Exceeding free github tier)  :heavy_check_mark: Completed
-* Data Quality Control
+* Data Quality Control <span style="color: green;">&#10004; Completed</span>
 * Implementation of proper CI/CD pipeline
 * Testing prior to releases
 * Full automation of independent daily updates
