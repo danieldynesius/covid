@@ -44,7 +44,7 @@ d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet')
 
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12], ignore_index=True))
-#df = d2
+df = d2
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 df = df.dropna(how='any')
 
