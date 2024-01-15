@@ -60,8 +60,12 @@ df = df[['date','region', 'value', 'normalization']]
 df['region'] = df['region'].str.lower()
 df['date'] = pd.to_datetime(df['date'])
 
-# Extract the week number using ISO week date system
-df['week_no'] = df['date'].dt.strftime('%G-%V')
+# Speed up by directly converting date to first_day week
+df['first_day'] = df['date'].dt.to_period('W-SUN').dt.start_time
+
+"""
+#df['week_no'] = df['date'].dt.strftime('%G-%V') # too slow
+df['week_no'] = df['date'].dt.isocalendar().year.astype(str) + '-' + df['date'].dt.isocalendar().week.map("{:02d}".format)
 
 # Convert week to ISO year and week
 df[['iso_year', 'iso_week']] = df['week_no'].str.split('-', expand=True)
@@ -73,6 +77,7 @@ df['iso_week'] = df['iso_week'].astype(int)
 
 # Apply the function to create a new column "first_day"
 df['first_day'] = df.apply(get_first_day, axis=1)
+"""
 
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 

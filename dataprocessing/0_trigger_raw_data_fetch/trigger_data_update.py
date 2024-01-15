@@ -5,9 +5,42 @@ import time
 import pandas as pd
 import configparser
 
+global script_start_time
+script_start_time = time.time()
+
+
+def start_stopwatch():
+    global start_time
+
+    # Record the start time
+    start_time = time.time()
+
+
+def stop_stopwatch(print_str=''):
+    global start_time
+
+    # Record the end time
+    end_time = time.time()
+
+    # Calculate the elapsed time
+    elapsed_time_seconds = end_time - start_time
+    elapsed_time_seconds_t = end_time - script_start_time
+
+    # Convert elapsed time to minutes and seconds
+    minutes = int(elapsed_time_seconds // 60)
+    seconds = int(elapsed_time_seconds % 60)
+    minutes_t = int(elapsed_time_seconds_t // 60)
+    seconds_t = int(elapsed_time_seconds_t % 60)
+    # Display the result
+    print(f"> Sec Time: {print_str} {minutes}m {seconds}s >> T-time: {minutes_t}m {seconds_t}s")
+    #return minutes, seconds
+
+
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
 #----------------------------------------------------------------------------------------------
+start_stopwatch()
+
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 
 # Read the INI file
@@ -69,10 +102,11 @@ if os.path.isfile(flag_file):
 with open(flag_file, 'a') as file:
     file.write(f"Script executed on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
-
+stop_stopwatch('Step 0')
 #----------------------------------------------------------------------------------------------
 # Step 1: Check Which Countrie's Data Need to be Updated
 #----------------------------------------------------------------------------------------------
+start_stopwatch()
 
 def extract_country_name(file_path):
     # Get the last part of the path after the last '/'
@@ -128,7 +162,7 @@ def data_freshness(directory, hours_threshold=data_stale_hours):
             files_data["country"].append(country_name) # Only include the first word in the country column
             files_data["last_modified_date"].append(last_modified_date)
             files_data["needs_update_flg"].append(time_difference_hours > hours_threshold)
-
+        stop_stopwatch()
     # Create a DataFrame from the dictionary
     files_df = pd.DataFrame(files_data)
 
@@ -139,9 +173,9 @@ def data_freshness(directory, hours_threshold=data_stale_hours):
 file_df = data_freshness(raw_datapath)
 
 # Display the DataFrame
-file_df
+file_df.head(1)
 
-
+stop_stopwatch('Step 1')
 #----------------------------------------------------------------------------------------------
 # Step 2: Update Needed Data
 #----------------------------------------------------------------------------------------------
@@ -164,16 +198,21 @@ def run_scripts_in_folder(trigger_path, log_output_path):
         load_tstamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_file.write(f"---------------------[ Dataload Triggered: {load_tstamp} ]----------------------\n")
         for script_file in script_files:
+            
             print('Triggering:', script_file)
             script_path = os.path.join(trigger_path, script_file)
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            
+
             try:
+                start_stopwatch()
                 subprocess.run(["python", script_path], check=True)
                 log_file.write(f"{timestamp} - {script_file} - OK\n")
+                stop_stopwatch(script_file)
             except subprocess.CalledProcessError as e:
                 log_file.write(f"{timestamp} - {script_file} - Fail\n")
                 log_file.write(f"Error: {e}\n")
+            
+            
     
     return load_tstamp
 
@@ -185,9 +224,10 @@ if __name__ == "__main__":
 #----------------------------------------------------------------------------------------------
 # Step 3: Check Data Updated & Save to Output Dir
 #----------------------------------------------------------------------------------------------
+start_stopwatch()
 file_df = data_freshness(raw_datapath)
 file_df.to_csv(f'{raw_datapath}/data_freshness.csv',index=False)
-
+stop_stopwatch()
 
 
 #----------------------------------------------------------------------------------------------
@@ -214,17 +254,21 @@ def run_scripts_in_stage(trigger_path, log_output_path):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_file.write(f"---------------------[ Stage Transformation: {timestamp} ]----------------------\n")
         for script_file in script_files:
+            
             print('Triggering:', script_file)
             script_path = os.path.join(trigger_path, script_file)
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             
             try:
+                start_stopwatch()
                 subprocess.run(["python", script_path], check=True)
                 log_file.write(f"{timestamp} - {script_file} - OK\n")
+                stop_stopwatch(script_file)
             except subprocess.CalledProcessError as e:
                 log_file.write(f"{timestamp} - {script_file} - Fail\n")
                 log_file.write(f"Error: {e}\n")
 
+            
 
 run_scripts_in_stage(staged_scripts, log_output_path)
 
@@ -234,14 +278,17 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 #----------------------------------------------------------------------------------------------
 
 # Run it
+start_stopwatch()
 subprocess.run(["python", final_geo_script], check=True) # Geo Map
+stop_stopwatch()
+start_stopwatch()
 subprocess.run(["python", final_trend_script], check=True) # Trend Charts
-
+stop_stopwatch('Step 5')
 
 #----------------------------------------------------------------------------------------------
 # Step 6: Save latest load timestamp
 #----------------------------------------------------------------------------------------------
-
+start_stopwatch()
 # Write the load data timestamp
 pd.DataFrame(
     {'latest_dataload': [load_tstamp]}
@@ -260,3 +307,4 @@ subprocess.run(['bash', push_html_file_gh], cwd=base_path)
 # Run the shell script: bitbucket
 #subprocess.run(['bash', push_html_file_bb])
 subprocess.run(['bash', push_html_file_bb], cwd=base_path_bb)
+stop_stopwatch('Step 6-7')
