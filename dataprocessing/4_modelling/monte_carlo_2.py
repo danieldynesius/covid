@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # https://www.youtube.com/watch?v=LWc-9v8RVwM
 
 n_steps_prediction = 252 # 252 trading days
-n_simulations = 10000
+n_simulations = 1000
 
 df = yf.download('TSLA')
 df.columns = df.columns.str.lower()
@@ -60,7 +60,7 @@ sigma = returns.std()
 
 # Set simulation parameters
 n_steps_prediction = 252  # 252 trading days
-n_simulations = 10000
+n_simulations = 1000
 
 # Initial value is the most recent record
 initial = df['adj close'].iloc[-1]
