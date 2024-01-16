@@ -11,10 +11,14 @@
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
 * Find more Datalinks to Covid Wastewater Data <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
-* Find ways to use social media data <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
-* Find ways to pull aggregated google trends search terms data by region <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
+* Find ways to use social media data <span style="color: Red;">❌ Cancelled</span>
+* Find ways to pull aggregated google trends search terms data by region 
 * Find ways to pull aggregated mobility data per region
-* Forecast covid transmission per region 1-4+ weeks ahead
+* Forecast covid transmission per country 1-4+ weeks ahead <span style="color: green;">&#10004; Completed</span>
+* Forecasts per region
+* Improve forecasts
+* Add variant data for better predictions <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
+* Improved data standardization <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
 <br><br>
 #### Reliability of The Project
 * Find ways of better hosting (URGENT - Exceeding free github tier)  <span style="color: green;">&#10004; Completed</span>
