@@ -1,4 +1,3 @@
-
 ################################################################## C19 Wastewater Data ##################################################################
 #print(train_data.shape, test_data.shape) for example
 #(605, 1) (151, 1) 
@@ -18,18 +17,36 @@ from tensorflow.keras.optimizers import SGD
 from sklearn import metrics
 from sklearn.metrics import mean_squared_error
 import plotly.graph_objects as go
+import configparser
 
 sequence_len = 5
+
+# Maximum size for graphs
+max_width = 1200
+max_height = 800
+
+# How many rows & cols for pandas to display
 pd.set_option('display.max_rows', 15)
 pd.set_option('display.max_columns',10)
 
+# series names
 train = 'train'
 test = 'test'
 predict = 'prediction'
 
-staged_datapath = '~/code/analytics/covid/data/2_staged_data/'
-final_datapath ='~/code/analytics/covid/data/3_finalized_data/'
+# Read the Conf file
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config = configparser.ConfigParser()
+config.read(config_file)
 
+# Data Params
+staged_datapath = config.get('Paths', 'staged_datapath')
+final_datapath = config.get('Paths', 'final_datapath')
+save_trend_dir_gh = config.get('Paths', 'save_trend_dir_gh')
+save_trend_filepath_gh = os.path.join(save_trend_dir_gh, 'forecasts.html')
+
+save_trend_dir_bb = config.get('Paths', 'save_trend_dir_bb')
+save_trend_filepath_bb = os.path.join(save_trend_dir_bb, 'forecasts.html')
 
 d1 = pd.read_parquet(os.path.join(staged_datapath, 'france_wastewater.parquet'))
 d2 = pd.read_parquet(os.path.join(staged_datapath, 'sweden_wastewater.parquet'))
@@ -44,10 +61,23 @@ d10 =pd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
 d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
 d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
 
+## Remove old html
+files_to_remove = [save_trend_filepath_bb, save_trend_filepath_gh]
+for file in files_to_remove:
+    trend_html_filepath = file
+    try:
+        os.remove(trend_html_filepath)
+        print(trend_html_filepath, 'removed')
+    except FileNotFoundError:
+        print(trend_html_filepath, 'does not exist')
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12], ignore_index=True))
+df.sort_values(by=['cntr_nm'], inplace=True)
 #df = d7
-#df = d2
+#df = d10
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 df['val_type'] = train # default naming
 df = df.groupby(by=['first_day','cntr_nm','val_type','metric_nm'])['value'].mean().reset_index()
@@ -57,11 +87,14 @@ location_groups = df.cntr_nm.unique()
 
 cntr_list = []
 rmse_list = []
+error_countries = []
 for location in location_groups:
     try:
         print(location.upper())
+        
         #df_location = df
         df_location = df[df.cntr_nm == location]
+        df_location.reset_index(inplace=True)
         metric_nm = df_location.metric_nm.iloc[0] # Just get the metric name
         print('df_location.head():', df_location.head(1))
 
@@ -207,6 +240,7 @@ for location in location_groups:
         df_loc_pred = pd.concat([df_location, df_future])
         df_loc_pred['val_type'] = df_loc_pred['val_type'].astype('category')
 
+
         fig = go.Figure()
         
 
@@ -221,16 +255,16 @@ for location in location_groups:
         mean_value = df_loc_pred['value'].mean()
 
         # Plot The Data
-        fig = go.Figure()
+        current_fig = go.Figure()
 
-        fig.add_trace(go.Scatter(x=df_orig['first_day'], y=df_orig['value'], mode='lines', name=train, line=dict(color='green')))
-        fig.add_trace(go.Scatter(x=con_row1['first_day'], y=con_row1['value'], mode='lines', name=train, line=dict(color='green'),showlegend=False))
-        fig.add_trace(go.Scatter(x=df_test['first_day'], y=df_test['value'], mode='lines', name=test, line=dict(color='blue')))
-        fig.add_trace(go.Scatter(x=con_row2['first_day'], y=con_row2['value'], mode='lines', name=test, line=dict(color='blue'),showlegend=False))
-        fig.add_trace(go.Scatter(x=df_pred['first_day'], y=df_pred['value'], mode='lines', name=predict, line=dict(color='orange')))
+        current_fig.add_trace(go.Scatter(x=df_orig['first_day'], y=df_orig['value'], mode='lines', name=train, line=dict(color='green')))
+        current_fig.add_trace(go.Scatter(x=con_row1['first_day'], y=con_row1['value'], mode='lines', name=train, line=dict(color='green'),showlegend=False))
+        current_fig.add_trace(go.Scatter(x=df_test['first_day'], y=df_test['value'], mode='lines', name=test, line=dict(color='blue')))
+        current_fig.add_trace(go.Scatter(x=con_row2['first_day'], y=con_row2['value'], mode='lines', name=test, line=dict(color='blue'),showlegend=False))
+        current_fig.add_trace(go.Scatter(x=df_pred['first_day'], y=df_pred['value'], mode='lines', name=predict, line=dict(color='orange')))
 
         # Add the red mean line
-        fig.add_trace(go.Scatter(
+        current_fig.add_trace(go.Scatter(
             x=[df_loc_pred['first_day'].min(), df_loc_pred['first_day'].max()],
             y=[mean_value, mean_value],
             mode='lines',
@@ -239,16 +273,34 @@ for location in location_groups:
         ))
 
         # Layout
-        fig.update_layout(title=f"<b>{location.title()}</b><br>LSTM Neural Net <br>Mean Squared Error: {round(evaluation_result[1],2)}", xaxis_title='first_day (first day of week)', yaxis_title=metric_nm, showlegend=True)
+        current_fig.update_layout(title=f"<b>{location.title()}</b><br>LSTM Neural Net <br>Mean Squared Error: {round(evaluation_result[1],2)}"
+        ,xaxis_title='first_day (first day of week)'
+        ,yaxis_title=metric_nm
+        ,showlegend=True
+        #,width=max_width
+        #,height=max_height
+        )
 
         # Show the plot
-        fig.show()
+        current_fig.show()
         
 
-        # Evaluate the model on the test set
-        
+        # Evaluate the model on the test set        
         #cntr_list = cntr_list.append(location)
         #rmse_list = rmse_list.append(evaluation_result[1])
         print("Test MSE:", evaluation_result[1])
+            
+        ### put figs into 1 graph
+        with open(trend_html_filepath, 'a') as f:
+            f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))
+
+        with open(save_trend_filepath_bb, 'a') as f:
+            f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))        
+
+
+        
     except:
         print('FAILED:', location.upper())
+        error_countries.append(location.upper())
+
+print('All Failed Predictions:',error_countries)
