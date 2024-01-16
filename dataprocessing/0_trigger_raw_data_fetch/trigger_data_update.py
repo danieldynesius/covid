@@ -56,6 +56,7 @@ flag_file = config.get('Paths', 'flag_file')
 staged_scripts = config.get('Paths', 'staged_scripts')
 final_geo_script = config.get('Paths', 'final_geo_script')
 final_trend_script = config.get('Paths', 'final_trend_script')
+final_prediction_script = config.get('Paths', 'final_prediction_script')
 final_write_dir = config.get('Paths', 'final_write_dir')
 push_html_file_gh = config.get('Paths', 'push_html_file_gh')
 push_html_file_bb = config.get('Paths', 'push_html_file_bb')
@@ -280,9 +281,8 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 # Run it
 start_stopwatch()
 subprocess.run(["python", final_geo_script], check=True) # Geo Map
-stop_stopwatch()
-start_stopwatch()
 subprocess.run(["python", final_trend_script], check=True) # Trend Charts
+subprocess.run(["python", final_prediction_script], check=True) # Prediction Charts
 stop_stopwatch('Step 5')
 
 #----------------------------------------------------------------------------------------------
