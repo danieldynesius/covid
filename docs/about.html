@@ -29,6 +29,19 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+         <!-- Media Query for Mobile -->
+      <style>
+            @media (max-width: 767px) {
+               /* Styles for screens smaller than 768px (mobile) */
+               .menu-area-main {
+                  flex-direction: column;
+               }
+         
+               .menu-area-main li {
+                  text-align: center;
+               }
+            }
+   </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -109,6 +122,7 @@
                 </div>
             </div>
         </div>
+        
          <!-- end header inner --> 
       </header>
       <!-- end header -->
