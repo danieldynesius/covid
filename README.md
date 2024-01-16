@@ -53,9 +53,15 @@ The Heuristic of the Swedish Cut-off Value of 10 and above indicated as "high tr
 <br><br><br>
 
 ## Trendline Charts
-Later some trend graphs might be added too (geo higher prioritized to be implemented).
-Later might add trendgraphs too. The trick is to figure out how to create a concise & intuitive overview.
+Later might update the trend graphs. The trick is to figure out how to create a concise & intuitive overview.
 ![Trendline Viz](docs/c19-trends.png)
+
+## Prediction Models
+A simple Neural Net implemented. <b> Caution:</b> Very early stage. Interpret carefully.
+Known issues: 
+* Bugs when running for some countries e.g. Finland and Poland.
+* Will <b>not</b> capture sudden strong spikes.
+![prediction](docs/prediction_model_1.png)
 
 
 ## Questions?

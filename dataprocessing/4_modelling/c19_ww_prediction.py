@@ -2,12 +2,9 @@
 #print(train_data.shape, test_data.shape) for example
 #(605, 1) (151, 1) 
 # org has seq len = 50, but has x 605 ~10% seq len here = 5
-
+import os
 import numpy as np
 import pandas as pd
-import yfinance as yf
-import datetime as dt
-import matplotlib.pyplot as plt
 import math
 from sklearn.preprocessing import MinMaxScaler
 # importing libraries
@@ -297,8 +294,6 @@ for location in location_groups:
         with open(save_trend_filepath_bb, 'a') as f:
             f.write(current_fig.to_html(full_html=False, include_plotlyjs='cdn'))        
 
-
-        
     except:
         print('FAILED:', location.upper())
         error_countries.append(location.upper())

@@ -74,6 +74,7 @@ print(f"flag_file: {flag_file}")
 print(f"staged_scripts: {staged_scripts}")
 print(f"final_geo_script: {final_geo_script}")
 print(f"final_trend_script: {final_trend_script}")
+print(f"final_prediction_script: {final_prediction_script}")
 print(f"final_write_dir: {final_write_dir}")
 print(f"push_html_file: {push_html_file_gh}")
 print(f"push_html_file: {push_html_file_bb}")
@@ -99,6 +100,13 @@ if os.path.isfile(flag_file):
 # Run the Python script 
 #subprocess.run(['python3', trigger_raw_scripts])
 
+# Error checking
+"""try:
+    result = subprocess.check_output(['python', '/home/stratega/code/analytics/covid/dataprocessing/4_modelling/c19_ww_prediction.py'], stderr=subprocess.STDOUT, text=True)
+except subprocess.CalledProcessError as e:
+    print(f"Command failed with exit code {e.returncode}")
+    print(e.output)
+"""
 # Create/update the flag file
 with open(flag_file, 'a') as file:
     file.write(f"Script executed on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")

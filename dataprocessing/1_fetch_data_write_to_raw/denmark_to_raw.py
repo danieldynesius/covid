@@ -75,7 +75,7 @@ if response.status_code == 200:
                                     df = pd.read_csv(zipped_file.open(target_csv_name))
 
                                     # Print or process the DataFrame as needed
-                                    print(f"CSV file found and loaded:\n{df}")
+                                    print(f"CSV file found and loaded:\n{df.head(2)}")
 
                             # If a target CSV file was found, delete other files in the ZIP file
                             if target_csv_name:
