@@ -1,77 +1,59 @@
-import os
-import time  # Import the time module
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
 
-dirpath = '~/code/analytics/covid/data/1_raw_data/'
-filename_from_web = 'RNAMonitoring_Public - Result Description - N1 Gene, Reported Value - N1 Gene (gc-l), Days Since.csv'
-filename_parquet = 'scotland_wastewater.parquet'
-file_path = f'{dirpath}{filename_from_web}'
+url = 'https://informatics.sepa.org.uk/spotfire/wp/analysis?file=Public/SEPA/Projects/Sewage%20Monitoring/RNAMonitoring_Public&waid=xqnJx0y6QECY99JuZwOV2-2703381a01mbPL&wavid=3'
 
-def func_remove_finland_csv(file_to_remove=f'{file_path}'):
-    rm_path = os.path.expanduser(file_path)
-    if os.path.exists(rm_path):
-        os.remove(rm_path)
-        print(f"File '{filename_from_web}' has been deleted.")
-    else:
-        print(f"File '{filename_from_web}' does not exist.")
-    return
+# Create a new instance of the Chrome driver
+driver = webdriver.Chrome()
 
-# func_remove_finland_csv()
 
-firefox_options = Options()
-firefox_options.add_argument("--private")
+# Navigate to the specified URL
+driver.get(url)
 
-profile = webdriver.FirefoxProfile()
-profile.set_preference("browser.download.folderList", 2)
-profile.set_preference("browser.download.dir", f'{dirpath}')
-profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'text/csv')
+# Get the page source
+page_source = driver.page_source
 
-firefox_options.profile = profile
+soup = BeautifulSoup(page_source)
 
-driver = webdriver.Firefox(options=firefox_options)
+for tag in soup.find_all():
+    print(tag.text)
+soup
 
-# Navigate to the webpage
-driver.get("https://informatics.sepa.org.uk/RNAmonitoring/")
 
-try:
-    # Wait for the element with ID 'sepa_rnamonitoringId' to be present
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, 'sepa_rnamonitoringId'))
-    )
-    print("Before waiting for ID 'id36'")
-    div_with_id = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, 'id36'))
-    )
-    print("After waiting for ID 'id36'")
-    # Find the first div with class "HtmlTextArea" after the div with ID "id36"
-    first_div_after_id36 = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="id36"]/following-sibling::div[contains(@class, "HtmlTextArea")]'))
-    )
-    
-    WebDriverWait(driver, 10).until(
-        lambda driver: driver.execute_script('return document.readyState') == 'complete'
-    )    
+# Find all <div> elements with class="sf-root"
+sf_root_divs = soup.find_all('div', class_='sf-root')
 
-# Perform some action on the found div, for example, print its text
-    print(first_div_after_id36.text)
-    # Click on the 7th p element
-    seventh_p_center.click()
+# Print the text content of each <div> with class="sf-root"
+for i, div in enumerate(sf_root_divs, start=1):
+    print(f"sf-root div {i} text: {div.text}")
 
-    # Find the body element with class "sfx_body_190"
-    body_element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, 'sfx_body_190'))
-    )
+# Find all nested <div> elements
+nested_divs = soup.find_all('div', recursive=True)
 
-    # Find the div with class "sfx_root_191" (or adjust the class name accordingly)
-    target_div = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, 'sfx_root_191'))
-    )
-    # Perform some action on the found div, for example, print its text
-    print(target_div.text)
+# Print the text content of each nested <div>
+for i, div in enumerate(nested_divs, start=1):
+    print(f"Nested div {i} text: {div.text}")
 
-finally:
-    driver.quit()
+
+
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://informatics.sepa.org.uk/spotfire/wp/analysis?file=Public/SEPA/Projects/Sewage%20Monitoring/RNAMonitoring_Public&waid=xqnJx0y6QECY99JuZwOV2-2703381a01mbPL&wavid=3'
+
+# Make a request to the URL and get the HTML content
+response = requests.get(url)
+html_content = response.text
+
+# Parse the HTML content with BeautifulSoup
+soup = BeautifulSoup(html_content, 'html.parser')
+
+# Print the tag name and a portion of the content for each tag
+for tag in soup.descendants:
+    if tag.name:
+        # Truncate the content to 50 characters for brevity
+        content_preview = tag.text[:50] if tag.text else ""
+        print(f"{tag.name}: {content_preview}")

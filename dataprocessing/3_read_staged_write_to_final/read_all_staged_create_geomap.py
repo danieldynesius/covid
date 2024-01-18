@@ -45,7 +45,7 @@ g12 =gpd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'
 
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12], ignore_index=True))
-gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.01) # The higher the tolerance, the smaller file size (but less geo accurately drawn regions).
+gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.05) # The higher the tolerance, the smaller file size (but less geo accurately drawn regions).
 
 # Get latest data by country
 last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()
