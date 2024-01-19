@@ -72,17 +72,12 @@ try:
     )
     fifth_li.click()
 
-    # Wait for the page to load again, if needed
     WebDriverWait(driver, 10).until(
-        #EC.presence_of_element_located((By.ID, 'htmlwidget-3e5899f7c051cb0662e0')) # initial pre-2024-01-12
-        EC.presence_of_element_located((By.ID, 'htmlwidget-ac8e727f1010ece8f887'))
-        
+        EC.presence_of_element_located((By.XPATH, '//div[@class="datatables html-widget html-fill-item html-widget-static-bound"]'))
     )
-
-    # Find the button within the specified div
+    # Find the button within the specified div using class name
     csv_button = WebDriverWait(driver, 10).until(
-        #EC.element_to_be_clickable((By.CSS_SELECTOR, '#htmlwidget-3e5899f7c051cb0662e0 button.dt-button.buttons-csv.buttons-html5')) # initial pre-2024-01-12
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#htmlwidget-ac8e727f1010ece8f887 button.dt-button.buttons-csv.buttons-html5'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '.datatables.html-widget.html-fill-item.html-widget-static-bound button.dt-button.buttons-csv.buttons-html5'))
     )
 
     # Click on the button to trigger the download

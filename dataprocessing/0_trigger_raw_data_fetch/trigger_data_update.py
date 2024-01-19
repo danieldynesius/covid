@@ -171,7 +171,7 @@ def data_freshness(directory, hours_threshold=data_stale_hours):
             files_data["country"].append(country_name) # Only include the first word in the country column
             files_data["last_modified_date"].append(last_modified_date)
             files_data["needs_update_flg"].append(time_difference_hours > hours_threshold)
-        stop_stopwatch()
+        
     # Create a DataFrame from the dictionary
     files_df = pd.DataFrame(files_data)
 
