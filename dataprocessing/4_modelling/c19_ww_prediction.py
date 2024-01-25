@@ -279,7 +279,7 @@ for location in location_groups:
         )
 
         # Show the plot
-        current_fig.show()
+        #current_fig.show()
         
 
         # Evaluate the model on the test set        

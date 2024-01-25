@@ -32,7 +32,7 @@ def stop_stopwatch(print_str=''):
     minutes_t = int(elapsed_time_seconds_t // 60)
     seconds_t = int(elapsed_time_seconds_t % 60)
     # Display the result
-    print(f"> Sec Time: {print_str} {minutes}m {seconds}s >> T-time: {minutes_t}m {seconds_t}s")
+    print(f"> Sec Time: {print_str} {minutes}m {seconds}s >> T-time: {minutes_t}m {seconds_t}s\n")
     #return minutes, seconds
 
 
