@@ -1,3 +1,31 @@
+import pandas as pd
+import configparser
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Paths
+research_datafile = config.get('Paths', 'research_datafile')
+html_dir_gh = config.get('Paths', 'html_savedir_gh')
+html_dir_bb = config.get('Paths', 'html_savedir_gh')
+
+
+"""
+
+df = pd.read_json(research_datafile, orient="records")
+
+df.article_title[0]
+df.paragraphs[0]
+paragraphs_string = ''.join(df.paragraphs[0])
+
+"""
+
+import json
+
+def generate_html(articles):
+    html_content = """
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -7,11 +35,13 @@
       <!-- mobile metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      
       <!-- site metas -->
-      <title>Trend Graphs</title>
+      <title>Data Sources</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" href="images/logo.png" type="image/x-icon">
       <meta name="keywords" content="COVID-19, wastewater, measurement, monitoring, surveillance, public health, environmental monitoring, water analysis, viral RNA, SARS-CoV-2,SARS-nCoV-2, global, countries, data, analysis, pandemic, wastewater-based epidemiology, geo-map">
-      <meta name="description" content="Trend Graphs with Transmission over Time">
+      <meta name="description" content="Data Sources of Visualizations">
       <meta name="author" content="Daniel Dynesius">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,17 +57,17 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <style>
-         @media (max-width: 767px) {
+            @media (max-width: 767px) {
             /* Styles for screens smaller than 768px (mobile) */
             .menu-area-main {
-               flex-direction: column;
+                flex-direction: column;
             }
-      
+        
             .menu-area-main li {
-               text-align: center;
+                text-align: center;
             }
-         }
-      </style>      
+            }
+    </style>      
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -68,7 +98,7 @@
                     </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="top-box">
+                     <div class="top-box">
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <style>
@@ -84,7 +114,7 @@
                             .throb-line:hover::after {
                                 content: ' ❤️'; /* Add the heart emoji after the text */
                                 display: inline-block;
-                                animation: throb 0.5s infinite; /* Apply the throb animation */
+                                animation: throb 0.76s infinite; /* Apply the throb animation */
                             }
                         </style>
                     
@@ -110,9 +140,9 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main d-flex">
                                     <li class=""> <a href="index.html">Geo Map</a> </li>
-                                    <li class="active"> <a href="trends.html">Trend Graphs</a> </li>
+                                    <li class=""> <a href="trends.html">Trend Graphs</a> </li>
                                     <li class=""> <a href="predictions_tab.html">Predictive</a> </li>
-                                    <li class=""> <a href="new_research.html">Research News</a> </li>
+                                    <li class="active"> <a href="new_research.html">Research News</a> </li>
                                     <li class=""> <a href="data_sources.html">Data Sources</a> </li>
                                     <li class=""> <a href="about.html">About</a> </li>
                                 </ul>
@@ -125,13 +155,40 @@
          <!-- end header inner --> 
       </header>
       <!-- end header -->
+      <div class="brand_color">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Research Articles</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- contact -->
+<p>
 
 
-      <<object data="country_trends.html" width="100%" height="1000px" type="text/html" id="map-object"></object>
+    <br><br><br>
+"""
+# Here's the actual article inserts into the other templates (above and below this segment)
+    for article in articles:
+        html_content += f"""
+    <div style="margin: 20px;">
+        <h3>{article['article_title']}</h3>
+        <p><strong style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); background-clip: text; -webkit-background-clip: text; color: transparent;">Publication Date</strong>: {article['publication_date']}</p>
+        <br><strong>Abstract</strong><br>
+        <p>{article['paragraphs']}</p>
+        <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
+        <br>
+    </div>
+"""
 
-
-    
-    <!-- end Lastestnews -->
+    html_content += """
+      
       <!--  footer --> 
       <footr>
         <div class="footer">
@@ -142,7 +199,6 @@
                         <!--<li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>-->
                         <li> <a href="https://twitter.com/covidfox"><i class="fa fa-twitter"></i></a></li>
                         <li> <a href="https://github.com/danieldynesius/covid" target="_blank"><i class="fa fa-github"></i></a></li>
-
                         <!--<li> <a href="#"><i class="fa fa-instagram"></i></a></li>-->
                         <li> <a href="https://www.linkedin.com/in/danieldynesius/"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
@@ -163,8 +219,8 @@
                  <div class="contact">
                     <h3>ADDITIONAL LINKS</h3>
                     <ul class="lik">
-                        <li> <a href="https://danieldynesius.github.io/covid/about.html">About The Project</a></li>
-                        <li> <a href="https://www.stratega.ai" style="color: white; text-decoration: none;" onmouseover="this.style.color='aqua'" onmouseout="this.style.color='white'">About Stratega Data Consulting</a></li>
+                        <li> <a href="#">About us</a></li>
+                        <li> <a href="https://www.stratega.ai" style="color: white; text-decoration: none;" onmouseover="this.style.color='aqua'" onmouseout="this.style.color='white'">Stratega Data Consulting</a></li>
 <!--         
                         <li> <a href="#">Privacy policy</a></li>
                         <li> <a href="#">News</a></li>
@@ -190,7 +246,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                  <div class="contact">
                     <h3>About Covid-19 Wastewater Monitoring</h3>
-                    <span>This is a project to monitor the pandemic development over time in multiple countries through wastewater measurement.</span>
+                    <span>This is a project to monitor the pandemic development over time in multiple countries through wastewater measurement. </span>
                  </div>
               </div>
            </div>
@@ -231,3 +287,26 @@
      </script> 
   </body>
 </html>
+"""
+
+    return html_content
+
+def save_html(html_content, output_path='.', output_filename='output.html'):
+    output_filepath = os.path.join(output_path, output_filename)
+    with open(output_filepath, 'w', encoding='utf-8') as output_file:
+        output_file.write(html_content)
+
+
+output_filename = 'new_research.html'  # Replace with your desired output filename
+
+# Read the article data from JSON file
+with open(research_datafile, 'r', encoding='utf-8') as json_file:
+    articles = json.load(json_file)
+
+# Generate HTML content
+html_content = generate_html(articles)
+
+# Write the generated HTML content to a file
+save_html(html_content, output_path=html_dir_gh, output_filename=output_filename)
+
+print('HTML file generated successfully.')

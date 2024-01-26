@@ -57,3 +57,22 @@ for tag in soup.descendants:
         # Truncate the content to 50 characters for brevity
         content_preview = tag.text[:50] if tag.text else ""
         print(f"{tag.name}: {content_preview}")
+
+
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://informatics.sepa.org.uk/spotfire/wp/analysis?file=Public/SEPA/Projects/Sewage%20Monitoring/RNAMonitoring_Public&waid=xqnJx0y6QECY99JuZwOV2-2703381a01mbPL&wavid=3'
+
+# Make a request to the URL and get the HTML content
+response = requests.get(url)
+html_content = response.text
+
+# Parse the HTML content with BeautifulSoup
+soup = BeautifulSoup(html_content, 'html.parser')
+
+# Print the entire HTML structure
+print(soup.prettify())
