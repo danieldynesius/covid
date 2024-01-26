@@ -162,7 +162,7 @@ def generate_html(articles):
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Research Articles</h2>
+                        <h2>Latest Research Articles</h2>
                     </div>
                 </div>
             </div>
