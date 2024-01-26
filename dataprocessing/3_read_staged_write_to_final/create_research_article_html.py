@@ -308,5 +308,7 @@ html_content = generate_html(articles)
 
 # Write the generated HTML content to a file
 save_html(html_content, output_path=html_dir_gh, output_filename=output_filename)
+save_html(html_content, output_path=html_dir_bb, output_filename=output_filename)
 
-print('HTML file generated successfully.')
+
+print('Research News HTML files generated successfully.')

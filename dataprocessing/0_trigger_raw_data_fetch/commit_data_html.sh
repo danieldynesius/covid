@@ -6,6 +6,7 @@ files_to_commit=(
   "/home/stratega/code/analytics/covid/docs/geo_map.html"
   "/home/stratega/code/analytics/covid/docs/country_trends.html"
   "/home/stratega/code/analytics/covid/docs/forecasts.html"
+  "/home/stratega/code/analytics/covid/docs/new_research.html"
 )
 
 for file in "${files_to_commit[@]}"; do
