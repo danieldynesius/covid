@@ -1,6 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import configparser
+import os
+
+config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+# Read the Conf file
+config = configparser.ConfigParser()
+config.read(config_file)
+
+# Paths
+new_research_dump = config.get('Paths', 'new_research_dump')
+existing_research_articles = config.get('Paths', 'existing_research_articles')
+new_research_dump
 
 # Note, this is the last 30 days in order of Relevabce
 url = "https://www.nature.com/search?q=covid-19%20sars-cov-2&date_range=last_30_days&order=relevance"
@@ -118,16 +131,19 @@ async def process_article(article_link):
         paragraphs = abs1_section_div.find_all('p')
 
         # Extract the text from each paragraph
-        paragraph_text = [paragraph.get_text(strip=True) for paragraph in paragraphs]
+        paragraph_text = ' '.join(paragraph.get_text(strip=True) for paragraph in paragraphs)
     else:
-        paragraph_text = ["No div with ID 'Abs1-section' found."]
+        paragraph_text = "No div with ID 'Abs1-section' found."
     # ... (rest of the processing)
 
     return {
         "article_title": article_header.get_text() if article_header else "No title found.",
         "publication_date": publication_date,
-        "paragraphs": paragraph_text,
-        "article_url": article_url
+        "abstract": paragraph_text,
+        "article_url": article_url,
+        "layman_title": "",
+        "layman_abstract": "",
+        "needs_ai_processing": 0
     }
 
 async def main():
@@ -143,16 +159,63 @@ async def main():
     print(json_data)
 
     # Optionally, save the JSON data to a file
-    with open("article_data.json", "w", encoding="utf-8") as json_file:
+    with open(new_research_dump, "w", encoding="utf-8") as json_file:
         json.dump(articles, json_file, ensure_ascii=False, indent=2)
 
 # For running through console etc
-if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
 
-# For running in interactive mode
-"""
+
 if __name__ == "__main__":
-    await main()
-"""
+    if hasattr(__builtins__, '__IPYTHON__') and __IPYTHON__:
+        # Running in an IPython (Jupyter) environment
+        import nest_asyncio
+        nest_asyncio.apply()
+        asyncio.run(main())
+    else:
+        # Running in a non-interactive environment
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(main())
+
+
+
+
+
+## ATTEMPT 
+
+print('Checking for New Articles to append')
+# Load existing data from the JSON file
+existing_articles = []
+
+if os.path.isfile(existing_research_articles):
+    with open(existing_research_articles, 'r') as file:
+        try:
+            existing_articles = json.load(file)
+        except json.JSONDecodeError as e:
+            print("Error decoding existing JSON file:", e)
+
+# Compare existing articles with the new articles based on article_url
+new_articles = []
+
+for article_link in article_links:
+    article_url = stem + article_link['href']
+    if not any(article['article_url'] == article_url for article in existing_articles):
+        new_article = await process_article(article_link)
+        
+        # Set "needs_ai_processing" to 1 to process for new articles in next script
+        new_article["needs_ai_processing"] = 1
+        new_articles.append(new_article)
+
+# Append new articles to existing data
+existing_articles.extend(new_articles)
+
+# Convert the list to JSON
+json_data = json.dumps(existing_articles, ensure_ascii=False, indent=2)
+
+# Print or save the JSON data
+print(json_data)
+
+# Save the updated JSON data to the file
+with open(existing_research_articles, "w", encoding="utf-8") as json_file:
+    json.dump(existing_articles, json_file, ensure_ascii=False, indent=2)
+
+print('Nature Articles Downloaded!')

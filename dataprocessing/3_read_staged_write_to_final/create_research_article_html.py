@@ -1,6 +1,7 @@
 import pandas as pd
 import configparser
 import os
+import json
 
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 
@@ -9,7 +10,8 @@ config = configparser.ConfigParser()
 config.read(config_file)
 
 # Paths
-research_datafile = config.get('Paths', 'research_datafile')
+research_datafile = config.get('Paths', 'existing_research_articles')
+output_filename = 'new_research.html'
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
@@ -24,7 +26,7 @@ paragraphs_string = ''.join(df.paragraphs[0])
 
 """
 
-import json
+
 
 def generate_html(articles):
     html_content = """
@@ -163,6 +165,10 @@ def generate_html(articles):
                 <div class="col-md-12">
                     <div class="titlepage">
                         <h2>Latest Research Articles</h2>
+                        <br>
+                        <h4>🤖 Please note that an AI (LLM model) is used to create a more understandable Title & Abstract for <i>non-scientists</i>.<br>
+                        Do not make conclusions based on the AI. <i><u>Please make sure you understand the true Title & Abstract before drawing conclusions</u></i>.</h4>
+
                     </div>
                 </div>
             </div>
@@ -176,18 +182,24 @@ def generate_html(articles):
 
     <br><br><br>
 """
-# Here's the actual article inserts into the other templates (above and below this segment)
+
+    # Here's the actual article inserts into the other templates (above and below this segment)
+
     for article in articles:
         html_content += f"""
-    <div style="margin: 20px;">
+    <div style="margin: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
         <h3>{article['article_title']}</h3>
+        <h3>🤖 {article['layman_title']}</h3><br>
         <p><strong style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); background-clip: text; -webkit-background-clip: text; color: transparent;">Publication Date</strong>: {article['publication_date']}</p>
-        <br><strong>Abstract</strong><br>
-        <p>{article['paragraphs']}</p>
-        <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
         <br>
-    </div>
-"""
+        <p>🤖 <strong>Abstract</strong></p>
+        <p>{article['layman_abstract']}</p>
+        <br><strong>Abstract</strong><br>
+        <p>{article['abstract']}</p>
+        <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
+        <br><br>
+    </div>"""
+
 
     html_content += """
       
@@ -298,8 +310,6 @@ def save_html(html_content, output_path='.', output_filename='output.html'):
     with open(output_filepath, 'w', encoding='utf-8') as output_file:
         output_file.write(html_content)
 
-
-output_filename = 'new_research.html'  # Replace with your desired output filename
 
 # Read the article data from JSON file
 with open(research_datafile, 'r', encoding='utf-8') as json_file:
