@@ -128,14 +128,6 @@
     "article_url": "https://www.nature.com/articles/s42003-024-05799-1"
   },
   {
-    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
-    "publication_date": "2024-01-03",
-    "paragraphs": [
-      "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies."
-    ],
-    "article_url": "https://www.nature.com/articles/s41598-023-50027-1"
-  },
-  {
     "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
     "publication_date": "2024-01-11",
     "paragraphs": [
@@ -144,12 +136,12 @@
     "article_url": "https://www.nature.com/articles/s41598-024-51505-w"
   },
   {
-    "article_title": "Silent battles: immune responses in asymptomatic SARS-CoV-2 infection",
-    "publication_date": "2024-01-15",
+    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
+    "publication_date": "2024-01-03",
     "paragraphs": [
-      "SARS-CoV-2 infections manifest with a broad spectrum of presentations, ranging from asymptomatic infections to severe pneumonia and fatal outcomes. This review centers on asymptomatic infections, a widely reported phenomenon that has substantially contributed to the rapid spread of the pandemic. In such asymptomatic infections, we focus on the role of innate, humoral, and cellular immunity. Notably, asymptomatic infections are characterized by an early and robust innate immune response, particularly a swift type 1 IFN reaction, alongside a rapid and broad induction of SARS-CoV-2-specific T cells. Often, antibody levels tend to be lower or undetectable after asymptomatic infections, suggesting that the rapid control of viral replication by innate and cellular responses might impede the full triggering of humoral immunity. Even if antibody levels are present in the early convalescent phase, they wane rapidly below serological detection limits, particularly following asymptomatic infection. Consequently, prevalence studies reliant solely on serological assays likely underestimate the extent of community exposure to the virus."
+      "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies."
     ],
-    "article_url": "https://www.nature.com/articles/s41423-024-01127-z"
+    "article_url": "https://www.nature.com/articles/s41598-023-50027-1"
   },
   {
     "article_title": "A quest for universal anti-SARS-CoV-2 T cell assay: systematic review, meta-analysis, and experimental validation",
@@ -158,6 +150,14 @@
       "Measuring SARS-CoV-2-specific T cell responses is crucial to understanding an individual’s immunity to COVID-19. However, high inter- and intra-assay variability make it difficult to define T cells as a correlate of protection against COVID-19. To address this, we performed systematic review and meta-analysis of 495 datasets from 94 original articles evaluating SARS-CoV-2-specific T cell responses using three assays – Activation Induced Marker (AIM), Intracellular Cytokine Staining (ICS), and Enzyme-Linked Immunospot (ELISPOT), and defined each assay’s quantitative range. We validated these ranges using samples from 193 SARS-CoV-2-exposed individuals. Although IFNγ ELISPOT was the preferred assay, our experimental validation suggested that it under-represented the SARS-CoV-2-specific T cell repertoire. Our data indicate that a combination of AIM and ICS or FluoroSpot assay would better represent the frequency, polyfunctionality, and compartmentalization of the antigen-specific T cell responses. Taken together, our results contribute to defining the ranges of antigen-specific T cell assays and propose a choice of assay that can be employed to better understand the cellular immune response against viral diseases."
     ],
     "article_url": "https://www.nature.com/articles/s41541-023-00794-9"
+  },
+  {
+    "article_title": "Silent battles: immune responses in asymptomatic SARS-CoV-2 infection",
+    "publication_date": "2024-01-15",
+    "paragraphs": [
+      "SARS-CoV-2 infections manifest with a broad spectrum of presentations, ranging from asymptomatic infections to severe pneumonia and fatal outcomes. This review centers on asymptomatic infections, a widely reported phenomenon that has substantially contributed to the rapid spread of the pandemic. In such asymptomatic infections, we focus on the role of innate, humoral, and cellular immunity. Notably, asymptomatic infections are characterized by an early and robust innate immune response, particularly a swift type 1 IFN reaction, alongside a rapid and broad induction of SARS-CoV-2-specific T cells. Often, antibody levels tend to be lower or undetectable after asymptomatic infections, suggesting that the rapid control of viral replication by innate and cellular responses might impede the full triggering of humoral immunity. Even if antibody levels are present in the early convalescent phase, they wane rapidly below serological detection limits, particularly following asymptomatic infection. Consequently, prevalence studies reliant solely on serological assays likely underestimate the extent of community exposure to the virus."
+    ],
+    "article_url": "https://www.nature.com/articles/s41423-024-01127-z"
   },
   {
     "article_title": "IgM N-glycosylation correlates with COVID-19 severity and rate of complement deposition",
@@ -184,14 +184,6 @@
     "article_url": "https://www.nature.com/articles/s41598-023-50856-0"
   },
   {
-    "article_title": "Impact on the time elapsed since SARS-CoV-2 infection, vaccination history, and number of doses, on protection against reinfection",
-    "publication_date": "2024-01-03",
-    "paragraphs": [
-      "SARS-CoV-2 reinfections have been frequent, even among those vaccinated. The aim of this study is to know if hybrid immunity (infection + vaccination) is affected by the moment of vaccination and number of doses received. We conducted a retrospective study in 746 patients with a history of COVID-19 reinfection and recovered the dates of infection and reinfection and vaccination status (date and number of doses). To assess differences in the time to reinfection(tRI) between unvaccinated, vaccinated before 6 months, and later; and comparing one, two or three doses (incomplete, complete and booster regime) we performed the log-rank test of the cumulative incidence calculated as 1 minus the Kaplan–Meier estimator. Also, an adjusted Cox-regression was performed to evaluate the risk of reinfection in all groups. The tRIwas significantly higher in those vaccinated vs. non-vaccinated (p < 0.001). However, an early incomplete regime protects similar time than not receiving a vaccine. Vaccination before 6 months after infection showed a lower tRIcompared to those vaccinated later with the same regime (adj-p < 0.001). Actually, early vaccination with complete and booster regimes provided lower length of protection compared to vaccinating later with incomplete and complete regime, respectively. Vaccination with complete and booster regimes significantly increases the tRI(adj-p < 0.001). Vaccination increases the time it takes for a person to become reinfected with SARS-CoV-2. Increasing the time from infection to vaccination increases the time in which a person could be reinfected and reduces the risk of reinfection, especially in complete and booster regimes. Those results emphasize the role of vaccines and boosters during the pandemic and can guide strategies on future vaccination policy."
-    ],
-    "article_url": "https://www.nature.com/articles/s41598-023-50335-6"
-  },
-  {
     "article_title": "Multiple redox switches of the SARS-CoV-2 main protease in vitro provide opportunities for drug design",
     "publication_date": "2024-01-09",
     "paragraphs": [
@@ -206,6 +198,14 @@
       "No div with ID 'Abs1-section' found."
     ],
     "article_url": "https://www.nature.com/articles/s41551-023-01170-7"
+  },
+  {
+    "article_title": "Impact on the time elapsed since SARS-CoV-2 infection, vaccination history, and number of doses, on protection against reinfection",
+    "publication_date": "2024-01-03",
+    "paragraphs": [
+      "SARS-CoV-2 reinfections have been frequent, even among those vaccinated. The aim of this study is to know if hybrid immunity (infection + vaccination) is affected by the moment of vaccination and number of doses received. We conducted a retrospective study in 746 patients with a history of COVID-19 reinfection and recovered the dates of infection and reinfection and vaccination status (date and number of doses). To assess differences in the time to reinfection(tRI) between unvaccinated, vaccinated before 6 months, and later; and comparing one, two or three doses (incomplete, complete and booster regime) we performed the log-rank test of the cumulative incidence calculated as 1 minus the Kaplan–Meier estimator. Also, an adjusted Cox-regression was performed to evaluate the risk of reinfection in all groups. The tRIwas significantly higher in those vaccinated vs. non-vaccinated (p < 0.001). However, an early incomplete regime protects similar time than not receiving a vaccine. Vaccination before 6 months after infection showed a lower tRIcompared to those vaccinated later with the same regime (adj-p < 0.001). Actually, early vaccination with complete and booster regimes provided lower length of protection compared to vaccinating later with incomplete and complete regime, respectively. Vaccination with complete and booster regimes significantly increases the tRI(adj-p < 0.001). Vaccination increases the time it takes for a person to become reinfected with SARS-CoV-2. Increasing the time from infection to vaccination increases the time in which a person could be reinfected and reduces the risk of reinfection, especially in complete and booster regimes. Those results emphasize the role of vaccines and boosters during the pandemic and can guide strategies on future vaccination policy."
+    ],
+    "article_url": "https://www.nature.com/articles/s41598-023-50335-6"
   },
   {
     "article_title": "Development and validation of cost-effective SYBR Green-based RT-qPCR and its evaluation in a sample pooling strategy for detecting SARS-CoV-2 infection in the Indonesian setting",
@@ -264,14 +264,6 @@
     "article_url": "https://www.nature.com/articles/s41598-023-50912-9"
   },
   {
-    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
-    "publication_date": "2024-01-18",
-    "paragraphs": [
-      "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2."
-    ],
-    "article_url": "https://www.nature.com/articles/s42004-024-01104-7"
-  },
-  {
     "article_title": "In silico and in vitro prediction of new synthesized N-heterocyclic compounds as anti-SARS-CoV-2",
     "publication_date": "2024-01-11",
     "paragraphs": [
@@ -280,12 +272,28 @@
     "article_url": "https://www.nature.com/articles/s41598-024-51443-7"
   },
   {
+    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
+    "publication_date": "2024-01-18",
+    "paragraphs": [
+      "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2."
+    ],
+    "article_url": "https://www.nature.com/articles/s42004-024-01104-7"
+  },
+  {
     "article_title": "The development of an electrochemical immunosensor utilizing chicken IgY anti-spike antibody for the detection of SARS-CoV-2",
     "publication_date": "2024-01-07",
     "paragraphs": [
       "This paper introduces a novel approach for detecting the SARS-CoV-2 recombinant spike protein combining a label free electrochemical impedimetric immunosensor with the use of purified chicken IgY antibodies. The sensor employs three electrodes and is functionalized with an anti-S IgY antibody, ELISA and immunoblot assays confirmed the positive response of chicken immunized with SARS-CoV2 S antigen. The developed immunosensor is effective in detecting SARS-CoV-2 in nasopharyngeal clinical samples from suspected cases. The key advantage of this biosensor is its remarkable sensitivity, and its capability of detecting very low concentrations of the target analyte, with a detection limit of 5.65 pg/mL. This attribute makes it highly suitable for practical point-of-care (POC) applications, particularly in low analyte count clinical scenarios, without requiring amplification. Furthermore, the biosensor has a wide dynamic range of detection, spanning from 11.56 to 740 ng/mL, which makes it applicable for sample analysis in a typical clinical setting."
     ],
     "article_url": "https://www.nature.com/articles/s41598-023-50501-w"
+  },
+  {
+    "article_title": "Interfer-on time: lessons from genetically diverse mouse models of SARS-CoV-2 infection",
+    "publication_date": "2023-12-29",
+    "paragraphs": [
+      "No div with ID 'Abs1-section' found."
+    ],
+    "article_url": "https://www.nature.com/articles/s41435-023-00250-7"
   },
   {
     "article_title": "The ongoing evolution of UShER during the SARS-CoV-2 pandemic",
@@ -302,14 +310,6 @@
       "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy."
     ],
     "article_url": "https://www.nature.com/articles/s41598-024-52499-1"
-  },
-  {
-    "article_title": "Interfer-on time: lessons from genetically diverse mouse models of SARS-CoV-2 infection",
-    "publication_date": "2023-12-29",
-    "paragraphs": [
-      "No div with ID 'Abs1-section' found."
-    ],
-    "article_url": "https://www.nature.com/articles/s41435-023-00250-7"
   },
   {
     "article_title": "An mRNA vaccine encoding the SARS-CoV-2 receptor-binding domain protects mice from various Omicron variants",

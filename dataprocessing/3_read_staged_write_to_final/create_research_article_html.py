@@ -1,5 +1,7 @@
 import pandas as pd
 import configparser
+import os
+
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 
 # Read the Conf file
