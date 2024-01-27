@@ -162,15 +162,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
-    "publication_date": "2024-01-11",
-    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
-    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
     "publication_date": "2024-01-03",
     "abstract": "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies.",
@@ -180,10 +171,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "A quest for universal anti-SARS-CoV-2 T cell assay: systematic review, meta-analysis, and experimental validation",
-    "publication_date": "2024-01-02",
-    "abstract": "Measuring SARS-CoV-2-specific T cell responses is crucial to understanding an individual’s immunity to COVID-19. However, high inter- and intra-assay variability make it difficult to define T cells as a correlate of protection against COVID-19. To address this, we performed systematic review and meta-analysis of 495 datasets from 94 original articles evaluating SARS-CoV-2-specific T cell responses using three assays – Activation Induced Marker (AIM), Intracellular Cytokine Staining (ICS), and Enzyme-Linked Immunospot (ELISPOT), and defined each assay’s quantitative range. We validated these ranges using samples from 193 SARS-CoV-2-exposed individuals. Although IFNγ ELISPOT was the preferred assay, our experimental validation suggested that it under-represented the SARS-CoV-2-specific T cell repertoire. Our data indicate that a combination of AIM and ICS or FluoroSpot assay would better represent the frequency, polyfunctionality, and compartmentalization of the antigen-specific T cell responses. Taken together, our results contribute to defining the ranges of antigen-specific T cell assays and propose a choice of assay that can be employed to better understand the cellular immune response against viral diseases.",
-    "article_url": "https://www.nature.com/articles/s41541-023-00794-9",
+    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
+    "publication_date": "2024-01-11",
+    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
+    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -193,6 +184,15 @@
     "publication_date": "2024-01-15",
     "abstract": "SARS-CoV-2 infections manifest with a broad spectrum of presentations, ranging from asymptomatic infections to severe pneumonia and fatal outcomes. This review centers on asymptomatic infections, a widely reported phenomenon that has substantially contributed to the rapid spread of the pandemic. In such asymptomatic infections, we focus on the role of innate, humoral, and cellular immunity. Notably, asymptomatic infections are characterized by an early and robust innate immune response, particularly a swift type 1 IFN reaction, alongside a rapid and broad induction of SARS-CoV-2-specific T cells. Often, antibody levels tend to be lower or undetectable after asymptomatic infections, suggesting that the rapid control of viral replication by innate and cellular responses might impede the full triggering of humoral immunity. Even if antibody levels are present in the early convalescent phase, they wane rapidly below serological detection limits, particularly following asymptomatic infection. Consequently, prevalence studies reliant solely on serological assays likely underestimate the extent of community exposure to the virus.",
     "article_url": "https://www.nature.com/articles/s41423-024-01127-z",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "A quest for universal anti-SARS-CoV-2 T cell assay: systematic review, meta-analysis, and experimental validation",
+    "publication_date": "2024-01-02",
+    "abstract": "Measuring SARS-CoV-2-specific T cell responses is crucial to understanding an individual’s immunity to COVID-19. However, high inter- and intra-assay variability make it difficult to define T cells as a correlate of protection against COVID-19. To address this, we performed systematic review and meta-analysis of 495 datasets from 94 original articles evaluating SARS-CoV-2-specific T cell responses using three assays – Activation Induced Marker (AIM), Intracellular Cytokine Staining (ICS), and Enzyme-Linked Immunospot (ELISPOT), and defined each assay’s quantitative range. We validated these ranges using samples from 193 SARS-CoV-2-exposed individuals. Although IFNγ ELISPOT was the preferred assay, our experimental validation suggested that it under-represented the SARS-CoV-2-specific T cell repertoire. Our data indicate that a combination of AIM and ICS or FluoroSpot assay would better represent the frequency, polyfunctionality, and compartmentalization of the antigen-specific T cell responses. Taken together, our results contribute to defining the ranges of antigen-specific T cell assays and propose a choice of assay that can be employed to better understand the cellular immune response against viral diseases.",
+    "article_url": "https://www.nature.com/articles/s41541-023-00794-9",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -225,6 +225,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Impact on the time elapsed since SARS-CoV-2 infection, vaccination history, and number of doses, on protection against reinfection",
+    "publication_date": "2024-01-03",
+    "abstract": "SARS-CoV-2 reinfections have been frequent, even among those vaccinated. The aim of this study is to know if hybrid immunity (infection + vaccination) is affected by the moment of vaccination and number of doses received. We conducted a retrospective study in 746 patients with a history of COVID-19 reinfection and recovered the dates of infection and reinfection and vaccination status (date and number of doses). To assess differences in the time to reinfection(tRI) between unvaccinated, vaccinated before 6 months, and later; and comparing one, two or three doses (incomplete, complete and booster regime) we performed the log-rank test of the cumulative incidence calculated as 1 minus the Kaplan–Meier estimator. Also, an adjusted Cox-regression was performed to evaluate the risk of reinfection in all groups. The tRIwas significantly higher in those vaccinated vs. non-vaccinated (p < 0.001). However, an early incomplete regime protects similar time than not receiving a vaccine. Vaccination before 6 months after infection showed a lower tRIcompared to those vaccinated later with the same regime (adj-p < 0.001). Actually, early vaccination with complete and booster regimes provided lower length of protection compared to vaccinating later with incomplete and complete regime, respectively. Vaccination with complete and booster regimes significantly increases the tRI(adj-p < 0.001). Vaccination increases the time it takes for a person to become reinfected with SARS-CoV-2. Increasing the time from infection to vaccination increases the time in which a person could be reinfected and reduces the risk of reinfection, especially in complete and booster regimes. Those results emphasize the role of vaccines and boosters during the pandemic and can guide strategies on future vaccination policy.",
+    "article_url": "https://www.nature.com/articles/s41598-023-50335-6",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Multiple redox switches of the SARS-CoV-2 main protease in vitro provide opportunities for drug design",
     "publication_date": "2024-01-09",
     "abstract": "Besides vaccines, the development of antiviral drugs targeting SARS-CoV-2 is critical for preventing future COVID outbreaks. The SARS-CoV-2 main protease (Mpro), a cysteine protease with essential functions in viral replication, has been validated as an effective drug target. Here, we show that Mprois subject to redox regulation in vitro and reversibly switches between the enzymatically active dimer and the functionally dormant monomer through redox modifications of cysteine residues. These include a disulfide-dithiol switch between the catalytic cysteine C145 and cysteine C117, and generation of an allosteric cysteine-lysine-cysteine SONOS bridge that is required for structural stability under oxidative stress conditions, such as those exerted by the innate immune system. We identify homo- and heterobifunctional reagents that mimic the redox switching and inhibit Mproactivity. The discovered redox switches are conserved in main proteases from other coronaviruses, e.g. MERS-CoV and SARS-CoV, indicating their potential as common druggable sites.",
@@ -238,15 +247,6 @@
     "publication_date": "2023-12-29",
     "abstract": "No div with ID 'Abs1-section' found.",
     "article_url": "https://www.nature.com/articles/s41551-023-01170-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Impact on the time elapsed since SARS-CoV-2 infection, vaccination history, and number of doses, on protection against reinfection",
-    "publication_date": "2024-01-03",
-    "abstract": "SARS-CoV-2 reinfections have been frequent, even among those vaccinated. The aim of this study is to know if hybrid immunity (infection + vaccination) is affected by the moment of vaccination and number of doses received. We conducted a retrospective study in 746 patients with a history of COVID-19 reinfection and recovered the dates of infection and reinfection and vaccination status (date and number of doses). To assess differences in the time to reinfection(tRI) between unvaccinated, vaccinated before 6 months, and later; and comparing one, two or three doses (incomplete, complete and booster regime) we performed the log-rank test of the cumulative incidence calculated as 1 minus the Kaplan–Meier estimator. Also, an adjusted Cox-regression was performed to evaluate the risk of reinfection in all groups. The tRIwas significantly higher in those vaccinated vs. non-vaccinated (p < 0.001). However, an early incomplete regime protects similar time than not receiving a vaccine. Vaccination before 6 months after infection showed a lower tRIcompared to those vaccinated later with the same regime (adj-p < 0.001). Actually, early vaccination with complete and booster regimes provided lower length of protection compared to vaccinating later with incomplete and complete regime, respectively. Vaccination with complete and booster regimes significantly increases the tRI(adj-p < 0.001). Vaccination increases the time it takes for a person to become reinfected with SARS-CoV-2. Increasing the time from infection to vaccination increases the time in which a person could be reinfected and reduces the risk of reinfection, especially in complete and booster regimes. Those results emphasize the role of vaccines and boosters during the pandemic and can guide strategies on future vaccination policy.",
-    "article_url": "https://www.nature.com/articles/s41598-023-50335-6",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -306,6 +306,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
+    "publication_date": "2024-01-18",
+    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
+    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "High quality of SARS-CoV-2 molecular diagnostics in a diverse laboratory landscape through supported benchmark testing and External Quality Assessment",
     "publication_date": "2024-01-16",
     "abstract": "A two-step strategy combining assisted benchmark testing (entry controls) and External Quality Assessments (EQAs) with blinded simulated clinical specimens to enhance and maintain the quality of nucleic acid amplification testing was developed. This strategy was successfully applied to 71 diagnostic laboratories in The Netherlands when upscaling the national diagnostic capacity during the SARS-CoV-2 pandemic. The availability of benchmark testing in combination with advice for improvement substantially enhanced the quality of the laboratory testing procedures for SARS-CoV-2 detection. The three subsequent EQA rounds demonstrated high quality testing with regard to specificity (99.6% correctly identified) and sensitivity (93.3% correctly identified). Even with the implementation of novel assays, changing workflows using diverse equipment and a high degree of assay heterogeneity, the overall high quality was maintained using this two-step strategy. We show that in contrast to the limited value of Cq value for absolute proxies of viral load, these Cq values can, in combination with metadata on strategies and techniques, provide valuable information for laboratories to improve their procedures. In conclusion, our two-step strategy (preparation phase followed by a series of EQAs) is a rapid and flexible system capable of scaling, improving, and maintaining high quality diagnostics even in a rapidly evolving (e.g. pandemic) situation.",
@@ -324,15 +333,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
-    "publication_date": "2024-01-18",
-    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
-    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "The development of an electrochemical immunosensor utilizing chicken IgY anti-spike antibody for the detection of SARS-CoV-2",
     "publication_date": "2024-01-07",
     "abstract": "This paper introduces a novel approach for detecting the SARS-CoV-2 recombinant spike protein combining a label free electrochemical impedimetric immunosensor with the use of purified chicken IgY antibodies. The sensor employs three electrodes and is functionalized with an anti-S IgY antibody, ELISA and immunoblot assays confirmed the positive response of chicken immunized with SARS-CoV2 S antigen. The developed immunosensor is effective in detecting SARS-CoV-2 in nasopharyngeal clinical samples from suspected cases. The key advantage of this biosensor is its remarkable sensitivity, and its capability of detecting very low concentrations of the target analyte, with a detection limit of 5.65 pg/mL. This attribute makes it highly suitable for practical point-of-care (POC) applications, particularly in low analyte count clinical scenarios, without requiring amplification. Furthermore, the biosensor has a wide dynamic range of detection, spanning from 11.56 to 740 ng/mL, which makes it applicable for sample analysis in a typical clinical setting.",
@@ -342,19 +342,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Interfer-on time: lessons from genetically diverse mouse models of SARS-CoV-2 infection",
-    "publication_date": "2023-12-29",
+    "article_title": "The ongoing evolution of UShER during the SARS-CoV-2 pandemic",
+    "publication_date": "2023-12-28",
     "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41435-023-00250-7",
+    "article_url": "https://www.nature.com/articles/s41588-023-01622-5",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "The ongoing evolution of UShER during the SARS-CoV-2 pandemic",
-    "publication_date": "2023-12-28",
+    "article_title": "Interfer-on time: lessons from genetically diverse mouse models of SARS-CoV-2 infection",
+    "publication_date": "2023-12-29",
     "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41588-023-01622-5",
+    "article_url": "https://www.nature.com/articles/s41435-023-00250-7",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -396,24 +396,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Novel sofosbuvir derivatives against SARS-CoV-2 RNA-dependent RNA polymerase: an in silico perspective",
-    "publication_date": "2023-12-27",
-    "abstract": "The human coronavirus, SARS-CoV-2, had a negative impact on both the economy and human health, and the emerging resistant variants are an ongoing threat. One essential protein to target to prevent virus replication is the viral RNA-dependent RNA polymerase (RdRp). Sofosbuvir, a uridine nucleotide analog that potently inhibits viral polymerase, has been found to help treat SARS-CoV-2 patients. This work combines molecular docking and dynamics simulation (MDS) to test 14 sofosbuvir-based modifications against SARS-CoV-2 RdRp. The results reveal comparable (slightly better) average binding affinity of five modifications (compounds3,4,11,12, and14) to the parent molecule, sofosbuvir. Compounds3and4show the best average binding affinities against SARS-CoV-2 RdRp (− 16.28 ± 5.69 and − 16.25 ± 5.78 kcal/mol average binding energy compared to − 16.20 ± 6.35 kcal/mol for sofosbuvir) calculated by Molecular Mechanics Generalized Born Surface Area (MM-GBSA) after MDS. The present study proposes compounds3and4as potential SARS-CoV-2 RdRp blockers, although this has yet to be proven experimentally.",
-    "article_url": "https://www.nature.com/articles/s41598-023-49712-y",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Unravelling the cellular response to the SARS-COV-2 vaccine in inflammatory bowel disease patients on biologic drugs",
-    "publication_date": "2023-12-27",
-    "abstract": "Suboptimal vaccine response is a significant concern in patients with Inflammatory Bowel Disease (IBD) receiving biologic drugs. This single-center observational study involved 754 patients with IBD. In Phase I (October 2020-April 2021), 754 IBD participants who had not previously received the SARS-CoV-2 vaccine, underwent blood extraction to assess the seroprevalence of SARS-CoV-2 infection and IBD-related factors. Phase II (May 2021-October 2021) included a subgroup of 52 IBD participants with confirmed previous SARS-CoV-2 infection, who were studied for humoral and cellular response to the SARS-CoV-2 vaccine. In Phase I, treatment with anti-TNF was associated with lower rates of seroconversion (aOR 0.25 95% CI [0.10–0.61]). In Phase II, a significant increase in post-vaccination IgG levels was observed regardless of biologic treatment. However, patients treated with anti-TNF exhibited significantly lower IgG levels compared to those without IBD therapy (5.32 ± 2.47 vs. 7.99 ± 2.59 U/ml, p = 0.042). Following vaccination, a lymphocyte, monocyte, and NK cell activation pattern was observed, with no significant differences between patients receiving biologic drugs and those without IBD treatment. Despite lower seroprevalence and humoral response to the SARS-CoV-2 vaccine in patients treated with anti-TNF, the cellular response to the vaccine did not differ significantly from that patients without IBD therapy.",
-    "article_url": "https://www.nature.com/articles/s41598-023-50537-y",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "Diverse array of neutralizing antibodies elicited upon Spike Ferritin Nanoparticle vaccination in rhesus macaques",
     "publication_date": "2024-01-03",
     "abstract": "The repeat emergence of SARS-CoV-2 variants of concern (VoC) with decreased susceptibility to vaccine-elicited antibodies highlights the need to develop next-generation vaccine candidates that confer broad protection. Here we describe the antibody response induced by the SARS-CoV-2 Spike Ferritin Nanoparticle (SpFN) vaccine candidate adjuvanted with the Army Liposomal Formulation including QS21 (ALFQ) in non-human primates. By isolating and characterizing several monoclonal antibodies directed against the Spike Receptor Binding Domain (RBD), N-Terminal Domain (NTD), or the S2 Domain, we define the molecular recognition of vaccine-elicited cross-reactive monoclonal antibodies (mAbs) elicited by SpFN. We identify six neutralizing antibodies with broad sarbecovirus cross-reactivity that recapitulate serum polyclonal antibody responses. In particular, RBD mAb WRAIR-5001 binds to the conserved cryptic region with high affinity to sarbecovirus clades 1 and 2, including Omicron variants, while mAb WRAIR-5021 offers complete protection from B.1.617.2 (Delta) in a murine challenge study. Our data further highlight the ability of SpFN vaccination to stimulate cross-reactive B cells targeting conserved regions of the Spike with activity against SARS CoV-1 and SARS-CoV-2 variants.",
@@ -445,6 +427,24 @@
     "publication_date": "2024-01-26",
     "abstract": "No div with ID 'Abs1-section' found.",
     "article_url": "https://www.nature.com/articles/s41423-024-01132-2",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "A stapled lipopeptide platform for preventing and treating highly pathogenic viruses of pandemic potential",
+    "publication_date": "2024-01-04",
+    "abstract": "The continued emergence of highly pathogenic viruses, which either thwart immune- and small molecule-based therapies or lack interventions entirely, mandates alternative approaches, particularly for prompt and facile pre- and post-exposure prophylaxis. Many highly pathogenic viruses, including coronaviruses, employ the six-helix bundle heptad repeat membrane fusion mechanism to achieve infection. Although heptad-repeat-2 decoys can inhibit viral entry by blocking six-helix bundle assembly, the biophysical and pharmacologic liabilities of peptides have hindered their clinical development. Here, we develop a chemically stapled lipopeptide inhibitor of SARS-CoV-2 as proof-of-concept for the platform. We show that our lead compound blocks infection by a spectrum of SARS-CoV-2 variants, exhibits mucosal persistence upon nasal administration, demonstrates enhanced stability compared to prior analogs, and mitigates infection in hamsters. We further demonstrate that our stapled lipopeptide platform yields nanomolar inhibitors of respiratory syncytial, Ebola, and Nipah viruses by targeting heptad-repeat-1 domains, which exhibit strikingly low mutation rates, enabling on-demand therapeutic intervention to combat viral outbreaks.",
+    "article_url": "https://www.nature.com/articles/s41467-023-44361-1",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Using BCG vaccination to protect against COVID-19: when reality fails to meet expectation",
+    "publication_date": "2024-01-18",
+    "abstract": "No div with ID 'Abs1-section' found.",
+    "article_url": "https://www.nature.com/articles/s41577-024-00992-z",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0

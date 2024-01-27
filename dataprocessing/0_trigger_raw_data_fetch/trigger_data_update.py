@@ -60,6 +60,9 @@ final_prediction_script = config.get('Paths', 'final_prediction_script')
 
 # Non-tiered Processing
 research_scriptfile = config.get('Paths', 'research_scriptfile')
+staged_research_script = config.get('Paths', 'staged_research_script')
+existing_research_articles = config.get('Paths', 'existing_research_articles')
+
 research_html_script = config.get('Paths', 'research_html_script')
 
 # Output dirs
@@ -292,7 +295,8 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 # 4.5 Run Non-Tiered Processing Scripts
 #----------------------------------------------------------------------------------------------
 start_stopwatch()
-subprocess.run(["python", research_scriptfile], check=True) # Prediction Charts
+subprocess.run(["python", research_scriptfile], check=True) # Raw
+subprocess.run(["python", staged_research_script], check=True) # Raw
 stop_stopwatch('Step 4.5')
 
 #----------------------------------------------------------------------------------------------

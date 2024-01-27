@@ -179,8 +179,7 @@ if __name__ == "__main__":
 
 
 
-
-## ATTEMPT 
+# ATTEMPT
 
 print('Checking for New Articles to append')
 # Load existing data from the JSON file
@@ -196,14 +195,18 @@ if os.path.isfile(existing_research_articles):
 # Compare existing articles with the new articles based on article_url
 new_articles = []
 
-for article_link in article_links:
+async def process_and_append(article_link):
     article_url = stem + article_link['href']
     if not any(article['article_url'] == article_url for article in existing_articles):
         new_article = await process_article(article_link)
         
-        # Set "needs_ai_processing" to 1 to process for new articles in next script
+        # Set "needs_ai_processing" to 1 to process for new articles in the next script
         new_article["needs_ai_processing"] = 1
         new_articles.append(new_article)
+
+# Run the article processing asynchronously
+loop = asyncio.get_event_loop()
+loop.run_until_complete(asyncio.gather(*(process_and_append(article_link) for article_link in article_links)))
 
 # Append new articles to existing data
 existing_articles.extend(new_articles)
