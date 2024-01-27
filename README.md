@@ -67,6 +67,8 @@ Known issues:
 * Will <b>not</b> capture sudden strong spikes.
 ![prediction](docs/prediction_model_1.png)
 
+## AI LLM
+Uses a large language model to make research news more accessible to non-scientists.
 
 ## Questions?
 For questions, suggestions, requests or ideas:
