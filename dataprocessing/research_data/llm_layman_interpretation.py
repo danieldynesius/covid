@@ -6,6 +6,7 @@ from datetime import timedelta
 
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 n_days_back_to_include = 30 # research from latest 30 days
+n_articles_to_write_to_publish = 3
 
 # Read the Conf file
 config = configparser.ConfigParser()
@@ -13,6 +14,9 @@ config.read(config_file)
 
 # Paths
 existing_research_articles = config.get('Paths', 'existing_research_articles')
+selected_research_articles = config.get('Paths', 'selected_research_articles')
+
+selected_research_articles
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
@@ -22,8 +26,10 @@ df['publication_date_dt'] = pd.to_datetime(df['publication_date'])
 df = df[df['publication_date_dt'] > date_threshold]
 df.drop(columns=['publication_date_dt'], inplace=True)
 df
+#df[df['article_title']=='COVID-19 vaccines and beyond'].needs_ai_processing
 
-
+df.loc[df['article_title'] == 'COVID-19 vaccines and beyond', 'needs_ai_processing'] = 1
+df.sort_values(by='publication_date',ascending=False, inplace=True)
 #df.needs_ai_processing=1 # Needing to reparse stuff
 
 
@@ -52,7 +58,7 @@ for index, row in df.iterrows():
         response_title = ollama.chat(model='openchat', messages=[
         {
             'role': 'user',
-            'content': f'Please formulate this title simpler so a layman understands it well, Please make it as true to the original in meaning as possible:{article_title}',
+            'content': f'Please formulate this title simpler so a layman understands it well, Please change difficult words to simpler words:{article_title}',
         },
         ])
         print('AI Title:', response_title['message']['content'])
@@ -61,7 +67,7 @@ for index, row in df.iterrows():
         response_abstract = ollama.chat(model='openchat', messages=[
         {
             'role': 'user',
-            'content': f"Please provide a concise summary of this research abstract in a single sentence, using a maximum of 50 words. Use simple language and phrasing to ensure it's easily understandable for a layperson: {abstract}",
+            'content': f"Please provide a concise summary of this research abstract in a single sentence, using a maximum of 50 words. Use simple language and phrasing without difficult words to ensure it's easily understandable for a layperson: {abstract}",
         },
         ])
         print('AI Abstract:',response_abstract['message']['content'])
@@ -80,9 +86,9 @@ for index, row in df.iterrows():
     
 
 
-
 df
-df.to_json(existing_research_articles, orient='records', date_format='iso')
+df.head(n_articles_to_write_to_publish)
+df.to_json(selected_research_articles, orient='records', date_format='iso')
 
 df.article_title[0]
 df.layman_title[0]

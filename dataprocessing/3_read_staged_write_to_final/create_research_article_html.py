@@ -10,7 +10,7 @@ config = configparser.ConfigParser()
 config.read(config_file)
 
 # Paths
-research_datafile = config.get('Paths', 'existing_research_articles')
+selected_research_articles = config.get('Paths', 'selected_research_articles')
 output_filename = 'new_research.html'
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
@@ -18,7 +18,7 @@ html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
 """
 
-df = pd.read_json(research_datafile, orient="records")
+df = pd.read_json(selected_research_articles, orient="records")
 
 df.article_title[0]
 df.paragraphs[0]
@@ -312,7 +312,7 @@ def save_html(html_content, output_path='.', output_filename='output.html'):
 
 
 # Read the article data from JSON file
-with open(research_datafile, 'r', encoding='utf-8') as json_file:
+with open(selected_research_articles, 'r', encoding='utf-8') as json_file:
     articles = json.load(json_file)
 
 # Generate HTML content
