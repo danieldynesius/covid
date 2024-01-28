@@ -6,7 +6,7 @@ from datetime import timedelta
 
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 n_days_back_to_include = 30 # research from latest 30 days
-n_articles_to_write_to_publish = 3
+n_articles_to_write_to_publish = 4
 
 # Read the Conf file
 config = configparser.ConfigParser()
@@ -28,7 +28,7 @@ df.drop(columns=['publication_date_dt'], inplace=True)
 df
 #df[df['article_title']=='COVID-19 vaccines and beyond'].needs_ai_processing
 
-df.loc[df['article_title'] == 'COVID-19 vaccines and beyond', 'needs_ai_processing'] = 1
+#df.loc[df['article_title'] == 'COVID-19 vaccines and beyond', 'needs_ai_processing'] = 1
 df.sort_values(by='publication_date',ascending=False, inplace=True)
 #df.needs_ai_processing=1 # Needing to reparse stuff
 
@@ -87,11 +87,6 @@ for index, row in df.iterrows():
 
 
 df
-df.head(n_articles_to_write_to_publish)
+df = df[0:n_articles_to_write_to_publish]
+df.reset_index(inplace=True)
 df.to_json(selected_research_articles, orient='records', date_format='iso')
-
-df.article_title[0]
-df.layman_title[0]
-
-df.abstract[0]
-df.layman_abstract[0]

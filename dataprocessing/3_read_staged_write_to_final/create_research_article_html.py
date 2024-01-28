@@ -305,7 +305,7 @@ def generate_html(articles):
 
     return html_content
 
-def save_html(html_content, output_path='.', output_filename='output.html'):
+def save_html(html_content, output_path='.', output_filename=output_filename):
     output_filepath = os.path.join(output_path, output_filename)
     with open(output_filepath, 'w', encoding='utf-8') as output_file:
         output_file.write(html_content)

@@ -162,15 +162,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
-    "publication_date": "2024-01-03",
-    "abstract": "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies.",
-    "article_url": "https://www.nature.com/articles/s41598-023-50027-1",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
     "publication_date": "2024-01-11",
     "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
@@ -180,10 +171,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Silent battles: immune responses in asymptomatic SARS-CoV-2 infection",
-    "publication_date": "2024-01-15",
-    "abstract": "SARS-CoV-2 infections manifest with a broad spectrum of presentations, ranging from asymptomatic infections to severe pneumonia and fatal outcomes. This review centers on asymptomatic infections, a widely reported phenomenon that has substantially contributed to the rapid spread of the pandemic. In such asymptomatic infections, we focus on the role of innate, humoral, and cellular immunity. Notably, asymptomatic infections are characterized by an early and robust innate immune response, particularly a swift type 1 IFN reaction, alongside a rapid and broad induction of SARS-CoV-2-specific T cells. Often, antibody levels tend to be lower or undetectable after asymptomatic infections, suggesting that the rapid control of viral replication by innate and cellular responses might impede the full triggering of humoral immunity. Even if antibody levels are present in the early convalescent phase, they wane rapidly below serological detection limits, particularly following asymptomatic infection. Consequently, prevalence studies reliant solely on serological assays likely underestimate the extent of community exposure to the virus.",
-    "article_url": "https://www.nature.com/articles/s41423-024-01127-z",
+    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
+    "publication_date": "2024-01-03",
+    "abstract": "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies.",
+    "article_url": "https://www.nature.com/articles/s41598-023-50027-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -198,10 +189,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "IgM N-glycosylation correlates with COVID-19 severity and rate of complement deposition",
-    "publication_date": "2024-01-09",
-    "abstract": "The glycosylation of IgG plays a critical role during human severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection, activating immune cells and inducing cytokine production. However, the role of IgM N-glycosylation has not been studied during human acute viral infection. The analysis of IgM N-glycosylation from healthy controls and hospitalized coronavirus disease 2019 (COVID-19) patients reveals increased high-mannose and sialylation that correlates with COVID-19 severity. These trends are confirmed within SARS-CoV-2-specific immunoglobulin N-glycan profiles. Moreover, the degree of total IgM mannosylation and sialylation correlate significantly with markers of disease severity. We link the changes of IgM N-glycosylation with the expression of Golgi glycosyltransferases. Lastly, we observe antigen-specific IgM antibody-dependent complement deposition is elevated in severe COVID-19 patients and modulated by exoglycosidase digestion. Taken together, this work links the IgM N-glycosylation with COVID-19 severity and highlights the need to understand IgM glycosylation and downstream immune function during human disease.",
-    "article_url": "https://www.nature.com/articles/s41467-023-44211-0",
+    "article_title": "Silent battles: immune responses in asymptomatic SARS-CoV-2 infection",
+    "publication_date": "2024-01-15",
+    "abstract": "SARS-CoV-2 infections manifest with a broad spectrum of presentations, ranging from asymptomatic infections to severe pneumonia and fatal outcomes. This review centers on asymptomatic infections, a widely reported phenomenon that has substantially contributed to the rapid spread of the pandemic. In such asymptomatic infections, we focus on the role of innate, humoral, and cellular immunity. Notably, asymptomatic infections are characterized by an early and robust innate immune response, particularly a swift type 1 IFN reaction, alongside a rapid and broad induction of SARS-CoV-2-specific T cells. Often, antibody levels tend to be lower or undetectable after asymptomatic infections, suggesting that the rapid control of viral replication by innate and cellular responses might impede the full triggering of humoral immunity. Even if antibody levels are present in the early convalescent phase, they wane rapidly below serological detection limits, particularly following asymptomatic infection. Consequently, prevalence studies reliant solely on serological assays likely underestimate the extent of community exposure to the virus.",
+    "article_url": "https://www.nature.com/articles/s41423-024-01127-z",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -225,6 +216,24 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Screening for drivers of SARS-CoV-2 uptake",
+    "publication_date": "2023-12-29",
+    "abstract": "No div with ID 'Abs1-section' found.",
+    "article_url": "https://www.nature.com/articles/s41551-023-01170-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "IgM N-glycosylation correlates with COVID-19 severity and rate of complement deposition",
+    "publication_date": "2024-01-09",
+    "abstract": "The glycosylation of IgG plays a critical role during human severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection, activating immune cells and inducing cytokine production. However, the role of IgM N-glycosylation has not been studied during human acute viral infection. The analysis of IgM N-glycosylation from healthy controls and hospitalized coronavirus disease 2019 (COVID-19) patients reveals increased high-mannose and sialylation that correlates with COVID-19 severity. These trends are confirmed within SARS-CoV-2-specific immunoglobulin N-glycan profiles. Moreover, the degree of total IgM mannosylation and sialylation correlate significantly with markers of disease severity. We link the changes of IgM N-glycosylation with the expression of Golgi glycosyltransferases. Lastly, we observe antigen-specific IgM antibody-dependent complement deposition is elevated in severe COVID-19 patients and modulated by exoglycosidase digestion. Taken together, this work links the IgM N-glycosylation with COVID-19 severity and highlights the need to understand IgM glycosylation and downstream immune function during human disease.",
+    "article_url": "https://www.nature.com/articles/s41467-023-44211-0",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Impact on the time elapsed since SARS-CoV-2 infection, vaccination history, and number of doses, on protection against reinfection",
     "publication_date": "2024-01-03",
     "abstract": "SARS-CoV-2 reinfections have been frequent, even among those vaccinated. The aim of this study is to know if hybrid immunity (infection + vaccination) is affected by the moment of vaccination and number of doses received. We conducted a retrospective study in 746 patients with a history of COVID-19 reinfection and recovered the dates of infection and reinfection and vaccination status (date and number of doses). To assess differences in the time to reinfection(tRI) between unvaccinated, vaccinated before 6 months, and later; and comparing one, two or three doses (incomplete, complete and booster regime) we performed the log-rank test of the cumulative incidence calculated as 1 minus the Kaplan–Meier estimator. Also, an adjusted Cox-regression was performed to evaluate the risk of reinfection in all groups. The tRIwas significantly higher in those vaccinated vs. non-vaccinated (p < 0.001). However, an early incomplete regime protects similar time than not receiving a vaccine. Vaccination before 6 months after infection showed a lower tRIcompared to those vaccinated later with the same regime (adj-p < 0.001). Actually, early vaccination with complete and booster regimes provided lower length of protection compared to vaccinating later with incomplete and complete regime, respectively. Vaccination with complete and booster regimes significantly increases the tRI(adj-p < 0.001). Vaccination increases the time it takes for a person to become reinfected with SARS-CoV-2. Increasing the time from infection to vaccination increases the time in which a person could be reinfected and reduces the risk of reinfection, especially in complete and booster regimes. Those results emphasize the role of vaccines and boosters during the pandemic and can guide strategies on future vaccination policy.",
@@ -238,15 +247,6 @@
     "publication_date": "2024-01-09",
     "abstract": "Besides vaccines, the development of antiviral drugs targeting SARS-CoV-2 is critical for preventing future COVID outbreaks. The SARS-CoV-2 main protease (Mpro), a cysteine protease with essential functions in viral replication, has been validated as an effective drug target. Here, we show that Mprois subject to redox regulation in vitro and reversibly switches between the enzymatically active dimer and the functionally dormant monomer through redox modifications of cysteine residues. These include a disulfide-dithiol switch between the catalytic cysteine C145 and cysteine C117, and generation of an allosteric cysteine-lysine-cysteine SONOS bridge that is required for structural stability under oxidative stress conditions, such as those exerted by the innate immune system. We identify homo- and heterobifunctional reagents that mimic the redox switching and inhibit Mproactivity. The discovered redox switches are conserved in main proteases from other coronaviruses, e.g. MERS-CoV and SARS-CoV, indicating their potential as common druggable sites.",
     "article_url": "https://www.nature.com/articles/s41467-023-44621-0",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Screening for drivers of SARS-CoV-2 uptake",
-    "publication_date": "2023-12-29",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41551-023-01170-7",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -306,15 +306,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
-    "publication_date": "2024-01-18",
-    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
-    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "High quality of SARS-CoV-2 molecular diagnostics in a diverse laboratory landscape through supported benchmark testing and External Quality Assessment",
     "publication_date": "2024-01-16",
     "abstract": "A two-step strategy combining assisted benchmark testing (entry controls) and External Quality Assessments (EQAs) with blinded simulated clinical specimens to enhance and maintain the quality of nucleic acid amplification testing was developed. This strategy was successfully applied to 71 diagnostic laboratories in The Netherlands when upscaling the national diagnostic capacity during the SARS-CoV-2 pandemic. The availability of benchmark testing in combination with advice for improvement substantially enhanced the quality of the laboratory testing procedures for SARS-CoV-2 detection. The three subsequent EQA rounds demonstrated high quality testing with regard to specificity (99.6% correctly identified) and sensitivity (93.3% correctly identified). Even with the implementation of novel assays, changing workflows using diverse equipment and a high degree of assay heterogeneity, the overall high quality was maintained using this two-step strategy. We show that in contrast to the limited value of Cq value for absolute proxies of viral load, these Cq values can, in combination with metadata on strategies and techniques, provide valuable information for laboratories to improve their procedures. In conclusion, our two-step strategy (preparation phase followed by a series of EQAs) is a rapid and flexible system capable of scaling, improving, and maintaining high quality diagnostics even in a rapidly evolving (e.g. pandemic) situation.",
@@ -333,19 +324,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "The development of an electrochemical immunosensor utilizing chicken IgY anti-spike antibody for the detection of SARS-CoV-2",
-    "publication_date": "2024-01-07",
-    "abstract": "This paper introduces a novel approach for detecting the SARS-CoV-2 recombinant spike protein combining a label free electrochemical impedimetric immunosensor with the use of purified chicken IgY antibodies. The sensor employs three electrodes and is functionalized with an anti-S IgY antibody, ELISA and immunoblot assays confirmed the positive response of chicken immunized with SARS-CoV2 S antigen. The developed immunosensor is effective in detecting SARS-CoV-2 in nasopharyngeal clinical samples from suspected cases. The key advantage of this biosensor is its remarkable sensitivity, and its capability of detecting very low concentrations of the target analyte, with a detection limit of 5.65 pg/mL. This attribute makes it highly suitable for practical point-of-care (POC) applications, particularly in low analyte count clinical scenarios, without requiring amplification. Furthermore, the biosensor has a wide dynamic range of detection, spanning from 11.56 to 740 ng/mL, which makes it applicable for sample analysis in a typical clinical setting.",
-    "article_url": "https://www.nature.com/articles/s41598-023-50501-w",
+    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
+    "publication_date": "2024-01-18",
+    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
+    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "The ongoing evolution of UShER during the SARS-CoV-2 pandemic",
-    "publication_date": "2023-12-28",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41588-023-01622-5",
+    "article_title": "The development of an electrochemical immunosensor utilizing chicken IgY anti-spike antibody for the detection of SARS-CoV-2",
+    "publication_date": "2024-01-07",
+    "abstract": "This paper introduces a novel approach for detecting the SARS-CoV-2 recombinant spike protein combining a label free electrochemical impedimetric immunosensor with the use of purified chicken IgY antibodies. The sensor employs three electrodes and is functionalized with an anti-S IgY antibody, ELISA and immunoblot assays confirmed the positive response of chicken immunized with SARS-CoV2 S antigen. The developed immunosensor is effective in detecting SARS-CoV-2 in nasopharyngeal clinical samples from suspected cases. The key advantage of this biosensor is its remarkable sensitivity, and its capability of detecting very low concentrations of the target analyte, with a detection limit of 5.65 pg/mL. This attribute makes it highly suitable for practical point-of-care (POC) applications, particularly in low analyte count clinical scenarios, without requiring amplification. Furthermore, the biosensor has a wide dynamic range of detection, spanning from 11.56 to 740 ng/mL, which makes it applicable for sample analysis in a typical clinical setting.",
+    "article_url": "https://www.nature.com/articles/s41598-023-50501-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -360,19 +351,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
-    "publication_date": "2024-01-23",
-    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
+    "article_title": "An mRNA vaccine encoding the SARS-CoV-2 receptor-binding domain protects mice from various Omicron variants",
+    "publication_date": "2024-01-02",
+    "abstract": "Here, we assessed the efficacy of a lipid nanoparticle-based mRNA vaccine candidate encoding the receptor-binding domain (LNP-mRNA-RBD) in mice. Mice immunized with LNP-mRNA-RBD based on the ancestral strain (ancestral-type LNP-mRNA-RBD) showed similar cellular responses against the ancestral strain and BA.5, but their neutralizing activity against BA.5 was lower than that against the ancestral strain. The ancestral-type LNP-mRNA-RBD protected mice from the ancestral strain or BA.5 challenge; however, its ability to reduce the viral burdens after BA.5 challenge was limited. In contrast, immunization with bivalent LNP-mRNA-RBD consisting of the ancestral-type and BA.4/5-type LNP-mRNA-RBD or monovalent BA.4/5-type LNP-mRNA-RBD elicited robust cellular responses, as well as high and moderate neutralizing titers against BA.5 and XBB.1.5, respectively. Furthermore, the vaccines containing BA.4/5-type LNP-mRNA-RBD remarkably reduced the viral burdens following BA.5 or XBB.1.5 challenge. Overall, our findings suggest that LNP-mRNA-RBD is effective against SARS-CoV-2 infection.",
+    "article_url": "https://www.nature.com/articles/s41541-023-00800-0",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "An mRNA vaccine encoding the SARS-CoV-2 receptor-binding domain protects mice from various Omicron variants",
-    "publication_date": "2024-01-02",
-    "abstract": "Here, we assessed the efficacy of a lipid nanoparticle-based mRNA vaccine candidate encoding the receptor-binding domain (LNP-mRNA-RBD) in mice. Mice immunized with LNP-mRNA-RBD based on the ancestral strain (ancestral-type LNP-mRNA-RBD) showed similar cellular responses against the ancestral strain and BA.5, but their neutralizing activity against BA.5 was lower than that against the ancestral strain. The ancestral-type LNP-mRNA-RBD protected mice from the ancestral strain or BA.5 challenge; however, its ability to reduce the viral burdens after BA.5 challenge was limited. In contrast, immunization with bivalent LNP-mRNA-RBD consisting of the ancestral-type and BA.4/5-type LNP-mRNA-RBD or monovalent BA.4/5-type LNP-mRNA-RBD elicited robust cellular responses, as well as high and moderate neutralizing titers against BA.5 and XBB.1.5, respectively. Furthermore, the vaccines containing BA.4/5-type LNP-mRNA-RBD remarkably reduced the viral burdens following BA.5 or XBB.1.5 challenge. Overall, our findings suggest that LNP-mRNA-RBD is effective against SARS-CoV-2 infection.",
-    "article_url": "https://www.nature.com/articles/s41541-023-00800-0",
+    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
+    "publication_date": "2024-01-23",
+    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -445,6 +436,15 @@
     "publication_date": "2024-01-18",
     "abstract": "No div with ID 'Abs1-section' found.",
     "article_url": "https://www.nature.com/articles/s41577-024-00992-z",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Tubeimosides are pan-coronavirus and filovirus inhibitors that can block their fusion protein binding to Niemann-Pick C1",
+    "publication_date": "2024-01-02",
+    "abstract": "SARS-CoV-2 and filovirus enter cells via the cell surface angiotensin-converting enzyme 2 (ACE2) or the late-endosome Niemann-Pick C1 (NPC1) as a receptor. Here, we screened 974 natural compounds and identified Tubeimosides I, II, and III as pan-coronavirus and filovirus entry inhibitors that target NPC1. Using in-silico, biochemical, and genomic approaches, we provide evidence that NPC1 also binds SARS-CoV-2 spike (S) protein on the receptor-binding domain (RBD), which is blocked by Tubeimosides. Importantly, NPC1 strongly promotes productive SARS-CoV-2 entry, which we propose is due to its influence on fusion in late endosomes. The Tubeimosides’ antiviral activity and NPC1 function are further confirmed by infection with SARS-CoV-2 variants of concern (VOC), SARS-CoV, and MERS-CoV. Thus, NPC1 is a critical entry co-factor for highly pathogenic human coronaviruses (HCoVs) in the late endosomes, and Tubeimosides hold promise as a new countermeasure for these HCoVs and filoviruses.",
+    "article_url": "https://www.nature.com/articles/s41467-023-44504-4",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
