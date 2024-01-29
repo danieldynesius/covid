@@ -162,19 +162,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
-    "publication_date": "2024-01-11",
-    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
-    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
+    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
+    "publication_date": "2024-01-03",
+    "abstract": "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies.",
+    "article_url": "https://www.nature.com/articles/s41598-023-50027-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "HMGB1 mediates microbiome-immune axis dysregulation underlying reduced neutralization capacity in obesity-related post-acute sequelae of SARS-CoV-2",
-    "publication_date": "2024-01-03",
-    "abstract": "While obesity is a risk factor for post-acute sequelae of SARS-CoV-2 infection (PASC, \"long-COVID\"), the mechanism(s) underlying this phenomenon remains poorly understood. To address this gap in knowledge, we performed a 6-week longitudinal study to examine immune activity and gut microbiome dysbiosis in post-acute stage patients recovering from SARS-CoV-2 infection. Self-reported symptom frequencies and blood samples were collected weekly, with plasma assessed by ELISA and Luminex for multiple biomarkers and immune cell profiling. DNA from stool samples were collected at the early stage of recovery for baseline assessments of gut microbial composition and diversity using 16S-based metagenomic sequencing. Multiple regression analyses revealed obesity-related PASC linked to a sustained proinflammatory immune profile and reduced adaptive immunity, corresponding with reduced gut microbial diversity. In particular, enhanced signaling of the high mobility group box 1 (HMGB1) protein was found to associate with this dysregulation, with its upregulated levels in plasma associated with significantly impaired viral neutralization that was exacerbated with obesity. These findings implicate HMGB1 as a candidate biomarker of PASC, with potential applications for risk assessment and targeted therapies.",
-    "article_url": "https://www.nature.com/articles/s41598-023-50027-1",
+    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
+    "publication_date": "2024-01-11",
+    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
+    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -211,15 +211,6 @@
     "publication_date": "2024-01-05",
     "abstract": "The growing occurrence of novel recombinants, such as XBB.1.16, has emerged and become predominant, raising concerns about the impact of genomic recombination on the evolution of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). This study investigated the molecular epidemiological trends and evolution of the Omicron XBB.1.16 epidemic in Bangkok between December 2022 and August 2023. Partial spike and complete genome sequencing of SARS-CoV-2 samples collected from collaborating hospitals were performed. The analysis of 491 partial spike sequences identified 15 distinct lineages, with XBB.1.16 dominating the lineages beginning in March 2023. Phylogenetic analysis revealed at least four distinct XBB.1.16 lineages, suggesting multiple independent introductions into Bangkok. The estimated emergence of XBB.1.16 occurred approximately in January 2022, with an evolutionary rate of 0.79 × 10–3substitutions per site per year. Monitoring the genomic epidemiology and evolution of XBB.1.16 is vital for the early detection of new strains or emerging variants, which may guide vaccine design and the inclusion of new vaccine strains.",
     "article_url": "https://www.nature.com/articles/s41598-023-50856-0",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Screening for drivers of SARS-CoV-2 uptake",
-    "publication_date": "2023-12-29",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41551-023-01170-7",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -342,10 +333,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Interfer-on time: lessons from genetically diverse mouse models of SARS-CoV-2 infection",
-    "publication_date": "2023-12-29",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41435-023-00250-7",
+    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
+    "publication_date": "2024-01-23",
+    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -355,15 +346,6 @@
     "publication_date": "2024-01-02",
     "abstract": "Here, we assessed the efficacy of a lipid nanoparticle-based mRNA vaccine candidate encoding the receptor-binding domain (LNP-mRNA-RBD) in mice. Mice immunized with LNP-mRNA-RBD based on the ancestral strain (ancestral-type LNP-mRNA-RBD) showed similar cellular responses against the ancestral strain and BA.5, but their neutralizing activity against BA.5 was lower than that against the ancestral strain. The ancestral-type LNP-mRNA-RBD protected mice from the ancestral strain or BA.5 challenge; however, its ability to reduce the viral burdens after BA.5 challenge was limited. In contrast, immunization with bivalent LNP-mRNA-RBD consisting of the ancestral-type and BA.4/5-type LNP-mRNA-RBD or monovalent BA.4/5-type LNP-mRNA-RBD elicited robust cellular responses, as well as high and moderate neutralizing titers against BA.5 and XBB.1.5, respectively. Furthermore, the vaccines containing BA.4/5-type LNP-mRNA-RBD remarkably reduced the viral burdens following BA.5 or XBB.1.5 challenge. Overall, our findings suggest that LNP-mRNA-RBD is effective against SARS-CoV-2 infection.",
     "article_url": "https://www.nature.com/articles/s41541-023-00800-0",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
-    "publication_date": "2024-01-23",
-    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -445,6 +427,24 @@
     "publication_date": "2024-01-02",
     "abstract": "SARS-CoV-2 and filovirus enter cells via the cell surface angiotensin-converting enzyme 2 (ACE2) or the late-endosome Niemann-Pick C1 (NPC1) as a receptor. Here, we screened 974 natural compounds and identified Tubeimosides I, II, and III as pan-coronavirus and filovirus entry inhibitors that target NPC1. Using in-silico, biochemical, and genomic approaches, we provide evidence that NPC1 also binds SARS-CoV-2 spike (S) protein on the receptor-binding domain (RBD), which is blocked by Tubeimosides. Importantly, NPC1 strongly promotes productive SARS-CoV-2 entry, which we propose is due to its influence on fusion in late endosomes. The Tubeimosides’ antiviral activity and NPC1 function are further confirmed by infection with SARS-CoV-2 variants of concern (VOC), SARS-CoV, and MERS-CoV. Thus, NPC1 is a critical entry co-factor for highly pathogenic human coronaviruses (HCoVs) in the late endosomes, and Tubeimosides hold promise as a new countermeasure for these HCoVs and filoviruses.",
     "article_url": "https://www.nature.com/articles/s41467-023-44504-4",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Non-fatal outcomes of COVID-19 disease in pediatric organ transplantation associates with down-regulation of senescence pathways",
+    "publication_date": "2024-01-22",
+    "abstract": "This is a cross-sectional study examining kinetics and durability of immune response in children with solid organ transplants (SOTs) who had COVID-19 disease between November 2020 through June 2022, who were followed for 60-days at a single transplant center. Blood was collected between 1–14 (acute infection), and 15–60 days of a positive PCR (convalescence). SOT children with peripheral blood mononuclear cells (PBMC) cryopreserved before 2019 were non-infected controls (ctrls). PBMCs stimulated with 15-mer peptides from spike protein and anti-CD49d/anti-CD28. Testing done included mass cytometry, mi-RNA sequencing with confirmatory qPCR. 38 children formed the study cohort, 10 in the acute phase and 8 in the convalescence phase. 20 subjects were non-infected controls. Two subjects had severe disease. Subjects in the acute and convalescent phases were different subjects. The median age and tacrolimus level at blood draw was not significantly different. There was no death, and no subject was lost to follow-up. During acute infection CD57 expression was low in NKT, Th17 effector memory, memory Treg, CD4−CD8−, and γδT cells (p= 0.01,p= 0.04,p= 0.03,p= 0.03, p = 0.004 respectively). The frequencies of NK and Th2 effector memory cells increased (p= 0.01,p= 0.02) during acute infection. Non-switched memory B and CD8 central memory cell frequencies were decreased during acute infection (p= 0.02;p= 0.02), but the decrease in CD8 central memory cells did not persist. CD4−CD8−and CD14 monocyte frequencies increased during recovery (p= 0.03;p= 0.007). Our observations suggest down regulation of CD57 with absence of NK cell contraction protect against death from COVID-19 disease in children with SOTs.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52456-y",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Longitudinal plasma proteomics reveals biomarkers of alveolar-capillary barrier disruption in critically ill COVID-19 patients",
+    "publication_date": "2024-01-25",
+    "abstract": "The pathobiology of respiratory failure in COVID-19 consists of a complex interplay between viral cytopathic effects and a dysregulated host immune response. In critically ill patients, imatinib treatment demonstrated potential for reducing invasive ventilation duration and mortality. Here, we perform longitudinal profiling of 6385 plasma proteins in 318 hospitalised patients to investigate the biological processes involved in critical COVID-19, and assess the effects of imatinib treatment. Nine proteins measured at hospital admission accurately predict critical illness development. Next to dysregulation of inflammation, critical illness is characterised by pathways involving cellular adhesion, extracellular matrix turnover and tissue remodelling. Imatinib treatment attenuates protein perturbations associated with inflammation and extracellular matrix turnover. These proteomic alterations are contextualised using external pulmonary RNA-sequencing data of deceased COVID-19 patients and imatinib-treated Syrian hamsters. Together, we show that alveolar capillary barrier disruption in critical COVID-19 is reflected in the plasma proteome, and is attenuated with imatinib treatment. This study comprises a secondary analysis of both clinical data and plasma samples derived from a clinical trial that was registered with the EU Clinical Trials Register (EudraCT 2020–001236–10,https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-001236-10/NL) and Netherlands Trial Register (NL8491,https://www.trialregister.nl/trial/8491).",
+    "article_url": "https://www.nature.com/articles/s41467-024-44986-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0

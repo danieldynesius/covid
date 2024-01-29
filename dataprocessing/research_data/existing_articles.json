@@ -448,5 +448,23 @@
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 1
+  },
+  {
+    "article_title": "Non-fatal outcomes of COVID-19 disease in pediatric organ transplantation associates with down-regulation of senescence pathways",
+    "publication_date": "2024-01-22",
+    "abstract": "This is a cross-sectional study examining kinetics and durability of immune response in children with solid organ transplants (SOTs) who had COVID-19 disease between November 2020 through June 2022, who were followed for 60-days at a single transplant center. Blood was collected between 1–14 (acute infection), and 15–60 days of a positive PCR (convalescence). SOT children with peripheral blood mononuclear cells (PBMC) cryopreserved before 2019 were non-infected controls (ctrls). PBMCs stimulated with 15-mer peptides from spike protein and anti-CD49d/anti-CD28. Testing done included mass cytometry, mi-RNA sequencing with confirmatory qPCR. 38 children formed the study cohort, 10 in the acute phase and 8 in the convalescence phase. 20 subjects were non-infected controls. Two subjects had severe disease. Subjects in the acute and convalescent phases were different subjects. The median age and tacrolimus level at blood draw was not significantly different. There was no death, and no subject was lost to follow-up. During acute infection CD57 expression was low in NKT, Th17 effector memory, memory Treg, CD4−CD8−, and γδT cells (p= 0.01,p= 0.04,p= 0.03,p= 0.03, p = 0.004 respectively). The frequencies of NK and Th2 effector memory cells increased (p= 0.01,p= 0.02) during acute infection. Non-switched memory B and CD8 central memory cell frequencies were decreased during acute infection (p= 0.02;p= 0.02), but the decrease in CD8 central memory cells did not persist. CD4−CD8−and CD14 monocyte frequencies increased during recovery (p= 0.03;p= 0.007). Our observations suggest down regulation of CD57 with absence of NK cell contraction protect against death from COVID-19 disease in children with SOTs.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52456-y",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 1
+  },
+  {
+    "article_title": "Longitudinal plasma proteomics reveals biomarkers of alveolar-capillary barrier disruption in critically ill COVID-19 patients",
+    "publication_date": "2024-01-25",
+    "abstract": "The pathobiology of respiratory failure in COVID-19 consists of a complex interplay between viral cytopathic effects and a dysregulated host immune response. In critically ill patients, imatinib treatment demonstrated potential for reducing invasive ventilation duration and mortality. Here, we perform longitudinal profiling of 6385 plasma proteins in 318 hospitalised patients to investigate the biological processes involved in critical COVID-19, and assess the effects of imatinib treatment. Nine proteins measured at hospital admission accurately predict critical illness development. Next to dysregulation of inflammation, critical illness is characterised by pathways involving cellular adhesion, extracellular matrix turnover and tissue remodelling. Imatinib treatment attenuates protein perturbations associated with inflammation and extracellular matrix turnover. These proteomic alterations are contextualised using external pulmonary RNA-sequencing data of deceased COVID-19 patients and imatinib-treated Syrian hamsters. Together, we show that alveolar capillary barrier disruption in critical COVID-19 is reflected in the plasma proteome, and is attenuated with imatinib treatment. This study comprises a secondary analysis of both clinical data and plasma samples derived from a clinical trial that was registered with the EU Clinical Trials Register (EudraCT 2020–001236–10,https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-001236-10/NL) and Netherlands Trial Register (NL8491,https://www.trialregister.nl/trial/8491).",
+    "article_url": "https://www.nature.com/articles/s41467-024-44986-w",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 1
   }
 ]

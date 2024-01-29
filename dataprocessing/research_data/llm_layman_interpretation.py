@@ -6,7 +6,7 @@ from datetime import timedelta
 
 config_file = '/home/stratega/code/analytics/covid/conf.ini'
 n_days_back_to_include = 30 # research from latest 30 days
-n_articles_to_write_to_publish = 7
+n_articles_to_write_to_publish = 700
 
 # Read the Conf file
 config = configparser.ConfigParser()
