@@ -11,7 +11,7 @@
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
 * Find more Datalinks to Covid Wastewater Data
-* Find ways to use social media data <span style="color: Red;">❌ Cancelled</span>
+* Find ways to use social media data ❌```diff - Cancelled```
 * Find ways to pull aggregated google trends search terms data by region 
 * Find ways to pull aggregated mobility data per region
 * Forecast covid transmission per country 1-4+ weeks ahead <span style="color: green;">&#10004; Completed</span>
