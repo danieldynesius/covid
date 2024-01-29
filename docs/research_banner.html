@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Banner Carousel</title>
+  <style>
+        #carouselContainer {
+            background: rgba(224, 10, 10, 0);
+            padding: 0px; /* Add some padding for better appearance */
+            text-align: center;
+            color: #271e1ad3;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            position: fixed;
+            width: auto; /* Set width to auto */
+            max-width: 750px; /* Set maximum width */
+            top: 0px; /* Adjust the starting position from the top */
+            bottom: 0px;/*
+            left: 50%; /* Center horizontally */
+            /*transform: translateX(-50%); /* Adjust for centering */
+            overflow-wrap: break-word;
+            margin: 10px; /* Corrected margin value */
+        }
+        #carouselContainer a {
+        text-decoration: none; /* Remove default underline */
+        color: #271e1ad3; /* Set link color, adjust as needed */
+    }
+    #carouselContainer a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+  </style>
+</head>
+<body> 
+  <div id="carouselContainer">
+    <!-- Dynamically generated carousel items -->
+<div class="carousel-item active" id=section1><a href="new_research.html#section1" target="_top">News: 🤖 The human coronavirus OC43 triggers protective CD4+ T cells that guard against SARS-CoV-2 in mice with HLA genes.</a></div><div class="carousel-item " id=section2><a href="new_research.html#section2" target="_top">News: 🤖 The MVA-based vaccine candidates, which contain either the normal or stabilized version of the SARS-CoV-2 spike protein, show different levels of ability to provoke an immune response in humans.</a></div><div class="carousel-item " id=section3><a href="new_research.html#section3" target="_top">News: 🤖 COVID-19 vaccines help protect people from getting sick by training the immune system to fight the virus, while ongoing research continues to explore more effective solutions.</a></div><div class="carousel-item " id=section4><a href="new_research.html#section4" target="_top">News: 🤖 In the COMP Study, respiratory distress occurred in newborns without SARS-CoV-2 infection after their mothers were exposed to the virus.</a></div>
+                        </div>
+                        <script>
+                            // Statically define the textList
+                            var textList = ["a 1", "b 2", "c 3"];
+                            // Create the carousel container
+                            var carouselContainer = document.getElementById("carouselContainer");
+                            // Create carousel items
+                            textList.forEach(function(text, index) {
+                            var section_id = `section${index + 1}`;
+                            var carouselItem = document.createElement('div');
+                            carouselItem.classList.add('carousel-item');
+                            carouselItem.id = section_id;
+                            carouselItem.textContent = text;
+                            // Append carousel item to the container
+                            carouselContainer.appendChild(carouselItem);
+                            });
+                            // Function to update carousel
+                            var index = 0;
+                            function updateCarousel() {
+                            // Hide all items
+                            document.querySelectorAll('.carousel-item').forEach(item => {
+                                item.style.display = 'none';
+                            });
+                            // Show the current item
+                            var currentItem = document.getElementById(`section${index + 1}`);
+                            if (currentItem) {
+                                currentItem.style.display = 'block';
+                            }
+                            index = (index + 1) % textList.length;
+                            }
+                            // Update the carousel every 10000 milliseconds
+                            setInterval(updateCarousel, 10000);
+                            updateCarousel();
+                        </script>
+                        </body>
+                        </html>
+    

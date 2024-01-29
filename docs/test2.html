@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Banner Carousel</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f0f0f0; /* Set body background to a light gray */
+      display: flex;
+      justify-content: center;
+    }
+
+    #carouselContainer {
+      background: linear-gradient(to right, #3a7bd5, #00d2ff); /* Gradient background */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow for a raised effect */
+      text-align: center;
+      color: #fff; /* Text color */
+      position: absolute;
+      top: 20px; /* Adjust the top spacing as needed */
+      white-space: nowrap;
+      font-size: 24px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="carouselContainer">
+    <!-- Dynamically generated carousel items -->
+    <!-- Replace this part with your research_banner variable -->
+    <!-- For demonstration, using a static textList -->
+
+    <div class="carousel-item active" id="section1"><a href="new_research.html#section1">🤖 Text 1</a></div>
+    <div class="carousel-item" id="section2"><a href="new_research.html#section2">🤖 Text 2</a></div>
+    <div class="carousel-item" id="section3"><a href="new_research.html#section3">🤖 Text 3</a></div>
+
+  </div>
+
+  <script>
+    // Statically define the textList
+    var textList = ["a 1", "b 2", "c 3"];
+
+    // Create the carousel container
+    var carouselContainer = document.getElementById("carouselContainer");
+
+    // Create carousel items
+    textList.forEach(function(text, index) {
+      var section_id = `section${index + 1}`;
+      var carouselItem = document.createElement('div');
+      carouselItem.classList.add('carousel-item');
+      carouselItem.id = section_id;
+      carouselItem.textContent = text;
+
+      // Append carousel item to the container
+      carouselContainer.appendChild(carouselItem);
+    });
+
+    // Function to update carousel
+    var index = 0;
+    function updateCarousel() {
+      // Hide all items
+      document.querySelectorAll('.carousel-item').forEach(item => {
+        item.style.display = 'none';
+      });
+
+      // Show the current item
+      var currentItem = document.getElementById(`section${index + 1}`);
+      if (currentItem) {
+        currentItem.style.display = 'block';
+      }
+
+      index = (index + 1) % textList.length;
+    }
+
+    // Update the carousel every 3000 milliseconds
+    setInterval(updateCarousel, 3000);
+    updateCarousel();
+  </script>
+
+</body>
+</html>

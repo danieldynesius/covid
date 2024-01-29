@@ -27,9 +27,14 @@ df = df[df['publication_date_dt'] > date_threshold]
 df.drop(columns=['publication_date_dt'], inplace=True)
 df
 #df[df['article_title']=='COVID-19 vaccines and beyond'].needs_ai_processing
-
-#df.loc[df['article_title'] == 'COVID-19 vaccines and beyond', 'needs_ai_processing'] = 1
 df.sort_values(by='publication_date',ascending=False, inplace=True)
+df.reset_index(inplace=True)
+
+#df.loc[df.index < n_articles_to_write_to_publish, 'needs_ai_processing'] = 1
+
+df
+
+
 #df.needs_ai_processing=1 # Needing to reparse stuff
 
 
@@ -54,11 +59,11 @@ for index, row in df.iterrows():
     print(f"Abstract: {abstract[:50]}\n")
     
     if df['needs_ai_processing'][index] == 1:
-        print('LLM processing article:', article_title)
+        print('LLM processing article:', article_title[:50],'..')
         response_title = ollama.chat(model='openchat', messages=[
         {
             'role': 'user',
-            'content': f'Please formulate this title simpler so a layman understands it well, Please change difficult words to simpler words:{article_title}',
+            'content': f"Please provide a concise summary of this research title in a single sentence, using a maximum of 20 words. Use simple language and phrasing without difficult words to ensure it's easily understandable for a layperson: {article_title}",
         },
         ])
         print('AI Title:', response_title['message']['content'])
@@ -75,7 +80,7 @@ for index, row in df.iterrows():
         df.loc[index, 'needs_ai_processing'] = 0 # indicate that it has been processed to not need to compute it again
 
     elif df['needs_ai_processing'][index] == 0:
-        print('Skipping - Already processed', article_title)
+        print('Skipping - Already processed', article_title[:50],'..')
     else:
         print('Error! Something went wrong..')
 
@@ -86,7 +91,13 @@ for index, row in df.iterrows():
     
 
 
-df
-df = df[0:n_articles_to_write_to_publish]
+if 'index' in df.columns:
+    df.drop(columns=['index'], inplace=True)
+else:
+    print("The 'index' column does not exist.")
+
 df.reset_index(inplace=True)
-df.to_json(selected_research_articles, orient='records', date_format='iso')
+df = df[0:n_articles_to_write_to_publish]
+
+df.to_json(selected_research_articles, orient='records', date_format='iso', index=False)
+df

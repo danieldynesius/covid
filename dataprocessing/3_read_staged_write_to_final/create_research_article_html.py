@@ -12,6 +12,7 @@ config.read(config_file)
 # Paths
 selected_research_articles = config.get('Paths', 'selected_research_articles')
 output_filename = 'new_research.html'
+output_filename_research_banner ='research_banner.html'
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
@@ -164,7 +165,7 @@ def generate_html(articles):
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Latest Research Articles</h2>
+                        <h2>Research News</h2>
                         <br>
                         <h4>🤖 Please note that an AI (LLM model) is used to create a more understandable Title & Abstract for <i>non-scientists</i>.<br>
                         Do not make conclusions based on the AI. <i><u>Please make sure you understand the true Title & Abstract before drawing conclusions</u></i>.</h4>
@@ -184,22 +185,121 @@ def generate_html(articles):
 """
 
     # Here's the actual article inserts into the other templates (above and below this segment)
+    research_banner = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Banner Carousel</title>
+  <style>
+        #carouselContainer {
+            background: rgba(224, 10, 10, 0);
+            padding: 0px; /* Add some padding for better appearance */
+            text-align: center;
+            color: #271e1ad3;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            position: fixed;
+            width: auto; /* Set width to auto */
+            max-width: 750px; /* Set maximum width */
+            top: 0px; /* Adjust the starting position from the top */
+            bottom: 0px;/*
+            left: 50%; /* Center horizontally */
+            /*transform: translateX(-50%); /* Adjust for centering */
+            overflow-wrap: break-word;
+            margin: 10px; /* Corrected margin value */
+        }
+        #carouselContainer a {
+        text-decoration: none; /* Remove default underline */
+        color: #271e1ad3; /* Set link color, adjust as needed */
+    }
 
-    for article in articles:
+    #carouselContainer a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+  </style>
+</head>
+<body> 
+
+  <div id="carouselContainer">
+    <!-- Dynamically generated carousel items -->
+
+  
+
+"""
+
+    for index, article in enumerate(articles):
+        # Increase the number for each loop to create a unique section_id
+        section_id = f"section{index + 1}"
+        print(section_id)
+        #research_banner += f"""<h5 id="{section_id}"><a href="#{section_id}" style="text-decoration: none; color: inherit;">🤖 {article['layman_title']}</a></h5>"""
+        active_class = 'active' if index == 0 else ''
+        research_banner += f"""<div class="carousel-item {active_class}" id={section_id}><a href="new_research.html#{section_id}" target="_top">News: 🤖 {article['layman_title']}</a></div>"""
+
+        
         html_content += f"""
-    <div style="margin: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-        <h3>{article['article_title']}</h3>
-        <h3>🤖 {article['layman_title']}</h3><br>
-        <p><strong style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); background-clip: text; -webkit-background-clip: text; color: transparent;">Publication Date</strong>: {article['publication_date']}</p>
-        <br>
-        <p>🤖 <strong>Abstract</strong></p>
-        <p>{article['layman_abstract']}</p>
-        <br><strong>Abstract</strong><br>
-        <p>{article['abstract']}</p>
-        <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
-        <br><br>
-    </div>"""
+        <div style="margin: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <h3>{article['article_title']}</h3>
+            <h3 id="{section_id}"><a href="#{section_id}" style="text-decoration: none; color: inherit;">🤖 {article['layman_title']}</a></h3><br>
+            <p><strong style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); background-clip: text; -webkit-background-clip: text; color: transparent;">Publication Date</strong>: {article['publication_date']}</p>
+            <br>
+            <p>🤖 <strong>Abstract</strong></p>
+            <p>{article['layman_abstract']}</p>
+            <br><strong>Abstract</strong><br>
+            <p>{article['abstract']}</p>
+            <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
+            <br><br>
+        </div>"""
 
+
+    research_banner += """
+                        </div>
+
+                        <script>
+                            // Statically define the textList
+                            var textList = ["a 1", "b 2", "c 3"];
+
+                            // Create the carousel container
+                            var carouselContainer = document.getElementById("carouselContainer");
+
+                            // Create carousel items
+                            textList.forEach(function(text, index) {
+                            var section_id = `section${index + 1}`;
+                            var carouselItem = document.createElement('div');
+                            carouselItem.classList.add('carousel-item');
+                            carouselItem.id = section_id;
+                            carouselItem.textContent = text;
+
+                            // Append carousel item to the container
+                            carouselContainer.appendChild(carouselItem);
+                            });
+
+                            // Function to update carousel
+                            var index = 0;
+                            function updateCarousel() {
+                            // Hide all items
+                            document.querySelectorAll('.carousel-item').forEach(item => {
+                                item.style.display = 'none';
+                            });
+
+                            // Show the current item
+                            var currentItem = document.getElementById(`section${index + 1}`);
+                            if (currentItem) {
+                                currentItem.style.display = 'block';
+                            }
+
+                            index = (index + 1) % textList.length;
+                            }
+
+                            // Update the carousel every 10000 milliseconds
+                            setInterval(updateCarousel, 10000);
+                            updateCarousel();
+                        </script>
+
+                        </body>
+                        </html>
+
+    """
 
     html_content += """
       
@@ -296,14 +396,16 @@ def generate_html(articles):
         
         $(this).removeClass('transition');
         });
-        });
-        
-     </script> 
+        });   
+     </script>
+     
   </body>
 </html>
 """
 
-    return html_content
+    return research_banner, html_content
+
+
 
 def save_html(html_content, output_path='.', output_filename=output_filename):
     output_filepath = os.path.join(output_path, output_filename)
@@ -316,11 +418,19 @@ with open(selected_research_articles, 'r', encoding='utf-8') as json_file:
     articles = json.load(json_file)
 
 # Generate HTML content
-html_content = generate_html(articles)
+research_banner, html_content = generate_html(articles)
 
-# Write the generated HTML content to a file
+
+
+# Write the generated HTML Articles to a file
 save_html(html_content, output_path=html_dir_gh, output_filename=output_filename)
 save_html(html_content, output_path=html_dir_bb, output_filename=output_filename)
 
+# Research banner
+save_html(research_banner, output_path=html_dir_gh, output_filename=output_filename_research_banner)
+save_html(research_banner, output_path=html_dir_bb, output_filename=output_filename_research_banner)
 
-print('Research News HTML files generated successfully.')
+
+
+print(f'{output_filename} files generated successfully.')
+print(f'{output_filename_research_banner} files generated successfully.')
