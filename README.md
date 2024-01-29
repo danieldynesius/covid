@@ -10,7 +10,7 @@
 * Collect & Share Data Sources for people to use for their Covid-projects
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
-* Find more Datalinks to Covid Wastewater Data <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
+* Find more Datalinks to Covid Wastewater Data
 * Find ways to use social media data <span style="color: Red;">❌ Cancelled</span>
 * Find ways to pull aggregated google trends search terms data by region 
 * Find ways to pull aggregated mobility data per region
@@ -19,6 +19,7 @@
 * Improve forecasts
 * Add variant data for better predictions <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
 * Improved data standardization <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
+* Add Research News from Nature.com using LLM to interpret Abstract for laypersons.<span style="color: green;">&#10004; Completed</span>
 <br><br>
 #### Reliability of The Project
 * Find ways of better hosting (URGENT - Exceeding free github tier)  <span style="color: green;">&#10004; Completed</span>

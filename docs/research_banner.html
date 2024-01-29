@@ -26,21 +26,29 @@
         text-decoration: none; /* Remove default underline */
         color: #271e1ad3; /* Set link color, adjust as needed */
     }
+
     #carouselContainer a:hover {
         text-decoration: underline; /* Add underline on hover */
     }
   </style>
 </head>
 <body> 
+
   <div id="carouselContainer">
     <!-- Dynamically generated carousel items -->
-<div class="carousel-item active" id=section1><a href="new_research.html#section1" target="_top">News: 🤖 The human coronavirus OC43 triggers protective CD4+ T cells that guard against SARS-CoV-2 in mice with HLA genes.</a></div><div class="carousel-item " id=section2><a href="new_research.html#section2" target="_top">News: 🤖 The MVA-based vaccine candidates, which contain either the normal or stabilized version of the SARS-CoV-2 spike protein, show different levels of ability to provoke an immune response in humans.</a></div><div class="carousel-item " id=section3><a href="new_research.html#section3" target="_top">News: 🤖 COVID-19 vaccines help protect people from getting sick by training the immune system to fight the virus, while ongoing research continues to explore more effective solutions.</a></div><div class="carousel-item " id=section4><a href="new_research.html#section4" target="_top">News: 🤖 In the COMP Study, respiratory distress occurred in newborns without SARS-CoV-2 infection after their mothers were exposed to the virus.</a></div>
+
+  
+
+<div class="carousel-item active" id=section1><a href="new_research.html#section1" target="_top">News: 🤖 Human OC43 Coronavirus Triggers Protective CD4+ T Cells Against SARS-CoV-2 in HLA Transgenic Mice</a></div><div class="carousel-item " id=section2><a href="new_research.html#section2" target="_top">News: 🤖 MVA-Based Vaccine Candidates Encoding Native or Prefusion-Stabilized SARS-CoV-2 Spike Show Different Immunogenicity in Humans</a></div><div class="carousel-item " id=section3><a href="new_research.html#section3" target="_top">News: 🤖 Understanding COVID-19 Vaccines and What Comes Next</a></div><div class="carousel-item " id=section4><a href="new_research.html#section4" target="_top">News: 🤖 Breathing Problems in Babies Not Infected with COVID-19 but Exposed to SARS-CoV-2 Virus in the COVID-Outcomes in Mother-Infant Pairs (COMP) Study</a></div><div class="carousel-item " id=section5><a href="new_research.html#section5" target="_top">News: 🤖 "Type 2 Diabetes Connection to Genetic Vulnerability and Severe Outcomes in COVID-19 Infections: A Study of the UK Biobank"</a></div><div class="carousel-item " id=section6><a href="new_research.html#section6" target="_top">News: 🤖 Understanding and Explaining the Benefits of a Protein Booster Vaccine Targeting the Beta Variant to Combat SARS-CoV-2</a></div><div class="carousel-item " id=section7><a href="new_research.html#section7" target="_top">News: 🤖 "Creating and Testing an Affordable Method for Detection of COVID-19 Using SYBR Green and Pooled Samples in Indonesia"</a></div>
                         </div>
+
                         <script>
                             // Statically define the textList
                             var textList = ["a 1", "b 2", "c 3"];
+
                             // Create the carousel container
                             var carouselContainer = document.getElementById("carouselContainer");
+
                             // Create carousel items
                             textList.forEach(function(text, index) {
                             var section_id = `section${index + 1}`;
@@ -48,9 +56,11 @@
                             carouselItem.classList.add('carousel-item');
                             carouselItem.id = section_id;
                             carouselItem.textContent = text;
+
                             // Append carousel item to the container
                             carouselContainer.appendChild(carouselItem);
                             });
+
                             // Function to update carousel
                             var index = 0;
                             function updateCarousel() {
@@ -58,17 +68,22 @@
                             document.querySelectorAll('.carousel-item').forEach(item => {
                                 item.style.display = 'none';
                             });
+
                             // Show the current item
                             var currentItem = document.getElementById(`section${index + 1}`);
                             if (currentItem) {
                                 currentItem.style.display = 'block';
                             }
+
                             index = (index + 1) % textList.length;
                             }
+
                             // Update the carousel every 10000 milliseconds
                             setInterval(updateCarousel, 10000);
                             updateCarousel();
                         </script>
+
                         </body>
                         </html>
+
     
