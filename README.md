@@ -11,24 +11,24 @@
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
 * Find more Datalinks to Covid Wastewater Data
-* Find ways to use social media data ❌```diff - Cancelled```
+* Find ways to use social media data ❌ ${\color{red}\text{Cancelled}}$
 * Find ways to pull aggregated google trends search terms data by region 
 * Find ways to pull aggregated mobility data per region
-* Forecast covid transmission per country 1-4+ weeks ahead <span style="color: green;">&#10004; Completed</span>
+* Forecast covid transmission per country 1-4+ weeks ahead &#10004; ${\color{green}\text{Completed}}$
 * Forecasts per region
 * Improve forecasts
 * Add variant data for better predictions <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
 * Improved data standardization <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
-* Add Research News from Nature.com using LLM to interpret Abstract for laypersons.<span style="color: green;">&#10004; Completed</span>
+* Add Research News from Nature.com using LLM to interpret Abstract for laypersons.&#10004; ${\color{green}\text{Completed}}$
 <br><br>
 #### Reliability of The Project
-* Find ways of better hosting (URGENT - Exceeding free github tier)  <span style="color: green;">&#10004; Completed</span>
+* Find ways of better hosting (URGENT - Exceeding free github tier) &#10004; ${\color{green}\text{Completed}}$
 * Data Quality Control 
 * Implementation of proper CI/CD pipeline
 * Testing prior to releases
 * Full automation of independent daily updates
 <br><br>
-
+\mathscr
 #### Outside of Scope (Currently)
 * Simulations of NPI's & transmission level
 <br><br>
