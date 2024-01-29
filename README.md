@@ -17,8 +17,8 @@
 * Forecast covid transmission per country 1-4+ weeks ahead &#10004; ${\color{green}\text{Completed}}$
 * Forecasts per region
 * Improve forecasts
-* Add variant data for better predictions <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
-* Improved data standardization <span style="color: DarkOrange;">🔨👷🚧⚠️  In Progress</span>
+* Add variant data for better predictions 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
+* Improved data standardization 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
 * Add Research News from Nature.com using LLM to interpret Abstract for laypersons.&#10004; ${\color{green}\text{Completed}}$
 <br><br>
 #### Reliability of The Project
