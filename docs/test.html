@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Simple Quiz</title>
+  <style>
+    /* Add some basic styling if needed */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #quiz-container {
+      text-align: center;
+    }
+
+    #result-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      color: white;
+      z-index: 1000;
+    }
+
+    #popup-content {
+      /*background-color: #e40d0d;*/
+      color: #000000;
+      background-color: #ffff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Quiz</h1>
+
+  <div id="quiz-container">
+    <div id="question"></div>
+    <form id="options-form">
+      <div id="options"></div>
+      <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+    </form>
+    <p id="result"></p>
+  </div>
+
+  <div id="result-popup">
+    <div id="popup-content">
+      <p id="popup-result"></p>
+      <canvas id="radarChart" width="400" height="400"></canvas>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  
+
+  <script>
+    // Define your quiz questions and answers
+    const quizData = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "Paris", "Madrid", "Rome"],
+    correctAnswer: "Paris",
+    category: 'Category 1'
+  },
+  {
+    question: "Which is bigger?",
+    options: ["Elephant", "Ant", "Earth", "My brain"],
+    correctAnswer: "My brain",
+    category: 'Category 2'
+  },
+  {
+    question: "What is better?",
+    options: ["Cat", "Dog"],
+    correctAnswer: "Dog",
+    category: 'Category 3'
+  },
+  {
+    question: "Which planet has rings around it?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    correctAnswer: "Saturn",
+    category: 'Category 4'
+  },      
+];
+
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    let submitButtonDisabled = false;
+
+    function loadQuestion() {
+      const questionContainer = document.getElementById("question");
+      const optionsContainer = document.getElementById("options");
+
+      const currentQuestion = quizData[currentQuestionIndex];
+
+      questionContainer.textContent = currentQuestion.question;
+
+      optionsContainer.innerHTML = "";
+      currentQuestion.options.forEach((option, index) => {
+        const label = document.createElement("label");
+        label.textContent = option;
+
+        const radioButton = document.createElement("input");
+        radioButton.type = "radio";
+        radioButton.name = "answer";
+        radioButton.value = option;
+        radioButton.id = "option" + index;
+
+        label.appendChild(radioButton);
+        optionsContainer.appendChild(label);
+      });
+
+      // Re-enable the submit button for the new question
+      document.getElementById("submitBtn").disabled = false;
+      submitButtonDisabled = false;
+    }
+
+    function checkAnswer() {
+      if (submitButtonDisabled) {
+        return; // Prevent spamming the submit button
+      }
+
+      const resultContainer = document.getElementById("result");
+      const optionsForm = document.getElementById("options-form");
+      const radioButtons = document.querySelectorAll('input[name="answer"]');
+      const selectedOption = document.querySelector('input[name="answer"]:checked');
+
+      if (selectedOption) {
+        const selectedValue = selectedOption.value;
+        const currentQuestion = quizData[currentQuestionIndex];
+
+        if (selectedValue === currentQuestion.correctAnswer) {
+          resultContainer.textContent = "Correct!";
+          correctAnswers++;
+        } else {
+          resultContainer.textContent = "Incorrect. The correct answer is: " + currentQuestion.correctAnswer;
+        }
+
+        // Disable radio buttons and the submit button after submission
+        radioButtons.forEach((radioButton) => {
+          radioButton.disabled = true;
+        });
+        optionsForm.elements["submitBtn"].disabled = true;
+        submitButtonDisabled = true;
+
+        // Move to the next question after a brief delay
+        setTimeout(() => {
+          resultContainer.textContent = "";
+          currentQuestionIndex++;
+          if (currentQuestionIndex < quizData.length) {
+            loadQuestion();
+          } else {
+            showPopup();
+          }
+        }, 500);
+      } else {
+        resultContainer.textContent = "Please select an answer before submitting.";
+      }
+    }
+
+    function showPopup() {
+  const popup = document.getElementById("result-popup");
+  const popupResult = document.getElementById("popup-result");
+  const radarChartCanvas = document.getElementById("radarChart");
+
+  popupResult.textContent = `You got ${correctAnswers} out of ${quizData.length} correct answers!`;
+
+  // Display the popup
+  popup.style.display = "flex";
+
+  // Render the radar chart with updated data
+  renderRadarChart(radarChartCanvas);
+}
+
+function renderRadarChart(canvas) {
+  const categoryLabels = ['Category 1', 'Category 2', 'Category 3', 'Category 4'];
+  let categoryScores = JSON.parse(localStorage.getItem('userScores')) || Array(categoryLabels.length).fill(0);
+
+  quizData.forEach((question, questionIndex) => {
+    const selectedOption = document.querySelector(`input[name="answer${questionIndex}"]:checked`);
+    if (selectedOption && selectedOption.value === question.correctAnswer) {
+      const categoryIndex = categoryLabels.indexOf(question.category);
+      if (categoryIndex !== -1) {
+        categoryScores[categoryIndex]++;
+      }
+    }
+  });
+
+  const datasets = [{
+    label: 'Values',
+    data: categoryScores,
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 2,
+    fill: true,
+    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+  }];
+
+  const maxScore = Math.max(...categoryScores) + 1; // Set a small padding for the maximum value
+
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: categoryLabels,
+      datasets: datasets,
+    },
+    options: {
+      scale: {
+        ticks: {
+          beginAtZero: true,
+          max: maxScore,
+        }
+      }
+    }
+  });
+}
+    function closePopup() {
+      const popup = document.getElementById("result-popup");
+      popup.style.display = "none";
+
+      // Reset quiz for future attempts
+      currentQuestionIndex = 0;
+      correctAnswers = 0;
+      loadQuestion();
+    }
+
+    // Load the first question when the page loads
+    window.onload = loadQuestion;
+  </script>
+
+</body>
+</html>

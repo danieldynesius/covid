@@ -45,6 +45,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Humoral profiles of toddlers and young children following SARS-CoV-2 mRNA vaccination",
+    "publication_date": "2024-01-30",
+    "abstract": "Although young children generally experience mild symptoms following infection with SARS-CoV-2, severe acute and long-term complications can occur. SARS-CoV-2 mRNA vaccines elicit robust immunoglobulin profiles in children ages 5 years and older, and in adults, corresponding with substantial protection against hospitalizations and severe disease. Whether similar immune responses and humoral protection can be observed in vaccinated infants and young children, who have a developing and vulnerable immune system, remains poorly understood. To study the impact of mRNA vaccination on the humoral immunity of infant, we use a system serology approach to comprehensively profile antibody responses in a cohort of children ages 6 months to 5 years who were vaccinated with the mRNA-1273 COVID-19 vaccine (25 μg). Responses are compared with vaccinated adults (100 μg), in addition to naturally infected toddlers and young children. Despite their lower vaccine dose, vaccinated toddlers elicit a functional antibody response as strong as adults, with higher antibody-dependent phagocytosis compared to adults, without report of side effects. Moreover, mRNA vaccination is associated with a higher IgG3-dependent humoral profile against SARS-CoV-2 compared to natural infection, supporting that mRNA vaccination is effective at eliciting a robust antibody response in toddlers and young children.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45181-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "The death rate of COVID-19 infection in different SARS-CoV-2 variants was related to C-reactive protein gene polymorphisms",
     "publication_date": "2024-01-06",
     "abstract": "The serum level of C-reactive protein (CRP) is a significant independent risk factor for Coronavirus disease 2019 (COVID-19). A link was found between serum CRP and genetic diversity within theCRPgene in earlier research. This study examined whetherCRPrs1205 and rs1800947 polymorphisms were associated with COVID-19 mortality among various severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) variants. We genotypedCRPrs1205 and rs1800947 polymorphisms in 2023 deceased and 2307 recovered patients using the polymerase chain reaction-restriction fragment length polymorphism method. There was a significant difference between the recovered and the deceased patients in terms of the minor allele frequency ofCRPrs1205 T and rs1800947 G. In all three variants, COVID-19 mortality rates were associated withCRPrs1800947 GG genotype. Furthermore,CRPrs1205 CC and rs1800947 GG genotypes showed higher CRP levels. It was found that the G-T haplotype was prevalent in all SARS-CoV-2 variants. The C–C and C–T haplotypes were statistically significant in Delta and Omicron BA.5 variants, respectively. In conclusion, polymorphisms within theCRPgene may relate to serum CRP levels and mortality among COVID-19 patients. In order to verify the utility ofCRPpolymorphism correlation in predicting COVID-19 mortality, a replication of these results is needed.",
@@ -63,10 +72,37 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Identification of a highly conserved neutralizing epitope within the RBD region of diverse SARS-CoV-2 variants",
+    "publication_date": "2024-01-29",
+    "abstract": "The constant emergence of SARS-CoV-2 variants continues to impair the efficacy of existing neutralizing antibodies, especially XBB.1.5 and EG.5, which showed exceptional immune evasion properties. Here, we identify a highly conserved neutralizing epitope targeted by a broad-spectrum neutralizing antibody BA7535, which demonstrates high neutralization potency against not only previous variants, such as Alpha, Beta, Gamma, Delta and Omicron BA.1-BA.5, but also more recently emerged Omicron subvariants, including BF.7, CH.1.1, XBB.1, XBB.1.5, XBB.1.9.1, EG.5. Structural analysis of the Omicron Spike trimer with BA7535-Fab using cryo-EM indicates that BA7535 recognizes a highly conserved cryptic receptor-binding domain (RBD) epitope, avoiding most of the mutational hot spots in RBD. Furthermore, structural simulation based on the interaction of BA7535-Fab/RBD complexes dissects the broadly neutralizing effect of BA7535 against latest variants. Therapeutic and prophylactic treatment with BA7535 alone or in combination with BA7208 protected female mice from the circulating Omicron BA.5 and XBB.1 variant infection, suggesting the highly conserved neutralizing epitope serves as a potential target for developing highly potent therapeutic antibodies and vaccines.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45050-3",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Necroptosis does not drive disease pathogenesis in a mouse infective model of SARS-CoV-2 in vivo",
+    "publication_date": "2024-01-30",
+    "abstract": "Necroptosis, a type of lytic cell death executed by the pseudokinase Mixed Lineage Kinase Domain-Like (MLKL) has been implicated in the detrimental inflammation caused by SARS-CoV-2 infection. We minimally and extensively passaged a single clinical SARS-CoV-2 isolate to create models of mild and severe disease in mice allowing us to dissect the role of necroptosis in SARS-CoV-2 disease pathogenesis. We infected wild-type and MLKL-deficient mice and found no significant differences in viral loads or lung pathology. In our model of severe COVID-19, MLKL-deficiency did not alter the host response, ameliorate weight loss, diminish systemic pro-inflammatory cytokines levels, or prevent lethality in aged animals. Our in vivo models indicate that necroptosis is dispensable in the pathogenesis of mild and severe COVID-19.",
+    "article_url": "https://www.nature.com/articles/s41419-024-06471-6",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Nanoparticle-based DNA vaccine protects against SARS-CoV-2 variants in female preclinical models",
     "publication_date": "2024-01-18",
     "abstract": "A safe and effective vaccine with long-term protection against SARS-CoV-2 variants of concern (VOCs) is a global health priority. Here, we develop lipid nanoparticles (LNPs) to provide safe and effective delivery of plasmid DNA (pDNA) and show protection against VOCs in female small animal models. Using a library of LNPs encapsulating unique barcoded DNA (b-DNA), we screen for b-DNA delivery after intramuscular administration. The top-performing LNPs are further tested for their capacity of pDNA uptake in antigen-presenting cells in vitro. The lead LNP is used to encapsulate pDNA encoding the HexaPro version of SARS-CoV-2 spike (LNP-HPS) and immunogenicity and protection is tested in vivo. LNP-HPS elicit a robust protective effect against SARS-CoV-2 Gamma (P.1), correlating with reduced lethality, decreased viral load in the lungs and reduced lung damage. LNP-HPS induce potent humoral and T cell responses against P.1, and generate high levels of neutralizing antibodies against P.1 and Omicron (B.1.1.529). Our findings indicate that the protective efficacy and immunogenicity elicited by LNP-HPS are comparable to those achieved by the approved COVID-19 vaccine from Biontech/Pfizer in animal models. Together, these findings suggest that LNP-HPS hold great promise as a vaccine candidate against VOCs.",
     "article_url": "https://www.nature.com/articles/s41467-024-44830-1",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Omicron Spike confers enhanced infectivity and interferon resistance to SARS-CoV-2 in human nasal tissue",
+    "publication_date": "2024-01-30",
+    "abstract": "Omicron emerged following COVID-19 vaccination campaigns, displaced previous SARS-CoV-2 variants of concern worldwide, and gave rise to lineages that continue to spread. Here, we show that Omicron exhibits increased infectivity in primary adult upper airway tissue relative to Delta. Using recombinant forms of SARS-CoV-2 and nasal epithelial cells cultured at the liquid-air interface, we show that mutations unique to Omicron Spike enable enhanced entry into nasal tissue. Unlike earlier variants of SARS-CoV-2, our findings suggest that Omicron enters nasal cells independently of serine transmembrane proteases and instead relies upon metalloproteinases to catalyze membrane fusion. Furthermore, we demonstrate that this entry pathway unlocked by Omicron Spike enables evasion from constitutive and interferon-induced antiviral factors that restrict SARS-CoV-2 entry following attachment. Therefore, the increased transmissibility exhibited by Omicron in humans may be attributed not only to its evasion of vaccine-elicited adaptive immunity, but also to its superior invasion of nasal epithelia and resistance to the cell-intrinsic barriers present therein.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45075-8",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -94,6 +130,15 @@
     "publication_date": "2024-01-11",
     "abstract": "Long COVID (LC) occurs after at least 10% of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infections, yet its etiology remains poorly understood. We used ‘omic” assays and serology to deeply characterize the global and SARS-CoV-2-specific immunity in the blood of individuals with clear LC and non-LC clinical trajectories, 8 months postinfection. We found that LC individuals exhibited systemic inflammation and immune dysregulation. This was evidenced by global differences in T cell subset distribution implying ongoing immune responses, as well as by sex-specific perturbations in cytolytic subsets. LC individuals displayed increased frequencies of CD4+T cells poised to migrate to inflamed tissues and exhausted SARS-CoV-2-specific CD8+T cells, higher levels of SARS-CoV-2 antibodies and a mis-coordination between their SARS-CoV-2-specific T and B cell responses. Our analysis suggested an improper crosstalk between the cellular and humoral adaptive immunity in LC, which can lead to immune dysregulation, inflammation and clinical symptoms associated with this debilitating condition.",
     "article_url": "https://www.nature.com/articles/s41590-023-01724-6",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Cycle threshold of SARS-CoV-2 RT-PCR as a driver of retesting",
+    "publication_date": "2024-01-29",
+    "abstract": "SARS-CoV-2 RT-PCR is a critical and, at times, limited resource. Frequent Retesting of patients may strain testing infrastructure unduly. Recommendations that include cycle threshold (Ct) cutoffs may incentivize early retesting when the Ct value is reported. We aimed to investigate patterns of retesting in association with initial Ct-values. We performed a retrospective analysis of RT-PCR results (including Ct-values) for patients from whom ≥ 2 samples were collected within 14 days, the first of which had to be positive. We calculated absolute and baseline-corrected kinetics of Ct-values over time, as well as the median initial Ct-values in dependence of the timing of the first retesting and the time until RT-PCR negativity for SARS-CoV-2. Retesting after an initial positive SARS-CoV-2 RT-PCR was most commonly performed on day 7, with patients being retested as early as day 1. The majority of patients retested within 14 days remained SARS-CoV-2 positive in the RT-PCR. Baseline-corrected Ct-values showed a quasi-linear increase over 14 days since the initial positive result. Both the timing until the first retesting and until RT-PCR negativity were inversely correlated with the initial Ct-value. The timing of retesting after a positive SARS-CoV-2 RT-PCR appears to be significantly influenced by the initial Ct-value. Although it can be assumed that Ct-values will increase steadily over time, strategies that rely on rigid Ct-cutoffs should be discussed critically, not only because of methodological caveats but also because of the strain on testing infrastructure caused by the incentive for early retesting that Ct-values apparently represent.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52984-7",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -171,19 +216,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
-    "publication_date": "2024-01-11",
-    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
-    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
+    "article_title": "A quest for universal anti-SARS-CoV-2 T cell assay: systematic review, meta-analysis, and experimental validation",
+    "publication_date": "2024-01-02",
+    "abstract": "Measuring SARS-CoV-2-specific T cell responses is crucial to understanding an individual’s immunity to COVID-19. However, high inter- and intra-assay variability make it difficult to define T cells as a correlate of protection against COVID-19. To address this, we performed systematic review and meta-analysis of 495 datasets from 94 original articles evaluating SARS-CoV-2-specific T cell responses using three assays – Activation Induced Marker (AIM), Intracellular Cytokine Staining (ICS), and Enzyme-Linked Immunospot (ELISPOT), and defined each assay’s quantitative range. We validated these ranges using samples from 193 SARS-CoV-2-exposed individuals. Although IFNγ ELISPOT was the preferred assay, our experimental validation suggested that it under-represented the SARS-CoV-2-specific T cell repertoire. Our data indicate that a combination of AIM and ICS or FluoroSpot assay would better represent the frequency, polyfunctionality, and compartmentalization of the antigen-specific T cell responses. Taken together, our results contribute to defining the ranges of antigen-specific T cell assays and propose a choice of assay that can be employed to better understand the cellular immune response against viral diseases.",
+    "article_url": "https://www.nature.com/articles/s41541-023-00794-9",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "A quest for universal anti-SARS-CoV-2 T cell assay: systematic review, meta-analysis, and experimental validation",
-    "publication_date": "2024-01-02",
-    "abstract": "Measuring SARS-CoV-2-specific T cell responses is crucial to understanding an individual’s immunity to COVID-19. However, high inter- and intra-assay variability make it difficult to define T cells as a correlate of protection against COVID-19. To address this, we performed systematic review and meta-analysis of 495 datasets from 94 original articles evaluating SARS-CoV-2-specific T cell responses using three assays – Activation Induced Marker (AIM), Intracellular Cytokine Staining (ICS), and Enzyme-Linked Immunospot (ELISPOT), and defined each assay’s quantitative range. We validated these ranges using samples from 193 SARS-CoV-2-exposed individuals. Although IFNγ ELISPOT was the preferred assay, our experimental validation suggested that it under-represented the SARS-CoV-2-specific T cell repertoire. Our data indicate that a combination of AIM and ICS or FluoroSpot assay would better represent the frequency, polyfunctionality, and compartmentalization of the antigen-specific T cell responses. Taken together, our results contribute to defining the ranges of antigen-specific T cell assays and propose a choice of assay that can be employed to better understand the cellular immune response against viral diseases.",
-    "article_url": "https://www.nature.com/articles/s41541-023-00794-9",
+    "article_title": "Measurement of IFN-γ and IL-2 for the assessment of the cellular immunity against SARS-CoV-2",
+    "publication_date": "2024-01-11",
+    "abstract": "The study of specific T-cell responses against SARS-CoV-2 is important for understanding long-term immunity and infection management. The aim of this study was to assess the dual IFN-γ and IL-2 detection, using a SARS-CoV-2 specific fluorescence ELISPOT, in patients undergoing acute disease, during convalescence, and after vaccination. We also evaluated humoral response and compared with T-cells with the aim of correlating both types of responses, and increase the number of specific response detection. Blood samples were drawn from acute COVID-19 patients and convalescent individuals classified according to disease severity; and from unvaccinated and vaccinated uninfected individuals. IgGs against Spike and nucleocapsid, IgMs against nucleocapsid, and neutralizing antibodies were also analyzed. Our results show that IFN-γ in combination with IL-2 increases response detection in acute and convalescent individuals (p = 0.023). In addition, IFN-γ detection can be a useful biomarker for monitoring severe acute patients, as our results indicate that those individuals with a poor outcome have lower levels of this cytokine. In some cases, the lack of cellular immunity is compensated by antibodies, confirming the role of both types of immune responses in infection, and confirming that their dual detection can increase the number of specific response detections. In summary, IFN-γ/IL-2 dual detection is promising for characterizing and assessing the immunization status, and helping in the patient management.",
+    "article_url": "https://www.nature.com/articles/s41598-024-51505-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -297,6 +342,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
+    "publication_date": "2024-01-18",
+    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
+    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "High quality of SARS-CoV-2 molecular diagnostics in a diverse laboratory landscape through supported benchmark testing and External Quality Assessment",
     "publication_date": "2024-01-16",
     "abstract": "A two-step strategy combining assisted benchmark testing (entry controls) and External Quality Assessments (EQAs) with blinded simulated clinical specimens to enhance and maintain the quality of nucleic acid amplification testing was developed. This strategy was successfully applied to 71 diagnostic laboratories in The Netherlands when upscaling the national diagnostic capacity during the SARS-CoV-2 pandemic. The availability of benchmark testing in combination with advice for improvement substantially enhanced the quality of the laboratory testing procedures for SARS-CoV-2 detection. The three subsequent EQA rounds demonstrated high quality testing with regard to specificity (99.6% correctly identified) and sensitivity (93.3% correctly identified). Even with the implementation of novel assays, changing workflows using diverse equipment and a high degree of assay heterogeneity, the overall high quality was maintained using this two-step strategy. We show that in contrast to the limited value of Cq value for absolute proxies of viral load, these Cq values can, in combination with metadata on strategies and techniques, provide valuable information for laboratories to improve their procedures. In conclusion, our two-step strategy (preparation phase followed by a series of EQAs) is a rapid and flexible system capable of scaling, improving, and maintaining high quality diagnostics even in a rapidly evolving (e.g. pandemic) situation.",
@@ -315,15 +369,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
-    "publication_date": "2024-01-18",
-    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
-    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "The development of an electrochemical immunosensor utilizing chicken IgY anti-spike antibody for the detection of SARS-CoV-2",
     "publication_date": "2024-01-07",
     "abstract": "This paper introduces a novel approach for detecting the SARS-CoV-2 recombinant spike protein combining a label free electrochemical impedimetric immunosensor with the use of purified chicken IgY antibodies. The sensor employs three electrodes and is functionalized with an anti-S IgY antibody, ELISA and immunoblot assays confirmed the positive response of chicken immunized with SARS-CoV2 S antigen. The developed immunosensor is effective in detecting SARS-CoV-2 in nasopharyngeal clinical samples from suspected cases. The key advantage of this biosensor is its remarkable sensitivity, and its capability of detecting very low concentrations of the target analyte, with a detection limit of 5.65 pg/mL. This attribute makes it highly suitable for practical point-of-care (POC) applications, particularly in low analyte count clinical scenarios, without requiring amplification. Furthermore, the biosensor has a wide dynamic range of detection, spanning from 11.56 to 740 ng/mL, which makes it applicable for sample analysis in a typical clinical setting.",
@@ -333,19 +378,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
-    "publication_date": "2024-01-23",
-    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
+    "article_title": "An mRNA vaccine encoding the SARS-CoV-2 receptor-binding domain protects mice from various Omicron variants",
+    "publication_date": "2024-01-02",
+    "abstract": "Here, we assessed the efficacy of a lipid nanoparticle-based mRNA vaccine candidate encoding the receptor-binding domain (LNP-mRNA-RBD) in mice. Mice immunized with LNP-mRNA-RBD based on the ancestral strain (ancestral-type LNP-mRNA-RBD) showed similar cellular responses against the ancestral strain and BA.5, but their neutralizing activity against BA.5 was lower than that against the ancestral strain. The ancestral-type LNP-mRNA-RBD protected mice from the ancestral strain or BA.5 challenge; however, its ability to reduce the viral burdens after BA.5 challenge was limited. In contrast, immunization with bivalent LNP-mRNA-RBD consisting of the ancestral-type and BA.4/5-type LNP-mRNA-RBD or monovalent BA.4/5-type LNP-mRNA-RBD elicited robust cellular responses, as well as high and moderate neutralizing titers against BA.5 and XBB.1.5, respectively. Furthermore, the vaccines containing BA.4/5-type LNP-mRNA-RBD remarkably reduced the viral burdens following BA.5 or XBB.1.5 challenge. Overall, our findings suggest that LNP-mRNA-RBD is effective against SARS-CoV-2 infection.",
+    "article_url": "https://www.nature.com/articles/s41541-023-00800-0",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "An mRNA vaccine encoding the SARS-CoV-2 receptor-binding domain protects mice from various Omicron variants",
-    "publication_date": "2024-01-02",
-    "abstract": "Here, we assessed the efficacy of a lipid nanoparticle-based mRNA vaccine candidate encoding the receptor-binding domain (LNP-mRNA-RBD) in mice. Mice immunized with LNP-mRNA-RBD based on the ancestral strain (ancestral-type LNP-mRNA-RBD) showed similar cellular responses against the ancestral strain and BA.5, but their neutralizing activity against BA.5 was lower than that against the ancestral strain. The ancestral-type LNP-mRNA-RBD protected mice from the ancestral strain or BA.5 challenge; however, its ability to reduce the viral burdens after BA.5 challenge was limited. In contrast, immunization with bivalent LNP-mRNA-RBD consisting of the ancestral-type and BA.4/5-type LNP-mRNA-RBD or monovalent BA.4/5-type LNP-mRNA-RBD elicited robust cellular responses, as well as high and moderate neutralizing titers against BA.5 and XBB.1.5, respectively. Furthermore, the vaccines containing BA.4/5-type LNP-mRNA-RBD remarkably reduced the viral burdens following BA.5 or XBB.1.5 challenge. Overall, our findings suggest that LNP-mRNA-RBD is effective against SARS-CoV-2 infection.",
-    "article_url": "https://www.nature.com/articles/s41541-023-00800-0",
+    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
+    "publication_date": "2024-01-23",
+    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -396,55 +441,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "COVID-19 vaccines and beyond",
-    "publication_date": "2024-01-26",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41423-024-01132-2",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "A stapled lipopeptide platform for preventing and treating highly pathogenic viruses of pandemic potential",
     "publication_date": "2024-01-04",
     "abstract": "The continued emergence of highly pathogenic viruses, which either thwart immune- and small molecule-based therapies or lack interventions entirely, mandates alternative approaches, particularly for prompt and facile pre- and post-exposure prophylaxis. Many highly pathogenic viruses, including coronaviruses, employ the six-helix bundle heptad repeat membrane fusion mechanism to achieve infection. Although heptad-repeat-2 decoys can inhibit viral entry by blocking six-helix bundle assembly, the biophysical and pharmacologic liabilities of peptides have hindered their clinical development. Here, we develop a chemically stapled lipopeptide inhibitor of SARS-CoV-2 as proof-of-concept for the platform. We show that our lead compound blocks infection by a spectrum of SARS-CoV-2 variants, exhibits mucosal persistence upon nasal administration, demonstrates enhanced stability compared to prior analogs, and mitigates infection in hamsters. We further demonstrate that our stapled lipopeptide platform yields nanomolar inhibitors of respiratory syncytial, Ebola, and Nipah viruses by targeting heptad-repeat-1 domains, which exhibit strikingly low mutation rates, enabling on-demand therapeutic intervention to combat viral outbreaks.",
     "article_url": "https://www.nature.com/articles/s41467-023-44361-1",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Using BCG vaccination to protect against COVID-19: when reality fails to meet expectation",
-    "publication_date": "2024-01-18",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41577-024-00992-z",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Tubeimosides are pan-coronavirus and filovirus inhibitors that can block their fusion protein binding to Niemann-Pick C1",
-    "publication_date": "2024-01-02",
-    "abstract": "SARS-CoV-2 and filovirus enter cells via the cell surface angiotensin-converting enzyme 2 (ACE2) or the late-endosome Niemann-Pick C1 (NPC1) as a receptor. Here, we screened 974 natural compounds and identified Tubeimosides I, II, and III as pan-coronavirus and filovirus entry inhibitors that target NPC1. Using in-silico, biochemical, and genomic approaches, we provide evidence that NPC1 also binds SARS-CoV-2 spike (S) protein on the receptor-binding domain (RBD), which is blocked by Tubeimosides. Importantly, NPC1 strongly promotes productive SARS-CoV-2 entry, which we propose is due to its influence on fusion in late endosomes. The Tubeimosides’ antiviral activity and NPC1 function are further confirmed by infection with SARS-CoV-2 variants of concern (VOC), SARS-CoV, and MERS-CoV. Thus, NPC1 is a critical entry co-factor for highly pathogenic human coronaviruses (HCoVs) in the late endosomes, and Tubeimosides hold promise as a new countermeasure for these HCoVs and filoviruses.",
-    "article_url": "https://www.nature.com/articles/s41467-023-44504-4",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Non-fatal outcomes of COVID-19 disease in pediatric organ transplantation associates with down-regulation of senescence pathways",
-    "publication_date": "2024-01-22",
-    "abstract": "This is a cross-sectional study examining kinetics and durability of immune response in children with solid organ transplants (SOTs) who had COVID-19 disease between November 2020 through June 2022, who were followed for 60-days at a single transplant center. Blood was collected between 1–14 (acute infection), and 15–60 days of a positive PCR (convalescence). SOT children with peripheral blood mononuclear cells (PBMC) cryopreserved before 2019 were non-infected controls (ctrls). PBMCs stimulated with 15-mer peptides from spike protein and anti-CD49d/anti-CD28. Testing done included mass cytometry, mi-RNA sequencing with confirmatory qPCR. 38 children formed the study cohort, 10 in the acute phase and 8 in the convalescence phase. 20 subjects were non-infected controls. Two subjects had severe disease. Subjects in the acute and convalescent phases were different subjects. The median age and tacrolimus level at blood draw was not significantly different. There was no death, and no subject was lost to follow-up. During acute infection CD57 expression was low in NKT, Th17 effector memory, memory Treg, CD4−CD8−, and γδT cells (p= 0.01,p= 0.04,p= 0.03,p= 0.03, p = 0.004 respectively). The frequencies of NK and Th2 effector memory cells increased (p= 0.01,p= 0.02) during acute infection. Non-switched memory B and CD8 central memory cell frequencies were decreased during acute infection (p= 0.02;p= 0.02), but the decrease in CD8 central memory cells did not persist. CD4−CD8−and CD14 monocyte frequencies increased during recovery (p= 0.03;p= 0.007). Our observations suggest down regulation of CD57 with absence of NK cell contraction protect against death from COVID-19 disease in children with SOTs.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52456-y",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Longitudinal plasma proteomics reveals biomarkers of alveolar-capillary barrier disruption in critically ill COVID-19 patients",
-    "publication_date": "2024-01-25",
-    "abstract": "The pathobiology of respiratory failure in COVID-19 consists of a complex interplay between viral cytopathic effects and a dysregulated host immune response. In critically ill patients, imatinib treatment demonstrated potential for reducing invasive ventilation duration and mortality. Here, we perform longitudinal profiling of 6385 plasma proteins in 318 hospitalised patients to investigate the biological processes involved in critical COVID-19, and assess the effects of imatinib treatment. Nine proteins measured at hospital admission accurately predict critical illness development. Next to dysregulation of inflammation, critical illness is characterised by pathways involving cellular adhesion, extracellular matrix turnover and tissue remodelling. Imatinib treatment attenuates protein perturbations associated with inflammation and extracellular matrix turnover. These proteomic alterations are contextualised using external pulmonary RNA-sequencing data of deceased COVID-19 patients and imatinib-treated Syrian hamsters. Together, we show that alveolar capillary barrier disruption in critical COVID-19 is reflected in the plasma proteome, and is attenuated with imatinib treatment. This study comprises a secondary analysis of both clinical data and plasma samples derived from a clinical trial that was registered with the EU Clinical Trials Register (EudraCT 2020–001236–10,https://www.clinicaltrialsregister.eu/ctr-search/trial/2020-001236-10/NL) and Netherlands Trial Register (NL8491,https://www.trialregister.nl/trial/8491).",
-    "article_url": "https://www.nature.com/articles/s41467-024-44986-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
