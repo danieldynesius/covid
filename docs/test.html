@@ -69,102 +69,130 @@
     question: "What is the capital of France?",
     options: ["Berlin", "Paris", "Madrid", "Rome"],
     correctAnswer: "Paris",
-    category: 'Category 1'
+    category: 'Heart & Blood Vessels' // Change the category name here
   },
   {
     question: "Which is bigger?",
     options: ["Elephant", "Ant", "Earth", "My brain"],
     correctAnswer: "My brain",
-    category: 'Category 2'
+    category: 'Brain' // Change the category name here
+  },
+  {
+    question: "Which is bigger?",
+    options: ["Elephant", "Ant", "Earth", "My brain"],
+    correctAnswer: "My brain",
+    category: 'Brain' // Change the category name here
   },
   {
     question: "What is better?",
     options: ["Cat", "Dog"],
     correctAnswer: "Dog",
-    category: 'Category 3'
+    category: 'Lungs' // Change the category name here
+  },
+  {
+    question: "Which is the best mask to avoid transmission?",
+    options: ["FFP2/N95","Cloth", "Surgeical Mask", "FFP3/N99"],
+    correctAnswer: "FFP3/N99",
+    category: 'Masks' // Change the category name here
+  },  
+  {
+    question: "Which planet has rings around it?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    correctAnswer: "Saturn",
+    category: 'Immune System' // Change the category name here
   },
   {
     question: "Which planet has rings around it?",
     options: ["Venus", "Mars", "Jupiter", "Saturn"],
     correctAnswer: "Saturn",
-    category: 'Category 4'
-  },      
+    category: 'Mental Health' // Change the category name here
+  },        
 ];
 
-    let currentQuestionIndex = 0;
-    let correctAnswers = 0;
-    let submitButtonDisabled = false;
+let currentQuestionIndex = 0;
+let correctAnswers = 0;
+let categoryCorrectAnswers = {}; // Object to store correct answers per category
+let submitButtonDisabled = false;
 
-    function loadQuestion() {
-      const questionContainer = document.getElementById("question");
-      const optionsContainer = document.getElementById("options");
+function loadQuestion() {
+  const questionContainer = document.getElementById("question");
+  const optionsContainer = document.getElementById("options");
 
-      const currentQuestion = quizData[currentQuestionIndex];
+  const currentQuestion = quizData[currentQuestionIndex];
 
-      questionContainer.textContent = currentQuestion.question;
+  questionContainer.textContent = currentQuestion.question;
 
-      optionsContainer.innerHTML = "";
-      currentQuestion.options.forEach((option, index) => {
-        const label = document.createElement("label");
-        label.textContent = option;
+  optionsContainer.innerHTML = "";
+  currentQuestion.options.forEach((option, index) => {
+    const label = document.createElement("label");
+    label.textContent = option;
 
-        const radioButton = document.createElement("input");
-        radioButton.type = "radio";
-        radioButton.name = "answer";
-        radioButton.value = option;
-        radioButton.id = "option" + index;
+    const radioButton = document.createElement("input");
+    radioButton.type = "radio";
+    radioButton.name = "answer";
+    radioButton.value = option;
+    radioButton.id = "option" + index;
 
-        label.appendChild(radioButton);
-        optionsContainer.appendChild(label);
-      });
+    label.appendChild(radioButton);
+    optionsContainer.appendChild(label);
+  });
 
-      // Re-enable the submit button for the new question
-      document.getElementById("submitBtn").disabled = false;
-      submitButtonDisabled = false;
-    }
+  // Re-enable the submit button for the new question
+  document.getElementById("submitBtn").disabled = false;
+  submitButtonDisabled = false;
+}
 
-    function checkAnswer() {
-      if (submitButtonDisabled) {
-        return; // Prevent spamming the submit button
-      }
+function checkAnswer() {
+  if (submitButtonDisabled) {
+    return; // Prevent spamming the submit button
+  }
 
-      const resultContainer = document.getElementById("result");
-      const optionsForm = document.getElementById("options-form");
-      const radioButtons = document.querySelectorAll('input[name="answer"]');
-      const selectedOption = document.querySelector('input[name="answer"]:checked');
+  const resultContainer = document.getElementById("result");
+  const optionsForm = document.getElementById("options-form");
+  const radioButtons = document.querySelectorAll('input[name="answer"]');
+  const selectedOption = document.querySelector('input[name="answer"]:checked');
 
-      if (selectedOption) {
-        const selectedValue = selectedOption.value;
-        const currentQuestion = quizData[currentQuestionIndex];
+  if (selectedOption) {
+    const selectedValue = selectedOption.value;
+    const currentQuestion = quizData[currentQuestionIndex];
 
-        if (selectedValue === currentQuestion.correctAnswer) {
-          resultContainer.textContent = "Correct!";
-          correctAnswers++;
-        } else {
-          resultContainer.textContent = "Incorrect. The correct answer is: " + currentQuestion.correctAnswer;
-        }
-
-        // Disable radio buttons and the submit button after submission
-        radioButtons.forEach((radioButton) => {
-          radioButton.disabled = true;
-        });
-        optionsForm.elements["submitBtn"].disabled = true;
-        submitButtonDisabled = true;
-
-        // Move to the next question after a brief delay
-        setTimeout(() => {
-          resultContainer.textContent = "";
-          currentQuestionIndex++;
-          if (currentQuestionIndex < quizData.length) {
-            loadQuestion();
-          } else {
-            showPopup();
-          }
-        }, 500);
+    if (selectedValue === currentQuestion.correctAnswer) {
+      resultContainer.textContent = "Correct!";
+      if (!categoryCorrectAnswers[currentQuestion.category]) {
+        categoryCorrectAnswers[currentQuestion.category] = 1;
       } else {
-        resultContainer.textContent = "Please select an answer before submitting.";
+        categoryCorrectAnswers[currentQuestion.category]++;
       }
+      correctAnswers++;
+    } else {
+      resultContainer.textContent = "Incorrect. The correct answer is: " + currentQuestion.correctAnswer;
+      categoryCorrectAnswers[currentQuestion.category] = 0; // Set the category score to 0 when the answer is incorrect
     }
+
+    // Disable radio buttons and the submit button after submission
+    radioButtons.forEach((radioButton) => {
+      radioButton.disabled = true;
+    });
+    optionsForm.elements["submitBtn"].disabled = true;
+    submitButtonDisabled = true;
+
+    // Move to the next question after a brief delay
+    setTimeout(() => {
+      resultContainer.textContent = "";
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        showPopup();
+        console.log("Category Correct Answers:", categoryCorrectAnswers);
+      }
+    }, 500);
+  } else {
+    resultContainer.textContent = "Please select an answer before submitting.";
+  }
+}
+
+
 
     function showPopup() {
   const popup = document.getElementById("result-popup");
@@ -181,21 +209,11 @@
 }
 
 function renderRadarChart(canvas) {
-  const categoryLabels = ['Category 1', 'Category 2', 'Category 3', 'Category 4'];
-  let categoryScores = JSON.parse(localStorage.getItem('userScores')) || Array(categoryLabels.length).fill(0);
-
-  quizData.forEach((question, questionIndex) => {
-    const selectedOption = document.querySelector(`input[name="answer${questionIndex}"]:checked`);
-    if (selectedOption && selectedOption.value === question.correctAnswer) {
-      const categoryIndex = categoryLabels.indexOf(question.category);
-      if (categoryIndex !== -1) {
-        categoryScores[categoryIndex]++;
-      }
-    }
-  });
+  const customCategoryLabels = ['Heart & Blood Vessels', 'Brain', 'Lungs', 'Immune System', 'Masks']; // Change the category names here
+  const categoryScores = customCategoryLabels.map((category) => categoryCorrectAnswers[category] || 0);
 
   const datasets = [{
-    label: 'Values',
+    label: 'Score',
     data: categoryScores,
     borderColor: 'rgba(75, 192, 192, 1)',
     borderWidth: 2,
@@ -208,7 +226,7 @@ function renderRadarChart(canvas) {
   new Chart(canvas, {
     type: 'radar',
     data: {
-      labels: categoryLabels,
+      labels: customCategoryLabels,
       datasets: datasets,
     },
     options: {
@@ -221,6 +239,8 @@ function renderRadarChart(canvas) {
     }
   });
 }
+
+
     function closePopup() {
       const popup = document.getElementById("result-popup");
       popup.style.display = "none";

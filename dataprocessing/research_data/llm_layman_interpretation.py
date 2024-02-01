@@ -102,4 +102,5 @@ df
 df.to_json(existing_research_articles, orient='records', date_format='iso', default_handler=str, indent=4, index=False)
 
 df = df[0:n_articles_to_write_to_publish]
-df.to_json(selected_research_articles, orient='records', date_format='iso', index=False)
+#df.to_json(selected_research_articles, orient='records', date_format='iso', index=False) #old
+df.to_json(selected_research_articles, orient='records', date_format='iso', default_handler=str, indent=4, index=False)
