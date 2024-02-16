@@ -31,10 +31,11 @@ stem = 'https://www.nature.com'
 """
 # Initialize an empty list to store article information
 article_list = []
-
+article_nr = 0
 for article_link in article_links:
+    article_nr += 1
     article_url = stem + article_link['href']
-    print('article url:', article_url)
+    print('article',article_nr, 'url:', article_url)
 
     # Navigate to the article URL
     article_response = requests.get(article_url)
@@ -42,14 +43,18 @@ for article_link in article_links:
     article_header = article_soup.find('h1', class_='c-article-title')
 
     # Assuming you have the BeautifulSoup object 'article_soup'
-    article_publicationdate = article_soup.find('a', href='#article-info').find('time')
+    try: 
+        article_publicationdate = article_soup.select_one('a[href="#article-info"] time')
+        if article_publicationdate:
+            publication_date = article_publicationdate['datetime']
+        else:
+            publication_date = "No time element found."
 
-    # Check if the time element is found
-    if article_publicationdate:
-        # Extract the datetime attribute
-        publication_date = article_publicationdate['datetime']
-    else:
-        publication_date = "No time element found."
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        publication_date = "Error occurred while extracting publication date."
+
+
 
     # Assuming you have the BeautifulSoup object 'soup'
     abs1_section_div = article_soup.find('div', id='Abs1-section')
@@ -85,6 +90,7 @@ print(json_data)
 with open("article_data.json", "w", encoding="utf-8") as json_file:
     json.dump(article_list, json_file, ensure_ascii=False, indent=2)
 """
+
 """
 import pandas as pd
 df = pd.read_json("article_data.json", orient="records")
@@ -94,6 +100,7 @@ paragraphs_string = ''.join(df.paragraphs[0])
 """
 
 # Fast but witchcraft (ok to use until it breaks)
+
 import asyncio
 import aiohttp
 from bs4 import BeautifulSoup
@@ -113,15 +120,16 @@ async def process_article(article_link):
     article_soup = BeautifulSoup(article_html, 'html.parser')
     article_header = article_soup.find('h1', class_='c-article-title')
     # Assuming you have the BeautifulSoup object 'article_soup'
-    article_publicationdate = article_soup.find('a', href='#article-info').find('time')
+    try: 
+        article_publicationdate = article_soup.select_one('a[href="#article-info"] time')
+        if article_publicationdate:
+            publication_date = article_publicationdate['datetime']
+        else:
+            publication_date = "No time element found."
 
-    # Check if the time element is found
-    if article_publicationdate:
-        # Extract the datetime attribute
-        publication_date = article_publicationdate['datetime']
-    else:
-        publication_date = "No time element found."
-
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        publication_date = "Error occurred while extracting publication date."
     # Assuming you have the BeautifulSoup object 'soup'
     abs1_section_div = article_soup.find('div', id='Abs1-section')
 
@@ -220,5 +228,6 @@ print(json_data)
 # Save the updated JSON data to the file
 with open(existing_research_articles, "w", encoding="utf-8") as json_file:
     json.dump(existing_articles, json_file, ensure_ascii=False, indent=2)
+
 
 print('Nature Articles Downloaded!')

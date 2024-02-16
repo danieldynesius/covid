@@ -22,6 +22,18 @@ html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
 df = pd.read_json(existing_research_articles)
+
+# Drop rows based on condition
+df = df[~df['abstract'].str.contains("No div with ID 'Abs1-section'")]
+
+# Drop index
+if 'index' in df.columns:
+    print('Dropping index')
+    df.drop(columns=['index'], inplace=True)
+else:
+    print("The 'index' column does not exist.")
+
+
 date_threshold = pd.to_datetime(dt.now()) - pd.DateOffset(days=n_days_back_to_include)
 df['publication_date_dt'] = pd.to_datetime(df['publication_date'])
 df = df[df['publication_date_dt'] > date_threshold]
@@ -94,9 +106,16 @@ if 'index' in df.columns:
 else:
     print("The 'index' column does not exist.")
 
+if 'level_0' in df.columns:
+    print('Dropping level_0')
+    df.drop(columns=['level_0'], inplace=True)
+else:
+    print("The 'level_0' column does not exist.")
+
+df.head()
 df.reset_index(inplace=True)
 
-df
+df.head()
 
 #df.to_json('./output.json', orient='records', date_format='iso', index=False)
 df.to_json(existing_research_articles, orient='records', date_format='iso', default_handler=str, indent=4, index=False)
