@@ -9,6 +9,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Demographic and Clinical Factors Associated With SARS-CoV-2 Spike 1 Antibody Response Among Vaccinated US Adults: the C4R Study",
+    "publication_date": "2024-02-19",
+    "abstract": "This study investigates correlates of anti-S1 antibody response following COVID-19 vaccination in a U.S. population-based meta-cohort of adults participating in longstanding NIH-funded cohort studies. Anti-S1 antibodies were measured from dried blood spots collected between February 2021-August 2022 using Luminex-based microsphere immunoassays. Of 6245 participants, mean age was 73 years (range, 21-100), 58% were female, and 76% were non-Hispanic White. Nearly 52% of participants received the BNT162b2 vaccine and 48% received the mRNA-1273 vaccine. Lower anti-S1 antibody levels are associated with age of 65 years or older, male sex, higher body mass index, smoking, diabetes, COPD and receipt of BNT16b2 vaccine (vs mRNA-1273). Participants with a prior infection, particularly those with a history of hospitalized illness, have higher anti-S1 antibody levels. These results suggest that adults with certain socio-demographic and clinical characteristics may have less robust antibody responses to COVID-19 vaccination and could be prioritized for more frequent re-vaccination.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45468-9",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Respiratory distress in SARS-CoV-2 exposed uninfected neonates followed in the COVID Outcomes in Mother-Infant Pairs (COMP) Study",
     "publication_date": "2024-01-24",
     "abstract": "Respiratory distress (RD) has been reported in SARS-CoV-2 exposed uninfected (SEU) term neonates. Prior studies suggest that prenatal exposure to Coronavirus Disease 19 (COVID-19) may activate an inflammatory cascade in the newborn airway. In this study, we examine the relationship between maternal COVID-19 vaccination and neonatal RD using a longitudinal cohort of mother-infant pairs in Los Angeles, CA. Two-hundred and twenty-one mothers with laboratory confirmed SARS-CoV-2 during pregnancy and 227 exposed fetuses are enrolled in our study. Maternal disease severity and neonatal RD variables were defined based on current accepted clinical criteria. To explore the multifactorial associations between maternal COVID-19 parameters and infant RD, we utilize a multivariable logistic regression model and a proteomic sub-analysis to propose a pathway for the development of RD followingin uteroexposure to SARS-CoV-2. Unusually high rates of RD are observed in SEU infants (17%). The odds ratio of RD is 3.06 (95% CI:1.08-10.21) in term neonates born to unvaccinated individuals versus those born to individuals vaccinated prior to maternal infection. Proteomic analysis reveals a robust inflammatory response associated with ciliary dysregulation and enhanced IgE production among SEU neonates with RD. Maternal vaccination against COVID-19 reduces the frequency of neonatal RD.",
@@ -36,10 +45,37 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Prefusion-stabilized SARS-CoV-2 S2-only antigen provides protection against SARS-CoV-2 challenge",
+    "publication_date": "2024-02-20",
+    "abstract": "Ever-evolving SARS-CoV-2 variants of concern (VOCs) have diminished the effectiveness of therapeutic antibodies and vaccines. Developing a coronavirus vaccine that offers a greater breadth of protection against current and future VOCs would eliminate the need to reformulate COVID-19 vaccines. Here, we rationally engineer the sequence-conserved S2 subunit of the SARS-CoV-2 spike protein and characterize the resulting S2-only antigens. Structural studies demonstrate that the introduction of interprotomer disulfide bonds can lock S2 in prefusion trimers, although the apex samples a continuum of conformations between open and closed states. Immunization with prefusion-stabilized S2 constructs elicits broadly neutralizing responses against several sarbecoviruses and protects female BALB/c mice from mouse-adapted SARS-CoV-2 lethal challenge and partially protects female BALB/c mice from mouse-adapted SARS-CoV lethal challenge. These engineering and immunogenicity results should inform the development of next-generation pan-coronavirus therapeutics and vaccines.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45404-x",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Analysis of related factors for RA flares after SARS-CoV-2 infection: a retrospective study from patient survey",
+    "publication_date": "2024-02-20",
+    "abstract": "SARS-CoV-2 and its variants are widely prevalent worldwide. With frequent secondary and breakthrough infections, immune dysfunction in RA patients, and long-term use of immune preparations, SARS-CoV-2 infection poses a significant challenge to patients and rheumatologists. Whether SARS-CoV-2 infection causes RA flares and what factors aggravate RA flares are poorly studied. A questionnaire survey was conducted on RA patients infected with SARS-CoV-2 after December 7, 2022, in China through a multicenter and inter-network platform regarding general personal condition, primary disease, comorbidity, SARS-CoV-2 vaccination, viral infection, and impact on the primary disease. A total of 306 RA patients were included in this study, and the patient data were analyzed, in which the general condition of RA patients, medication use before SARS-CoV-2 infection and post-infection typing and manifestations, and medication adjustment did not affect the Flare of RA patients after SARS-CoV-2 infection. The control of disease before SARS-CoV-2 infection (OR = 2.10), RA involving pulmonary lesions (OR = 2.28), and the recovery time of COVID-19 (OR = 2.50) were risk factors for RA flare. RA involving pulmonary lesions, control status of disease before infection, and recovery time of COVID-19 disease are risk factors for RA flare after SARS-CoV-2 infection.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52748-3",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Humoral profiles of toddlers and young children following SARS-CoV-2 mRNA vaccination",
     "publication_date": "2024-01-30",
     "abstract": "Although young children generally experience mild symptoms following infection with SARS-CoV-2, severe acute and long-term complications can occur. SARS-CoV-2 mRNA vaccines elicit robust immunoglobulin profiles in children ages 5 years and older, and in adults, corresponding with substantial protection against hospitalizations and severe disease. Whether similar immune responses and humoral protection can be observed in vaccinated infants and young children, who have a developing and vulnerable immune system, remains poorly understood. To study the impact of mRNA vaccination on the humoral immunity of infant, we use a system serology approach to comprehensively profile antibody responses in a cohort of children ages 6 months to 5 years who were vaccinated with the mRNA-1273 COVID-19 vaccine (25 μg). Responses are compared with vaccinated adults (100 μg), in addition to naturally infected toddlers and young children. Despite their lower vaccine dose, vaccinated toddlers elicit a functional antibody response as strong as adults, with higher antibody-dependent phagocytosis compared to adults, without report of side effects. Moreover, mRNA vaccination is associated with a higher IgG3-dependent humoral profile against SARS-CoV-2 compared to natural infection, supporting that mRNA vaccination is effective at eliciting a robust antibody response in toddlers and young children.",
     "article_url": "https://www.nature.com/articles/s41467-024-45181-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Prevalence of persistent SARS-CoV-2 in a large community surveillance study",
+    "publication_date": "2024-02-21",
+    "abstract": "Persistent SARS-CoV-2 infections may act as viral reservoirs that could seed future outbreaks1,2,3,4,5, give rise to highly divergent lineages6,7,8and contribute to cases with post-acute COVID-19 sequelae (long COVID)9,10. However, the population prevalence of persistent infections, their viral load kinetics and evolutionary dynamics over the course of infections remain largely unknown. Here, using viral sequence data collected as part of a national infection survey, we identified 381 individuals with SARS-CoV-2 RNA at high titre persisting for at least 30 days, of which 54 had viral RNA persisting at least 60 days. We refer to these as ‘persistent infections’ as available evidence suggests that they represent ongoing viral replication, although the persistence of non-replicating RNA cannot be ruled out in all. Individuals with persistent infection had more than 50% higher odds of self-reporting long COVID than individuals with non-persistent infection. We estimate that 0.1–0.5% of infections may become persistent with typically rebounding high viral loads and last for at least 60 days. In some individuals, we identified many viral amino acid substitutions, indicating periods of strong positive selection, whereas others had no consensus change in the sequences for prolonged periods, consistent with weak selection. Substitutions included mutations that are lineage defining for SARS-CoV-2 variants, at target sites for monoclonal antibodies and/or are commonly found in immunocompromised people11,12,13,14. This work has profound implications for understanding and characterizing SARS-CoV-2 infection, epidemiology and evolution.",
+    "article_url": "https://www.nature.com/articles/s41586-024-07029-4",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -63,10 +99,28 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "COVID-19 immune signatures in Uganda persist in HIV co-infection and diverge by pandemic phase",
+    "publication_date": "2024-02-17",
+    "abstract": "Little is known about the pathobiology of SARS-CoV-2 infection in sub-Saharan Africa, where severe COVID-19 fatality rates are among the highest in the world and the immunological landscape is unique. In a prospective cohort study of 306 adults encompassing the entire clinical spectrum of SARS-CoV-2 infection in Uganda, we profile the peripheral blood proteome and transcriptome to characterize the immunopathology of COVID-19 across multiple phases of the pandemic. Beyond the prognostic importance of myeloid cell-driven immune activation and lymphopenia, we show that multifaceted impairment of host protein synthesis and redox imbalance define core biological signatures of severe COVID-19, with central roles for IL-7, IL-15, and lymphotoxin-α in COVID-19 respiratory failure. While prognostic signatures are generally consistent in SARS-CoV-2/HIV-coinfection, type I interferon responses uniquely scale with COVID-19 severity in persons living with HIV. Throughout the pandemic, COVID-19 severity peaked during phases dominated by A.23/A.23.1 and Delta B.1.617.2/AY variants. Independent of clinical severity, Delta phase COVID-19 is distinguished by exaggerated pro-inflammatory myeloid cell and inflammasome activation, NK and CD8+T cell depletion, and impaired host protein synthesis. Combining these analyses with a contemporary Ugandan cohort of adults hospitalized with influenza and other severe acute respiratory infections, we show that activation of epidermal and platelet-derived growth factor pathways are distinct features of COVID-19, deepening translational understanding of mechanisms potentially underlying SARS-CoV-2-associated pulmonary fibrosis. Collectively, our findings provide biological rationale for use of broad and targeted immunotherapies for severe COVID-19 in sub-Saharan Africa, illustrate the relevance of local viral and host factors to SARS-CoV-2 immunopathology, and highlight underemphasized yet therapeutically exploitable immune pathways driving COVID-19 severity.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45204-3",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "A monoclonal antibody targeting a large surface of the receptor binding motif shows pan-neutralizing SARS-CoV-2 activity",
     "publication_date": "2024-02-05",
     "abstract": "Here we report the characterization of 17T2, a SARS-CoV-2 pan-neutralizing human monoclonal antibody isolated from a COVID-19 convalescent individual infected during the first pandemic wave. 17T2 is a class 1 VH1-58/κ3-20 antibody, derived from a receptor binding domain (RBD)-specific IgA+memory B cell, with a broad neutralizing activity against former and new SARS-CoV-2 variants, including XBB.1.16 and BA.2.86 Omicron subvariants. Consistently, 17T2 demonstrates in vivo prophylactic and therapeutic activity against Omicron BA.1.1 infection in K18-hACE2 mice. Cryo-electron microscopy reconstruction shows that 17T2 binds the BA.1 spike with the RBD in “up” position and blocks the receptor binding motif, as other structurally similar antibodies do, including S2E12. Yet, unlike S2E12, 17T2 retains its neutralizing activity against all variants tested, probably due to a larger RBD contact area. These results highlight the impact of small structural antibody changes on neutralizing performance and identify 17T2 as a potential candidate for future clinical interventions.",
     "article_url": "https://www.nature.com/articles/s41467-024-45171-9",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Impact of ageing on homologous and human-coronavirus-reactive antibodies after SARS-CoV-2 vaccination or infection",
+    "publication_date": "2024-02-20",
+    "abstract": "The endemic human coronaviruses (HCoVs) circulate worldwide yet remain understudied and unmitigated. The observation of elevated levels of HCoV reactive antibodies in COVID-19 patients highlights the urgent necessity of better understanding of HCoV specific immunity. Here, we characterized in-depth the de novo SARS-CoV-2 specific antibody responses and the boosting of HCoV-reactive antibodies after SARS-CoV-2 vaccination or infection in individuals up to 98 years old. All the vaccinees were home-dwelling with no documented SARS-CoV-2 infection before receiving the COVID-19 mRNA vaccine (BNT162b2). The first two vaccine doses elicited potent SARS-CoV-2 spike binding antibodies in individuals up to 80 years. The third dose largely boosted the previously low S2 domain binding and neutralizing antibodies in elderly 80–90 years old, but less so in those above 90 years. The endemicbetacoronavirus(HKU1 and OC43) reactive antibodies were boosted in all vaccinees, although to a lesser extent in those above 80 years old. COVID-19 patients had potent elevation ofalpha-andbetacoronavirus(229E, NL63, HKU1 and OC43) reactive antibodies. In both patients and vaccinees, S2 domain specific antibody increases correlated with SARS-CoV-2 neutralizing and HCoV-reactive antibody responses in all ages, indicating S2 domain as a candidate for future universal coronavirus vaccine design.",
+    "article_url": "https://www.nature.com/articles/s41541-024-00817-z",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -81,10 +135,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Risk for diagnosis or treatment of mood or anxiety disorders in adults after SARS-CoV-2 infection, 2020–2022",
-    "publication_date": "2024-01-18",
-    "abstract": "COVID-19 is associated with increased risks for mood or anxiety disorders, but it remains uncertain how the association evolves over time or which patient groups are most affected. We conducted a retrospective cohort study using a nationwide database of electronic health records to determine the risk of depressive or anxiety disorder diagnoses after SARS-CoV-2 infection by 3-month blocks from January 2020 to April 2022. The study population comprised 822,756 patients (51.8% female; mean age 42.8 years) with COVID-19 and 2,034,353 patients with other respiratory tract infections (RTIs) (53.5% female, mean age 30.6 years). First time diagnoses of depressive or anxiety disorders 14 days to 3 months after infection, as well as new or new plus recurrent prescriptions of antidepressants or anxiolytics, were compared between propensity score matched cohorts using Kaplan-Meier survival analysis, including hazard ratio (HR) and 95% confidence interval (CI). Risk of a new diagnosis or prescription was also stratified by age, sex, and race to better characterize which groups were most affected. In the first three months of the pandemic, patients infected with SARS-CoV-2 had significantly increased risk of depression or anxiety disorder diagnosis (HR 1.65 [95% CI, 1.30-2.08]). October 2021 to January 2022 (HR, 1.12 [95% CI, 1.06–1.18]) and January to April 2022 (HR, 1.08 [95% CI, 1.01–1.14]). Similar temporal patterns were observed for antidepressant and anxiolytic prescriptions, when the control group was patients with bone fracture, when anxiety and depressive disorders were considered separately, when recurrent depressive disorder was tested, and when the test period was extended to 6 months. COVID-19 patients ≥65 years old demonstrated greatest absolute risk at the start of the pandemic (6.8%), which remained consistently higher throughout the study period (HR, 1.20 [95% CI, 1.13–1.27]), and overall, women with COVID-19 had greater risk than men (HR 1.35 [95% CI 1.30–1.40]).",
-    "article_url": "https://www.nature.com/articles/s41380-024-02414-x",
+    "article_title": "Randomized controlled trial of molnupiravir SARS-CoV-2 viral and antibody response in at-risk adult outpatients",
+    "publication_date": "2024-02-23",
+    "abstract": "Viral clearance, antibody response and the mutagenic effect of molnupiravir has not been elucidated in at-risk populations. Non-hospitalised participants within 5 days of SARS-CoV-2 symptoms randomised to receive molnupiravir (n = 253) or Usual Care (n = 324) were recruited to study viral and antibody dynamics and the effect of molnupiravir on viral whole genome sequence from 1437 viral genomes. Molnupiravir accelerates viral load decline, but virus is detectable by Day 5 in most cases. At Day 14 (9 days post-treatment), molnupiravir is associated with significantly higher viral persistence and significantly lower anti-SARS-CoV-2 spike antibody titres compared to Usual Care. Serial sequencing reveals increased mutagenesis with molnupiravir treatment. Persistence of detectable viral RNA at Day 14 in the molnupiravir group is associated with higher transition mutations following treatment cessation. Viral viability at Day 14 is similar in both groups with post-molnupiravir treated samples cultured up to 9 days post cessation of treatment. The current 5-day molnupiravir course is too short. Longer courses should be tested to reduce the risk of potentially transmissible molnupiravir-mutated variants being generated. Trial registration: ISRCTN30448031",
+    "article_url": "https://www.nature.com/articles/s41467-024-45641-0",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -94,6 +148,15 @@
     "publication_date": "2024-02-02",
     "abstract": "In the context of continuous emergence of SARS-CoV-2 variants of concern (VOCs), one strategy to prevent the severe outcomes of COVID-19 is developing safe and effective broad-spectrum vaccines. Here, we present preclinical studies of a RBD vaccine derived from the Gamma SARS-CoV-2 variant adjuvanted with Alum. The Gamma-adapted RBD vaccine is more immunogenic than the Ancestral RBD vaccine in terms of inducing broader neutralizing antibodies. The Gamma RBD presents more immunogenic B-cell restricted epitopes and induces a higher proportion of specific-B cells and plasmablasts than the Ancestral RBD version. The Gamma-adapted vaccine induces antigen specific T cell immune responses and confers protection against Ancestral and Omicron BA.5 SARS-CoV-2 challenge in mice. Moreover, the Gamma RBD vaccine induces higher and broader neutralizing antibody activity than homologous booster vaccination in mice previously primed with different SARS-CoV-2 vaccine platforms. Our study indicates that the adjuvanted Gamma RBD vaccine is highly immunogenic and a broad-spectrum vaccine candidate.",
     "article_url": "https://www.nature.com/articles/s41467-024-45180-8",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "The Wnt/β-catenin pathway is important for replication of SARS-CoV-2 and other pathogenic RNA viruses",
+    "publication_date": "2024-02-21",
+    "abstract": "Understanding how viruses affect cellular pathways during infection may facilitate development of host cell-targeted therapeutics with broad-spectrum antiviral activity. The interferon (IFN) response is critical for reducing replication and pathogenesis of many viruses including Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2), the causative agent of COVID-19. Mounting evidence indicates that peroxisomes which are best known as metabolic organelles, function in the IFN response. Recently, we reported that the Wnt/β-catenin signaling pathway strongly suppresses peroxisome biogenesis. Here, we show that SARS-CoV-2 infection activates Wnt/β-catenin signaling and hypothesized that pharmacological inhibition of this pathway would result in increased peroxisome formation and enhanced IFN production. Indeed, Wnt/β-catenin signaling potently inhibits replication of SARS-CoV-2 and other pathogenic RNA viruses in vitro and reduces viral load, inflammation and clinical symptoms in a mouse model of COVID-19. As such, targeting this cellular pathway may have prophylactic and/or therapeutic value in reducing the disease burden caused by emerging viral pathogens.",
+    "article_url": "https://www.nature.com/articles/s44298-024-00018-4",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -126,19 +189,28 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Necroptosis does not drive disease pathogenesis in a mouse infective model of SARS-CoV-2 in vivo",
-    "publication_date": "2024-01-30",
-    "abstract": "Necroptosis, a type of lytic cell death executed by the pseudokinase Mixed Lineage Kinase Domain-Like (MLKL) has been implicated in the detrimental inflammation caused by SARS-CoV-2 infection. We minimally and extensively passaged a single clinical SARS-CoV-2 isolate to create models of mild and severe disease in mice allowing us to dissect the role of necroptosis in SARS-CoV-2 disease pathogenesis. We infected wild-type and MLKL-deficient mice and found no significant differences in viral loads or lung pathology. In our model of severe COVID-19, MLKL-deficiency did not alter the host response, ameliorate weight loss, diminish systemic pro-inflammatory cytokines levels, or prevent lethality in aged animals. Our in vivo models indicate that necroptosis is dispensable in the pathogenesis of mild and severe COVID-19.",
-    "article_url": "https://www.nature.com/articles/s41419-024-06471-6",
+    "article_title": "Immunogenicity phase II study evaluating booster capacity of nonadjuvanted AKS-452 SARS-Cov-2 RBD Fc vaccine",
+    "publication_date": "2024-02-21",
+    "abstract": "AKS-452, a subunit vaccine comprising an Fc fusion of the ancestral wild-type (WT) SARS-CoV-2 virus spike protein receptor binding domain (SP/RBD), was evaluated without adjuvant in a single cohort, non-randomized, open-labelled phase II study (NCT05124483) at a single site in The Netherlands for safety and immunogenicity. A single 90 µg subcutaneous booster dose of AKS-452 was administered to 71 adults previously primed with a registered mRNA- or adenovirus-based vaccine and evaluated for 273 days. All AEs were mild and no SAEs were attributable to AKS-452. While all subjects showed pre-existing SP/RBD binding and ACE2-inhibitory IgG titers, 60–68% responded to AKS-452 via ≥2-fold increase from days 28 to 90 and progressively decreased back to baseline by day 180 (days 28 and 90 mean fold-increases, 14.7 ± 6.3 and 8.0 ± 2.2). Similar response kinetics against RBD mutant proteins (including omicrons) were observed but with slightly reduced titers relative to WT. There was an expected strong inverse correlation between day-0 titers and the fold-increase in titers at day 28. AKS-452 enhanced neutralization potency against live virus, consistent with IgG titers. Nucleocapsid protein (Np) titers suggested infection occurred in 66% (46 of 70) of subjects, in which only 20 reported mild symptomatic COVID-19. These favorable safety and immunogenicity profiles support booster evaluation in a planned phase III universal booster study of this room-temperature stable vaccine that can be rapidly and inexpensively manufactured to serve vaccination at a global scale without the need of a complex distribution or cold chain.",
+    "article_url": "https://www.nature.com/articles/s41541-024-00830-2",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Nanoparticle-based DNA vaccine protects against SARS-CoV-2 variants in female preclinical models",
-    "publication_date": "2024-01-18",
-    "abstract": "A safe and effective vaccine with long-term protection against SARS-CoV-2 variants of concern (VOCs) is a global health priority. Here, we develop lipid nanoparticles (LNPs) to provide safe and effective delivery of plasmid DNA (pDNA) and show protection against VOCs in female small animal models. Using a library of LNPs encapsulating unique barcoded DNA (b-DNA), we screen for b-DNA delivery after intramuscular administration. The top-performing LNPs are further tested for their capacity of pDNA uptake in antigen-presenting cells in vitro. The lead LNP is used to encapsulate pDNA encoding the HexaPro version of SARS-CoV-2 spike (LNP-HPS) and immunogenicity and protection is tested in vivo. LNP-HPS elicit a robust protective effect against SARS-CoV-2 Gamma (P.1), correlating with reduced lethality, decreased viral load in the lungs and reduced lung damage. LNP-HPS induce potent humoral and T cell responses against P.1, and generate high levels of neutralizing antibodies against P.1 and Omicron (B.1.1.529). Our findings indicate that the protective efficacy and immunogenicity elicited by LNP-HPS are comparable to those achieved by the approved COVID-19 vaccine from Biontech/Pfizer in animal models. Together, these findings suggest that LNP-HPS hold great promise as a vaccine candidate against VOCs.",
-    "article_url": "https://www.nature.com/articles/s41467-024-44830-1",
+    "article_title": "Clonal chromosomal mosaicism and loss of chromosome Y in elderly men increase vulnerability for SARS-CoV-2",
+    "publication_date": "2024-02-19",
+    "abstract": "The pandemic caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2, COVID-19) had an estimated overall case fatality ratio of 1.38% (pre-vaccination), being 53% higher in males and increasing exponentially with age. Among 9578 individuals diagnosed with COVID-19 in the SCOURGE study, we found 133 cases (1.42%) with detectable clonal mosaicism for chromosome alterations (mCA) and 226 males (5.08%) with acquired loss of chromosome Y (LOY). Individuals with clonal mosaic events (mCA and/or LOY) showed a 54% increase in the risk of COVID-19 lethality. LOY is associated with transcriptomic biomarkers of immune dysfunction, pro-coagulation activity and cardiovascular risk. Interferon-induced genes involved in the initial immune response to SARS-CoV-2 are also down-regulated in LOY. Thus, mCA and LOY underlie at least part of the sex-biased severity and mortality of COVID-19 in aging patients. Given its potential therapeutic and prognostic relevance, evaluation of clonal mosaicism should be implemented as biomarker of COVID-19 severity in elderly people.",
+    "article_url": "https://www.nature.com/articles/s42003-024-05805-6",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Necroptosis does not drive disease pathogenesis in a mouse infective model of SARS-CoV-2 in vivo",
+    "publication_date": "2024-01-30",
+    "abstract": "Necroptosis, a type of lytic cell death executed by the pseudokinase Mixed Lineage Kinase Domain-Like (MLKL) has been implicated in the detrimental inflammation caused by SARS-CoV-2 infection. We minimally and extensively passaged a single clinical SARS-CoV-2 isolate to create models of mild and severe disease in mice allowing us to dissect the role of necroptosis in SARS-CoV-2 disease pathogenesis. We infected wild-type and MLKL-deficient mice and found no significant differences in viral loads or lung pathology. In our model of severe COVID-19, MLKL-deficiency did not alter the host response, ameliorate weight loss, diminish systemic pro-inflammatory cytokines levels, or prevent lethality in aged animals. Our in vivo models indicate that necroptosis is dispensable in the pathogenesis of mild and severe COVID-19.",
+    "article_url": "https://www.nature.com/articles/s41419-024-06471-6",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -171,28 +243,37 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "SARS-CoV-2 immunity in animal models",
-    "publication_date": "2024-01-18",
-    "abstract": "The COVID-19 pandemic, which was caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), has become a worldwide health crisis due to its transmissibility. SARS-CoV-2 infection results in severe respiratory illness and can lead to significant complications in affected individuals. These complications encompass symptoms such as coughing, respiratory distress, fever, infectious shock, acute respiratory distress syndrome (ARDS), and even multiple-organ failure. Animal models serve as crucial tools for investigating pathogenic mechanisms, immune responses, immune escape mechanisms, antiviral drug development, and vaccines against SARS-CoV-2. Currently, various animal models for SARS-CoV-2 infection, such as nonhuman primates (NHPs), ferrets, hamsters, and many different mouse models, have been developed. Each model possesses distinctive features and applications. In this review, we elucidate the immune response elicited by SARS-CoV-2 infection in patients and provide an overview of the characteristics of various animal models mainly used for SARS-CoV-2 infection, as well as the corresponding immune responses and applications of these models. A comparative analysis of transcriptomic alterations in the lungs from different animal models revealed that the K18-hACE2 and mouse-adapted virus mouse models exhibited the highest similarity with the deceased COVID-19 patients. Finally, we highlighted the current gaps in related research between animal model studies and clinical investigations, underscoring lingering scientific questions that demand further clarification.",
-    "article_url": "https://www.nature.com/articles/s41423-023-01122-w",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Proteomic analysis of SARS-CoV-2 particles unveils a key role of G3BP proteins in viral assembly",
-    "publication_date": "2024-01-20",
-    "abstract": "Considerable progress has been made in understanding the molecular host-virus battlefield during SARS-CoV-2 infection. Nevertheless, the assembly and egress of newly formed virions are less understood. To identify host proteins involved in viral morphogenesis, we characterize the proteome of SARS-CoV-2 virions produced from A549-ACE2 and Calu-3 cells, isolated via ultracentrifugation on sucrose cushion or by ACE-2 affinity capture. Bioinformatic analysis unveils 92 SARS-CoV-2 virion-associated host factors, providing a valuable resource to better understand the molecular environment of virion production. We reveal that G3BP1 and G3BP2 (G3BP1/2), two major stress granule nucleators, are embedded within virions and unexpectedly favor virion production. Furthermore, we show that G3BP1/2 participate in the formation of cytoplasmic membrane vesicles, that are likely virion assembly sites, consistent with a proviral role of G3BP1/2 in SARS-CoV-2 dissemination. Altogether, these findings provide new insights into host factors required for SARS-CoV-2 assembly with potential implications for future therapeutic targeting.",
-    "article_url": "https://www.nature.com/articles/s41467-024-44958-0",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "Asialoglycoprotein receptor 1 promotes SARS-CoV-2 infection of human normal hepatocytes",
     "publication_date": "2024-02-14",
     "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) causes multi-organ damage, which includes hepatic dysfunction, as observed in over 50% of COVID-19 patients. Angiotensin I converting enzyme (peptidyl-dipeptidase A) 2 (ACE2) is the primary receptor for SARS-CoV-2 entry into host cells, and studies have shown the presence of intracellular virus particles in human hepatocytes that express ACE2, but at extremely low levels. Consequently, we asked if hepatocytes might express receptors other than ACE2 capable of promoting the entry of SARS-CoV-2 into cells. To address this question, we performed a genome-wide CRISPR-Cas9 activation library screening and found that Asialoglycoprotein receptor 1 (ASGR1) promoted SARS-CoV-2 pseudovirus infection of HeLa cells. In Huh-7 cells, simultaneous knockout ofACE2andASGR1prevented SARS-CoV-2 pseudovirus infection. In the immortalized THLE-2 hepatocyte cell line and primary hepatic parenchymal cells, both of which barely expressed ACE2, SARS-CoV-2 pseudovirus could successfully establish an infection. However, after treatment with ASGR1 antibody or siRNA targeting ASGR1, the infection rate significantly dropped, suggesting that SARS-CoV-2 pseudovirus infects hepatic parenchymal cells mainly through an ASGR1-dependent mechanism. We confirmed that ASGR1 could interact with Spike protein, which depends on receptor binding domain (RBD) and N-terminal domain (NTD). Finally, we also used Immunohistochemistry and electron microscopy to verify that SARS-CoV-2 could infect primary hepatic parenchymal cells. After inhibiting ASGR1 in primary hepatic parenchymal cells by siRNA, the infection efficiency of the live virus decreased significantly. Collectively, these findings indicate that ASGR1 is a candidate receptor for SARS-CoV-2 that promotes infection of hepatic parenchymal cells.",
     "article_url": "https://www.nature.com/articles/s41392-024-01754-y",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Cycle threshold of SARS-CoV-2 RT-PCR as a driver of retesting",
+    "publication_date": "2024-01-29",
+    "abstract": "SARS-CoV-2 RT-PCR is a critical and, at times, limited resource. Frequent Retesting of patients may strain testing infrastructure unduly. Recommendations that include cycle threshold (Ct) cutoffs may incentivize early retesting when the Ct value is reported. We aimed to investigate patterns of retesting in association with initial Ct-values. We performed a retrospective analysis of RT-PCR results (including Ct-values) for patients from whom ≥ 2 samples were collected within 14 days, the first of which had to be positive. We calculated absolute and baseline-corrected kinetics of Ct-values over time, as well as the median initial Ct-values in dependence of the timing of the first retesting and the time until RT-PCR negativity for SARS-CoV-2. Retesting after an initial positive SARS-CoV-2 RT-PCR was most commonly performed on day 7, with patients being retested as early as day 1. The majority of patients retested within 14 days remained SARS-CoV-2 positive in the RT-PCR. Baseline-corrected Ct-values showed a quasi-linear increase over 14 days since the initial positive result. Both the timing until the first retesting and until RT-PCR negativity were inversely correlated with the initial Ct-value. The timing of retesting after a positive SARS-CoV-2 RT-PCR appears to be significantly influenced by the initial Ct-value. Although it can be assumed that Ct-values will increase steadily over time, strategies that rely on rigid Ct-cutoffs should be discussed critically, not only because of methodological caveats but also because of the strain on testing infrastructure caused by the incentive for early retesting that Ct-values apparently represent.",
+    "article_url": "https://www.nature.com/articles/s41598-024-52984-7",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "SARS-CoV-2 rapidly evolves lineage-specific phenotypic differences when passaged repeatedly in immune-naïve mice",
+    "publication_date": "2024-02-16",
+    "abstract": "The persistence of SARS-CoV-2 despite the development of vaccines and a degree of herd immunity is partly due to viral evolution reducing vaccine and treatment efficacy. Serial infections of wild-type (WT) SARS-CoV-2 in Balb/c mice yield mouse-adapted strains with greater infectivity and mortality. We investigate if passaging unmodified B.1.351 (Beta) and B.1.617.2 (Delta) 20 times in K18-ACE2 mice, expressing the human ACE2 receptor, in a BSL-3 laboratory without selective pressures, drives human health-relevant evolution and if evolution is lineage-dependent. Late-passage virus causes more severe disease, at organism and lung tissue scales, with late-passage Delta demonstrating antibody resistance and interferon suppression. This resistance co-occurs with a de novo spike S371F mutation, linked with both traits. S371F, an Omicron-characteristic mutation, is co-inherited at times with spike E1182G per Nanopore sequencing, existing in different within-sample viral variants at others. Both S371F and E1182G are linked to mammalian GOLGA7 and ZDHHC5 interactions, which mediate viral-cell entry and antiviral response. This study demonstrates SARS-CoV-2’s tendency to evolve with phenotypic consequences, its evolution varying by lineage, and suggests non-dominant quasi-species contribution.",
+    "article_url": "https://www.nature.com/articles/s42003-024-05878-3",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Virological characteristics of the SARS-CoV-2 Omicron XBB.1.5 variant",
+    "publication_date": "2024-02-08",
+    "abstract": "Circulation of SARS-CoV-2 Omicron XBB has resulted in the emergence of XBB.1.5, a new Variant of Interest. Our phylogenetic analysis suggests that XBB.1.5 evolved from XBB.1 by acquiring the S486P spike (S) mutation, subsequent to the acquisition of a nonsense mutation in ORF8. Neutralization assays showed similar abilities of immune escape between XBB.1.5 and XBB.1. We determine the structural basis for the interaction between human ACE2 and the S protein of XBB.1.5, showing similar overall structures between the S proteins of XBB.1 and XBB.1.5. We provide the intrinsic pathogenicity of XBB.1 and XBB.1.5 in hamsters. Importantly, we find that the ORF8 nonsense mutation of XBB.1.5 resulted in impairment of MHC suppression. In vivo experiments using recombinant viruses reveal that the XBB.1.5 mutations are involved with reduced virulence of XBB.1.5. Together, our study identifies the two viral functions defined the difference between XBB.1 and XBB.1.5.",
+    "article_url": "https://www.nature.com/articles/s41467-024-45274-3",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -216,28 +297,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Cycle threshold of SARS-CoV-2 RT-PCR as a driver of retesting",
-    "publication_date": "2024-01-29",
-    "abstract": "SARS-CoV-2 RT-PCR is a critical and, at times, limited resource. Frequent Retesting of patients may strain testing infrastructure unduly. Recommendations that include cycle threshold (Ct) cutoffs may incentivize early retesting when the Ct value is reported. We aimed to investigate patterns of retesting in association with initial Ct-values. We performed a retrospective analysis of RT-PCR results (including Ct-values) for patients from whom ≥ 2 samples were collected within 14 days, the first of which had to be positive. We calculated absolute and baseline-corrected kinetics of Ct-values over time, as well as the median initial Ct-values in dependence of the timing of the first retesting and the time until RT-PCR negativity for SARS-CoV-2. Retesting after an initial positive SARS-CoV-2 RT-PCR was most commonly performed on day 7, with patients being retested as early as day 1. The majority of patients retested within 14 days remained SARS-CoV-2 positive in the RT-PCR. Baseline-corrected Ct-values showed a quasi-linear increase over 14 days since the initial positive result. Both the timing until the first retesting and until RT-PCR negativity were inversely correlated with the initial Ct-value. The timing of retesting after a positive SARS-CoV-2 RT-PCR appears to be significantly influenced by the initial Ct-value. Although it can be assumed that Ct-values will increase steadily over time, strategies that rely on rigid Ct-cutoffs should be discussed critically, not only because of methodological caveats but also because of the strain on testing infrastructure caused by the incentive for early retesting that Ct-values apparently represent.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52984-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "Beneficial effect of temporary methotrexate interruption on B and T cell responses upon SARS-CoV-2 vaccination in patients with rheumatoid arthritis or psoriatic arthritis",
     "publication_date": "2024-01-30",
     "abstract": "B and T cell responses were evaluated in patients with rheumatoid arthritis (RA) or psoriatic arthritis (PsA) after 1 or 2 weeks of methotrexate (MTX) withdrawal following each COVID-19 vaccine dose and compared with those who maintained MTX. Adult RA and PsA patients treated with MTX were recruited and randomly assigned to 3 groups: MTX-maintenance (n= 72), MTX-withdrawal for 1 week (n= 71) or MTX-withdrawal for 2 weeks (n= 73). Specific antibodies to several SARS-CoV-2 antigens and interferon (IFN)-γ and interleukin (IL)-21 responses were assessed. MTX withdrawal in patients without previous COVID-19 was associated with higher levels of anti-RBD IgG and neutralising antibodies, especially in the 2-week withdrawal group and with higher IFN-γ secretion upon stimulation with pools of SARS-CoV-2 S peptides. No increment of RA/PsA relapses was detected across groups. Our data indicate that two-week MTX interruption following COVID-19 vaccination in patients with RA or PsA improves humoral and cellular immune responses.",
     "article_url": "https://www.nature.com/articles/s41541-024-00805-3",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Virological characteristics of the SARS-CoV-2 Omicron XBB.1.5 variant",
-    "publication_date": "2024-02-08",
-    "abstract": "Circulation of SARS-CoV-2 Omicron XBB has resulted in the emergence of XBB.1.5, a new Variant of Interest. Our phylogenetic analysis suggests that XBB.1.5 evolved from XBB.1 by acquiring the S486P spike (S) mutation, subsequent to the acquisition of a nonsense mutation in ORF8. Neutralization assays showed similar abilities of immune escape between XBB.1.5 and XBB.1. We determine the structural basis for the interaction between human ACE2 and the S protein of XBB.1.5, showing similar overall structures between the S proteins of XBB.1 and XBB.1.5. We provide the intrinsic pathogenicity of XBB.1 and XBB.1.5 in hamsters. Importantly, we find that the ORF8 nonsense mutation of XBB.1.5 resulted in impairment of MHC suppression. In vivo experiments using recombinant viruses reveal that the XBB.1.5 mutations are involved with reduced virulence of XBB.1.5. Together, our study identifies the two viral functions defined the difference between XBB.1 and XBB.1.5.",
-    "article_url": "https://www.nature.com/articles/s41467-024-45274-3",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -261,10 +324,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Time dependent dihedral angle oscillations of the spike protein of SARS-CoV-2 reveal favored frequencies of dihedral angle rotations",
-    "publication_date": "2024-02-09",
-    "abstract": "The spike protein of SARS-CoV-2 is critical to viral infection of human host cells which ultimately results in COVID-19. In this study we analyzed the behavior of dihedral angles (phi and psi) of the wild-type spike protein over time from molecular dynamics and identified that their oscillations are dominated by a few discrete, relatively low frequencies in the 23–63 MHz range with 42.969 MHz being the most prevalent frequency sampled by the oscillations. We thus observed the spike protein to favor certain frequencies more than others. Gaps in the tally of all observed frequencies for low-abundance amino acids also suggests that the frequency components of dihedral angle oscillations may be a function of position in the primary structure since relatively more abundant amino acids lacked gaps. Lastly, certain residues identified in the literature as constituting the inside of a druggable pocket, as well as others identified as allosteric sites, are observed in our data to have distinctive time domain profiles. This motivated us to propose additional residues with similar time domain profiles, which may be of potential interest to the vaccine and drug design communities for further investigation. Thus these findings indicate that there is a particular frequency domain profile for the spike protein hidden within the time domain data and this information, perhaps with the suggested residues, might provide additional insight into therapeutic development strategies for COVID-19 and beyond.",
-    "article_url": "https://www.nature.com/articles/s41598-024-53954-9",
+    "article_title": "Neutralizing antibodies after the third COVID-19 vaccination in healthcare workers with or without breakthrough infection",
+    "publication_date": "2024-02-23",
+    "abstract": "Vaccinations against the SARS-CoV-2 are still crucial in combating the ongoing pandemic that has caused more than 700 million infections and claimed almost 7 million lives in the past four years. Omicron (B.1.1.529) variants have incurred mutations that challenge the protection against infection and severe disease by the current vaccines, potentially compromising vaccination efforts. We analyzed serum samples taken up to 9 months post third dose from 432 healthcare workers. Enzyme-linked immunosorbent assays (ELISA) and microneutralization tests (MNT) were used to assess the prevalence of vaccine-induced neutralizing antibodies against various SARS-CoV-2 Omicron variants. In this serological analysis we show that SARS-CoV-2 vaccine combinations of BNT162b2, mRNA-1273, and ChAdOx1 mount SARS-CoV-2 binding and neutralizing antibodies with similar kinetics, but with differing neutralization capabilities. The most recent Omicron variants, BQ.1.1 and XBB.1.5, show a significant increase in the ability to escape vaccine and infection-induced antibody responses. Breakthrough infections in thrice vaccinated adults were seen in over 50% of the vaccinees, resulting in a stronger antibody response than without infection. Different three-dose vaccine combinations seem to induce considerable levels of neutralizing antibodies against most SARS-CoV-2 variants. However, the ability of the newer variants BQ1.1 and XBB 1.5 to escape vaccine-induced neutralizing antibody responses underlines the importance of updating vaccines as new variants emerge.",
+    "article_url": "https://www.nature.com/articles/s43856-024-00457-3",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -279,10 +342,19 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Aptamers targeting SARS-CoV-2 nucleocapsid protein exhibit potential anti pan-coronavirus activity",
-    "publication_date": "2024-02-14",
-    "abstract": "Emerging and recurrent infectious diseases caused by human coronaviruses (HCoVs) continue to pose a significant threat to global public health security. In light of this ongoing threat, the development of a broad-spectrum drug to combat HCoVs is an urgently priority. Herein, we report a series of anti-pan-coronavirus ssDNA aptamers screened using Systematic Evolution of Ligands by Exponential Enrichment (SELEX). These aptamers have nanomolar affinity with the nucleocapsid protein (NP) of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and also show excellent binding efficiency to the N proteins of both SARS, MERS, HCoV-OC43 and -NL63 with affinity KDvalues of 1.31 to 135.36 nM. Such aptamer-based therapeutics exhibited potent antiviral activity against both the authentic SARS-CoV-2 prototype strain and the Omicron variant (BA.5) with EC50values at 2.00 nM and 41.08 nM, respectively. The protein docking analysis also evidenced that these aptamers exhibit strong affinities for N proteins of pan-coronavirus and other HCoVs (−229E and -HKU1). In conclusion, we have identified six aptamers with a high pan-coronavirus antiviral activity, which could potentially serve as an effective strategy for preventing infections by unknown coronaviruses and addressing the ongoing global health threat.",
-    "article_url": "https://www.nature.com/articles/s41392-024-01748-w",
+    "article_title": "Immunogenicity and protective efficacy of a co-formulated two-in-one inactivated whole virus particle COVID-19/influenza vaccine",
+    "publication_date": "2024-02-20",
+    "abstract": "Due to the synchronous circulation of seasonal influenza viruses and severe acute respiratory coronavirus 2 (SARS-CoV-2) which causes coronavirus disease 2019 (COVID-19), there is need for routine vaccination for both COVID-19 and influenza to reduce disease severity. Here, we prepared individual WPVs composed of formalin-inactivated SARS-CoV-2 WK 521 (Ancestral strain; Co WPV) or influenza virus [A/California/07/2009 (X-179A) (H1N1) pdm; Flu WPV] to produce a two-in-one Co/Flu WPV. Serum analysis from vaccinated mice revealed that a single dose of Co/Flu WPV induced antigen-specific neutralizing antibodies against both viruses, similar to those induced by either type of WPV alone. Following infection with either virus, mice vaccinated with Co/Flu WPV showed no weight loss, reduced pneumonia and viral titers in the lung, and lower gene expression of proinflammatory cytokines, as observed with individual WPV-vaccinated. Furthermore, a pentavalent vaccine (Co/qFlu WPV) comprising of Co WPV and quadrivalent influenza vaccine (qFlu WPV) was immunogenic and protected animals from severe COVID-19. These results suggest that a single dose of the two-in-one WPV provides efficient protection against SARS-CoV-2 and influenza virus infections with no evidence of vaccine interference in mice. We propose that concomitant vaccination with the two-in-one WPV can be useful for controlling both diseases.",
+    "article_url": "https://www.nature.com/articles/s41598-024-54421-1",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
+    "article_title": "Time dependent dihedral angle oscillations of the spike protein of SARS-CoV-2 reveal favored frequencies of dihedral angle rotations",
+    "publication_date": "2024-02-09",
+    "abstract": "The spike protein of SARS-CoV-2 is critical to viral infection of human host cells which ultimately results in COVID-19. In this study we analyzed the behavior of dihedral angles (phi and psi) of the wild-type spike protein over time from molecular dynamics and identified that their oscillations are dominated by a few discrete, relatively low frequencies in the 23–63 MHz range with 42.969 MHz being the most prevalent frequency sampled by the oscillations. We thus observed the spike protein to favor certain frequencies more than others. Gaps in the tally of all observed frequencies for low-abundance amino acids also suggests that the frequency components of dihedral angle oscillations may be a function of position in the primary structure since relatively more abundant amino acids lacked gaps. Lastly, certain residues identified in the literature as constituting the inside of a druggable pocket, as well as others identified as allosteric sites, are observed in our data to have distinctive time domain profiles. This motivated us to propose additional residues with similar time domain profiles, which may be of potential interest to the vaccine and drug design communities for further investigation. Thus these findings indicate that there is a particular frequency domain profile for the spike protein hidden within the time domain data and this information, perhaps with the suggested residues, might provide additional insight into therapeutic development strategies for COVID-19 and beyond.",
+    "article_url": "https://www.nature.com/articles/s41598-024-53954-9",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -297,6 +369,15 @@
     "needs_ai_processing": 0
   },
   {
+    "article_title": "Aptamers targeting SARS-CoV-2 nucleocapsid protein exhibit potential anti pan-coronavirus activity",
+    "publication_date": "2024-02-14",
+    "abstract": "Emerging and recurrent infectious diseases caused by human coronaviruses (HCoVs) continue to pose a significant threat to global public health security. In light of this ongoing threat, the development of a broad-spectrum drug to combat HCoVs is an urgently priority. Herein, we report a series of anti-pan-coronavirus ssDNA aptamers screened using Systematic Evolution of Ligands by Exponential Enrichment (SELEX). These aptamers have nanomolar affinity with the nucleocapsid protein (NP) of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and also show excellent binding efficiency to the N proteins of both SARS, MERS, HCoV-OC43 and -NL63 with affinity KDvalues of 1.31 to 135.36 nM. Such aptamer-based therapeutics exhibited potent antiviral activity against both the authentic SARS-CoV-2 prototype strain and the Omicron variant (BA.5) with EC50values at 2.00 nM and 41.08 nM, respectively. The protein docking analysis also evidenced that these aptamers exhibit strong affinities for N proteins of pan-coronavirus and other HCoVs (−229E and -HKU1). In conclusion, we have identified six aptamers with a high pan-coronavirus antiviral activity, which could potentially serve as an effective strategy for preventing infections by unknown coronaviruses and addressing the ongoing global health threat.",
+    "article_url": "https://www.nature.com/articles/s41392-024-01748-w",
+    "layman_title": "",
+    "layman_abstract": "",
+    "needs_ai_processing": 0
+  },
+  {
     "article_title": "Targeting the receptor binding domain and heparan sulfate binding for antiviral drug development against SARS-CoV-2 variants",
     "publication_date": "2024-02-02",
     "abstract": "The emergence of SARS-CoV-2 variants diminished the efficacy of current antiviral drugs and vaccines. Hence, identifying highly conserved sequences and potentially druggable pockets for drug development was a promising strategy against SARS-CoV-2 variants. In viral infection, the receptor-binding domain (RBD) proteins are essential in binding to the host receptor. Others, Heparan sulfate (HS), widely distributed on the surface of host cells, is thought to play a central role in the viral infection cycle of SARS-CoV-2. Therefore, it might be a reasonable strategy for antiviral drug design to interfere with the RBD in the HS binding site. In this study, we used computational approaches to analyze multiple sequences of coronaviruses and reveal important information about the binding of HS to RBD in the SARS-CoV-2 spike protein. Our results showed that the potential hot-spots, including R454 and E471, in RBD, exhibited strong interactions in the HS-RBD binding region. Therefore, we screened different compounds in the natural product database towards these hot-spots to find potential antiviral candidates usingLibDock,Autodock vinaand furthermore applying the MD simulation inAMBER20. The results showed three potential natural compounds, including Acetoside (ACE), Hyperoside (HYP), and Isoquercitrin (ISO), had a strong affinity to the RBD. Our results demonstrate a feasible approach to identify potential antiviral agents by evaluating the binding interaction between viral glycoproteins and host receptors. The present study provided the applications of the structure-based computational approach for designing and developing of new antiviral drugs against SARS-CoV-2 variants.",
@@ -306,10 +387,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Three immunizations with Novavax’s protein vaccines increase antibody breadth and provide durable protection from SARS-CoV-2",
-    "publication_date": "2024-01-20",
-    "abstract": "The immune responses to Novavax’s licensed NVX-CoV2373 nanoparticle Spike protein vaccine against SARS-CoV-2 remain incompletely understood. Here, we show in rhesus macaques that immunization with Matrix-MTMadjuvanted vaccines predominantly elicits immune events in local tissues with little spillover to the periphery. A third dose of an updated vaccine based on the Gamma (P.1) variant 7 months after two immunizations with licensed NVX-CoV2373 resulted in significant enhancement of anti-spike antibody titers and antibody breadth including neutralization of forward drift Omicron variants. The third immunization expanded the Spike-specific memory B cell pool, induced significant somatic hypermutation, and increased serum antibody avidity, indicating considerable affinity maturation. Seven months after immunization, vaccinated animals controlled infection by either WA-1 or P.1 strain, mediated by rapid anamnestic antibody and T cell responses in the lungs. In conclusion, a third immunization with an adjuvanted, low-dose recombinant protein vaccine significantly improved the quality of B cell responses, enhanced antibody breadth, and provided durable protection against SARS-CoV-2 challenge.",
-    "article_url": "https://www.nature.com/articles/s41541-024-00806-2",
+    "article_title": "Proteomic and transcriptomic profiling of brainstem, cerebellum and olfactory tissues in early- and late-phase COVID-19",
+    "publication_date": "2024-02-16",
+    "abstract": "Neurological symptoms, including cognitive impairment and fatigue, can occur in both the acute infection phase of coronavirus disease 2019 (COVID-19) and at later stages, yet the mechanisms that contribute to this remain unclear. Here we profiled single-nucleus transcriptomes and proteomes of brainstem tissue from deceased individuals at various stages of COVID-19. We detected an inflammatory type I interferon response in acute COVID-19 cases, which resolves in the late disease phase. Integrating single-nucleus RNA sequencing and spatial transcriptomics, we could localize two patterns of reaction to severe systemic inflammation, one neuronal with a direct focus on cranial nerve nuclei and a separate diffuse pattern affecting the whole brainstem. The latter reflects a bystander effect of the respiratory infection that spreads throughout the vascular unit and alters the transcriptional state of mainly oligodendrocytes, microglia and astrocytes, while alterations of the brainstem nuclei could reflect the connection of the immune system and the central nervous system via, for example, the vagus nerve. Our results indicate that even without persistence of severe acute respiratory syndrome coronavirus 2 in the central nervous system, local immune reactions are prevailing, potentially causing functional disturbances that contribute to neurological complications of COVID-19.",
+    "article_url": "https://www.nature.com/articles/s41593-024-01573-y",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -319,15 +400,6 @@
     "publication_date": "2024-02-09",
     "abstract": "The optimal interval between the first and second doses of COVID-19 mRNA vaccines has not been thoroughly evaluated. Employing a target trial emulation approach, we compared the effectiveness of different interdose intervals among >6 million mRNA vaccine recipients in Georgia, USA, from December 2020 to March 2022. We compared three protocols defined by interdose interval: recommended by the Food and Drug Administration (FDA) (17-25 days for Pfizer-BioNTech; 24-32 days for Moderna), late-but-allowable (26-42 days for Pfizer-BioNTech; 33-49 days for Moderna), and late ( ≥ 43 days for Pfizer-BioNTech; ≥50 days for Moderna). In the short-term, the risk of SARS-CoV-2 infection was lowest under the FDA-recommended protocol. Longer-term, the late-but-allowable protocol resulted in the lowest risk (risk ratio on Day 120 after the first dose administration compared to the FDA-recommended protocol: 0.83 [95% confidence interval: 0.82-0.84]). Here, we showed that delaying the second dose by 1-2 weeks may provide stronger long-term protection.",
     "article_url": "https://www.nature.com/articles/s41467-024-45334-8",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Development and validation of cost-effective SYBR Green-based RT-qPCR and its evaluation in a sample pooling strategy for detecting SARS-CoV-2 infection in the Indonesian setting",
-    "publication_date": "2024-01-20",
-    "abstract": "A low-cost SYBR Green-based RT-qPCR method to detect SARS-CoV-2 were developed and validated. Primers targeting a conserved and vital region of the N genes of SARS-CoV-2 were designed.In-silicostudy was performed to analyse the compatibility of the selected primer pair with Indonesian SARS-CoV-2 genome sequences available from the GISAID database. We determined the linearity of our new assay using serial dilution of SARS-CoV-2 RNA from clinical samples with known virus concentration. The assay was then evaluated using clinically relevant samples in comparison to a commercial TaqMan-based test kit. Finally, we applied the assay in sample pooling strategies for SARS-CoV-2 detection. The SYBR Green-based RT-qPCR method was successfully developed with sufficient sensitivity. There is a very low prevalence of genome variation in the selected N primer binding regions, indicating their high conservation. The validation of the assay using clinical samples demonstrated similar performance to the TaqMan method suggesting the SYBR methods is reliable. The pooling strategy by combining 5 RNA samples for SARS-CoV-2 detection using the SYBR RT-qPCR methods is feasible and provides a high diagnostic yield. However, when dealing with samples having a very low viral load, it may increase the risk of missing positive cases.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52250-w",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
@@ -360,15 +432,6 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Peptidyl nitroalkene inhibitors of main protease rationalized by computational and crystallographic investigations as antivirals against SARS-CoV-2",
-    "publication_date": "2024-01-18",
-    "abstract": "The coronavirus disease 2019 (COVID-19) pandemic continues to represent a global public health issue. The viral main protease (Mpro) represents one of the most attractive targets for the development of antiviral drugs. Herein we report peptidyl nitroalkenes exhibiting enzyme inhibitory activity against Mpro(Ki: 1–10 μM) good anti-SARS-CoV-2 infection activity in the low micromolar range (EC50: 1–12 μM) without significant toxicity. Additional kinetic studies of compoundsFGA145,FGA146andFGA147show that all three compounds inhibit cathepsin L, denoting a possible multitarget effect of these compounds in the antiviral activity. Structural analysis shows the binding mode ofFGA146andFGA147to the active site of the protein. Furthermore, our results illustrate that peptidyl nitroalkenes are effective covalent reversible inhibitors of the Mproand cathepsin L, and that inhibitorsFGA145,FGA146andFGA147prevent infection against SARS-CoV-2.",
-    "article_url": "https://www.nature.com/articles/s42004-024-01104-7",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
     "article_title": "Immunological mechanisms of the nucleocapsid protein in COVID-19",
     "publication_date": "2024-02-14",
     "abstract": "The emergence of corona virus disease 2019 (COVID-19), resulting from Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), has left an indelible mark on a global scale, causing countless infections and fatalities. This investigation delves into the role of the SARS-CoV-2 nucleocapsid (N) protein within the HEK293 cells, shedding light on its influence over apoptosis, interferon signaling, and cytokines production. The N gene was amplified, inserted into the pAdTrack-CMV vector, and then transfected to the HEK293 cells. Changes in the expression of IRF3, IRF7, IFN-β, BAK, BAX, and BCL-2 genes were evaluated. The levels of proinflammatory cytokines of IL-6, IL-12, IL-1β, and TNF-α were also determined. The N protein exhibited an anti-apoptotic effect by modulating critical genes associated with apoptosis, including BAK, BAX, and BCL-2. This effect potentially prolonged the survival of infected cells. The N protein also played a role in immune evasion by suppressing the interferon pathway, evidenced by the downregulation of essential interferon regulatory factors of IRF3 and IRF7, and IFN-β expression. The N protein expression led to a substantial increase in the production of proinflammatory cytokines of IL-6, IL-12, IL-1β, and TNF-α. The N protein emerged as a versatile factor and was exerted over apoptosis, interferon signaling, and cytokine production. These findings carry potential implications for the development of targeted therapies to combat COVID-19 and mitigate its global health impact.",
@@ -378,73 +441,10 @@
     "needs_ai_processing": 0
   },
   {
-    "article_title": "Structural and biochemical rationale for Beta variant protein booster vaccine broad cross-neutralization of SARS-CoV-2",
-    "publication_date": "2024-01-23",
-    "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), responsible for the COVID-19 pandemic, uses a surface expressed trimeric spike glycoprotein for cell entry. This trimer is the primary target for neutralizing antibodies making it a key candidate for vaccine development. During the global pandemic circulating variants of concern (VOC) caused several waves of infection, severe disease, and death. The reduced efficacy of the ancestral trimer-based vaccines against emerging VOC led to the need for booster vaccines. Here we present a detailed characterization of the Sanofi Beta trimer, utilizing cryo-EM for structural elucidation. We investigate the conformational dynamics and stabilizing features using orthogonal SPR, SEC, nanoDSF, and HDX-MS techniques to better understand how this antigen elicits superior broad neutralizing antibodies as a variant booster vaccine. This structural analysis confirms the Beta trimer preference for canonical quaternary structure with two RBD in the up position and the reversible equilibrium between the canonical spike and open trimer conformations. Moreover, this report provides a better understanding of structural differences between spike antigens contributing to differential vaccine efficacy.",
-    "article_url": "https://www.nature.com/articles/s41598-024-52499-1",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Longitudinal single cell atlas identifies complex temporal relationship between type I interferon response and COVID-19 severity",
-    "publication_date": "2024-01-18",
-    "abstract": "Due to the paucity of longitudinal molecular studies of COVID-19, particularly those covering the early stages of infection (Days 1-8 symptom onset), our understanding of host response over the disease course is limited. We perform longitudinal single cell RNA-seq on 286 blood samples from 108 age- and sex-matched COVID-19 patients, including 73 with early samples. We examine discrete cell subtypes and continuous cell states longitudinally, and we identify upregulation of type I IFN-stimulated genes (ISGs) as the predominant early signature of subsequent worsening of symptoms, which we validate in an independent cohort and corroborate by plasma markers. However, ISG expression is dynamic in progressors, spiking early and then rapidly receding to the level of severity-matched non-progressors. In contrast, cross-sectional analysis shows that ISG expression is deficient and IFN suppressors such asSOCS3are upregulated in severe and critical COVID-19. We validate the latter in four independent cohorts, andSOCS3inhibition reduces SARS-CoV-2 replication in vitro. In summary, we identify complexity in type I IFN response to COVID-19, as well as a potential avenue for host-directed therapy.",
-    "article_url": "https://www.nature.com/articles/s41467-023-44524-0",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "SARS-CoV-2 immunity",
-    "publication_date": "2024-01-18",
+    "article_title": "Early life exposure to SARS-CoV-2 and offspring neurodevelopment: detecting a non-linear relationship requires a complex approach",
+    "publication_date": "2024-02-22",
     "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41423-024-01128-y",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Blood transcriptomics analysis offers insights into variant-specific immune response to SARS-CoV-2",
-    "publication_date": "2024-02-02",
-    "abstract": "Bulk RNA sequencing (RNA-seq) of blood is typically used for gene expression analysis in biomedical research but is still rarely used in clinical practice. In this study, we propose that RNA-seq should be considered a diagnostic tool, as it offers not only insights into aberrant gene expression and splicing but also delivers additional readouts on immune cell type composition as well as B-cell and T-cell receptor (BCR/TCR) repertoires. We demonstrate that RNA-seq offers insights into a patient’s immune status via integrative analysis of RNA-seq data from patients infected with various SARS-CoV-2 variants (in total 196 samples with up to 200 million reads sequencing depth). We compare the results of computational cell-type deconvolution methods (e.g., MCP-counter, xCell, EPIC, quanTIseq) to complete blood count data, the current gold standard in clinical practice. We observe varying levels of lymphocyte depletion and significant differences in neutrophil levels between SARS-CoV-2 variants. Additionally, we identify B and T cell receptor (BCR/TCR) sequences using the tools MiXCR and TRUST4 to show that—combined with sequence alignments and BLASTp—they could be used to classify a patient's disease. Finally, we investigated the sequencing depth required for such analyses and concluded that 10 million reads per sample is sufficient. In conclusion, our study reveals that computational cell-type deconvolution and BCR/TCR methods using bulk RNA-seq analyses can supplement missing CBC data and offer insights into immune responses, disease severity, and pathogen-specific immunity, all achievable with a sequencing depth of 10 million reads per sample.",
-    "article_url": "https://www.nature.com/articles/s41598-024-53117-w",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Audio-based AI classifiers show no evidence of improved COVID-19 screening over simple symptoms checkers",
-    "publication_date": "2024-02-07",
-    "abstract": "Recent work has reported that respiratory audio-trained AI classifiers can accurately predict SARS-CoV-2 infection status. However, it has not yet been determined whether such model performance is driven by latent audio biomarkers with true causal links to SARS-CoV-2 infection or by confounding effects, such as recruitment bias, present in observational studies. Here we undertake a large-scale study of audio-based AI classifiers as part of the UK government’s pandemic response. We collect a dataset of audio recordings from 67,842 individuals, with linked metadata, of whom 23,514 had positive polymerase chain reaction tests for SARS-CoV-2. In an unadjusted analysis, similar to that in previous works, AI classifiers predict SARS-CoV-2 infection status with high accuracy (ROC–AUC = 0.846 [0.838–0.854]). However, after matching on measured confounders, such as self-reported symptoms, performance is much weaker (ROC–AUC = 0.619 [0.594–0.644]). Upon quantifying the utility of audio-based classifiers in practical settings, we find them to be outperformed by predictions on the basis of user-reported symptoms. We make best-practice recommendations for handling recruitment bias, and for assessing audio-based classifiers by their utility in relevant practical settings. Our work provides insights into the value of AI audio analysis and the importance of study design and treatment of confounders in AI-enabled diagnostics.",
-    "article_url": "https://www.nature.com/articles/s42256-023-00773-8",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Broad protection against clade 1 sarbecoviruses after a single immunization with cocktail spike-protein-nanoparticle vaccine",
-    "publication_date": "2024-02-12",
-    "abstract": "The 2002 SARS outbreak, the 2019 emergence of COVID-19, and the continuing evolution of immune-evading SARS-CoV-2 variants together highlight the need for a broadly protective vaccine against ACE2-utilizing sarbecoviruses. While updated variant-matched formulations are a step in the right direction, protection needs to extend beyond SARS-CoV-2 and its variants to include SARS-like viruses. Here, we introduce bivalent and trivalent vaccine formulations using our spike protein nanoparticle platform that completely protect female hamsters against BA.5 and XBB.1 challenges with no detectable virus in the lungs. The trivalent cocktails elicit highly neutralizing responses against all tested Omicron variants and the bat sarbecoviruses SHC014 and WIV1. Finally, our 614D/SHC014/XBB trivalent spike formulation completely protects human ACE2-transgenic female hamsters against challenges with WIV1 and SHC014 with no detectable virus in the lungs. Collectively, these results illustrate that our trivalent protein-nanoparticle cocktail can provide broad protection against SARS-CoV-2-like and SARS-CoV-1-like sarbecoviruses.",
-    "article_url": "https://www.nature.com/articles/s41467-024-45495-6",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "COVID-19 vaccines and beyond",
-    "publication_date": "2024-01-26",
-    "abstract": "No div with ID 'Abs1-section' found.",
-    "article_url": "https://www.nature.com/articles/s41423-024-01132-2",
-    "layman_title": "",
-    "layman_abstract": "",
-    "needs_ai_processing": 0
-  },
-  {
-    "article_title": "Cyclosporine A in hospitalized COVID-19 pneumonia patients to prevent the development of interstitial lung disease: a pilot randomized clinical trial",
-    "publication_date": "2024-02-15",
-    "abstract": "Post-COVID-19 interstitial lung disease (ILD) is a new entity that frequently causes pulmonary fibrosis and can become chronic. We performed a single-center parallel-group open-label pilot randomized clinical trial to investigate the efficacy and safety of cyclosporine A (CsA) in the development of ILD in the medium term among patients hospitalized with COVID-19 pneumonia. Patients were randomized 1:1 to receive CsA plus standard of care or standard of care alone. The primary composite outcome was the percentage of patients without ILD 3 months after diagnosis of pneumonia and not requiring invasive mechanical ventilation (IMV) (response without requiring IMV). The key secondary composite outcomes were the percentage of patients who achieve a response requiring IMV or irrespective of the need for IMV, and adverse events. A total of 33 patients received at least one dose of CsA plus standard of care (n = 17) or standard of care alone (n = 16). No differences were found between the groups in the percentage of patients who achieved a response without requiring IMV or a response requiring IMV. A higher percentage of patients achieved a response irrespective of the need for IMV in the CsA plus standard of care group although the RR was almost significant 2.833 (95% CI, 0.908–8.840;p= 0.057). No differences were found between the groups for adverse events. In hospitalized patients with COVID-19 pneumonia, we were unable to demonstrate that CsA achieved a significant effect in preventing the development of ILD. (EU Clinical Trials Register; EudraCT Number: 2020-002123-11; registration date: 08/05/2020).",
-    "article_url": "https://www.nature.com/articles/s41598-024-54196-5",
+    "article_url": "https://www.nature.com/articles/s41390-024-03104-8",
     "layman_title": "",
     "layman_abstract": "",
     "needs_ai_processing": 0
