@@ -3,8 +3,10 @@ from bs4 import BeautifulSoup
 import json
 import configparser
 import os
+import pandas as pd
 
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()
@@ -12,8 +14,13 @@ config.read(config_file)
 
 # Paths
 new_research_dump = config.get('Paths', 'new_research_dump')
-existing_research_articles = config.get('Paths', 'existing_research_articles')
+article_data = config.get('Paths', 'article_data')
 new_research_dump
+article_data
+df = pd.read_json(article_data)
+already_existing_articles_list = list(df.article_url)
+
+
 
 # Note, this is the last 30 days in order of Relevabce
 url = "https://www.nature.com/search?q=covid-19%20sars-cov-2&date_range=last_30_days&order=relevance"
@@ -28,15 +35,43 @@ stem = 'https://www.nature.com'
 
 
 # Original Prototype (Slow but understandable as backup)
-"""
+
 # Initialize an empty list to store article information
+already_existing_articles_df = pd.DataFrame(already_existing_articles_list, columns=['href'])
+
+
 article_list = []
 article_nr = 0
 for article_link in article_links:
     article_nr += 1
+    """
+    if article_nr > 1:
+        print('breaking out of loop')
+        break
+    """
     article_url = stem + article_link['href']
-    print('article',article_nr, 'url:', article_url)
 
+
+    if article_url in already_existing_articles_df['href'].values:
+        print('article',article_nr, 'url:', article_url, 'href already exists in list. Skipping to next article')
+        continue
+    else:
+        print('article',article_nr, 'url:', article_url, 'href does NOT exists in list. Opening Link & Parsing it.')
+    """
+    for existing_link in already_existing_articles_list:
+        if existing_link == article_url:
+            
+            # Do something if the href already exists
+            print('article',article_nr, 'url:', article_url, 'href already exists in list')
+
+            # If it already exist we skip this article
+            # to only read new articles
+            break
+    else:
+        # Do something if the href does not exist
+        print('article',article_nr, 'url:', article_url, 'href does NOT exists in list')
+
+    """
     # Navigate to the article URL
     article_response = requests.get(article_url)
     article_soup = BeautifulSoup(article_response.text, 'html.parser')
@@ -44,7 +79,7 @@ for article_link in article_links:
 
     # Assuming you have the BeautifulSoup object 'article_soup'
     try: 
-        article_publicationdate = article_soup.select_one('a[href="#article-info"] time')
+        article_publicationdate = article_soup.select_one('.c-article-identifiers__item time')
         if article_publicationdate:
             publication_date = article_publicationdate['datetime']
         else:
@@ -73,8 +108,9 @@ for article_link in article_links:
     article_info = {
         "article_title": article_header.get_text() if article_header else "No title found.",
         "publication_date": publication_date,
-        "paragraphs": paragraph_text,
-        "article_url": article_url
+        "abstract": paragraph_text,
+        "article_url": article_url,
+        "needs_ai_processing": 1
     }
 
     # Append the dictionary to the list
@@ -87,20 +123,20 @@ json_data = json.dumps(article_list, ensure_ascii=False, indent=2)
 print(json_data)
 
 # Optionally, save the JSON data to a file
-with open("article_data.json", "w", encoding="utf-8") as json_file:
-    json.dump(article_list, json_file, ensure_ascii=False, indent=2)
-"""
+#with open("article_data.json", "w", encoding="utf-8") as json_file:
+#    json.dump(article_list, json_file, ensure_ascii=False, indent=2)
 
-"""
-import pandas as pd
+    
+
 df = pd.read_json("article_data.json", orient="records")
 df.article_title[0]
-df.paragraphs[0]
-paragraphs_string = ''.join(df.paragraphs[0])
-"""
+df.abstract[0]
+abstract_string = ''.join(df.abstract[0])
+
+
 
 # Fast but witchcraft (ok to use until it breaks)
-
+"""
 import asyncio
 import aiohttp
 from bs4 import BeautifulSoup
@@ -121,7 +157,9 @@ async def process_article(article_link):
     article_header = article_soup.find('h1', class_='c-article-title')
     # Assuming you have the BeautifulSoup object 'article_soup'
     try: 
-        article_publicationdate = article_soup.select_one('a[href="#article-info"] time')
+        #article_publicationdate = article_soup.select_one('a[href="#article-info"] time')
+        article_publicationdate = article_soup.select_one('.c-article-identifiers__item time')
+        
         if article_publicationdate:
             publication_date = article_publicationdate['datetime']
         else:
@@ -228,6 +266,6 @@ print(json_data)
 # Save the updated JSON data to the file
 with open(existing_research_articles, "w", encoding="utf-8") as json_file:
     json.dump(existing_articles, json_file, ensure_ascii=False, indent=2)
-
+"""
 
 print('Nature Articles Downloaded!')

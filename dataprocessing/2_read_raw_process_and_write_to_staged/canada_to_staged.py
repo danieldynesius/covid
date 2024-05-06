@@ -5,6 +5,7 @@ from datetime import datetime as dt
 from datetime import timedelta
 from sklearn.preprocessing import MinMaxScaler
 import configparser
+import os
 
 # Define a function to get the first day of the ISO year and week
 def get_first_day(row):
@@ -14,7 +15,7 @@ def get_first_day(row):
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
 #----------------------------------------------------------------------------------------------
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()

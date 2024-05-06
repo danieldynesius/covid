@@ -13,6 +13,7 @@ import geopandas as gpd
 from sklearn.preprocessing import MinMaxScaler
 import configparser
 import re
+import os
 
 # Get the first day of the ISO year and week
 def get_first_day(row):
@@ -21,7 +22,7 @@ def get_first_day(row):
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
 #----------------------------------------------------------------------------------------------
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()

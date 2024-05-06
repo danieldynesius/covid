@@ -7,7 +7,6 @@
 #--------------------------------------------------------------------------------
 import requests
 import pandas as pd
-import requests
 import hashlib
 import pyarrow.parquet as pq
 

@@ -4,6 +4,11 @@ from datetime import datetime
 import time
 import pandas as pd
 import configparser
+import getpass
+
+username = getpass.getuser()
+print("Current username:", username)
+
 
 global script_start_time
 script_start_time = time.time()
@@ -41,7 +46,7 @@ def stop_stopwatch(print_str=''):
 #----------------------------------------------------------------------------------------------
 start_stopwatch()
 
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config_file = f'/home/{username}/code/analytics/covid/conf.ini'
 
 # Read the INI file
 config = configparser.ConfigParser()
