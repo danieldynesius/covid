@@ -129,9 +129,9 @@ print(json_data)
     
 
 df = pd.read_json("article_data.json", orient="records")
-df.article_title[0]
-df.abstract[0]
-abstract_string = ''.join(df.abstract[0])
+#df.article_title[0]
+#df.abstract[0]
+#abstract_string = ''.join(df.abstract[0])
 
 
 
@@ -207,10 +207,10 @@ async def main():
     # Optionally, save the JSON data to a file
     with open(new_research_dump, "w", encoding="utf-8") as json_file:
         json.dump(articles, json_file, ensure_ascii=False, indent=2)
-
+"""
 # For running through console etc
 
-
+"""
 if __name__ == "__main__":
     if hasattr(__builtins__, '__IPYTHON__') and __IPYTHON__:
         # Running in an IPython (Jupyter) environment
@@ -221,12 +221,12 @@ if __name__ == "__main__":
         # Running in a non-interactive environment
         loop = asyncio.get_event_loop()
         loop.run_until_complete(main())
-
+"""
 
 
 
 # ATTEMPT
-
+"""
 print('Checking for New Articles to append')
 # Load existing data from the JSON file
 existing_articles = []

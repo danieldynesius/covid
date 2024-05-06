@@ -8,7 +8,8 @@ import numpy as np
 import os
 import configparser
 
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()
@@ -41,11 +42,11 @@ d7 = pd.read_parquet(os.path.join(staged_datapath, 'finland_wastewater.parquet')
 d8 = pd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parquet'))
 d9 = pd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
 d10 =pd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
-d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
-d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
+#d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
+#d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
 
 # Concatenate DataFrames
-df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12], ignore_index=True))
+df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
 df = df[['first_day', 'region', 'cntr_code', 'cntr_nm','value', 'normalized_value', 'metric_nm']]
 
 df.groupby('cntr_code')['region'].agg('nunique')

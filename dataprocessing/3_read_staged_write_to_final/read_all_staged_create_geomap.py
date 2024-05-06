@@ -13,7 +13,9 @@ import folium
 from folium import plugins
 import os
 import configparser
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+
+
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()
