@@ -5,7 +5,7 @@ from datetime import datetime
 import configparser
 
 # Read the INI file
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config_file = '/home/ph0s/code/analytics/covid/conf.ini'
 
 # Read the INI file
 config = configparser.ConfigParser()

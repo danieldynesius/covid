@@ -32,7 +32,7 @@ test = 'test'
 predict = 'prediction'
 
 # Read the Conf file
-config_file = '/home/stratega/code/analytics/covid/conf.ini'
+config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 config = configparser.ConfigParser()
 config.read(config_file)
 
@@ -55,8 +55,8 @@ d7 = pd.read_parquet(os.path.join(staged_datapath, 'finland_wastewater.parquet')
 d8 = pd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parquet'))
 d9 = pd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
 d10 =pd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
-d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
-d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
+#d11 =pd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
+#d12 =pd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
 
 ## Remove old html
 files_to_remove = [save_trend_filepath_bb, save_trend_filepath_gh]
@@ -71,7 +71,7 @@ for file in files_to_remove:
         print(f"An error occurred: {e}")
 
 # Concatenate DataFrames
-df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12], ignore_index=True))
+df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
 df.sort_values(by=['cntr_nm'], inplace=True)
 #df = d7
 #df = d10

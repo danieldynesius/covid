@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read the config file
-CONFIG_FILE="/home/stratega/code/analytics/covid/conf.ini"
+CONFIG_FILE="/home/ph0s/code/analytics/covid/conf.ini"
 # Read the [BasePaths] section
 BASE_PATH=$(grep '^\s*base_path' "${CONFIG_FILE}" | awk -F '=' '{gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2}')
 

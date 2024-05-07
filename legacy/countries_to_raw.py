@@ -9,7 +9,7 @@ import subprocess
 
 
 # Specify the path to your JSON file
-json_file_path = '/home/stratega/code/analytics/covid/dataprocessing/metadata/data_sources.json'
+json_file_path = '/home/ph0s/code/analytics/covid/dataprocessing/metadata/data_sources.json'
 
 # Read the JSON file into a Pandas DataFrame
 df = pd.read_json(json_file_path)
@@ -19,7 +19,7 @@ df_normalized = pd.json_normalize(df['countries'])
 
 
 
-df_source = pd.read_csv('/home/stratega/code/analytics/covid/dataprocessing/metadata/data_sources.csv', sep=',')
+df_source = pd.read_csv('/home/ph0s/code/analytics/covid/dataprocessing/metadata/data_sources.csv', sep=',')
 df_source
 
 df_source['n_links'] = df_source.groupby('country')['link'].transform('count')
@@ -53,28 +53,28 @@ for i, country in enumerate(df_source['country']):
 
 
     elif (country == 'finland'):
-        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/finland_to_raw.py'
+        script_path = '/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/finland_to_raw.py'
         try:
             subprocess.run(['python3', script_path])
         except Exception as e:
             print(f"Error: {e}")
 
     elif (country == 'denmark'):
-        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/denmark_to_raw.py'
+        script_path = '/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/denmark_to_raw.py'
         try:
             subprocess.run(['python3', script_path])
         except Exception as e:
             print(f"Error: {e}")
 
     elif (country == 'scotland'):
-        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/scotland_to_raw.py'
+        script_path = '/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/scotland_to_raw.py'
         try:
             subprocess.run(['python3', script_path])
         except Exception as e:
             print(f"Error: {e}")
 
     elif (country == 'switzerland'):
-        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/switzerland_to_raw.py'
+        script_path = '/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/switzerland_to_raw.py'
         try:
             subprocess.run(['python3', script_path])
         except Exception as e:
@@ -82,7 +82,7 @@ for i, country in enumerate(df_source['country']):
 
 
     elif (country == 'usa'):
-        script_path = '/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/usa_to_raw.py'
+        script_path = '/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw/usa_to_raw.py'
         try:
             subprocess.run(['python3', script_path])
         except Exception as e:
@@ -102,3 +102,4 @@ html_table = df.to_html(index=False)
 # Save the HTML to a file
 with open('output.html', 'w') as f:
     f.write(html_table)
+"""

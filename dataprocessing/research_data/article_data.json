@@ -143,17 +143,6 @@
         "needs_ai_processing":0
     },
     {
-        "article_title":"SARS-CoV-2 and its ORF3a, E and M viroporins activate inflammasome in human macrophages and induce of IL-1\u03b1 in pulmonary epithelial and endothelial cells",
-        "publication_date":"2024-04-25",
-        "abstract":[
-            "Inflammasome assembly is a potent mechanism responsible for the host protection against pathogens, including viruses. When compromised, it can allow viral replication, while when disrupted, it can perpetuate pathological responses by IL-1 signaling and pyroptotic cell death. SARS-CoV-2 infection was shown to activate inflammasome in the lungs of COVID-19 patients, however, potential mechanisms responsible for this response are not fully elucidated. In this study, we investigated the effects of ORF3a, E and M SARS-CoV-2 viroporins in the inflammasome activation in major populations of alveolar sentinel cells: macrophages, epithelial and endothelial cells. We demonstrated that each viroporin is capable of activation of the inflammasome in macrophages to trigger pyroptosis-like cell death and IL-1\u03b1release from epithelial and endothelial cells. Small molecule NLRP3 inflammasome inhibitors reduced IL-1 release but weakly affected the pyroptosis. Importantly, we discovered that while SARS-CoV-2 could not infect the pulmonary microvascular endothelial cells it induced IL-1\u03b1and IL-33 release. Together, these findings highlight the essential role of macrophages as the major inflammasome-activating cell population in the lungs and point to endothelial cell expressed IL-1\u03b1as a potential novel component driving the pulmonary immunothromobosis in COVID-19."
-        ],
-        "article_url":"https:\/\/www.nature.com\/articles\/s41420-024-01966-9",
-        "layman_title":"\"COVID-19 Spike Protein Triggers Inflammatory Response in Lung Cells\"",
-        "layman_abstract":"SARS-CoV-2 triggers lung inflammation by activating macrophages' inflammasomes, causing pyroptotic death and IL-1 release, while also inducing endothelial cells to secrete IL-1\u03b1, contributing to COVID-19 complications.",
-        "needs_ai_processing":0
-    },
-    {
         "article_title":"Estimating SARS-CoV-2 infection probabilities with serological data and a Bayesian mixture model",
         "publication_date":"2024-04-25",
         "abstract":[
@@ -173,6 +162,17 @@
         "article_url":"https:\/\/www.nature.com\/articles\/s41467-024-47777-5",
         "layman_title":"Carbon Dioxide Level Linked to Virus Staying Airborne and Infection Risk\n\n---------------------------",
         "layman_abstract":"A study suggests higher outdoor CO2 levels increase COVID-19 virus spread, emphasizing improved ventilation and low CO2 indoors as key prevention measures.",
+        "needs_ai_processing":0
+    },
+    {
+        "article_title":"SARS-CoV-2 and its ORF3a, E and M viroporins activate inflammasome in human macrophages and induce of IL-1\u03b1 in pulmonary epithelial and endothelial cells",
+        "publication_date":"2024-04-25",
+        "abstract":[
+            "Inflammasome assembly is a potent mechanism responsible for the host protection against pathogens, including viruses. When compromised, it can allow viral replication, while when disrupted, it can perpetuate pathological responses by IL-1 signaling and pyroptotic cell death. SARS-CoV-2 infection was shown to activate inflammasome in the lungs of COVID-19 patients, however, potential mechanisms responsible for this response are not fully elucidated. In this study, we investigated the effects of ORF3a, E and M SARS-CoV-2 viroporins in the inflammasome activation in major populations of alveolar sentinel cells: macrophages, epithelial and endothelial cells. We demonstrated that each viroporin is capable of activation of the inflammasome in macrophages to trigger pyroptosis-like cell death and IL-1\u03b1release from epithelial and endothelial cells. Small molecule NLRP3 inflammasome inhibitors reduced IL-1 release but weakly affected the pyroptosis. Importantly, we discovered that while SARS-CoV-2 could not infect the pulmonary microvascular endothelial cells it induced IL-1\u03b1and IL-33 release. Together, these findings highlight the essential role of macrophages as the major inflammasome-activating cell population in the lungs and point to endothelial cell expressed IL-1\u03b1as a potential novel component driving the pulmonary immunothromobosis in COVID-19."
+        ],
+        "article_url":"https:\/\/www.nature.com\/articles\/s41420-024-01966-9",
+        "layman_title":"\"COVID-19 Spike Protein Triggers Inflammatory Response in Lung Cells\"",
+        "layman_abstract":"SARS-CoV-2 triggers lung inflammation by activating macrophages' inflammasomes, causing pyroptotic death and IL-1 release, while also inducing endothelial cells to secrete IL-1\u03b1, contributing to COVID-19 complications.",
         "needs_ai_processing":0
     },
     {
@@ -264,14 +264,14 @@
         "needs_ai_processing":0
     },
     {
-        "article_title":"Immune response stability to the SARS-CoV-2 mRNA vaccine booster is influenced by differential splicing of HLA genes",
+        "article_title":"Statine-based peptidomimetic compounds as inhibitors for SARS-CoV-2 main protease (SARS-CoV\u20112 Mpro)",
         "publication_date":"2024-04-18",
         "abstract":[
-            "Many molecular mechanisms that lead to the host antibody response to COVID-19 vaccines remain largely unknown. In this study, we used serum antibody detection combined with whole blood RNA-based transcriptome analysis to investigate variability in vaccine response in healthy recipients of a booster (third) dose schedule of the mRNA BNT162b2 vaccine against COVID-19. The cohort was divided into two groups: (1) low-stable individuals, with antibody concentration anti-SARS-CoV IgG S1 below 0.4 percentile at 180\u00a0days after boosting vaccination; and (2) high-stable individuals, with antibody values greater than 0.6 percentile of the range in the same period (median 9525 [185\u201380,000] AU\/mL). Differential gene expression, expressed single nucleotide variants and insertions\/deletions, differential splicing events, and allelic imbalance were explored to broaden our understanding of the immune response sustenance. Our analysis revealed a differential expression of genes with immunological functions in individuals with low antibody titers, compared to those with higher antibody titers, underscoring the fundamental importance of the innate immune response for boosting immunity. Our findings also provide new insights into the determinants of the immune response variability to the SARS-CoV-2 mRNA vaccine booster, highlighting the significance of differential splicing regulatory mechanisms, mainly concerningHLAalleles, in delineating vaccine immunogenicity."
+            "COVID-19 is a multisystemic disease caused by the SARS-CoV-2 airborne virus, a member of theCoronaviridaefamily. It has a positive sense single-stranded RNA genome and encodes two non-structural proteins through viral cysteine-proteases processing. Blocking this step is crucial to control virus replication. In this work, we reported the synthesis of 23 statine-based peptidomimetics to determine their ability to inhibit the main protease (Mpro) activity of SARS-CoV-2. Among the 23 peptidomimetics, 15 compounds effectively inhibited Mpro activity by 50% or more, while three compounds (7d,8e, and9g) exhibited maximum inhibition above 70% and IC50<\u20091\u00a0\u00b5M. Compounds7d,8e,and9ginhibited roughly 80% of SARS-CoV-2 replication and proved no cytotoxicity. Molecular docking simulations show putative hydrogen bond and hydrophobic interactions between specific amino acids and these inhibitors. Molecular dynamics simulations further confirmed the stability and persisting interactions in Mpro's subsites, exhibiting favorable free energy binding (\u0394Gbind) values. These findings suggest the statine-based peptidomimetics as potential therapeutic agents against SARS-CoV-2 by targeting Mpro."
         ],
-        "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-59259-1",
-        "layman_title":"\"Booster Vaccine Stability Linked to HLA Gene Splicing Variations\"",
-        "layman_abstract":"This study analyzed blood samples and antibodies from people who received an extra COVID-19 vaccine dose, finding differences in their gene activity could explain why some individuals have stronger protection than others.",
+        "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-59442-4",
+        "layman_title":"\"Peptide mimics of statins to block COVID-19 virus's key enzyme.\"",
+        "layman_abstract":"This study discovered 15 and three highly effective new inhibitors that can significantly stop COVID-19's virus replication without harming cells.",
         "needs_ai_processing":0
     },
     {
@@ -286,17 +286,6 @@
         "needs_ai_processing":0
     },
     {
-        "article_title":"Statine-based peptidomimetic compounds as inhibitors for SARS-CoV-2 main protease (SARS-CoV\u20112 Mpro)",
-        "publication_date":"2024-04-18",
-        "abstract":[
-            "COVID-19 is a multisystemic disease caused by the SARS-CoV-2 airborne virus, a member of theCoronaviridaefamily. It has a positive sense single-stranded RNA genome and encodes two non-structural proteins through viral cysteine-proteases processing. Blocking this step is crucial to control virus replication. In this work, we reported the synthesis of 23 statine-based peptidomimetics to determine their ability to inhibit the main protease (Mpro) activity of SARS-CoV-2. Among the 23 peptidomimetics, 15 compounds effectively inhibited Mpro activity by 50% or more, while three compounds (7d,8e, and9g) exhibited maximum inhibition above 70% and IC50<\u20091\u00a0\u00b5M. Compounds7d,8e,and9ginhibited roughly 80% of SARS-CoV-2 replication and proved no cytotoxicity. Molecular docking simulations show putative hydrogen bond and hydrophobic interactions between specific amino acids and these inhibitors. Molecular dynamics simulations further confirmed the stability and persisting interactions in Mpro's subsites, exhibiting favorable free energy binding (\u0394Gbind) values. These findings suggest the statine-based peptidomimetics as potential therapeutic agents against SARS-CoV-2 by targeting Mpro."
-        ],
-        "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-59442-4",
-        "layman_title":"\"Peptide mimics of statins to block COVID-19 virus's key enzyme.\"",
-        "layman_abstract":"This study discovered 15 and three highly effective new inhibitors that can significantly stop COVID-19's virus replication without harming cells.",
-        "needs_ai_processing":0
-    },
-    {
         "article_title":"SARS-CoV-2 booster vaccine dose significantly extends humoral immune response half-life beyond the primary series",
         "publication_date":"2024-04-18",
         "abstract":[
@@ -305,6 +294,17 @@
         "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-58811-3",
         "layman_title":"\"Booster shot extends COVID-19 antibody protection time.\"",
         "layman_abstract":"This study shows that booster shots significantly extend the duration of antibodayer immune response to COVID-19 vaccines across all ages and sexes but highlights a trend for non-disease factors influencing older adults' immune decline, rather than age itself.",
+        "needs_ai_processing":0
+    },
+    {
+        "article_title":"Immune response stability to the SARS-CoV-2 mRNA vaccine booster is influenced by differential splicing of HLA genes",
+        "publication_date":"2024-04-18",
+        "abstract":[
+            "Many molecular mechanisms that lead to the host antibody response to COVID-19 vaccines remain largely unknown. In this study, we used serum antibody detection combined with whole blood RNA-based transcriptome analysis to investigate variability in vaccine response in healthy recipients of a booster (third) dose schedule of the mRNA BNT162b2 vaccine against COVID-19. The cohort was divided into two groups: (1) low-stable individuals, with antibody concentration anti-SARS-CoV IgG S1 below 0.4 percentile at 180\u00a0days after boosting vaccination; and (2) high-stable individuals, with antibody values greater than 0.6 percentile of the range in the same period (median 9525 [185\u201380,000] AU\/mL). Differential gene expression, expressed single nucleotide variants and insertions\/deletions, differential splicing events, and allelic imbalance were explored to broaden our understanding of the immune response sustenance. Our analysis revealed a differential expression of genes with immunological functions in individuals with low antibody titers, compared to those with higher antibody titers, underscoring the fundamental importance of the innate immune response for boosting immunity. Our findings also provide new insights into the determinants of the immune response variability to the SARS-CoV-2 mRNA vaccine booster, highlighting the significance of differential splicing regulatory mechanisms, mainly concerningHLAalleles, in delineating vaccine immunogenicity."
+        ],
+        "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-59259-1",
+        "layman_title":"\"Booster Vaccine Stability Linked to HLA Gene Splicing Variations\"",
+        "layman_abstract":"This study analyzed blood samples and antibodies from people who received an extra COVID-19 vaccine dose, finding differences in their gene activity could explain why some individuals have stronger protection than others.",
         "needs_ai_processing":0
     },
     {
@@ -385,17 +385,6 @@
         "needs_ai_processing":0
     },
     {
-        "article_title":"Perinatal outcomes after admission with COVID-19 in pregnancy: a UK national cohort study",
-        "publication_date":"2024-04-15",
-        "abstract":[
-            "There are few population-based studies of sufficient size and follow-up duration to have reliably assessed perinatal outcomes for pregnant women hospitalised with SARS-CoV-2 infection. The United Kingdom Obstetric Surveillance System (UKOSS) covers all 194 consultant-led UK maternity units and included all pregnant women admitted to hospital with an ongoing SARS-CoV-2 infection. Here we show that in this large national cohort comprising two years\u2019 active surveillance over four SARS-CoV-2 variant periods and with near complete follow-up of pregnancy outcomes for 16,627 included women, severe perinatal outcomes were more common in women with moderate to severe COVID-19, during the delta dominant period and among unvaccinated women. We provide strong evidence to recommend continuous surveillance of pregnancy outcomes in future pandemics and to continue to recommend SARS-CoV-2 vaccination in pregnancy to protect both mothers and babies."
-        ],
-        "article_url":"https:\/\/www.nature.com\/articles\/s41467-024-47181-z",
-        "layman_title":"COVID-19 impact on pregnant women in the UK: A Study of Birth Results and Health\n\nNote that while condensing, some essential information may be slightly less detailed than the original title. However, for an abstract or general overview intended for a lay audience, this revised version communicates the essence more succinctly.",
-        "layman_abstract":"This study shows that severe birth complications are more likely for women with serious COVID-19 during the delta variant peak, unvaccinated, indicating ongoing monitoring and vaccination benefits in pregnancies.",
-        "needs_ai_processing":0
-    },
-    {
         "article_title":"Age-specific nasal epithelial responses to SARS-CoV-2 infection",
         "publication_date":"2024-04-15",
         "abstract":[
@@ -415,6 +404,17 @@
         "article_url":"https:\/\/www.nature.com\/articles\/s41579-024-01036-y",
         "layman_title":"\"COVID-19 Treatment: New Drug Discoveries\"",
         "layman_abstract":"The COVID-19 pandemic demands urgent development of effective treatments due to its global spread and potential for vaccine resistance, with a focus on broad-spectrum antivirals and targeted therapies.\n\n\n-----",
+        "needs_ai_processing":0
+    },
+    {
+        "article_title":"Perinatal outcomes after admission with COVID-19 in pregnancy: a UK national cohort study",
+        "publication_date":"2024-04-15",
+        "abstract":[
+            "There are few population-based studies of sufficient size and follow-up duration to have reliably assessed perinatal outcomes for pregnant women hospitalised with SARS-CoV-2 infection. The United Kingdom Obstetric Surveillance System (UKOSS) covers all 194 consultant-led UK maternity units and included all pregnant women admitted to hospital with an ongoing SARS-CoV-2 infection. Here we show that in this large national cohort comprising two years\u2019 active surveillance over four SARS-CoV-2 variant periods and with near complete follow-up of pregnancy outcomes for 16,627 included women, severe perinatal outcomes were more common in women with moderate to severe COVID-19, during the delta dominant period and among unvaccinated women. We provide strong evidence to recommend continuous surveillance of pregnancy outcomes in future pandemics and to continue to recommend SARS-CoV-2 vaccination in pregnancy to protect both mothers and babies."
+        ],
+        "article_url":"https:\/\/www.nature.com\/articles\/s41467-024-47181-z",
+        "layman_title":"COVID-19 impact on pregnant women in the UK: A Study of Birth Results and Health\n\nNote that while condensing, some essential information may be slightly less detailed than the original title. However, for an abstract or general overview intended for a lay audience, this revised version communicates the essence more succinctly.",
+        "layman_abstract":"This study shows that severe birth complications are more likely for women with serious COVID-19 during the delta variant peak, unvaccinated, indicating ongoing monitoring and vaccination benefits in pregnancies.",
         "needs_ai_processing":0
     },
     {
@@ -517,17 +517,6 @@
         "article_url":"https:\/\/www.nature.com\/articles\/s43856-024-00494-y",
         "layman_title":"\"Wastewater and Serology Model Predicting COVID-19 Impact Post-Vaccination\"",
         "layman_abstract":"A study in Kentucky showed that after vaccinating 64% of residents, there was about a 15% drop in COVID cases, with the Delta variant significantly increasing wastewater virus levels and hospitalizations by one week later.",
-        "needs_ai_processing":0
-    },
-    {
-        "article_title":"Systematic analyses of the factors influencing sperm quality in patients with SARS-CoV-2 infection",
-        "publication_date":"2024-04-07",
-        "abstract":[
-            "To figure out how does SARS-CoV-2 affect sperm parameters and what influencing factors affect the recovery of sperm quality after infection? We conducted a prospective cohort study and initially included 122 men with SARS-CoV-2 infection. The longest time to track semen quality after infection is 112\u00a0days and 58 eligible patients were included in our study eventually. We subsequently exploited a linear mixed-effects model to statistically analyze their semen parameters at different time points before and after SARS-CoV-2 infection. Semen parameters were significantly reduced after SARS-CoV-2 infection, including total sperm count (211 [147; 347] to 167 [65.0; 258],P<\u20090.001), sperm concentration (69.0 [38.8; 97.0] to 51.0 [25.5; 71.5],P<\u20090.001), total sperm motility (57.5 [52.3; 65.0] to 51.0 [38.5; 56.8],P<\u20090.001), progressive motility (50.0 [46.2; 58.0] to 45.0 [31.5; 52.8],P<\u20090.001). The parameters displayed the greatest diminution within 30\u00a0days after SARS-CoV-2 infection, gradually recovered thereafter, and exhibited no significant difference after 90\u00a0days compared with prior to COVID-19 infection. In addition, the patients in the group with a low-grade fever showed a declining tendency in semen parameters, but not to a significant degree, whereas those men with a moderate or high fever produced a significant drop in the same parameters. Semen parameters were significantly reduced after SARS-CoV-2 infection, and fever severity during SARS-CoV-2 infection may constitute the main influencing factor in reducing semen parameters in patients after recovery, but the effect is reversible and the semen parameters gradually return to normal with the realization of a new spermatogenic cycle."
-        ],
-        "article_url":"https:\/\/www.nature.com\/articles\/s41598-024-58797-y",
-        "layman_title":"Title on COVID-19 Patients' Sperm Quality Factors Analysis\n\n(Note: The revised title simplifies and shortens while retaining core information.)",
-        "layman_abstract":"This study found that SARS-CoV-2 infection significantly lowers men's sperm count, concentration, and motility within 30 days but these levels recover over time, though moderate to high fever during the illness may worsen this effect.",
         "needs_ai_processing":0
     }
 ]

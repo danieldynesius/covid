@@ -117,7 +117,7 @@ if os.path.isfile(flag_file):
 
 # Error checking
 """try:
-    result = subprocess.check_output(['python', '/home/stratega/code/analytics/covid/dataprocessing/4_modelling/c19_ww_prediction.py'], stderr=subprocess.STDOUT, text=True)
+    result = subprocess.check_output(['python', '/home/ph0s/code/analytics/covid/dataprocessing/4_modelling/c19_ww_prediction.py'], stderr=subprocess.STDOUT, text=True)
 except subprocess.CalledProcessError as e:
     print(f"Command failed with exit code {e.returncode}")
     print(e.output)
@@ -241,8 +241,8 @@ def run_scripts_in_folder(trigger_path, log_output_path):
     return load_tstamp
 
 if __name__ == "__main__":
-    #trigger_path = "/home/stratega/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw"
-    #log_output_path = "/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/log.txt"
+    #trigger_path = "/home/ph0s/code/analytics/covid/dataprocessing/1_fetch_data_write_to_raw"
+    #log_output_path = "/home/ph0s/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/log.txt"
     load_tstamp = run_scripts_in_folder(trigger_path, log_output_path)
 
 #----------------------------------------------------------------------------------------------

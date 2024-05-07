@@ -13,6 +13,7 @@ import folium
 from folium import plugins
 import os
 import configparser
+from datetime import datetime as dt
 
 
 config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
@@ -29,7 +30,15 @@ save_geomap_filepath_gh =  os.path.join(save_geomap_dir_gh, 'geo_map.html')
 save_geomap_dir_bb = config.get('Paths', 'save_geomap_dir_bb')
 save_geomap_filepath_bb =  os.path.join(save_geomap_dir_bb, 'geo_map.html')
 
-latest_dataload = pd.read_csv(final_datapath+'latest_dataload.csv') # Get the Timestamp
+try:
+    latest_dataload = pd.read_csv(final_datapath+'/latest_dataload.csv') # Get the Timestamp
+except:
+    print('Latest Dataload csv missing. Creating it with current time.')
+    current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+    df_ct = pd.DataFrame([current_time], columns=['latest_dataload'])
+    df_ct.to_csv(final_datapath+'/latest_dataload.csv')
+    latest_dataload = df_ct
+
 latest_dataload = latest_dataload.at[0, 'latest_dataload']
 
 g1 = gpd.read_parquet(os.path.join(staged_datapath, 'france_wastewater.parquet'))
@@ -37,16 +46,16 @@ g2 = gpd.read_parquet(os.path.join(staged_datapath, 'sweden_wastewater.parquet')
 g3 = gpd.read_parquet(os.path.join(staged_datapath, 'netherlands_wastewater.parquet')) 
 g4 = gpd.read_parquet(os.path.join(staged_datapath, 'denmark_wastewater.parquet')) #fail 1 makes html huge
 g5 = gpd.read_parquet(os.path.join(staged_datapath, 'austria_wastewater.parquet'))
-g6 = gpd.read_parquet(os.path.join(staged_datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
+#g6 = gpd.read_parquet(os.path.join(staged_datapath, 'poland_wastewater.parquet')) # this is just Poznan County. Normaized Value must be
 g7 = gpd.read_parquet(os.path.join(staged_datapath, 'finland_wastewater.parquet'))
 g8 = gpd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parquet'))
 g9 = gpd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
 g10 =gpd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
-g11 =gpd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
-g12 =gpd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
+#g11 =gpd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
+#g12 =gpd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5,  g7, g8, g9, g10], ignore_index=True))
 gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.05) # The higher the tolerance, the smaller file size (but less geo accurately drawn regions).
 
 # Get latest data by country

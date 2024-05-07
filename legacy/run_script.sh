@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Activate the virtual environment
-source /home/stratega/code/venv/covid-dash/bin/activate
+source /home/ph0s/code/venv/covid-dash/bin/activate
 
 # Your Python script path
-python_script='/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/fetch_raw.py'
+python_script='/home/ph0s/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/fetch_raw.py'
 
 # Flag file path
-flag_file="/home/stratega/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/flag_file.txt"
+flag_file="/home/ph0s/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/flag_file.txt"
 
 # Function to get the latest runtime
 get_latest_runtime() {
