@@ -13,13 +13,15 @@ config = configparser.ConfigParser()
 config.read(config_file)
 
 # Paths
-new_research_dump = config.get('Paths', 'new_research_dump')
 article_data = config.get('Paths', 'article_data')
-new_research_dump
-article_data
+
+# parse with df
 df = pd.read_json(article_data)
 already_existing_articles_list = list(df.article_url)
 
+# keep in json
+f = open(article_data)
+article_data = json.load(f)
 
 
 # Note, this is the last 30 days in order of Relevabce
@@ -120,18 +122,29 @@ for article_link in article_links:
 json_data = json.dumps(article_list, ensure_ascii=False, indent=2)
 
 # Print or save the JSON data
-print(json_data)
+#print(json_data)
 
-# Optionally, save the JSON data to a file
-#with open("article_data.json", "w", encoding="utf-8") as json_file:
-#    json.dump(article_list, json_file, ensure_ascii=False, indent=2)
+json_data
+article_data
+"""
+article_data = json.dumps(article_data)
+article_data = json.loads(article_data)
+"""
+json_data = json.loads(json_data)
 
-    
+new_and_old_articles = article_data + json_data
+print(new_and_old_articles)
 
-df = pd.read_json("article_data.json", orient="records")
+# Save the JSON data to a file
+with open("article_data.json", "w", encoding="utf-8") as json_file:
+    json.dump(new_and_old_articles, json_file, ensure_ascii=False, indent=2)
+
+   
+
+#df = pd.read_json("article_data.json", orient="records")
 #df.article_title[0]
 #df.abstract[0]
-#abstract_string = ''.join(df.abstract[0])
+
 
 
 
