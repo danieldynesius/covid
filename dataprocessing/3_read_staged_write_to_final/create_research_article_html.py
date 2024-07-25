@@ -21,7 +21,7 @@ html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
 df = pd.read_json(article_data, orient="records")
 
-df.article_title[0]
+df.title[0]
 df.paragraphs[0]
 paragraphs_string = ''.join(df.paragraphs[0])
 
@@ -232,22 +232,23 @@ def generate_html(articles):
         # Increase the number for each loop to create a unique section_id
         section_id = f"section{index + 1}"
         print(section_id)
-        #research_banner += f"""<h5 id="{section_id}"><a href="#{section_id}" style="text-decoration: none; color: inherit;">🤖 {article['layman_title']}</a></h5>"""
+        #research_banner += f"""<h5 id="{section_id}"><a href="#{section_id}" style="text-decoration: none; color: inherit;">🤖 {article['ai_title']}</a></h5>"""
         active_class = 'active' if index == 0 else ''
-        research_banner += f"""<div class="carousel-item {active_class}" id={section_id}><a href="new_research.html#{section_id}" target="_top">News: 🤖 {article['layman_title']}</a></div>"""
+        research_banner += f"""<div class="carousel-item {active_class}" id={section_id}><a href="new_research.html#{section_id}" target="_top">News: 🤖 {article['ai_title']}</a></div>"""
 
         
         html_content += f"""
         <div style="margin: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-            <h3>{article['article_title']}</h3>
-            <h3 id="{section_id}"><a href="#{section_id}" style="text-decoration: none; color: inherit;">🤖 {article['layman_title']}</a></h3><br>
+            <h3><strong>Title</strong></p>
+            <h4>🤖 {article['ai_title']}</h3>
+            <h5>{article['title']}</h5>
             <p><strong style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); background-clip: text; -webkit-background-clip: text; color: transparent;">Publication Date</strong>: {article['publication_date']}</p>
             <br>
             <p>🤖 <strong>Abstract</strong></p>
-            <p>{article['layman_abstract']}</p>
+            <p>{article['ai_abstract']}</p>
             <br><strong>Abstract</strong><br>
             <p>{article['abstract']}</p>
-            <p><strong>Article URL</strong>: <a href="{article['article_url']}" target="_blank">{article['article_url']}</a></p>
+            <p><strong>Article URL</strong>: <a href="{article['url']}" target="_blank">{article['url']}</a></p>
             <br><br>
         </div>"""
 
@@ -409,6 +410,7 @@ def generate_html(articles):
 
 def save_html(html_content, output_path='.', output_filename=output_filename):
     output_filepath = os.path.join(output_path, output_filename)
+    print('research html dir:', output_filepath+output_filename)
     with open(output_filepath, 'w', encoding='utf-8') as output_file:
         output_file.write(html_content)
 
