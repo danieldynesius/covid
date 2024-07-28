@@ -263,6 +263,7 @@ def generate_html(articles):
 
     return html_content, research_banner
 
+
 # Generate HTML content for new research articles
 html_content, research_banner = generate_html(df.to_dict(orient="records"))
 
