@@ -18,7 +18,7 @@
 * Forecasts per region
 * Improve forecasts
 * Add variant data for better predictions 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
-* Improved data standardization 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
+* Improved data standardization ❌ ${\color{red}\text{Cancelled}}$
 * Add Research News from Nature.com using LLM to interpret Abstract for laypersons.&#10004; ${\color{green}\text{Completed}}$
 <br><br>
 #### Reliability of The Project
