@@ -107,10 +107,10 @@ if os.path.isfile(flag_file):
             print("Script has not been executed today.")
 
     # Prompt user to confirm running the script
-    choice = input("Do you want to run the script anyway? (y/n): ").lower()
-    if choice != "y":
-        print("Script not executed.")
-        exit(0)
+    #choice = input("Do you want to run the script anyway? (y/n): ").lower()
+    #if choice != "y":
+    #    print("Script not executed.")
+    #    exit(0)
 
 # Run the Python script 
 #subprocess.run(['python3', trigger_raw_scripts])
@@ -300,8 +300,8 @@ run_scripts_in_stage(staged_scripts, log_output_path)
 # 4.5 Run Non-Tiered Processing Scripts
 #----------------------------------------------------------------------------------------------
 start_stopwatch()
-subprocess.run(["python", research_scriptfile], check=True) # Raw
-subprocess.run(["python", staged_research_script], check=True) # Raw
+#subprocess.run(["python", research_scriptfile], check=True) # Raw Download nature.com
+#subprocess.run(["python", staged_research_script], check=True) # Raw layman llm
 stop_stopwatch('Step 4.5')
 
 #----------------------------------------------------------------------------------------------

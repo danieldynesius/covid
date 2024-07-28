@@ -63,22 +63,44 @@ def generate_html(articles):
 </head>
 <body class="main-layout">
 <header>
-    <div class="header">
-        <div class="head_top">
-            <div class="container">
-                <div class="row">
+         <!-- header inner -->
+         <div class="header">
+            <div class="head_top">
+               <div class="container">
+                  <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="top-box">
-                            <ul class="sociel_link">
-                                <li><a href="https://twitter.com/covidfox"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://github.com/danieldynesius/covid" target="_blank"><i class="fa fa-github"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/danieldynesius/"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
+                       <div class="top-box">
+                        <ul class="sociel_link">
+                         <!--<li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>-->
+                         <li> <a href="https://twitter.com/covidfox"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="https://github.com/danieldynesius/covid" target="_blank"><i class="fa fa-github"></i></a></li>
+                         <!--<li> <a href="#"><i class="fa fa-instagram"></i></a></li>-->
+                         <li> <a href="https://www.linkedin.com/in/danieldynesius/"><i class="fa fa-linkedin"></i></a></li>
+                     </ul>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="top-box">
-                            <p class="throb-line">It's better to prevent.</p>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                     <div class="top-box">
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <style>
+                            @keyframes throb {
+                                0%, 100% {
+                                    transform: scale(1);
+                                }
+                                50% {
+                                    transform: scale(1.2);
+                                }
+                            }
+                    
+                            .throb-line:hover::after {
+                                content: ' ❤️'; /* Add the heart emoji after the text */
+                                display: inline-block;
+                                animation: throb 0.76s infinite; /* Apply the throb animation */
+                            }
+                        </style>
+                    
+                        <p class="throb-line">It's better to prevent.</p>
                         </div>
                     </div>
                 </div>
@@ -175,21 +197,21 @@ def generate_html(articles):
         section_id = f"section{index + 1}"
         active_class = 'active' if index == 0 else ''
         research_banner += f"""<div class="carousel-item {active_class}" id="{section_id}"><a href="new_research.html#{section_id}" target="_top">
-        News: 🤖 {article['ai_title']}</a></div>"""
+        News: 🤖 {article['ai_title_simple']}</a></div>"""
 
         html_content += f"""
         <div style="margin: 0px; max-width: 1000px; margin-left: auto; margin-right: auto;">
             <h4 style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); 
             background-clip: text; -webkit-background-clip: text; color: transparent;">
             {article['publication_date']}</strong> <a href="{article['url']}" target="_blank">
-            🤖 {article['ai_title']}</a> 
+            🤖 {article['ai_title_simple']}</a> 
             <button class="toggle-button" onclick="toggleAbstract('toggle-{index}')">
             More</button></h4>
             <div id="toggle-{index}" class="toggle-content">
                 <p><strong>Title</strong></p>
                 <p>{article['title']}</p>
                 <p>🤖 <strong>Abstract</strong></p>
-                <p>{article['ai_abstract']}</p>
+                <p>{article['ai_abstract_simple']}</p>
                 <p><strong>Abstract</strong></p>
                 <p>{article['abstract']}</p>
                 <p><strong>Article URL</strong>: <a href="{article['url']}" target="_blank">{article['url']}</a></p>
@@ -229,35 +251,102 @@ def generate_html(articles):
 """
 
     html_content += """
-<footer>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="copyright">
-                        <p>Covid-19 Wastewater Monitoring</p>
-                    </div>
-                </div>
-            </div>
+  <footr>
+        <div class="footer">
+           <div class="container">
+              <div class="row">
+                 <div class="col-md-6 offset-md-3">
+                    <ul class="sociel">
+                        <!--<li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>-->
+                        <li> <a href="https://twitter.com/covidfox"><i class="fa fa-twitter"></i></a></li>
+                        <li> <a href="https://github.com/danieldynesius/covid" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <!--<li> <a href="#"><i class="fa fa-instagram"></i></a></li>-->
+                        <li> <a href="https://www.linkedin.com/in/danieldynesius/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                 </div>
+           </div>
+           <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                 <div class="contact">
+                    <h3>Contact</h3>
+                    <span><b>Email</b><br>
+                       <a href="mailto:daniel.dynesius@stratega.ai?subject=Covid-19%20Wastewater%20Monitoring" style="color: white; text-decoration: none;" onmouseover="this.style.color='aqua'" onmouseout="this.style.color='white'">daniel.dynesius@stratega.ai</a>
+
+                          <br>
+                       </span>
+                 </div>
+              </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                 <div class="contact">
+                    <h3>ADDITIONAL LINKS</h3>
+                    <ul class="lik">
+                        <li> <a href="#">About us</a></li>
+                        <li> <a href="https://www.stratega.ai" style="color: white; text-decoration: none;" onmouseover="this.style.color='aqua'" onmouseout="this.style.color='white'">Stratega Data Consulting</a></li>
+<!--         
+                        <li> <a href="#">Privacy policy</a></li>
+                        <li> <a href="#">News</a></li>
+                         <li> <a href="#">Contact us</a></li>
+                    </ul>
+                 -->                     
+                 </div>
+              </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                 <div class="contact">
+<!--
+                    <h3>service</h3>
+                     <ul class="lik">
+                   <li> <a href="#"> Data recovery</a></li>
+                        <li> <a href="#">Computer repair</a></li>
+                        <li> <a href="#">Mobile service</a></li>
+                        <li> <a href="#">Network solutions</a></li>
+                         <li> <a href="#">Technical support</a></li>
+                     -->                          
+                 </div>                  
+              </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                 <div class="contact">
+                    <h3>About Covid-19 Wastewater Monitoring</h3>
+                    <span>This is a project to monitor the pandemic development over time in multiple countries through wastewater measurement. </span>
+                 </div>
+              </div>
+           </div>
         </div>
-    </div>
-</footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
-<script>
-    function toggleAbstract(id) {
-        var element = document.getElementById(id);
-        if (element.style.display === 'block') {
-            element.style.display = 'none';
-        } else {
-            element.style.display = 'block';
-        }
-    }
-</script>
-</body>
+           <div class="copyright">
+              <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon </a></p>
+           </div>
+        
+     </div>
+     </footr>
+      <!-- end footer -->
+      <!-- Javascript files--> 
+      <script src="js/jquery.min.js"></script> 
+      <script src="js/popper.min.js"></script> 
+      <script src="js/bootstrap.bundle.min.js"></script> 
+      <script src="js/jquery-3.0.0.min.js"></script> 
+      <script src="js/plugin.js"></script> 
+      <!-- sidebar --> 
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+      <script src="js/custom.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         $(".zoom").hover(function(){
+         
+         $(this).addClass('transition');
+         }, function(){
+         
+         $(this).removeClass('transition');
+         });
+         });
+         
+      </script> 
+   </body>
 </html>
 """
 

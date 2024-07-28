@@ -1,93 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Banner Carousel</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Banner Carousel</title>
+    <style>
         #carouselContainer {
             background: rgba(224, 10, 10, 0);
-            padding: 0px; /* Add some padding for better appearance */
+            padding: 0px;
             text-align: center;
             color: #271e1ad3;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             position: fixed;
-            width: auto; /* Set width to auto */
-            max-width: 750px; /* Set maximum width */
-            top: 0px; /* Adjust the starting position from the top */
-            bottom: 0px;/*
-            left: 50%; /* Center horizontally */
-            /*transform: translateX(-50%); /* Adjust for centering */
+            width: auto;
+            max-width: 750px;
+            top: 0px;
+            bottom: 0px;
             overflow-wrap: break-word;
-            margin: 10px; /* Corrected margin value */
+            margin: 10px;
         }
         #carouselContainer a {
-        text-decoration: none; /* Remove default underline */
-        color: #271e1ad3; /* Set link color, adjust as needed */
-    }
-
-    #carouselContainer a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-  </style>
+            text-decoration: none;
+            color: #271e1ad3;
+        }
+        #carouselContainer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body> 
-
-  <div id="carouselContainer">
-    <!-- Dynamically generated carousel items -->
-
-  
-
-<div class="carousel-item active" id=section1><a href="new_research.html#section1" target="_top">News: 🤖 "Creating Lyophilized Assay Protocol for Quick COVID-19 Testing"</a></div><div class="carousel-item " id=section2><a href="new_research.html#section2" target="_top">News: 🤖 Title: "Genomic Study of Flu A H1N1 & COVID-19 in ILI and SARI Cases (July-Dec '22)"</a></div><div class="carousel-item " id=section3><a href="new_research.html#section3" target="_top">News: 🤖 Trivalent Vaccine Neutralizes Multiple COVID Variants, Including Omicron Subtypes
-
-----
-
-For a more challenging task:</a></div><div class="carousel-item " id=section4><a href="new_research.html#section4" target="_top">News: 🤖 New model tracks COVID-19 virus changes and surprises.</a></div><div class="carousel-item " id=section5><a href="new_research.html#section5" target="_top">News: 🤖 China's notable disease trends pre-and-during COVID-19.</a></div><div class="carousel-item " id=section6><a href="new_research.html#section6" target="_top">News: 🤖 "Gambia's COVID Rates & Asymptomatic Cases During Delta/Omicron Waves"</a></div><div class="carousel-item " id=section7><a href="new_research.html#section7" target="_top">News: 🤖 "SARS-CoV-2 M protein reacts to damage with sulfur linkages."</a></div><div class="carousel-item " id=section8><a href="new_research.html#section8" target="_top">News: 🤖 "Studying Azo Imidazo Indoles as Potential Mpro Inhibitors for COVID-19 Treatment"</a></div>
-                        </div>
-
-                        <script>
-                            // Statically define the textList
-                            var textList = ["a 1", "b 2", "c 3"];
-
-                            // Create the carousel container
-                            var carouselContainer = document.getElementById("carouselContainer");
-
-                            // Create carousel items
-                            textList.forEach(function(text, index) {
-                            var section_id = `section${index + 1}`;
-                            var carouselItem = document.createElement('div');
-                            carouselItem.classList.add('carousel-item');
-                            carouselItem.id = section_id;
-                            carouselItem.textContent = text;
-
-                            // Append carousel item to the container
-                            carouselContainer.appendChild(carouselItem);
-                            });
-
-                            // Function to update carousel
-                            var index = 0;
-                            function updateCarousel() {
-                            // Hide all items
-                            document.querySelectorAll('.carousel-item').forEach(item => {
-                                item.style.display = 'none';
-                            });
-
-                            // Show the current item
-                            var currentItem = document.getElementById(`section${index + 1}`);
-                            if (currentItem) {
-                                currentItem.style.display = 'block';
-                            }
-
-                            index = (index + 1) % textList.length;
-                            }
-
-                            // Update the carousel every 10000 milliseconds
-                            setInterval(updateCarousel, 10000);
-                            updateCarousel();
-                        </script>
-
-                        </body>
-                        </html>
-
-    
+<body>
+    <div id="carouselContainer">
+<div class="carousel-item active" id="section1"><a href="new_research.html#section1" target="_top">
+        News: 🤖 Unraveling the Complexity of Immune Response: A Study on Neutralizing Antibody Lineages in Macaques</a></div><div class="carousel-item " id="section2"><a href="new_research.html#section2" target="_top">
+        News: 🤖 COVID-19's Lasting Impact on Pregnant Women and Babies in China</a></div><div class="carousel-item " id="section3"><a href="new_research.html#section3" target="_top">
+        News: 🤖 Safety of High-Dose Nitric Oxide in Treating COVID-19 Pneumonia</a></div><div class="carousel-item " id="section4"><a href="new_research.html#section4" target="_top">
+        News: 🤖 Unlocking mRNA Delivery with AI</a></div><div class="carousel-item " id="section5"><a href="new_research.html#section5" target="_top">
+        News: 🤖 Forecasting Influenza Hospitalizations: A Two-Year Evaluation</a></div><div class="carousel-item " id="section6"><a href="new_research.html#section6" target="_top">
+        News: 🤖 Progesterone Helps Reduce Inflammation in Airways</a></div><div class="carousel-item " id="section7"><a href="new_research.html#section7" target="_top">
+        News: 🤖 Protecting Against Multiple COVID Strains with a Single Vaccine</a></div><div class="carousel-item " id="section8"><a href="new_research.html#section8" target="_top">
+        News: 🤖 COVID-19 Vaccine Tested in Phase 3 Trial Shows Promise</a></div><div class="carousel-item " id="section9"><a href="new_research.html#section9" target="_top">
+        News: 🤖 Unexplained Fatigue and Hormonal Imbalances: A Common Thread in Long COVID Cases</a></div><div class="carousel-item " id="section10"><a href="new_research.html#section10" target="_top">
+        News: 🤖 Protecting Against Multiple COVID Variants with an Inactivated Vaccine</a></div><div class="carousel-item " id="section11"><a href="new_research.html#section11" target="_top">
+        News: 🤖 Uncovering the Secrets of SARS-CoV-2's Papain-Like Protease: What Makes It Tick and How to Outsmart It</a></div><div class="carousel-item " id="section12"><a href="new_research.html#section12" target="_top">
+        News: 🤖 Protecting Against Deadly Viruses: A New Vaccine Shows Promise</a></div><div class="carousel-item " id="section13"><a href="new_research.html#section13" target="_top">
+        News: 🤖 Testing Plasma Exchange for Severe COVID-19</a></div><div class="carousel-item " id="section14"><a href="new_research.html#section14" target="_top">
+        News: 🤖 COVID-19's Airway Problem: Spike Protein Blocks Important Cell Signal</a></div><div class="carousel-item " id="section15"><a href="new_research.html#section15" target="_top">
+        News: 🤖 Hope in a Field: Reducing COVID-19 Lung Damage with Magnetism</a></div><div class="carousel-item " id="section16"><a href="new_research.html#section16" target="_top">
+        News: 🤖 COVID-19 Vaccine vs No Vaccine: How It Affects Eye Nerve Health</a></div><div class="carousel-item " id="section17"><a href="new_research.html#section17" target="_top">
+        News: 🤖 Tracking COVID-19 in Brazil: Understanding Vaccine Response to New Variant</a></div><div class="carousel-item " id="section18"><a href="new_research.html#section18" target="_top">
+        News: 🤖 Vaccine for the Nose: Boosting Immunity with a Shot to the Sinuses</a></div>
+    </div>
+    <script>
+        var textList = ["a 1", "b 2", "c 3"];
+        var carouselContainer = document.getElementById("carouselContainer");
+        textList.forEach(function(text, index) {
+            var section_id = `section${index + 1}`;
+            var carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            carouselItem.id = section_id;
+            carouselItem.textContent = text;
+            carouselContainer.appendChild(carouselItem);
+        });
+        var index = 0;
+        function updateCarousel() {
+            document.querySelectorAll('.carousel-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            var currentItem = document.getElementById(`section${index + 1}`);
+            if (currentItem) {
+                currentItem.style.display = 'block';
+            }
+            index = (index + 1) % textList.length;
+        }
+        setInterval(updateCarousel, 10000);
+        updateCarousel();
+    </script>
+</body>
+</html>

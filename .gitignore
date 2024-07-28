@@ -9,3 +9,5 @@ dataprocessing/websearch_data/*
 *.env
 /covid-venv/
 *.json
+data/
+**/data/
