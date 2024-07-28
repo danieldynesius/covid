@@ -52,30 +52,5 @@
         News: 🤖 Tracking COVID-19 in Brazil: Understanding Vaccine Response to New Variant</a></div><div class="carousel-item " id="section18"><a href="new_research.html#section18" target="_top">
         News: 🤖 Vaccine for the Nose: Boosting Immunity with a Shot to the Sinuses</a></div>
     </div>
-    <script>
-        var textList = ["a 1", "b 2", "c 3"];
-        var carouselContainer = document.getElementById("carouselContainer");
-        textList.forEach(function(text, index) {
-            var section_id = `section${index + 1}`;
-            var carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
-            carouselItem.id = section_id;
-            carouselItem.textContent = text;
-            carouselContainer.appendChild(carouselItem);
-        });
-        var index = 0;
-        function updateCarousel() {
-            document.querySelectorAll('.carousel-item').forEach(item => {
-                item.style.display = 'none';
-            });
-            var currentItem = document.getElementById(`section${index + 1}`);
-            if (currentItem) {
-                currentItem.style.display = 'block';
-            }
-            index = (index + 1) % textList.length;
-        }
-        setInterval(updateCarousel, 10000);
-        updateCarousel();
-    </script>
 </body>
 </html>

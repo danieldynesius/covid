@@ -205,53 +205,28 @@ def generate_html(articles):
             background-clip: text; -webkit-background-clip: text; color: transparent;">
             {article['publication_date']}</strong> <a href="{article['url']}" target="_blank">
             🤖 {article['ai_title_simple']}</a> 
-            <button class="toggle-button" onclick="toggleAbstract('toggle-{index}')">
+            <button class="toggle-button" onclick="toggleAbstract('toggle-{index}', this)">
             More</button></h4>
             <div id="toggle-{index}" class="toggle-content">
                 <p><strong>Title</strong></p>
-                <p>{article['title']}</p>
+                <p>{article['title']}</p><br>
                 <p>🤖 <strong>Abstract</strong></p>
-                <p>{article['ai_abstract_simple']}</p>
+                <p>{article['ai_abstract_simple']}</p><br>
                 <p><strong>Abstract</strong></p>
                 <p>{article['abstract']}</p>
                 <p><strong>Article URL</strong>: <a href="{article['url']}" target="_blank">{article['url']}</a></p>
+                
+                <br><br>
             </div>
-        </div>"""
-
-
-    research_banner += """
-    </div>
-    <script>
-        var textList = ["a 1", "b 2", "c 3"];
-        var carouselContainer = document.getElementById("carouselContainer");
-        textList.forEach(function(text, index) {
-            var section_id = `section${index + 1}`;
-            var carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
-            carouselItem.id = section_id;
-            carouselItem.textContent = text;
-            carouselContainer.appendChild(carouselItem);
-        });
-        var index = 0;
-        function updateCarousel() {
-            document.querySelectorAll('.carousel-item').forEach(item => {
-                item.style.display = 'none';
-            });
-            var currentItem = document.getElementById(`section${index + 1}`);
-            if (currentItem) {
-                currentItem.style.display = 'block';
-            }
-            index = (index + 1) % textList.length;
-        }
-        setInterval(updateCarousel, 10000);
-        updateCarousel();
-    </script>
-</body>
-</html>
-"""
+        </div>
+        """
 
     html_content += """
-  <footr>
+</p>
+</div>
+<br><br><br><br><br><br><br><br>
+      <!--  footer --> 
+      <footr>
         <div class="footer">
            <div class="container">
               <div class="row">
@@ -348,22 +323,49 @@ def generate_html(articles):
       </script> 
    </body>
 </html>
+<!-- end footer -->
+<script>
+function toggleAbstract(id, button) {
+    const content = document.getElementById(id);
+    if (content.style.display === "none") {
+        content.style.display = "block";
+        button.textContent = "Less";
+    } else {
+        content.style.display = "none";
+        button.textContent = "More";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".toggle-button");
+    buttons.forEach(button => {
+        const contentId = button.getAttribute("onclick").match(/'([^']+)'/)[1];
+        const content = document.getElementById(contentId);
+        if (content) {
+            content.style.display = "none";
+        }
+    });
+});
+</script>
+</body>
+</html>
+"""
+
+    research_banner += """
+    </div>
+</body>
+</html>
 """
 
     return html_content, research_banner
 
-
-# Generate HTML content for new research articles
+# Generate the HTML content
 html_content, research_banner = generate_html(df.to_dict(orient="records"))
 
-# Write the HTML content to the file
-output_file_path = os.path.join(html_dir_gh, output_filename)
-with open(output_file_path, 'w', encoding='utf-8') as file:
-    file.write(html_content)
+# Save the HTML content to a file
+with open(os.path.join(html_dir_gh, output_filename), 'w') as f:
+    f.write(html_content)
 
-# Write the research banner to the file
-output_file_path_research_banner = os.path.join(html_dir_gh, output_filename_research_banner)
-with open(output_file_path_research_banner, 'w', encoding='utf-8') as file:
-    file.write(research_banner)
+with open(os.path.join(html_dir_bb, output_filename_research_banner), 'w') as f:
+    f.write(research_banner)
 
-output_file_path, output_file_path_research_banner
+html_content, research_banner
