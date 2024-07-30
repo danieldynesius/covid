@@ -30,16 +30,7 @@ save_geomap_filepath_gh =  os.path.join(save_geomap_dir_gh, 'geo_map.html')
 save_geomap_dir_bb = config.get('Paths', 'save_geomap_dir_bb')
 save_geomap_filepath_bb =  os.path.join(save_geomap_dir_bb, 'geo_map.html')
 
-try:
-    latest_dataload = pd.read_csv(final_datapath+'/latest_dataload.csv') # Get the Timestamp
-except:
-    print('Latest Dataload csv missing. Creating it with current time.')
-    current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-    df_ct = pd.DataFrame([current_time], columns=['latest_dataload'])
-    df_ct.to_csv(final_datapath+'/latest_dataload.csv')
-    latest_dataload = df_ct
-
-latest_dataload = latest_dataload.at[0, 'latest_dataload']
+latest_dataload = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
 g1 = gpd.read_parquet(os.path.join(staged_datapath, 'france_wastewater.parquet'))
 g2 = gpd.read_parquet(os.path.join(staged_datapath, 'sweden_wastewater.parquet'))
