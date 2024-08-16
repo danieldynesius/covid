@@ -11,6 +11,9 @@ config.read(config_file)
 
 # Paths
 article_data = config.get('Paths', 'article_data')
+mpox_data = config.get('Paths', 'mpox_data')
+
+
 output_filename = 'new_research.html'
 output_filename_research_banner = 'research_banner.html'
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
@@ -18,7 +21,12 @@ html_dir_bb = config.get('Paths', 'html_savedir_gh')
 
 # Read the article data from JSON file
 df = pd.read_json(article_data, orient="records")
+df_mpox = pd.read_json(mpox_data, orient="records")
+
+# Concatenate the two DataFrames
+df = pd.concat([df, df_mpox], ignore_index=True)
 df = df.sort_values(by='publication_date', ascending=False)
+
 
 def generate_html(articles):
     html_content = """
