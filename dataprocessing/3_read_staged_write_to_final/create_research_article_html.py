@@ -2,29 +2,49 @@ import pandas as pd
 import configparser
 import os
 import json
+import pymongo
+import pandas as pd
+
+# MongoDB connection setup
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client['scidb']  # Change to your database name
+collection = db['articles']  # Change to your collection name
+
+# Fetch all articles from MongoDB
+articles = list(collection.find())
+
+# Create a DataFrame from the list of articles
+df = pd.DataFrame(articles)
+
+# Optional: Drop the MongoDB-specific '_id' column if you don't need it
+df = df.drop(columns=['_id'], errors='ignore')
+
+# Print the first few rows of the DataFrame
+print(df.head())
+
 
 config_file = os.path.expanduser('~/code/analytics/covid/conf.ini')
 
 # Read the Conf file
 config = configparser.ConfigParser()
 config.read(config_file)
-
+"""
 # Paths
 article_data = config.get('Paths', 'article_data')
 mpox_data = config.get('Paths', 'mpox_data')
-
+"""
 
 output_filename = 'new_research.html'
 output_filename_research_banner = 'research_banner.html'
 html_dir_gh = config.get('Paths', 'html_savedir_gh')
 html_dir_bb = config.get('Paths', 'html_savedir_gh')
-
+"""
 # Read the article data from JSON file
 df = pd.read_json(article_data, orient="records")
 df_mpox = pd.read_json(mpox_data, orient="records")
 
 # Concatenate the two DataFrames
-df = pd.concat([df, df_mpox], ignore_index=True)
+df = pd.concat([df, df_mpox], ignore_index=True)"""
 df = df.sort_values(by='publication_date', ascending=False)
 
 
@@ -36,7 +56,7 @@ def generate_html(articles):
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Data Sources</title>
+    <title>Research News</title>
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">

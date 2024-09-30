@@ -106,6 +106,17 @@ if os.path.isfile(flag_file):
         else:
             print("Script has not been executed today.")
 
+
+
+def start_mongodb():
+    try:
+        subprocess.run(['sudo', 'service', 'mongod', 'start'], check=True)
+        print("MongoDB started successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error starting MongoDB: {e}")
+
+start_mongodb()
+
     # Prompt user to confirm running the script
     #choice = input("Do you want to run the script anyway? (y/n): ").lower()
     #if choice != "y":
