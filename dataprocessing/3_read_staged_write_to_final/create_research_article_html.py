@@ -156,7 +156,7 @@ def generate_html(articles):
                                     <li><a href="trends.html">Trend Graphs</a></li>
                                     <li><a href="predictions_tab.html">Predictive</a></li>
                                     <li class="active"><a href="new_research.html">Research News</a></li>
-                                    <li><a href="data_sources.html">Data Sources</a></li>
+                                    <li><a href="data_sources.html">Data Sources</gita></li>
                                     <li><a href="about.html">About</a></li>
                                 </ul>
                             </nav>
@@ -229,7 +229,7 @@ def generate_html(articles):
         News: 🤖 {article['ai_title_simple']}</a></div>"""
 
         html_content += f"""
-        <div style="margin: 0 auto; max-width: 1000px; width: 90%; padding: 0 10px;">
+        <div style="margin: 0 auto; max-width: 1000px; width: 95%; padding: 0 5px;">
             <h4 style="background: linear-gradient(to right, rgb(0, 120, 255), rgb(105, 255, 255)); 
             background-clip: text; -webkit-background-clip: text; color: transparent;">
             {article['publication_date']}</strong> <a href="{article['url']}" target="_blank">
