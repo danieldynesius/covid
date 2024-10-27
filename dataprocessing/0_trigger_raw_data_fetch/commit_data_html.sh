@@ -4,6 +4,8 @@
 
 files_to_commit=(
   "/home/ph0s/code/analytics/covid/docs/geo_map.html"
+  "/home/ph0s/code/analytics/covid/docs/search_geo.html"
+  "/home/ph0s/code/analytics/covid/docs/gtrend_geo_map.html"
   "/home/ph0s/code/analytics/covid/docs/country_trends.html"
   "/home/ph0s/code/analytics/covid/docs/forecasts.html"
   "/home/ph0s/code/analytics/covid/docs/new_research.html"
@@ -22,6 +24,8 @@ branch_name="main"
 github_username="danieldynesius"
 github_token="$GITHUB_TOKEN"  # Use environment variable
 github_repo="covid"
+
+echo "githubtoken: $GITHUB_TOKEN"
 
 # Check if the file exists
 if [ ! -f "$files_to_commit" ]; then

@@ -6,6 +6,7 @@ import pandas as pd
 import configparser
 import getpass
 
+
 username = getpass.getuser()
 print("Current username:", username)
 
@@ -308,6 +309,35 @@ def run_scripts_in_stage(trigger_path, log_output_path):
 run_scripts_in_stage(staged_scripts, log_output_path)
 
 #----------------------------------------------------------------------------------------------
+# 4.1 Run Web Search: Load, Transform, Create HTML
+#----------------------------------------------------------------------------------------------
+start_stopwatch()
+# Download GTrend CSV
+try:
+    print("Starting: Download GTrend CSV")
+    #subprocess.run(["python", '/home/ph0s/code/analytics/covid/dataprocessing/1_gtrends_raw/download_gtrend_csv.py'], check=True)
+    print("Completed: Download GTrend CSV")
+except subprocess.CalledProcessError as e:
+    print(f"Error occurred while executing 'Download GTrend CSV': {e}")
+
+# Transform data for HTML
+try:
+    print("Starting: Transform Data for HTML")
+    subprocess.run(["python", '/home/ph0s/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/create_gtrend_geodata.py'], check=True)
+    print("Completed: Transform Data for HTML")
+except subprocess.CalledProcessError as e:
+    print(f"Error occurred while executing 'Transform Data for HTML': {e}")
+
+# Create HTML
+try:
+    print("Starting: Create HTML")
+    subprocess.run(["python", '/home/ph0s/code/analytics/covid/dataprocessing/3_read_staged_write_to_final/create_gtrend_geo_html.py'], check=True)
+    print("Completed: Create HTML")
+except subprocess.CalledProcessError as e:
+    print(f"Error occurred while executing 'Create HTML': {e}")
+stop_stopwatch('Step 4.1: OK: Seach Data Page Done!')
+
+#----------------------------------------------------------------------------------------------
 # 4.5 Run Non-Tiered Processing Scripts
 #----------------------------------------------------------------------------------------------
 start_stopwatch()
@@ -344,10 +374,19 @@ pd.DataFrame(
 
 
 # Run the shell script: github
-#subprocess.run(['bash', push_html_file_gh])
-subprocess.run(['bash', push_html_file_gh], cwd=base_path)
+#subprocess.run(['bash', push_html_file_gh], cwd=base_path)
 
 # Run the shell script: bitbucket
 #subprocess.run(['bash', push_html_file_bb])
-subprocess.run(['bash', push_html_file_bb], cwd=base_path_bb)
+#subprocess.run(['bash', push_html_file_bb], cwd=base_path_bb)
+
+commit_script_path = 'dataprocessing/0_trigger_raw_data_fetch'
+commit_script_name = 'multi_commit.py'
+commit_script_fullpath = os.path.join(base_path, commit_script_path, commit_script_name)
+print('running commitscriptpath:', commit_script_fullpath)
+
+subprocess.run(["python", commit_script_fullpath])
+
+
+subprocess.run(["python", research_html_script], check=True) # Generate Research News HTML
 stop_stopwatch('Step 6-7')
