@@ -80,10 +80,18 @@ region_mapping = {
 country_name = 'sweden'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
-df['channel'] = df['channel'].str.lower()
-df["year"] = df["week"].str[:4].astype(int)
-df["week_no"] = df["week"].str.replace(r"\*$", "", regex=True)
-df["week"] = df["week"].str.replace(r"\*$", "", regex=True)
+df['channel'] = df['city'].str.lower()
+df['sampling_date'] = pd.to_datetime(df.sampling_date)
+
+df["week"]   = (df['sampling_date'].dt.isocalendar().week).astype(str)
+df["week_no"]= (df['sampling_date'].dt.isocalendar().week).astype(str)
+
+df['sampling_date'] = df['sampling_date'].astype(str)
+
+df["year"] = df["sampling_date"].str[:4].astype(int)
+
+
+df['week'] = df['year'].astype(str) + '-' + df['week_no']
 
 # Convert week to ISO year and week
 df[['iso_year', 'iso_week']] = df['week'].str.split('-', expand=True)
@@ -94,8 +102,8 @@ df['iso_week'] = df['iso_week'].astype(int)
 
 # Apply the function to create a new column "first_day"
 df['first_day'] = df.apply(get_first_day, axis=1)
-metric_nm = "SARS-CoV2/PMMoV x 1000"
-df.rename(columns={"SARS-CoV2/PMMoV x 1000": "value", }, inplace=True) # relative_copy_number
+metric_nm = "copies_l"
+df.rename(columns={"copies_l": "value", }, inplace=True) # relative_copy_number
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
 region_stats = df.groupby('channel')['first_day'].agg(['count','min','max']).reset_index()
