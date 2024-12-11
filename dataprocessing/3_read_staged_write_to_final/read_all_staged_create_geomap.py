@@ -67,7 +67,8 @@ color_scales = {}
 gdf['type_of_colorscale'] = 'Country Relative Min-Max'
 for cntr_code, cntr_code_df in gdf.groupby('cntr_code'):
     if cntr_code == 'SE':
-        color_scales[cntr_code] = linear.OrRd_04.scale(0, 10) # Purple scale: PuRd_04 :)
+        #color_scales[cntr_code] = linear.OrRd_04.scale(0, 10) # Purple scale: PuRd_04. 0-10 was old scale :)
+        color_scales[cntr_code] = linear.OrRd_04.scale(0, 660000) # New equivalent scale :)
         gdf.loc[gdf['cntr_code'] == 'SE', 'type_of_colorscale'] = 'Country Heuristic (Basic)'
     else:
         color_scales[cntr_code] = linear.OrRd_04.scale(min(cntr_code_df['value']), max(cntr_code_df['value']))
