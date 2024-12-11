@@ -48,29 +48,29 @@ geojson['nuts_name'] = geojson['nuts_name'].str.lower()
 region_mapping = {
     'uppsala': 'uppsala län',
     'knivsta': 'uppsala län',
-    'enköping': 'uppsala län',
-    'älvkarleby': 'uppsala län',  # assuming älvkarleby is also in uppsala
-    'östhammar': 'uppsala län',  # assuming östhammar is also in uppsala
-    'ekerö': 'stockholms län',
+    'enkoping': 'uppsala län',
+    'alvkarleby': 'uppsala län',  # assuming älvkarleby is also in uppsala
+    'osthammar': 'uppsala län',  # assuming östhammar is also in uppsala
+    'ekero': 'stockholms län',
     'tierp': 'uppsala län',
-    'österåker': 'stockholms län',
+    'osteråker': 'stockholms län',
     'vaxholm': 'stockholms län',
-    'örebro': 'örebro län',
+    'orebro': 'örebro län',
     'umeå': 'västerbottens län',
     'kalmar': 'kalmar län',
     'ekeby': 'skåne län',  # note: this is a guess; provide the correct mapping if ekeby is in a different region
-    'jönköping': 'jönköpings län',
-    'västerås': 'västmanlands län',
+    'jonkoping': 'jönköpings län',
+    'vasteras': 'västmanlands län',
     'helsingborg': 'skåne län',
-    'östersund': 'jämtlands län',
-    'gävle': 'gävleborgs län',
-    'göteborg': 'västra götalands län',
-    'malmö': 'skåne län',
-    'stockholm-käppala': 'stockholms län',
-    'luleå': 'norrbottens län',
+    'ostersund': 'jämtlands län',
+    'gavle': 'gävleborgs län',
+    'goteborg': 'västra götalands län',
+    'malmo': 'skåne län',
+    'stockholm-kappala': 'stockholms län',
+    'lulea': 'norrbottens län',
     'karlstad': 'värmlands län',
     'stockholm-grödinge': 'stockholms län',
-    'linköping': 'östergötlands län',
+    'linkoping': 'östergötlands län',
     'stockholm-bromma': 'stockholms län',
     'stockholm-henriksdal': 'stockholms län'
 }
