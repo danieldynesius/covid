@@ -53,7 +53,7 @@
 
 <br>
 
-The Heuristic of the Swedish Cut-off Value of 10 and above indicated as "high transmission" (red).
+The Heuristic of the Swedish Cut-off Value of 10 and above indicated as "high transmission" (red). (EDIT 2024-12-11: Equivalent value of 10 in new source file scale is 660 000)
 ![Trendline Viz](docs/se_uppsala_c19_first_recorded_peak.png)
 <br><br><br>
 
