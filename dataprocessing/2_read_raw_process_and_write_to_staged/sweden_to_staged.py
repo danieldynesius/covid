@@ -34,8 +34,10 @@ date_threshold = (dt.now() - timedelta(days=n_days_back_to_include)).date()
 date_threshold = pd.Timestamp(date_threshold)
 sufficient_updates_since_threshold = sufficient_updates_since_threshold # 22 in 365 days they should have atleast 22 data reports (assumes weekly reporting)
 
-# Set the range of values for the color scale
-color_range = [0, 10]
+# Set the range of values for the color scale. Originally 10 was red value (high vave one).
+# New metric copies_l.the equivalent value is 660000
+#color_range = [0, 10] # old
+color_range = [0, 660000]
 
 
 # Load GeoJSON file into a GeoDataFrame
@@ -153,7 +155,7 @@ gdf_original = merged_gdf
 parquet_filename = f'~/code/analytics/covid/data/2_staged_data/{filename}'
 gdf_original.to_parquet(parquet_filename, index=False)
 
-"""
+
 # Plot choropleth map using Plotly Express with Mapbox
 fig = px.choropleth_mapbox(
     merged_gdf,
@@ -181,4 +183,3 @@ fig.update_layout(
 
 # Show the plot
 fig.show()
-"""
