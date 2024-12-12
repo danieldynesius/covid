@@ -109,6 +109,7 @@ country_name = 'canada'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
+df = df.loc[df.measureid =='covN2']
 metric_nm = 'w_avg'
 df.rename(columns={"w_avg": "value"
                     ,"location":"channel" 

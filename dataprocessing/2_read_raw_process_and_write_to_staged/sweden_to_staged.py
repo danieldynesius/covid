@@ -82,6 +82,9 @@ region_mapping = {
 country_name = 'sweden'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
+df = df.loc[df['target'] == 'SARS CoV-2']
+
+
 df['channel'] = df['city'].str.lower()
 df['sampling_date'] = pd.to_datetime(df.sampling_date)
 
@@ -157,6 +160,7 @@ gdf_original.to_parquet(parquet_filename, index=False)
 
 
 # Plot choropleth map using Plotly Express with Mapbox
+"""
 fig = px.choropleth_mapbox(
     merged_gdf,
     geojson=merged_gdf.geometry,
@@ -183,3 +187,4 @@ fig.update_layout(
 
 # Show the plot
 fig.show()
+"""
