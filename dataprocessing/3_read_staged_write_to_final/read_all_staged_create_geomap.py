@@ -43,10 +43,11 @@ g8 = gpd.read_parquet(os.path.join(staged_datapath, 'switzerland_wastewater.parq
 g9 = gpd.read_parquet(os.path.join(staged_datapath, 'canada_wastewater.parquet'))
 g10 =gpd.read_parquet(os.path.join(staged_datapath, 'usa_wastewater.parquet'))
 #g11 =gpd.read_parquet(os.path.join(staged_datapath, 'newzealand_wastewater.parquet'))
-#g12 =gpd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
+g12 =gpd.read_parquet(os.path.join(staged_datapath, 'germany_wastewater.parquet'))
+g13 =gpd.read_parquet(os.path.join(staged_datapath, 'slovenia_wastewater.parquet'))
 
 # Concatenate GeoDataFrames
-gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5,  g7, g8, g9, g10], ignore_index=True))
+gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5,  g7, g8, g9, g10, g12, g13], ignore_index=True))
 gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.05) # The higher the tolerance, the smaller file size (but less geo accurately drawn regions).
 
 # Get latest data by country
