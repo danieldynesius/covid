@@ -187,10 +187,12 @@ country_name = 'germany'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
+df.typ = df.typ.str.lower()
+df = df.loc[df.typ == 'sars-cov-2']
 metric_nm = 'viral_load'
-df.rename(columns={"x": "date",
-                    "y": "value"
-                    ,"region":"channel" 
+df.rename(columns={"datum": "date",
+                    "viruslast": "value"
+                    ,"standort":"channel" 
                     }, inplace=True)
 
 df = df[['date','channel', 'value']]
