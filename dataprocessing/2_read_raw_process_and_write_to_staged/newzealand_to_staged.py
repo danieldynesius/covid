@@ -45,42 +45,157 @@ gf_shp = gf_shp[['nuts_name', 'cntr_code', 'geometry']]
 gf_shp['nuts_name'] = gf_shp['nuts_name'].astype(str)
 gf_shp['nuts_name'] = gf_shp['nuts_name'].str.replace('[', '').str.replace(']', '')
 gf_shp['nuts_name'] = gf_shp['nuts_name'].str.replace("'", '')
-gf_shp['nuts_name'] = gf_shp['nuts_name'].str.lower()
+gf_shp['nuts_name'] = gf_shp['nuts_name'].str.title()
 region_mapping = {
-    'auckland': 'auckland region',
-    'bay of plenty': 'bay of plenty region',
-    'canterbury': 'canterbury region',
-    'waikato': 'waikato region',
-    'wellington': 'wellington region',
-    'otago': 'otago region',
-    'gisborne': 'gisborne region',
-    "hawke's bay": 'hawkes bay region',
-    'manawatu-whanganui': 'manawatu-whanganui region',
-    'nelson': 'nelson region',
-    'northland': 'northland region',
-    'southland': 'southland region',
-    'taranaki': 'taranaki region',
-    'marlborough': 'marlborough region',
-    'west coast': 'west coast region',
-    'tasman': 'tasman region',
-}
-region_mapping = {
-    'auckland': 'auckland',
-    'bay of plenty': 'bay of plenty',
-    'canterbury': 'canterbury',
-    'waikato': 'waikato',
-    'wellington': 'wellington',
-    'otago': 'otago',
-    'gisborne': 'gisborne',
-    "hawke's bay": 'hawkes bay',
-    'manawatu-whanganui': 'manawatu-whanganui',
-    'nelson': 'nelson',
-    'northland': 'northland',
-    'southland': 'southland',
-    'taranaki': 'taranaki',
-    'marlborough': 'marlborough',
-    'west coast': 'west coast',
-    'tasman': 'tasman',
+'au_armybay': 'Auckland',
+'au_beachlands': 'Auckland',
+'au_clarksbeach': 'Auckland',
+'au_eastern': 'Auckland',
+'au_helensville': 'Auckland',
+'au_kawakawabay': 'Auckland',
+'au_kingseat': 'Auckland',
+'au_mangere': 'Auckland',
+'au_omaha': 'Auckland',
+'au_pukekohe': 'Auckland',
+'au_rosedale': 'Auckland',
+'au_snellsalgies': 'Auckland',
+'au_southwestern': 'Auckland',
+'au_waiuku': 'Auckland',
+'au_warkworth': 'Auckland',
+'au_wellsford': 'Auckland',
+'au_western': 'Auckland',
+
+'bp_katikati': 'Bay of Plenty',
+'bp_kawerau': 'Bay of Plenty',
+'bp_maketu': 'Bay of Plenty',
+'bp_opotiki': 'Bay of Plenty',
+'bp_rotorua': 'Bay of Plenty',
+'bp_tauranga': 'Bay of Plenty',
+'bp_temaunga': 'Bay of Plenty',
+'bp_tepuke': 'Bay of Plenty',
+'bp_waihibeach': 'Bay of Plenty',
+'bp_whakatane': 'Bay of Plenty',
+
+'ca_amberley': 'Canterbury',
+'ca_ashburton': 'Canterbury',
+'ca_christchurch': 'Canterbury',
+'ca_hanmersprings': 'Canterbury',
+'ca_kaiapoi': 'Canterbury',
+'ca_kaikoura': 'Canterbury',
+'ca_leeston': 'Canterbury',
+'ca_rangiora': 'Canterbury',
+'ca_rolleston': 'Canterbury',
+'ca_timaru': 'Canterbury',
+'ca_woodend': 'Canterbury',
+
+'gi_gisborne': 'Gisborne',
+
+'hb_hastings': "Hawke's Bay",
+'hb_mahia': "Hawke's Bay",
+'hb_napier': "Hawke's Bay",
+'hb_otane': "Hawke's Bay",
+'hb_porangahau': "Hawke's Bay",
+'hb_takapau': "Hawke's Bay",
+'hb_tepaerahi': "Hawke's Bay",
+'hb_waipawa': "Hawke's Bay",
+'hb_waipukurau': "Hawke's Bay",
+'hb_wairoa': "Hawke's Bay",
+
+'ma_blenheim': 'Marlborough', 
+'ma_picton': 'Marlborough',
+
+'mw_dannevirke':'Manawatu-Wanganui', 
+'mw_eketahuna':'Manawatu-Wanganui', 
+'mw_feilding':'Manawatu-Wanganui', 
+'mw_levin':'Manawatu-Wanganui', 
+'mw_pahiatua':'Manawatu-Wanganui', 
+'mw_palmerstonnorth':'Manawatu-Wanganui', 
+'mw_taumarunui':'Manawatu-Wanganui', 
+'mw_whanganui':'Manawatu-Wanganui', 
+'mw_woodville':'Manawatu-Wanganui',
+
+'ne_bellisland':'Nelson', 
+'ne_nelson':'Nelson',
+
+'no_ahipara':'Northland', 
+'no_dargaville':'Northland', 
+'no_hikurangi':'Northland', 
+'no_kaeo':'Northland', 
+'no_kaikohe':'Northland', 
+'no_kaitaia':'Northland', 
+'no_kaiwaka':'Northland', 
+'no_kawakawa':'Northland', 
+'no_kerikeri':'Northland', 
+'no_kohukohu':'Northland', 
+'no_mangawhai':'Northland', 
+'no_maungaturoto':'Northland', 
+'no_opononi':'Northland', 
+'no_paihia':'Northland', 
+'no_rawene':'Northland', 
+'no_ruakaka':'Northland', 
+'no_russell':'Northland', 
+'no_taipa':'Northland', 
+'no_whangarei':'Northland', 
+"no_whatuwhiwhi": "Northland",
+
+"ot_alexandra": "Otago", 
+"ot_balclutha": "Otago", 
+"ot_cromwell": "Otago", 
+"ot_dunedintahuna": "Otago", 
+"ot_greenisland": "Otago", 
+"ot_mosgiel": "Otago", 
+"ot_oamaru": "Otago", 
+"ot_queenstown": "Otago", 
+"ot_wanaka": "Otago",
+
+"so_bluff": "Southland", 
+"so_gore": "Southland", 
+"so_invercargill": "Southland",
+
+"tk_eltham": "Taranaki",  
+"tk_hawera": "Taranaki",  
+"tk_kaponga": "Taranaki",  
+"tk_manaia": "Taranaki",  
+"tk_newplymouth": "Taranaki",  
+"tk_opunake": "Taranaki",  
+"tk_patea": "Taranaki",  
+"tk_stratford": "Taranaki",  
+"tk_waverley": "Taranaki",
+
+"ts_motueka": "Tasman",
+
+"wc_greymouth": "West Coast",  
+"wc_hokitika": "West Coast",  
+"wc_reefton": "West Coast",  
+"wc_westport": "West Coast",
+
+"wg_carterton": "Wellington",  
+"wg_featherston": "Wellington",  
+"wg_greytown": "Wellington",  
+"wg_karori": "Wellington",  
+"wg_martinborough": "Wellington",  
+"wg_masterton": "Wellington",  
+"wg_moapoint": "Wellington",  
+"wg_otaki": "Wellington",  
+"wg_paraparaumu": "Wellington",  
+"wg_porirua": "Wellington",  
+"wg_seaview": "Wellington",
+
+"wk_cambridge": "Waikato",  
+"wk_hamilton": "Waikato",  
+"wk_matamata": "Waikato",  
+"wk_morrinsville": "Waikato",  
+"wk_ngatea": "Waikato",  
+"wk_otorohanga": "Waikato",  
+"wk_paeroa": "Waikato",  
+"wk_taupo": "Waikato",  
+"wk_teawamutu": "Waikato",  
+"wk_tekuiti": "Waikato",  
+"wk_thames": "Waikato",
+"wk_tokoroa": "Waikato",
+"wk_turangi": "Waikato",
+"wk_whangamata": "Waikato",
+"wk_whitianga": "Waikato"
 }
 
 
@@ -89,10 +204,10 @@ country_name = 'newzealand'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
-metric_nm = 'copies_per_day_per_person'
-df.rename(columns={"copies_per_day_per_person": "value"
-                    ,"region":"channel"
-                    ,"week_end_date":'date' 
+metric_nm = 'sars_gcl'
+df.rename(columns={"sars_gcl": "value"
+                    ,"samplelocation":"channel"
+                    ,"collected":'date' 
                     }, inplace=True)
 
 df = df[['date','channel', 'value']]

@@ -7,7 +7,7 @@ import pandas as pd
 
 # Download data (replace the URL with your actual data URL)
 
-url_filename_dict = {'https://raw.githubusercontent.com/ESR-NZ/covid_in_wastewater/main/data/ww_regional.csv':
+url_filename_dict = {'https://raw.githubusercontent.com/ESR-NZ/covid_in_wastewater/refs/heads/main/data/ww_data_all.csv':
                     'newzealand_wastewater.parquet'}
 
 
