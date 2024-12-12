@@ -1,13 +1,13 @@
 # -------------------------------[ DATASET INFO ] -------------------------------
 # utilizing csv link from:
-# https://health-infobase.canada.ca/src/data/covidLive/wastewater/
+# https://health-infobase.canada.ca/src/data/wastewater/wastewater_aggregate.csv
 #--------------------------------------------------------------------------------
 
 import pandas as pd
 
 # Download data (replace the URL with your actual data URL)
 
-url_filename_dict = {'https://health-infobase.canada.ca/src/data/covidLive/wastewater/covid19-wastewater.csv':
+url_filename_dict = {'https://health-infobase.canada.ca/src/data/wastewater/wastewater_aggregate.csv':
                     'canada_wastewater.parquet'}
 
 
