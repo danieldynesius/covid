@@ -10,14 +10,14 @@
 * Collect & Share Data Sources for people to use for their Covid-projects
 <br><br>
 #### In order to fulfill these aims the current project direction is <br>
-* Find more Datalinks to Covid Wastewater Data
+* Find more Datalinks to Covid Wastewater Data (Please suggest!) 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
 * Find ways to use social media data ❌ ${\color{red}\text{Cancelled}}$
 * Find ways to pull aggregated google trends search terms data by region 
 * Find ways to pull aggregated mobility data per region
 * Forecast covid transmission per country 1-4+ weeks ahead &#10004; ${\color{green}\text{Completed}}$
 * Forecasts per region
 * Improve forecasts
-* Add variant data for better predictions 🔨👷🚧⚠️  ${\color{darkorange}\text{In Progress}}$
+* Add variant data for better predictions ❌ ${\color{red}\text{Cancelled}}$
 * Improved data standardization ❌ ${\color{red}\text{Cancelled}}$
 * Add Research News from Nature.com using LLM to interpret Abstract for laypersons.&#10004; ${\color{green}\text{Completed}}$
 <br><br>
