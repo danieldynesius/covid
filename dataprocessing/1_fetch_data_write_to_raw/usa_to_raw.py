@@ -35,7 +35,17 @@ d2.first_sample_date = pd.to_datetime(d2.first_sample_date)
 d2.date_start = pd.to_datetime(d2.date_start)
 
 df_original = d1.merge(d2, how='inner', left_on=['key_plot_id'], right_on=['key_plot_id'])
-df_original.dropna(subset='pcr_conc_smoothed', inplace=True)
+
+try:
+    # Check if 'pcr_conc_smoothed' column exists
+    if 'pcr_conc_lin' in df_original.columns:
+        df_original.dropna(subset=['pcr_conc_smoothed'], inplace=True)
+    else:
+        print("WARNING: 'pcr_conc_lin' column not found in the DataFrame. TROUBLE RUNNING DATA UPDATE!")
+
+except Exception as e:
+    print(f"An error occurred while processing 'pcr_conc_smoothed': {e}")
+
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/1_raw_data/{filename}'
 df_original.to_parquet(parquet_filename, index=False)

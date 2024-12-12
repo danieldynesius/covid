@@ -52,8 +52,8 @@ df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # was
 df.columns = df.columns.str.lower()
 selected_normalization = 'flow-population'
 df = df[df['normalization']==selected_normalization] # Select a particular normalization only to simplify min-max norm over time. Should get re-calc to make them comparable.
-metric_nm = 'pcr_conc_smoothed'
-df.rename(columns={"pcr_conc_smoothed": "value"
+metric_nm = 'pcr_conc_lin'
+df.rename(columns={"pcr_conc_lin": "value"
                     ,"reporting_jurisdiction":"region" 
                     }, inplace=True)
 
