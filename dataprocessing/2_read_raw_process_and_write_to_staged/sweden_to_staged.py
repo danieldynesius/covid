@@ -48,25 +48,23 @@ geojson
 geojson = geojson[['nuts_name', 'cntr_code', 'geometry']]
 geojson['nuts_name'] = geojson['nuts_name'].str.lower()
 region_mapping = {
+    'gavle': 'gävleborgs län',
+    'goteborg': 'västra götalands län',    
     'uppsala': 'uppsala län',
     'knivsta': 'uppsala län',
     'enkoping': 'uppsala län',
     'alvkarleby': 'uppsala län',  # assuming älvkarleby is also in uppsala
-    'osthammar': 'uppsala län',  # assuming östhammar is also in uppsala
     'ekero': 'stockholms län',
     'tierp': 'uppsala län',
     'osteråker': 'stockholms län',
     'vaxholm': 'stockholms län',
     'orebro': 'örebro län',
-    'umeå': 'västerbottens län',
     'kalmar': 'kalmar län',
     'ekeby': 'skåne län',  # note: this is a guess; provide the correct mapping if ekeby is in a different region
     'jonkoping': 'jönköpings län',
     'vasteras': 'västmanlands län',
     'helsingborg': 'skåne län',
     'ostersund': 'jämtlands län',
-    'gavle': 'gävleborgs län',
-    'goteborg': 'västra götalands län',
     'malmo': 'skåne län',
     'stockholm-kappala': 'stockholms län',
     'lulea': 'norrbottens län',
@@ -74,7 +72,9 @@ region_mapping = {
     'stockholm-grödinge': 'stockholms län',
     'linkoping': 'östergötlands län',
     'stockholm-bromma': 'stockholms län',
-    'stockholm-henriksdal': 'stockholms län'
+    'stockholm-henriksdal': 'stockholms län',
+    'umea': "västerbottens län",
+    'osthammar': 'uppsala län'  # assuming östhammar is also in uppsala
 }
 
 
@@ -82,10 +82,20 @@ region_mapping = {
 country_name = 'sweden'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
-df = df.loc[df['target'] == 'SARS CoV-2']
+
+# name standardization
+df.rename(columns={"copies_l": "value"
+                   ,"target": "virus"
+                   ,"city": "channel"
+                   }, inplace=True) # relative_copy_number
+df.virus = df.virus.str.lower()
+df.virus.fillna('sars-cov-2', inplace=True)
+df['virus'] = df['virus'].replace('sars cov-2', 'sars-cov-2') # assume missing is sars
+
+#df = df.loc[df['virus'] == 'sars cov-2']
 
 
-df['channel'] = df['city'].str.lower()
+df['channel'] = df['channel'].str.lower()
 df['sampling_date'] = pd.to_datetime(df.sampling_date)
 
 df["week"]   = (df['sampling_date'].dt.isocalendar().week).astype(str)
@@ -108,17 +118,16 @@ df['iso_week'] = df['iso_week'].astype(int)
 # Apply the function to create a new column "first_day"
 df['first_day'] = df.apply(get_first_day, axis=1)
 metric_nm = "copies_l"
-df.rename(columns={"copies_l": "value", }, inplace=True) # relative_copy_number
 df = df[df['first_day'] > date_threshold] # must be more recent that than X
 
 region_stats = df.groupby('channel')['first_day'].agg(['count','min','max']).reset_index()
 sufficient_reporting_region = region_stats[region_stats['count'] >= sufficient_updates_since_threshold].channel
 df = df[df['channel'].isin(sufficient_reporting_region)]
 df['region'] = df['channel'].map(region_mapping) # add region map for geojson
-df = df[['first_day','region', 'value']]
-df = df.groupby(['first_day','region'])['value'].agg('mean').reset_index()
+df = df[['first_day', 'virus', 'region', 'value']]
+df = df.groupby(['first_day', 'virus','region'])['value'].agg('mean').reset_index()
 df['first_day'] = df.first_day.dt.date
-df = df.sort_values(by=['first_day','region'])
+df = df.sort_values(by=['first_day','region', 'virus'])
 
 
 # Merge GeoDataFrame with data
@@ -130,17 +139,31 @@ merged_gdf = merged_gdf.sort_values(by='first_day')
 merged_gdf['first_day'] = merged_gdf.first_day.dt.date
 
 
-# Reshape the input to a 2D array
-values_2d = merged_gdf['value'].values.reshape(-1, 1)
-
-# Create and fit the MinMaxScaler
+# Initialize the MinMaxScaler
 scaler = MinMaxScaler()
-merged_gdf.loc[:, 'normalized_value'] = scaler.fit_transform(values_2d)
 
+# Create a new column for normalized values
+merged_gdf['normalized_value'] = 0  # Initialize with zeros or NaN
+
+# Get unique virus types
+unique_viruses = merged_gdf['virus'].unique()
+
+# Loop through each unique virus type
+for virus in unique_viruses:
+    # Filter the DataFrame for the current virus type
+    group = merged_gdf[merged_gdf['virus'] == virus]
+    
+    # Fit and transform the scaler on the 'value' column of this group
+    normalized_values = scaler.fit_transform(group[['value']])
+    
+    # Assign the normalized values back to the original DataFrame
+    merged_gdf.loc[merged_gdf['virus'] == virus, 'normalized_value'] = normalized_values.flatten()
+
+# Now merged_gdf contains a 'normalized_value' column with normalized values for each virus type
 merged_gdf.drop_duplicates(inplace=True)
 
 # RECREATE above
-merged_gdf = merged_gdf[['first_day', 'geometry','region','cntr_code','value','normalized_value']]
+merged_gdf = merged_gdf[['first_day', 'geometry', 'virus','region','cntr_code','value','normalized_value']]
 merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
@@ -156,11 +179,13 @@ gdf_original = merged_gdf
 
 # Save the DataFrame as a Parquet file
 parquet_filename = f'~/code/analytics/covid/data/2_staged_data/{filename}'
-gdf_original.to_parquet(parquet_filename, index=False)
+gdf_original.to_parquet(parquet_filename, index=False) #note this now contains multiple viruses, not just sars2
 
 
 # Plot choropleth map using Plotly Express with Mapbox
 """
+merged_gdf[merged_gdf.virus == 'sars-cov-2']
+
 fig = px.choropleth_mapbox(
     merged_gdf,
     geojson=merged_gdf.geometry,
@@ -169,7 +194,7 @@ fig = px.choropleth_mapbox(
     opacity=0.5,
     template='ggplot2', 
     hover_name='region',
-    title='Covid-19 Sweden Wastewater Data',
+    title='Covid-19 Sweden Wastewater Data - SARS-CoV-2',
     labels={'value': 'Relative Copy Number', 'first_day': 'Date (Weekly)'},
     color_continuous_scale="OrRd",
     range_color=color_range,

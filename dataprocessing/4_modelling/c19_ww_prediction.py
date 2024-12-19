@@ -72,6 +72,8 @@ for file in files_to_remove:
 
 # Concatenate DataFrames
 df = pd.DataFrame(pd.concat([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], ignore_index=True))
+df.virus.fillna('sars-cov-2', inplace=True)
+df = df.loc[df.virus=='sars-cov-2']
 df.sort_values(by=['cntr_nm'], inplace=True)
 #df = d7
 #df = d10

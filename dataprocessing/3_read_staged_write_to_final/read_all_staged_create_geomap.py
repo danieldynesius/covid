@@ -49,6 +49,8 @@ g13 =gpd.read_parquet(os.path.join(staged_datapath, 'slovenia_wastewater.parquet
 # Concatenate GeoDataFrames
 gdf = gpd.GeoDataFrame(pd.concat([g1, g2, g3, g4, g5,  g7, g8, g9, g10, g11, g12, g13], ignore_index=True))
 gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.05) # The higher the tolerance, the smaller file size (but less geo accurately drawn regions).
+gdf.virus.fillna('sars-cov-2', inplace=True) # assuming if virus type missing, then its covid values
+gdf = gdf.loc[gdf['virus'] == 'sars-cov-2']
 
 # Get latest data by country
 last_datapoint_by_country = gdf.groupby('cntr_code')['first_day'].max()

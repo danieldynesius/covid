@@ -109,14 +109,20 @@ country_name = 'canada'
 filename = f'{country_name}_wastewater.parquet'
 df = pd.read_parquet(f'~/code/analytics/covid/data/1_raw_data/{filename}') # wastewater
 df.columns = df.columns.str.lower()
-df = df.loc[df.measureid =='covN2']
-metric_nm = 'w_avg'
 df.rename(columns={"w_avg": "value"
                     ,"location":"channel" 
                     ,"weekstart": "date"
+                    ,"measureid": "virus"
                     }, inplace=True)
 
-df = df[['date','channel', 'value']]
+df.virus = df.virus.str.lower()
+df.virus.fillna('sars-cov-2', inplace=True)
+df.virus.replace('covn2', 'sars-cov-2', inplace=True)
+#df = df.loc[df.measureid =='sars-cov-2']
+metric_nm = 'w_avg'
+
+
+df = df[['date','channel', 'virus','value']]
 df['channel'] = df['channel'].str.lower()
 df['date'] = pd.to_datetime(df['date'])
 
@@ -142,12 +148,11 @@ region_stats = df.groupby('channel')['first_day'].agg(['count','min','max']).res
 sufficient_reporting_region = region_stats[region_stats['count'] >= sufficient_updates_since_threshold].channel
 df = df[df['channel'].isin(sufficient_reporting_region)]
 
-geojson
 df['region'] = df['channel'].map(region_mapping) # add region map for geojson
-df = df[['first_day','region', 'value']]
-df = df.groupby(['first_day','region'])['value'].agg('mean').reset_index()
+df = df[['first_day','region', 'value', 'virus']]
+df = df.groupby(['first_day','region', 'virus'])['value'].agg('mean').reset_index()
 df['first_day'] = df.first_day.dt.date
-df = df.sort_values(by=['first_day','region'])
+df = df.sort_values(by=['virus','first_day','region'])
 
 
 # Merge GeoDataFrame with data
@@ -159,17 +164,30 @@ merged_gdf = merged_gdf.sort_values(by='first_day')
 merged_gdf['first_day'] = merged_gdf.first_day.dt.date
 
 
-# Reshape the input to a 2D array
-values_2d = merged_gdf['value'].values.reshape(-1, 1)
-
-# Create and fit the MinMaxScaler
+# Initialize the MinMaxScaler
 scaler = MinMaxScaler()
-merged_gdf.loc[:, 'normalized_value'] = scaler.fit_transform(values_2d)
 
+# Create a new column for normalized values
+merged_gdf['normalized_value'] = 0  # Initialize with zeros or NaN
+
+# Get unique virus types
+unique_viruses = merged_gdf['virus'].unique()
+
+# Loop through each unique virus type
+for virus in unique_viruses:
+    # Filter the DataFrame for the current virus type
+    group = merged_gdf[merged_gdf['virus'] == virus]
+    
+    # Fit and transform the scaler on the 'value' column of this group
+    normalized_values = scaler.fit_transform(group[['value']])
+    
+    # Assign the normalized values back to the original DataFrame
+    merged_gdf.loc[merged_gdf['virus'] == virus, 'normalized_value'] = normalized_values.flatten()
+
+# Now merged_gdf contains a 'normalized_value' column with normalized values for each virus type
 merged_gdf.drop_duplicates(inplace=True)
-
 # RECREATE above
-merged_gdf = merged_gdf[['first_day', 'geometry','region','cntr_code','value','normalized_value']]
+merged_gdf = merged_gdf[['first_day', 'geometry','region','cntr_code', 'virus', 'value','normalized_value']]
 merged_gdf['first_day'] = merged_gdf['first_day'].astype(str)
 
 # Fix dataformat -- messy fix this shit later. Its the wrong order to do things in
