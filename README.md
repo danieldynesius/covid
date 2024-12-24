@@ -80,4 +80,4 @@ Contact me on twitter or linkedin.
 
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/danieldynesius/)&nbsp;
 
-[Email: daniel.dynesius@stratega.ai](mailto:daniel.dynesius@stratega.ai)
+[Email: daniel.dynesius@asciendo.ai](mailto:daniel.dynesius@asciendo.ai)
