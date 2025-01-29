@@ -164,17 +164,81 @@
           <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <div class="about_box">
                <h3>About the Project</h3>
-               <p><b style="color: red;">Note:</b> This project is still in the <i>Early Beta Stage</i>. It would be intereting to improve the project by finding an institute, organization, univeristy or agency interested in collaborating or supporting it.<br><br>
-                  The project utilizes multiple data sources in order to create geoviz, trendgraphs, predictions using a neural net and research article summarization using AI (LLM).<br><br>
+               <p>This project is still in the <i>Beta Stage</i>. It would be intereting to improve the project by finding an institute, organization, univeristy or agency interested in collaborating or supporting it.<br><br>
+                  The project utilizes multiple data sources in order to create geoviz, trendgraphs, predictions using a basic neural net and research article summarization using AI (LLM).<br><br>
                   </p>
                <br><br>
-               <h3> About the Developer</h3>
-               <p>I am Daniel Dynesius I work as a <i>Remote Data Scientist / Data Engineer</i> offering services via my company 
+               <h3>Developer</h3>
+               <p>I am Daniel Dynesius I've been working with data over a decade in the intersection <i>Data Sciennce & Data Engineering</i>. I offer consulting services via my company, get in touch! :) 
+                  <br><br><br><br>
                   
-                  <a href="https://www.asciendo.ai">
-                     <b>Asciendo Data Consulting</b>
-                  </a>
                </p>
+               <style>
+                  .asciendo-btn {
+                      display: inline-block;
+                      background: linear-gradient(45deg, #007BFF, #00BFFF, #007BFF);
+                      background-size: 200% 200%;
+                      color: #ffffff;
+                      padding: 15px 30px;
+                      text-decoration: none;
+                      border-radius: 30px;
+                      box-shadow: 
+                          0 6px 20px rgba(0, 123, 255, 0.3),
+                          0 10px 30px rgba(0, 123, 255, 0.2);
+                      font-weight: bold;
+                      font-family: 'Montserrat', 'Inter', sans-serif;
+                      font-size: 20px;
+                      text-transform: uppercase;
+                      letter-spacing: -0.5px;
+                      transition: all 0.3s ease;
+                      position: relative;
+                      overflow: hidden;
+                      z-index: 1;
+                      animation: gradientFlow 5s ease infinite, float 3s ease-in-out infinite;
+                  }
+              
+                  .asciendo-btn:before {
+                      content: '';
+                      position: absolute;
+                      top: -50%;
+                      left: -50%;
+                      width: 200%;
+                      height: 200%;
+                      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+                      transform: rotate(45deg);
+                      transition: all 0.3s ease;
+                      z-index: -1;
+                  }
+              
+                  .asciendo-btn:hover {
+                      transform: translateY(-5px) scale(1.05);
+                      box-shadow: 
+                          0 15px 30px rgba(0, 123, 255, 0.4),
+                          0 20px 40px rgba(0, 123, 255, 0.3);
+                  }
+              
+                  .asciendo-btn:hover:before {
+                      top: -100%;
+                      left: -100%;
+                  }
+              
+                  @keyframes gradientFlow {
+                      0% { background-position: 0% 50%; }
+                      50% { background-position: 100% 50%; }
+                      100% { background-position: 0% 50%; }
+                  }
+              
+                  @keyframes float {
+                      0%, 100% { transform: translateY(0); }
+                      50% { transform: translateY(-10px); }
+                  }
+              </style>
+              
+              <a href="https://www.asciendo.ai" class="asciendo-btn">
+                  Asciendo Data Consulting
+              </a>
+              
+                             
             </div>
          </dir> 
       </div>
@@ -189,8 +253,7 @@
                <div class="col-md-7 offset-md-3">
                   <div class="title">
                      <h2>Why <strong class="black">Monitor Covid?</strong></h2>
-                     <span>Once the project has matured. <br></b></span><br>
-                        <p>I hope it allows people to stay up to date on the Covid-19 transmission, allowing more people to evaluate their & others risk of exposure, allowing us to make more informed decisions to stay healthier.</p>
+                        <p>Staying up to date on the Covid-19 transmission, allows people to evaluate their risks of exposing themselves or others, it aids in making informed decisions.</p>
                   </div>
                </div>
             </div>
@@ -356,7 +419,7 @@
                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                   <div class="contact">
                      <h3>About Covid-19 Wastewater Monitoring</h3>
-                     <span>This is a project to monitor the pandemic development over time in multiple countries through wastewater measurement. </span>
+                     <span>This is a project to monitor the pandemic development over time in multiple countries through wastewater measurement.</span>
                   </div>
                </div>
             </div>
