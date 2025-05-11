@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import subprocess
 from datetime import datetime
@@ -5,6 +7,7 @@ import time
 import pandas as pd
 import configparser
 import getpass
+import signal
 
 
 username = getpass.getuser()
@@ -41,6 +44,40 @@ def stop_stopwatch(print_str=''):
     print(f"> Sec Time: {print_str} {minutes}m {seconds}s >> T-time: {minutes_t}m {seconds_t}s\n")
     #return minutes, seconds
 
+def start_mongodb():
+    try:
+        subprocess.run(['sudo', 'service', 'mongod', 'start'], check=True)
+        print("MongoDB started successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error starting MongoDB: {e}")
+
+def stop_mongodb():
+    """Stop the MongoDB service."""
+    try:
+        subprocess.run(['sudo', 'service', 'mongod', 'stop'], check=True)
+        print("MongoDB stopped successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error stopping MongoDB: {e}")
+        exit(1)
+
+def start_ollama():
+    global ollama_process
+    try:
+        ollama_process = subprocess.Popen(['ollama', 'serve'])
+        print("Ollama server started.")
+    except Exception as e:
+        print(f"Error starting Ollama: {e}")
+
+def stop_ollama():
+    if ollama_process:
+        try:
+            ollama_process.send_signal(signal.SIGINT)
+            ollama_process.wait()
+            print("Ollama server stopped.")
+        except Exception as e:
+            print(f"Error stopping Ollama: {e}")
+
+
 
 #----------------------------------------------------------------------------------------------
 # Step 0: Read Config file
@@ -70,6 +107,7 @@ staged_research_script = config.get('Paths', 'staged_research_script')
 existing_research_articles = config.get('Paths', 'existing_research_articles')
 
 research_html_script = config.get('Paths', 'research_html_script')
+birdflu_script = config.get('Paths', 'birdflu_script')
 
 # Output dirs
 final_write_dir = config.get('Paths', 'final_write_dir')
@@ -109,14 +147,8 @@ if os.path.isfile(flag_file):
 
 
 
-def start_mongodb():
-    try:
-        subprocess.run(['sudo', 'service', 'mongod', 'start'], check=True)
-        print("MongoDB started successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error starting MongoDB: {e}")
 
-start_mongodb()
+start_mongodb() 
 
     # Prompt user to confirm running the script
     #choice = input("Do you want to run the script anyway? (y/n): ").lower()
@@ -338,6 +370,10 @@ except subprocess.CalledProcessError as e:
 stop_stopwatch('Step 4.1: OK: Seach Data Page Done!')
 
 #----------------------------------------------------------------------------------------------
+# 4.3 Run Birdflu Basic ETL + graph + html creation
+#----------------------------------------------------------------------------------------------
+subprocess.run(["python", birdflu_script], check=True) # Update Birdflu graph html
+#----------------------------------------------------------------------------------------------
 # 4.5 Run Non-Tiered Processing Scripts
 #----------------------------------------------------------------------------------------------
 start_stopwatch()
@@ -354,6 +390,8 @@ start_stopwatch()
 subprocess.run(["python", final_geo_script], check=True) # Geo Map
 subprocess.run(["python", final_trend_script], check=True) # Trend Charts
 subprocess.run(["python", final_prediction_script], check=True) # Prediction Charts
+
+start_ollama()
 subprocess.run(["python", research_html_script], check=True) # Generate Research News HTML
 
 stop_stopwatch('Step 5')
@@ -383,10 +421,27 @@ pd.DataFrame(
 commit_script_path = 'dataprocessing/0_trigger_raw_data_fetch'
 commit_script_name = 'multi_commit.py'
 commit_script_fullpath = os.path.join(base_path, commit_script_path, commit_script_name)
+commit_script_fullpath = '/home/ph0s/code/analytics/covid/dataprocessing/0_trigger_raw_data_fetch/multi_commit.py'
 print('running commitscriptpath:', commit_script_fullpath)
 
-subprocess.run(["python", commit_script_fullpath])
+
+# Set the working directory to the root of the Git repository
+os.chdir("/home/ph0s/code/analytics/covid")
+
+try:
+    result = subprocess.run(["python", commit_script_fullpath], 
+                            check=True, 
+                            capture_output=True, 
+                            text=True)
+    print("Script output:", result.stdout)
+except subprocess.CalledProcessError as e:
+    print(f"Error occurred. Return code: {e.returncode}")
+    print("Error output:", e.stderr)
+    # Log the error messages
+    print("Error message:", e.output.strip())
 
 
 subprocess.run(["python", research_html_script], check=True) # Generate Research News HTML
+stop_mongodb()
+stop_ollama()
 stop_stopwatch('Step 6-7')
